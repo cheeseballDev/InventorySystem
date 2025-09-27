@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem
 {
-    partial class InventoryForm
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,23 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnStaff = new Button();
+            btnAdmin = new Button();
             SuspendLayout();
             // 
-            // InventoryForm
+            // btnStaff
+            // 
+            btnStaff.BackColor = Color.FromArgb(225, 212, 193);
+            btnStaff.Cursor = Cursors.Hand;
+            btnStaff.FlatStyle = FlatStyle.Flat;
+            btnStaff.Location = new Point(411, 200);
+            btnStaff.Name = "btnStaff";
+            btnStaff.Size = new Size(168, 34);
+            btnStaff.TabIndex = 0;
+            btnStaff.Text = "Login as Staff";
+            btnStaff.UseVisualStyleBackColor = false;
+            btnStaff.Click += btnStaff_Click;
+            // 
+            // btnAdmin
+            // 
+            btnAdmin.BackColor = Color.FromArgb(225, 212, 193);
+            btnAdmin.Cursor = Cursors.Hand;
+            btnAdmin.FlatStyle = FlatStyle.Flat;
+            btnAdmin.Location = new Point(411, 262);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(168, 34);
+            btnAdmin.TabIndex = 1;
+            btnAdmin.Text = "Login as Admin";
+            btnAdmin.UseVisualStyleBackColor = false;
+            // 
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1008, 561);
+            Controls.Add(btnAdmin);
+            Controls.Add(btnStaff);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(4);
-            Name = "InventoryForm";
+            Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Inventory System";
+            Text = "Login Page";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnStaff;
+        private Button btnAdmin;
     }
 }
