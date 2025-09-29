@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace InventorySystem
 {
-    public partial class LoginStaffForm : Form
+    public partial class StaffHomePage : Form
     {
-        public LoginStaffForm()
+        public StaffHomePage()
         {
             InitializeComponent();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
