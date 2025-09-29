@@ -32,9 +32,13 @@
             // 
             // StaffHomePage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 561);
+            Cursor = Cursors.Default;
+            Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "StaffHomePage";
             Text = "StaffHomePage";
             ResumeLayout(false);

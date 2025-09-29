@@ -34,6 +34,8 @@
             tbEmail = new RichTextBox();
             label2 = new Label();
             label3 = new Label();
+            btnClose = new Button();
+            btnBack = new Button();
             SuspendLayout();
             // 
             // label1
@@ -97,11 +99,43 @@
             label3.TabIndex = 5;
             label3.Text = "Email:";
             // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClose.ForeColor = SystemColors.ControlText;
+            btnClose.Location = new Point(980, 0);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(28, 32);
+            btnClose.TabIndex = 7;
+            btnClose.Text = "X";
+            btnClose.TextAlign = ContentAlignment.TopLeft;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = SystemColors.ControlText;
+            btnBack.Location = new Point(0, 0);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(32, 32);
+            btnBack.TabIndex = 8;
+            btnBack.Text = "<";
+            btnBack.TextAlign = ContentAlignment.TopLeft;
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // LoginStaffForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 561);
+            Controls.Add(btnBack);
+            Controls.Add(btnClose);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(btnLogin);
@@ -109,7 +143,7 @@
             Controls.Add(tbEmail);
             Controls.Add(label1);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "LoginStaffForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -126,5 +160,7 @@
         private RichTextBox tbEmail;
         private Label label2;
         private Label label3;
+        private Button btnClose;
+        private Button btnBack;
     }
 }
