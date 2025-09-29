@@ -63,9 +63,29 @@ namespace InventorySystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _32px_logo {
+            get {
+                object obj = ResourceManager.GetObject("32px logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9974058 {
             get {
                 object obj = ResourceManager.GetObject("9974058", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap parfum_logo_white_only {
+            get {
+                object obj = ResourceManager.GetObject("parfum logo white only", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

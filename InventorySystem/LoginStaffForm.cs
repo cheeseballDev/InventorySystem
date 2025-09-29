@@ -22,7 +22,9 @@ namespace InventorySystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            StaffHomePage staffHomePage = new StaffHomePage();
+            staffHomePage.Show();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
