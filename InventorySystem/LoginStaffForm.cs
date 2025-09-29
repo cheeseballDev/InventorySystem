@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace InventorySystem
 {
-    public partial class LoginStaffForm : Form`
+    public partial class LoginStaffForm : Form
     {
         public LoginStaffForm()
         {
