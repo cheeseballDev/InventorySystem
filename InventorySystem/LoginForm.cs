@@ -9,9 +9,10 @@ namespace InventorySystem
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             LoginStaffForm loginStaffForm = new LoginStaffForm();
             loginStaffForm.ShowDialog();
+            
             
         }
     }

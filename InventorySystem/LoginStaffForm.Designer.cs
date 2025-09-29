@@ -28,22 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
+            btnLogin = new Button();
+            tbPassword = new RichTextBox();
+            tbEmail = new RichTextBox();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Montserrat", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(371, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(246, 44);
+            label1.TabIndex = 0;
+            label1.Text = "Login as Staff";
+            // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.FromArgb(225, 212, 193);
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Location = new Point(356, 278);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(279, 32);
+            btnLogin.TabIndex = 3;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // tbPassword
+            // 
+            tbPassword.Location = new Point(356, 218);
+            tbPassword.MaxLength = 24;
+            tbPassword.Multiline = false;
+            tbPassword.Name = "tbPassword";
+            tbPassword.Size = new Size(279, 32);
+            tbPassword.TabIndex = 2;
+            tbPassword.Text = "";
+            // 
+            // tbEmail
+            // 
+            tbEmail.Location = new Point(356, 160);
+            tbEmail.MaxLength = 64;
+            tbEmail.Multiline = false;
+            tbEmail.Name = "tbEmail";
+            tbEmail.Size = new Size(279, 32);
+            tbEmail.TabIndex = 1;
+            tbEmail.Text = "";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(356, 195);
+            label2.Name = "label2";
+            label2.Size = new Size(90, 22);
+            label2.TabIndex = 4;
+            label2.Text = "Password:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(356, 135);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 22);
+            label3.TabIndex = 5;
+            label3.Text = "Email:";
             // 
             // LoginStaffForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 561);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(btnLogin);
+            Controls.Add(tbPassword);
+            Controls.Add(tbEmail);
+            Controls.Add(label1);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "LoginStaffForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginStaffForm";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private Button btnLogin;
+        private RichTextBox tbPassword;
+        private RichTextBox tbEmail;
+        private Label label2;
+        private Label label3;
     }
 }
