@@ -33,6 +33,11 @@
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            helpProvider1 = new HelpProvider();
+            button4 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -41,6 +46,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(28, 28, 28);
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -51,6 +60,7 @@
             // 
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label1);
+            panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(180, 100);
@@ -75,6 +85,62 @@
             label1.Size = new Size(100, 22);
             label1.TabIndex = 0;
             label1.Text = "Main Menu";
+            // 
+            // button1
+            // 
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.Control;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(0, 100);
+            button1.Name = "button1";
+            button1.Size = new Size(180, 59);
+            button1.TabIndex = 1;
+            button1.Text = "Inventory";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.BackgroundImageLayout = ImageLayout.Center;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = SystemColors.Control;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(0, 165);
+            button2.Name = "button2";
+            button2.Size = new Size(180, 59);
+            button2.TabIndex = 2;
+            button2.Text = "Inventory";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.BackgroundImageLayout = ImageLayout.Center;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = SystemColors.Control;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.Location = new Point(0, 230);
+            button3.Name = "button3";
+            button3.Size = new Size(180, 59);
+            button3.TabIndex = 3;
+            button3.Text = "Inventory";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.BackgroundImageLayout = ImageLayout.Center;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = SystemColors.Control;
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.Location = new Point(0, 295);
+            button4.Name = "button4";
+            button4.Size = new Size(180, 59);
+            button4.TabIndex = 4;
+            button4.Text = "Inventory";
+            button4.UseVisualStyleBackColor = true;
             // 
             // StaffHomePage
             // 
@@ -101,5 +167,10 @@
         private Panel panel2;
         private Label label1;
         private PictureBox pictureBox1;
+        private Button button1;
+        private Button button4;
+        private Button button3;
+        private Button button2;
+        private HelpProvider helpProvider1;
     }
 }
