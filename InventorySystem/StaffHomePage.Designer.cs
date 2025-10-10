@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffHomePage));
-            panel1 = new Panel();
+            pnlNavigation = new Panel();
             btnForecast = new Button();
             btnReport = new Button();
             btnRequest = new Button();
@@ -38,23 +38,24 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             helpProvider1 = new HelpProvider();
-            panel1.SuspendLayout();
+            pnlNavigation.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pnlNavigation
             // 
-            panel1.BackColor = Color.FromArgb(28, 28, 28);
-            panel1.Controls.Add(btnForecast);
-            panel1.Controls.Add(btnReport);
-            panel1.Controls.Add(btnRequest);
-            panel1.Controls.Add(btnInventory);
-            panel1.Controls.Add(panel2);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(180, 600);
-            panel1.TabIndex = 0;
+            pnlNavigation.BackColor = Color.FromArgb(28, 28, 28);
+            pnlNavigation.Controls.Add(btnForecast);
+            pnlNavigation.Controls.Add(btnReport);
+            pnlNavigation.Controls.Add(btnRequest);
+            pnlNavigation.Controls.Add(btnInventory);
+            pnlNavigation.Controls.Add(panel2);
+            pnlNavigation.Dock = DockStyle.Left;
+            pnlNavigation.Location = new Point(0, 0);
+            pnlNavigation.Name = "pnlNavigation";
+            pnlNavigation.Size = new Size(180, 600);
+            pnlNavigation.TabIndex = 0;
             // 
             // btnForecast
             // 
@@ -119,6 +120,7 @@
             btnInventory.Text = "Inventory";
             btnInventory.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInventory.UseVisualStyleBackColor = true;
+            btnInventory.Click += btnInventory_Click;
             // 
             // panel2
             // 
@@ -155,14 +157,14 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1024, 600);
-            Controls.Add(panel1);
+            Controls.Add(pnlNavigation);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "StaffHomePage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StaffHomePage";
-            panel1.ResumeLayout(false);
+            pnlNavigation.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -171,7 +173,7 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnlNavigation;
         private Panel panel2;
         private Label label1;
         private PictureBox pictureBox1;
