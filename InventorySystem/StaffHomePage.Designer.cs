@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffHomePage));
+            panel1 = new Panel();
             pnlNavigation = new Panel();
             btnForecast = new Button();
             btnReport = new Button();
@@ -38,24 +39,33 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             helpProvider1 = new HelpProvider();
-            pnlNavigation.SuspendLayout();
+            panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(28, 28, 28);
+            panel1.Controls.Add(pnlNavigation);
+            panel1.Controls.Add(btnForecast);
+            panel1.Controls.Add(btnReport);
+            panel1.Controls.Add(btnRequest);
+            panel1.Controls.Add(btnInventory);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(180, 600);
+            panel1.TabIndex = 0;
+            // 
             // pnlNavigation
             // 
-            pnlNavigation.BackColor = Color.FromArgb(28, 28, 28);
-            pnlNavigation.Controls.Add(btnForecast);
-            pnlNavigation.Controls.Add(btnReport);
-            pnlNavigation.Controls.Add(btnRequest);
-            pnlNavigation.Controls.Add(btnInventory);
-            pnlNavigation.Controls.Add(panel2);
-            pnlNavigation.Dock = DockStyle.Left;
-            pnlNavigation.Location = new Point(0, 0);
+            pnlNavigation.BackColor = Color.FromArgb(225, 212, 193);
+            pnlNavigation.Location = new Point(168, 177);
             pnlNavigation.Name = "pnlNavigation";
-            pnlNavigation.Size = new Size(180, 600);
-            pnlNavigation.TabIndex = 0;
+            pnlNavigation.Size = new Size(12, 100);
+            pnlNavigation.TabIndex = 1;
             // 
             // btnForecast
             // 
@@ -72,6 +82,8 @@
             btnForecast.Text = "Forecast";
             btnForecast.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnForecast.UseVisualStyleBackColor = true;
+            btnForecast.Click += btnForecast_Click;
+            btnForecast.Leave += btnForecast_Leave;
             // 
             // btnReport
             // 
@@ -88,6 +100,8 @@
             btnReport.Text = "Report";
             btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnReport.UseVisualStyleBackColor = true;
+            btnReport.Click += btnReport_Click;
+            btnReport.Leave += btnReport_Leave;
             // 
             // btnRequest
             // 
@@ -104,6 +118,8 @@
             btnRequest.Text = "Request";
             btnRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRequest.UseVisualStyleBackColor = true;
+            btnRequest.Click += btnRequest_Click;
+            btnRequest.Leave += btnRequest_Leave;
             // 
             // btnInventory
             // 
@@ -121,6 +137,7 @@
             btnInventory.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInventory.UseVisualStyleBackColor = true;
             btnInventory.Click += btnInventory_Click;
+            btnInventory.Leave += btnInventory_Leave;
             // 
             // panel2
             // 
@@ -157,14 +174,14 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1024, 600);
-            Controls.Add(pnlNavigation);
+            Controls.Add(panel1);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "StaffHomePage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StaffHomePage";
-            pnlNavigation.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -173,7 +190,7 @@
 
         #endregion
 
-        private Panel pnlNavigation;
+        private Panel panel1;
         private Panel panel2;
         private Label label1;
         private PictureBox pictureBox1;
@@ -182,5 +199,6 @@
         private Button btnReport;
         private Button btnRequest;
         private HelpProvider helpProvider1;
+        private Panel pnlNavigation;
     }
 }

@@ -33,7 +33,50 @@ namespace InventorySystem
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            btnInventory.BackColor = Color.FromArgb(35, 225, 212, 193);
+            pnlNavigation.Height = btnInventory.Height;
+            pnlNavigation.Top = btnInventory.Top;
+            pnlNavigation.Left = btnInventory.Left + 168;
+            btnInventory.BackColor = Color.FromArgb(50, 225, 212, 193);
+        }   
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+            pnlNavigation.Height = btnRequest.Height;
+            pnlNavigation.Top = btnRequest.Top;
+            btnRequest.BackColor = Color.FromArgb(50, 225, 212, 193);
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            pnlNavigation.Height = btnReport.Height;
+            pnlNavigation.Top = btnReport.Top;
+            btnReport.BackColor = Color.FromArgb(50, 225, 212, 193);
+        }
+        private void btnForecast_Click(object sender, EventArgs e)
+        {
+            pnlNavigation.Height = btnForecast.Height;
+            pnlNavigation.Top = btnForecast.Top;
+            btnForecast.BackColor = Color.FromArgb(50, 225, 212, 193);
+        }
+
+        private void btnInventory_Leave(object sender, EventArgs e)
+        {
+            btnInventory.BackColor = Color.FromArgb(28, 28, 28);
+        }
+
+        private void btnRequest_Leave(object sender, EventArgs e)
+        {
+            btnRequest.BackColor = Color.FromArgb(28, 28, 28);
+        }
+
+        private void btnReport_Leave(object sender, EventArgs e)
+        {
+            btnReport.BackColor = Color.FromArgb(28, 28, 28);
+        }
+
+        private void btnForecast_Leave(object sender, EventArgs e)
+        {
+            btnForecast.BackColor = Color.FromArgb(28, 28, 28);
         }
     }
 }
