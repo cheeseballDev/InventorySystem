@@ -39,9 +39,16 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             helpProvider1 = new HelpProvider();
+            lblTitle = new Label();
+            lblDescription = new Label();
+            panel3 = new Panel();
+            pictureBox2 = new PictureBox();
+            btnNotification = new Button();
+            cbxUser = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -169,11 +176,82 @@
             label1.TabIndex = 0;
             label1.Text = "Main Menu";
             // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(199, 13);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(154, 37);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "Inventory";
+            lblTitle.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblDescription
+            // 
+            lblDescription.AutoSize = true;
+            lblDescription.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
+            lblDescription.Location = new Point(203, 55);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(273, 18);
+            lblDescription.TabIndex = 2;
+            lblDescription.Text = "Overview of all available parfum products";
+            // 
+            // panel3
+            // 
+            panel3.Location = new Point(199, 87);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(808, 497);
+            panel3.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.White;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox2.Location = new Point(886, 22);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(43, 39);
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            // 
+            // btnNotification
+            // 
+            btnNotification.FlatStyle = FlatStyle.Flat;
+            btnNotification.ForeColor = Color.White;
+            btnNotification.Image = (Image)resources.GetObject("btnNotification.Image");
+            btnNotification.Location = new Point(853, 27);
+            btnNotification.Name = "btnNotification";
+            btnNotification.Size = new Size(27, 30);
+            btnNotification.TabIndex = 4;
+            btnNotification.UseVisualStyleBackColor = false;
+            btnNotification.Click += btnNotification_Click;
+            // 
+            // cbxUser
+            // 
+            cbxUser.BackColor = Color.White;
+            cbxUser.FlatStyle = FlatStyle.Flat;
+            cbxUser.Font = new Font("Montserrat", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cbxUser.ForeColor = Color.FromArgb(25, 25, 25);
+            cbxUser.FormattingEnabled = true;
+            cbxUser.Location = new Point(935, 27);
+            cbxUser.Name = "cbxUser";
+            cbxUser.Size = new Size(72, 30);
+            cbxUser.TabIndex = 6;
+            cbxUser.Text = "Staff";
+            // 
             // StaffHomePage
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1024, 600);
+            Controls.Add(cbxUser);
+            Controls.Add(pictureBox2);
+            Controls.Add(btnNotification);
+            Controls.Add(panel3);
+            Controls.Add(lblDescription);
+            Controls.Add(lblTitle);
             Controls.Add(panel1);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -185,7 +263,9 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -200,5 +280,11 @@
         private Button btnRequest;
         private HelpProvider helpProvider1;
         private Panel pnlNavigation;
+        private Label lblTitle;
+        private Label lblDescription;
+        private Panel panel3;
+        private PictureBox pictureBox2;
+        private Button btnNotification;
+        private ComboBox cbxUser;
     }
 }

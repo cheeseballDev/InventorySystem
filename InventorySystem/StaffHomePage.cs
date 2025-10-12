@@ -37,7 +37,7 @@ namespace InventorySystem
             pnlNavigation.Top = btnInventory.Top;
             pnlNavigation.Left = btnInventory.Left + 168;
             btnInventory.BackColor = Color.FromArgb(50, 225, 212, 193);
-        }   
+        }
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
@@ -78,5 +78,11 @@ namespace InventorySystem
         {
             btnForecast.BackColor = Color.FromArgb(28, 28, 28);
         }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
