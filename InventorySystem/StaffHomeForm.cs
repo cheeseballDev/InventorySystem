@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 
 namespace InventorySystem
 {
-    public partial class StaffHomePage : Form
+    public partial class StaffHomeForm : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -24,7 +24,7 @@ namespace InventorySystem
             int nHeightEllipse
             );
 
-        public StaffHomePage()
+        public StaffHomeForm()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));

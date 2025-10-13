@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem
 {
-    partial class StaffHomePage
+    partial class StaffHomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffHomePage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffHomeForm));
             panel1 = new Panel();
             pnlNavigation = new Panel();
             btnForecast = new Button();
