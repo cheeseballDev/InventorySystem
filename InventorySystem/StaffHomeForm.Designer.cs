@@ -42,13 +42,13 @@
             lblTitle = new Label();
             lblDescription = new Label();
             panel3 = new Panel();
-            pictureBox2 = new PictureBox();
+            imgBtnUser = new PictureBox();
             btnNotification = new Button();
             cbxUser = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgBtnUser).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -205,16 +205,17 @@
             panel3.Size = new Size(808, 497);
             panel3.TabIndex = 3;
             // 
-            // pictureBox2
+            // imgBtnUser
             // 
-            pictureBox2.BackColor = Color.White;
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox2.Location = new Point(886, 22);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(43, 39);
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
+            imgBtnUser.BackColor = Color.White;
+            imgBtnUser.BackgroundImage = (Image)resources.GetObject("imgBtnUser.BackgroundImage");
+            imgBtnUser.BackgroundImageLayout = ImageLayout.Center;
+            imgBtnUser.Location = new Point(886, 22);
+            imgBtnUser.Name = "imgBtnUser";
+            imgBtnUser.Size = new Size(43, 39);
+            imgBtnUser.TabIndex = 5;
+            imgBtnUser.TabStop = false;
+            imgBtnUser.Click += pictureBox2_Click;
             // 
             // btnNotification
             // 
@@ -241,13 +242,13 @@
             cbxUser.TabIndex = 6;
             cbxUser.Text = "Staff";
             // 
-            // StaffHomePage
+            // StaffHomeForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1024, 600);
             Controls.Add(cbxUser);
-            Controls.Add(pictureBox2);
+            Controls.Add(imgBtnUser);
             Controls.Add(btnNotification);
             Controls.Add(panel3);
             Controls.Add(lblDescription);
@@ -256,14 +257,14 @@
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "StaffHomePage";
+            Name = "StaffHomeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StaffHomePage";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgBtnUser).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -283,7 +284,7 @@
         private Label lblTitle;
         private Label lblDescription;
         private Panel panel3;
-        private PictureBox pictureBox2;
+        private PictureBox imgBtnUser;
         private Button btnNotification;
         private ComboBox cbxUser;
     }
