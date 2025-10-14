@@ -95,6 +95,11 @@
             // 
             // dgPerfume
             // 
+            dgPerfume.AllowUserToAddRows = false;
+            dgPerfume.AllowUserToDeleteRows = false;
+            dgPerfume.AllowUserToResizeColumns = false;
+            dgPerfume.AllowUserToResizeRows = false;
+            dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgPerfume.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -116,6 +121,8 @@
             dgPerfume.DefaultCellStyle = dataGridViewCellStyle2;
             dgPerfume.Location = new Point(12, 61);
             dgPerfume.Name = "dgPerfume";
+            dgPerfume.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgPerfume.Size = new Size(776, 392);
             dgPerfume.TabIndex = 5;
             // 
@@ -148,6 +155,7 @@
             // 
             // PERFUME_ID
             // 
+            PERFUME_ID.FillWeight = 40F;
             PERFUME_ID.HeaderText = "ID";
             PERFUME_ID.MinimumWidth = 3;
             PERFUME_ID.Name = "PERFUME_ID";
@@ -155,35 +163,33 @@
             // 
             // PERFUME_NAME
             // 
+            PERFUME_NAME.FillWeight = 110F;
             PERFUME_NAME.HeaderText = "Perfume";
             PERFUME_NAME.Name = "PERFUME_NAME";
             PERFUME_NAME.ReadOnly = true;
-            PERFUME_NAME.Width = 180;
             // 
             // PERFUME_NOTE
             // 
             PERFUME_NOTE.HeaderText = "Note";
             PERFUME_NOTE.Name = "PERFUME_NOTE";
             PERFUME_NOTE.ReadOnly = true;
-            PERFUME_NOTE.Width = 150;
             // 
             // PERFUME_BRANCH
             // 
             PERFUME_BRANCH.HeaderText = "Branch";
             PERFUME_BRANCH.Name = "PERFUME_BRANCH";
-            PERFUME_BRANCH.Width = 120;
             // 
             // PERFUME_DATECREATED
             // 
+            PERFUME_DATECREATED.FillWeight = 107.817261F;
             PERFUME_DATECREATED.HeaderText = "Date Created";
             PERFUME_DATECREATED.Name = "PERFUME_DATECREATED";
-            PERFUME_DATECREATED.Width = 120;
             // 
             // PERFUME_QTY
             // 
-            PERFUME_QTY.HeaderText = "Qty";
+            PERFUME_QTY.FillWeight = 90F;
+            PERFUME_QTY.HeaderText = "Available Qty";
             PERFUME_QTY.Name = "PERFUME_QTY";
-            PERFUME_QTY.Width = 60;
             // 
             // StaffInventoryForm
             // 
