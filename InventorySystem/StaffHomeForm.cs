@@ -53,6 +53,14 @@ namespace InventorySystem
             pnlNavigation.Height = btnRequest.Height;
             pnlNavigation.Top = btnRequest.Top;
             btnRequest.BackColor = Color.FromArgb(50, 225, 212, 193);
+
+            lblTitle.Text = "Request";
+            lblDescription.Text = "Submit a request for restocking parfum products";
+            this.pnlFormLoader.Controls.Clear();
+            StaffRequestForm staffRequestForm = new StaffRequestForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            staffRequestForm.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(staffRequestForm);
+            staffRequestForm.Show();
         }
 
         private void btnReport_Click(object sender, EventArgs e)

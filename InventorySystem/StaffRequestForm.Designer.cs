@@ -45,13 +45,13 @@
             button1 = new Button();
             label6 = new Label();
             dgExistingRequests = new DataGridView();
-            label7 = new Label();
             PERFUME_ID = new DataGridViewTextBoxColumn();
             PERFUME_NAME = new DataGridViewTextBoxColumn();
             PERFUME_QTY = new DataGridViewTextBoxColumn();
             PERFUME_BRANCH = new DataGridViewTextBoxColumn();
             PERFUME_DATECREATED = new DataGridViewTextBoxColumn();
             PERFUME_STATUS = new DataGridViewTextBoxColumn();
+            label7 = new Label();
             btnRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgExistingRequests).BeginInit();
@@ -132,7 +132,7 @@
             // 
             numericUpDown1.Font = new Font("Montserrat", 9F);
             numericUpDown1.Location = new Point(556, 56);
-            numericUpDown1.Margin = new Padding(4, 4, 4, 4);
+            numericUpDown1.Margin = new Padding(4);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(165, 22);
             numericUpDown1.TabIndex = 7;
@@ -230,19 +230,8 @@
             dgExistingRequests.Name = "dgExistingRequests";
             dgExistingRequests.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgExistingRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgExistingRequests.Size = new Size(756, 234);
+            dgExistingRequests.Size = new Size(786, 276);
             dgExistingRequests.TabIndex = 13;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(135, 135, 135);
-            label7.Location = new Point(12, 201);
-            label7.Name = "label7";
-            label7.Size = new Size(218, 16);
-            label7.TabIndex = 14;
-            label7.Text = "List of all previous existing requests";
             // 
             // PERFUME_ID
             // 
@@ -280,6 +269,17 @@
             PERFUME_STATUS.HeaderText = "Status";
             PERFUME_STATUS.Name = "PERFUME_STATUS";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(135, 135, 135);
+            label7.Location = new Point(12, 201);
+            label7.Name = "label7";
+            label7.Size = new Size(218, 16);
+            label7.TabIndex = 14;
+            label7.Text = "List of all previous existing requests";
+            // 
             // btnRefresh
             // 
             btnRefresh.BackColor = Color.FromArgb(225, 212, 193);
@@ -288,7 +288,7 @@
             btnRefresh.Cursor = Cursors.Hand;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(726, 180);
+            btnRefresh.Location = new Point(756, 179);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(52, 38);
             btnRefresh.TabIndex = 15;
@@ -298,7 +298,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(820, 512);
             Controls.Add(btnRefresh);
             Controls.Add(label7);
             Controls.Add(dgExistingRequests);
@@ -317,7 +317,7 @@
             Controls.Add(label1);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "StaffRequestForm";
             Text = "StaffRequestForm";
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffInventoryForm));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             tbSearchProduct = new RichTextBox();
             cbxNote = new ComboBox();
             cbxBranch = new ComboBox();
@@ -96,7 +96,7 @@
             btnScanQR.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnScanQR.ForeColor = Color.Black;
             btnScanQR.Image = (Image)resources.GetObject("btnScanQR.Image");
-            btnScanQR.Location = new Point(665, 12);
+            btnScanQR.Location = new Point(686, 12);
             btnScanQR.Name = "btnScanQR";
             btnScanQR.Size = new Size(123, 38);
             btnScanQR.TabIndex = 4;
@@ -112,29 +112,29 @@
             dgPerfume.AllowUserToResizeRows = false;
             dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgPerfume.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgPerfume.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgPerfume.Columns.AddRange(new DataGridViewColumn[] { PERFUME_ID, PERFUME_NAME, PERFUME_NOTE, PERFUME_BRANCH, PERFUME_DATECREATED, PERFUME_QTY });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgPerfume.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgPerfume.DefaultCellStyle = dataGridViewCellStyle2;
             dgPerfume.Location = new Point(12, 61);
             dgPerfume.Name = "dgPerfume";
             dgPerfume.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgPerfume.Size = new Size(776, 383);
+            dgPerfume.Size = new Size(797, 383);
             dgPerfume.TabIndex = 5;
             // 
             // PERFUME_ID
@@ -183,7 +183,7 @@
             btnAdd.Cursor = Cursors.Hand;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(225, 450);
+            btnAdd.Location = new Point(225, 455);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(82, 38);
             btnAdd.TabIndex = 6;
@@ -197,7 +197,7 @@
             btnDeduct.Cursor = Cursors.Hand;
             btnDeduct.FlatStyle = FlatStyle.Flat;
             btnDeduct.ForeColor = Color.White;
-            btnDeduct.Location = new Point(313, 450);
+            btnDeduct.Location = new Point(313, 455);
             btnDeduct.Name = "btnDeduct";
             btnDeduct.Size = new Size(82, 38);
             btnDeduct.TabIndex = 7;
@@ -211,7 +211,7 @@
             btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(401, 450);
+            btnEdit.Location = new Point(401, 455);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(82, 38);
             btnEdit.TabIndex = 8;
@@ -225,7 +225,7 @@
             btnRefresh.Cursor = Cursors.Hand;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(489, 450);
+            btnRefresh.Location = new Point(489, 455);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(82, 38);
             btnRefresh.TabIndex = 9;
@@ -256,7 +256,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 500);
+            ClientSize = new Size(821, 504);
             Controls.Add(panel1);
             Controls.Add(btnRefresh);
             Controls.Add(btnEdit);
