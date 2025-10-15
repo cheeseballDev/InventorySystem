@@ -57,6 +57,7 @@
             btnAdmin.TabIndex = 1;
             btnAdmin.Text = "Login as Admin";
             btnAdmin.UseVisualStyleBackColor = false;
+            btnAdmin.Click += btnAdmin_Click;
             // 
             // btnClose
             // 
@@ -74,14 +75,14 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1008, 561);
             Controls.Add(btnClose);
             Controls.Add(btnAdmin);
             Controls.Add(btnStaff);
-            Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "LoginForm";
