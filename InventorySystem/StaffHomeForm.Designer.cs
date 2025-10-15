@@ -77,6 +77,7 @@
             // btnForecast
             // 
             btnForecast.BackgroundImageLayout = ImageLayout.Center;
+            btnForecast.Cursor = Cursors.Hand;
             btnForecast.Dock = DockStyle.Top;
             btnForecast.FlatAppearance.BorderSize = 0;
             btnForecast.FlatStyle = FlatStyle.Flat;
@@ -95,6 +96,7 @@
             // btnReport
             // 
             btnReport.BackgroundImageLayout = ImageLayout.Center;
+            btnReport.Cursor = Cursors.Hand;
             btnReport.Dock = DockStyle.Top;
             btnReport.FlatAppearance.BorderSize = 0;
             btnReport.FlatStyle = FlatStyle.Flat;
@@ -113,6 +115,7 @@
             // btnRequest
             // 
             btnRequest.BackgroundImageLayout = ImageLayout.Center;
+            btnRequest.Cursor = Cursors.Hand;
             btnRequest.Dock = DockStyle.Top;
             btnRequest.FlatAppearance.BorderSize = 0;
             btnRequest.FlatStyle = FlatStyle.Flat;
@@ -131,6 +134,7 @@
             // btnInventory
             // 
             btnInventory.BackgroundImageLayout = ImageLayout.Center;
+            btnInventory.Cursor = Cursors.Hand;
             btnInventory.Dock = DockStyle.Top;
             btnInventory.FlatAppearance.BorderSize = 0;
             btnInventory.FlatStyle = FlatStyle.Flat;
