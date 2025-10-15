@@ -15,7 +15,6 @@ namespace InventorySystem
         public StaffInventoryForm()
         {
             InitializeComponent();
-            tbSearchProduct.BackgroundImage = Image.FromFile("16");
         }
 
         private void tbSearchProduct_TextChanged(object sender, EventArgs e)

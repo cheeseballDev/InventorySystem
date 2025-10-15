@@ -41,7 +41,7 @@
             helpProvider1 = new HelpProvider();
             lblTitle = new Label();
             lblDescription = new Label();
-            panel3 = new Panel();
+            pnlFormLoader = new Panel();
             imgBtnUser = new PictureBox();
             btnNotification = new Button();
             cbxUser = new ComboBox();
@@ -198,12 +198,12 @@
             lblDescription.TabIndex = 2;
             lblDescription.Text = "Overview of all available parfum products";
             // 
-            // panel3
+            // pnlFormLoader
             // 
-            panel3.Location = new Point(199, 87);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(808, 497);
-            panel3.TabIndex = 3;
+            pnlFormLoader.Location = new Point(203, 88);
+            pnlFormLoader.Name = "pnlFormLoader";
+            pnlFormLoader.Size = new Size(800, 500);
+            pnlFormLoader.TabIndex = 3;
             // 
             // imgBtnUser
             // 
@@ -250,7 +250,7 @@
             Controls.Add(cbxUser);
             Controls.Add(imgBtnUser);
             Controls.Add(btnNotification);
-            Controls.Add(panel3);
+            Controls.Add(pnlFormLoader);
             Controls.Add(lblDescription);
             Controls.Add(lblTitle);
             Controls.Add(panel1);
@@ -283,7 +283,7 @@
         private Panel pnlNavigation;
         private Label lblTitle;
         private Label lblDescription;
-        private Panel panel3;
+        private Panel pnlFormLoader;
         private PictureBox imgBtnUser;
         private Button btnNotification;
         private ComboBox cbxUser;

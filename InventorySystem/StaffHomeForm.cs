@@ -37,6 +37,15 @@ namespace InventorySystem
             pnlNavigation.Top = btnInventory.Top;
             pnlNavigation.Left = btnInventory.Left + 168;
             btnInventory.BackColor = Color.FromArgb(50, 225, 212, 193);
+
+            lblTitle.Text = "Inventory";
+            lblDescription.Text = "Overview of all available parfum products";
+            this.pnlFormLoader.Controls.Clear();
+            StaffInventoryForm staffInventoryForm = new StaffInventoryForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            staffInventoryForm.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(staffInventoryForm);
+            staffInventoryForm.Show();
+
         }
 
         private void btnRequest_Click(object sender, EventArgs e)
