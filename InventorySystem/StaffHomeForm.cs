@@ -68,6 +68,10 @@ namespace InventorySystem
             pnlNavigation.Height = btnReport.Height;
             pnlNavigation.Top = btnReport.Top;
             btnReport.BackColor = Color.FromArgb(50, 225, 212, 193);
+
+            lblTitle.Text = "Report";
+            lblDescription.Text = "View the report and statuses of inventory, requests, and deliveries";
+            this.pnlFormLoader.Controls.Clear();
         }
         private void btnForecast_Click(object sender, EventArgs e)
         {
