@@ -30,6 +30,7 @@
         {
             btnStaff = new Button();
             btnAdmin = new Button();
+            btnClose = new Button();
             SuspendLayout();
             // 
             // btnStaff
@@ -57,16 +58,31 @@
             btnAdmin.Text = "Login as Admin";
             btnAdmin.UseVisualStyleBackColor = false;
             // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.ForeColor = SystemColors.ControlText;
+            btnClose.Location = new Point(980, 0);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(28, 32);
+            btnClose.TabIndex = 7;
+            btnClose.Text = "X";
+            btnClose.TextAlign = ContentAlignment.TopLeft;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1008, 561);
+            Controls.Add(btnClose);
             Controls.Add(btnAdmin);
             Controls.Add(btnStaff);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -78,5 +94,6 @@
 
         private Button btnStaff;
         private Button btnAdmin;
+        private Button btnClose;
     }
 }

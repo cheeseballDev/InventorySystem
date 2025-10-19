@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace InventorySystem
 {
-    public partial class LoginStaffForm : Form
+    public partial class LoginAdminForm : Form
     {
-        public LoginStaffForm()
+        public LoginAdminForm()
         {
             InitializeComponent();
             btnClose.FlatStyle = FlatStyle.Flat;

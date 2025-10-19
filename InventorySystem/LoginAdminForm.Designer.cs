@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem
 {
-    partial class LoginStaffForm
+    partial class LoginAdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,11 +42,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Montserrat", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(371, 9);
+            label1.Location = new Point(356, 9);
             label1.Name = "label1";
-            label1.Size = new Size(246, 44);
+            label1.Size = new Size(281, 44);
             label1.TabIndex = 0;
-            label1.Text = "Login as Staff";
+            label1.Text = "Login as Admin";
             // 
             // btnLogin
             // 
@@ -129,7 +129,7 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
-            // LoginStaffForm
+            // LoginAdminForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -145,9 +145,9 @@
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "LoginStaffForm";
+            Name = "LoginAdminForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LoginStaffForm";
+            Text = "LoginUserForm1";
             ResumeLayout(false);
             PerformLayout();
         }
