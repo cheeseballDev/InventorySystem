@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffReportForm));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label6 = new Label();
             cbxCurrentBranch = new ComboBox();
             label1 = new Label();
@@ -56,7 +58,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(12, 66);
+            label6.Location = new Point(12, 47);
             label6.Name = "label6";
             label6.Size = new Size(228, 37);
             label6.TabIndex = 13;
@@ -66,7 +68,7 @@
             // 
             cbxCurrentBranch.Font = new Font("Montserrat", 9F);
             cbxCurrentBranch.FormattingEnabled = true;
-            cbxCurrentBranch.Location = new Point(135, 24);
+            cbxCurrentBranch.Location = new Point(135, 10);
             cbxCurrentBranch.Name = "cbxCurrentBranch";
             cbxCurrentBranch.Size = new Size(178, 24);
             cbxCurrentBranch.TabIndex = 15;
@@ -76,7 +78,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(135, 135, 135);
-            label1.Location = new Point(12, 30);
+            label1.Location = new Point(12, 16);
             label1.Name = "label1";
             label1.Size = new Size(117, 16);
             label1.TabIndex = 14;
@@ -86,7 +88,7 @@
             // 
             cbxDateFrom.Font = new Font("Montserrat", 9F);
             cbxDateFrom.FormattingEnabled = true;
-            cbxDateFrom.Location = new Point(397, 24);
+            cbxDateFrom.Location = new Point(397, 10);
             cbxDateFrom.Name = "cbxDateFrom";
             cbxDateFrom.Size = new Size(128, 24);
             cbxDateFrom.TabIndex = 17;
@@ -96,7 +98,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(135, 135, 135);
-            label2.Location = new Point(319, 30);
+            label2.Location = new Point(319, 16);
             label2.Name = "label2";
             label2.Size = new Size(72, 16);
             label2.TabIndex = 16;
@@ -107,7 +109,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(135, 135, 135);
-            label3.Location = new Point(531, 30);
+            label3.Location = new Point(531, 16);
             label3.Name = "label3";
             label3.Size = new Size(21, 16);
             label3.TabIndex = 18;
@@ -117,7 +119,7 @@
             // 
             comboBox1.Font = new Font("Montserrat", 9F);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(558, 24);
+            comboBox1.Location = new Point(558, 10);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(128, 24);
             comboBox1.TabIndex = 19;
@@ -130,9 +132,10 @@
             btnGenerate.FlatStyle = FlatStyle.Flat;
             btnGenerate.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGenerate.ForeColor = Color.Black;
-            btnGenerate.Location = new Point(703, 22);
+            btnGenerate.Image = (Image)resources.GetObject("btnGenerate.Image");
+            btnGenerate.Location = new Point(703, 8);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(91, 27);
+            btnGenerate.Size = new Size(105, 27);
             btnGenerate.TabIndex = 20;
             btnGenerate.Text = "Generate";
             btnGenerate.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -143,7 +146,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(135, 135, 135);
-            label4.Location = new Point(35, 103);
+            label4.Location = new Point(35, 89);
             label4.Name = "label4";
             label4.Size = new Size(153, 16);
             label4.TabIndex = 21;
@@ -155,31 +158,37 @@
             dgReportResults.AllowUserToDeleteRows = false;
             dgReportResults.AllowUserToResizeColumns = false;
             dgReportResults.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dgReportResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgReportResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgReportResults.BackgroundColor = Color.White;
             dgReportResults.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgReportResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgReportResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgReportResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgReportResults.Columns.AddRange(new DataGridViewColumn[] { PERFUME_ID, PERFUME_NAME, PERFUME_QTY, PERFUME_BRANCH, PERFUME_DATECREATED, PERFUME_STATUS });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgReportResults.DefaultCellStyle = dataGridViewCellStyle4;
-            dgReportResults.Location = new Point(22, 122);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgReportResults.DefaultCellStyle = dataGridViewCellStyle3;
+            dgReportResults.Location = new Point(22, 114);
             dgReportResults.Name = "dgReportResults";
             dgReportResults.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgReportResults.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgReportResults.Size = new Size(772, 315);
+            dgReportResults.Size = new Size(786, 337);
             dgReportResults.TabIndex = 22;
             // 
             // PERFUME_ID
@@ -226,9 +235,10 @@
             btnExportToExcel.FlatStyle = FlatStyle.Flat;
             btnExportToExcel.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExportToExcel.ForeColor = Color.Black;
-            btnExportToExcel.Location = new Point(22, 457);
+            btnExportToExcel.Image = (Image)resources.GetObject("btnExportToExcel.Image");
+            btnExportToExcel.Location = new Point(22, 467);
             btnExportToExcel.Name = "btnExportToExcel";
-            btnExportToExcel.Size = new Size(166, 27);
+            btnExportToExcel.Size = new Size(141, 27);
             btnExportToExcel.TabIndex = 23;
             btnExportToExcel.Text = "Export to Excel";
             btnExportToExcel.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -242,9 +252,10 @@
             btnExportToPDF.FlatStyle = FlatStyle.Flat;
             btnExportToPDF.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExportToPDF.ForeColor = Color.Black;
-            btnExportToPDF.Location = new Point(210, 457);
+            btnExportToPDF.Image = (Image)resources.GetObject("btnExportToPDF.Image");
+            btnExportToPDF.Location = new Point(177, 467);
             btnExportToPDF.Name = "btnExportToPDF";
-            btnExportToPDF.Size = new Size(166, 27);
+            btnExportToPDF.Size = new Size(136, 27);
             btnExportToPDF.TabIndex = 24;
             btnExportToPDF.Text = "Export to PDF";
             btnExportToPDF.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -258,9 +269,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(397, 457);
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(328, 467);
             button1.Name = "button1";
-            button1.Size = new Size(108, 27);
+            button1.Size = new Size(85, 27);
             button1.TabIndex = 25;
             button1.Text = "Print";
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;

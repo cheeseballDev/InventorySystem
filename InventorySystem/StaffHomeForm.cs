@@ -72,12 +72,19 @@ namespace InventorySystem
             lblTitle.Text = "Report";
             lblDescription.Text = "View the report and statuses of inventory, requests, and deliveries";
             this.pnlFormLoader.Controls.Clear();
+            StaffReportForm staffReportForm = new StaffReportForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            staffReportForm.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(staffReportForm);
+            staffReportForm.Show();
         }
         private void btnForecast_Click(object sender, EventArgs e)
         {
             pnlNavigation.Height = btnForecast.Height;
             pnlNavigation.Top = btnForecast.Top;
             btnForecast.BackColor = Color.FromArgb(50, 225, 212, 193);
+
+            lblTitle.Text = "WORK IN PROGRESS !";
+            lblDescription.Text = "Not enough INT to learn forecasting!";
         }
 
         private void btnInventory_Leave(object sender, EventArgs e)

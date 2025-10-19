@@ -204,9 +204,9 @@
             // 
             // pnlFormLoader
             // 
-            pnlFormLoader.Location = new Point(186, 88);
+            pnlFormLoader.Location = new Point(186, 76);
             pnlFormLoader.Name = "pnlFormLoader";
-            pnlFormLoader.Size = new Size(826, 500);
+            pnlFormLoader.Size = new Size(826, 512);
             pnlFormLoader.TabIndex = 3;
             // 
             // imgBtnUser
