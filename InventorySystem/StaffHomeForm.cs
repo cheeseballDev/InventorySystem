@@ -27,18 +27,13 @@ namespace InventorySystem
 
         public StaffHomeForm()
         {
-            string[] userDropDown = new string[]
-            {
-                "Staff", "Logout", "Exit"
-            };
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             btnInventory_Click(new object(), new EventArgs());
-
-            this.cbxUser.Items.AddRange(userDropDown);
-            this.cbxUser.SelectedItem = userDropDown[0];
-
-            this.cbxUser.SelectedIndexChanged += new System.EventHandler(cbxUser_SelectedIndexChanged);
+            
+            cbxUser.Items.AddRange(new object[] {"Staff", "Logout", "Exit"});
+            cbxUser.SelectedItem = "Staff";
+            cbxUser.SelectedIndexChanged += new System.EventHandler(cbxUser_SelectedIndexChanged);
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
