@@ -15,13 +15,11 @@ namespace InventorySystem
             this.Hide();
             LoginStaffForm loginStaffForm = new LoginStaffForm();
             loginStaffForm.ShowDialog();
-
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

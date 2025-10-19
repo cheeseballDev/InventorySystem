@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.CodeDom;
 
 
 namespace InventorySystem
@@ -26,9 +27,18 @@ namespace InventorySystem
 
         public StaffHomeForm()
         {
+            string[] userDropDown = new string[]
+            {
+                "Staff", "Logout", "Exit"
+            };
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             btnInventory_Click(new object(), new EventArgs());
+
+            this.cbxUser.Items.AddRange(userDropDown);
+            this.cbxUser.SelectedItem = userDropDown[0];
+
+            this.cbxUser.SelectedIndexChanged += new System.EventHandler(cbxUser_SelectedIndexChanged);
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
@@ -85,6 +95,7 @@ namespace InventorySystem
 
             lblTitle.Text = "WORK IN PROGRESS !";
             lblDescription.Text = "Not enough INT to learn forecasting!";
+            this.pnlFormLoader.Controls.Clear();
         }
 
         private void btnInventory_Leave(object sender, EventArgs e)
@@ -115,6 +126,21 @@ namespace InventorySystem
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbxUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxUser.SelectedIndex == 1)
+            {
+                this.Close();
+                LoginForm loginForm = new LoginForm();
+                loginForm.ShowDialog();
+            }
+
+            if(cbxUser.SelectedIndex == 2)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -236,6 +236,7 @@
             // cbxUser
             // 
             cbxUser.BackColor = Color.White;
+            cbxUser.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxUser.FlatStyle = FlatStyle.Flat;
             cbxUser.Font = new Font("Montserrat", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbxUser.ForeColor = Color.FromArgb(25, 25, 25);
@@ -244,7 +245,7 @@
             cbxUser.Name = "cbxUser";
             cbxUser.Size = new Size(72, 30);
             cbxUser.TabIndex = 6;
-            cbxUser.Text = "Staff";
+            cbxUser.SelectedIndexChanged += cbxUser_SelectedIndexChanged;
             // 
             // StaffHomeForm
             // 
