@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomeForm));
             panel1 = new Panel();
+            btnAccounts = new Button();
+            btnAuditLog = new Button();
             pnlNavigation = new Panel();
             btnForecast = new Button();
             btnReport = new Button();
@@ -45,8 +47,6 @@
             imgBtnUser = new PictureBox();
             btnNotification = new Button();
             cbxUser = new ComboBox();
-            btnAuditLog = new Button();
-            btnAccounts = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -69,6 +69,44 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(180, 600);
             panel1.TabIndex = 0;
+            // 
+            // btnAccounts
+            // 
+            btnAccounts.BackgroundImageLayout = ImageLayout.Center;
+            btnAccounts.Cursor = Cursors.Hand;
+            btnAccounts.Dock = DockStyle.Top;
+            btnAccounts.FlatAppearance.BorderSize = 0;
+            btnAccounts.FlatStyle = FlatStyle.Flat;
+            btnAccounts.ForeColor = SystemColors.Control;
+            btnAccounts.Image = (Image)resources.GetObject("btnAccounts.Image");
+            btnAccounts.Location = new Point(0, 395);
+            btnAccounts.Name = "btnAccounts";
+            btnAccounts.Size = new Size(180, 59);
+            btnAccounts.TabIndex = 6;
+            btnAccounts.Text = "Accounts";
+            btnAccounts.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAccounts.UseVisualStyleBackColor = true;
+            btnAccounts.Click += btnAccounts_Click;
+            btnAccounts.Leave += btnAccounts_Leave;
+            // 
+            // btnAuditLog
+            // 
+            btnAuditLog.BackgroundImageLayout = ImageLayout.Center;
+            btnAuditLog.Cursor = Cursors.Hand;
+            btnAuditLog.Dock = DockStyle.Top;
+            btnAuditLog.FlatAppearance.BorderSize = 0;
+            btnAuditLog.FlatStyle = FlatStyle.Flat;
+            btnAuditLog.ForeColor = SystemColors.Control;
+            btnAuditLog.Image = (Image)resources.GetObject("btnAuditLog.Image");
+            btnAuditLog.Location = new Point(0, 336);
+            btnAuditLog.Name = "btnAuditLog";
+            btnAuditLog.Size = new Size(180, 59);
+            btnAuditLog.TabIndex = 5;
+            btnAuditLog.Text = "Audit Log";
+            btnAuditLog.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAuditLog.UseVisualStyleBackColor = true;
+            btnAuditLog.Click += btnAuditLog_Click;
+            btnAuditLog.Leave += btnAuditLog_Leave;
             // 
             // pnlNavigation
             // 
@@ -218,7 +256,7 @@
             imgBtnUser.BackColor = Color.White;
             imgBtnUser.BackgroundImage = (Image)resources.GetObject("imgBtnUser.BackgroundImage");
             imgBtnUser.BackgroundImageLayout = ImageLayout.Center;
-            imgBtnUser.Location = new Point(886, 22);
+            imgBtnUser.Location = new Point(877, 25);
             imgBtnUser.Name = "imgBtnUser";
             imgBtnUser.Size = new Size(43, 39);
             imgBtnUser.TabIndex = 5;
@@ -230,7 +268,7 @@
             btnNotification.FlatStyle = FlatStyle.Flat;
             btnNotification.ForeColor = Color.White;
             btnNotification.Image = (Image)resources.GetObject("btnNotification.Image");
-            btnNotification.Location = new Point(853, 27);
+            btnNotification.Location = new Point(844, 27);
             btnNotification.Name = "btnNotification";
             btnNotification.Size = new Size(27, 30);
             btnNotification.TabIndex = 4;
@@ -245,47 +283,11 @@
             cbxUser.Font = new Font("Montserrat", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbxUser.ForeColor = Color.FromArgb(25, 25, 25);
             cbxUser.FormattingEnabled = true;
-            cbxUser.Location = new Point(935, 27);
+            cbxUser.Location = new Point(926, 27);
             cbxUser.Name = "cbxUser";
-            cbxUser.Size = new Size(72, 30);
+            cbxUser.Size = new Size(81, 30);
             cbxUser.TabIndex = 6;
             cbxUser.SelectedIndexChanged += cbxUser_SelectedIndexChanged;
-            // 
-            // btnAuditLog
-            // 
-            btnAuditLog.BackgroundImageLayout = ImageLayout.Center;
-            btnAuditLog.Cursor = Cursors.Hand;
-            btnAuditLog.Dock = DockStyle.Top;
-            btnAuditLog.FlatAppearance.BorderSize = 0;
-            btnAuditLog.FlatStyle = FlatStyle.Flat;
-            btnAuditLog.ForeColor = SystemColors.Control;
-            btnAuditLog.Image = (Image)resources.GetObject("btnAuditLog.Image");
-            btnAuditLog.Location = new Point(0, 336);
-            btnAuditLog.Name = "btnAuditLog";
-            btnAuditLog.Size = new Size(180, 59);
-            btnAuditLog.TabIndex = 5;
-            btnAuditLog.Text = "Audit Log";
-            btnAuditLog.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAuditLog.UseVisualStyleBackColor = true;
-            btnAuditLog.Click += btnAuditLog_Click;
-            // 
-            // btnAccounts
-            // 
-            btnAccounts.BackgroundImageLayout = ImageLayout.Center;
-            btnAccounts.Cursor = Cursors.Hand;
-            btnAccounts.Dock = DockStyle.Top;
-            btnAccounts.FlatAppearance.BorderSize = 0;
-            btnAccounts.FlatStyle = FlatStyle.Flat;
-            btnAccounts.ForeColor = SystemColors.Control;
-            btnAccounts.Image = (Image)resources.GetObject("btnAccounts.Image");
-            btnAccounts.Location = new Point(0, 395);
-            btnAccounts.Name = "btnAccounts";
-            btnAccounts.Size = new Size(180, 59);
-            btnAccounts.TabIndex = 6;
-            btnAccounts.Text = "Accounts";
-            btnAccounts.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAccounts.UseVisualStyleBackColor = true;
-            btnAccounts.Click += btnAccounts_Click;
             // 
             // AdminHomeForm
             // 
