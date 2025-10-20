@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace InventorySystem
 {
-    public partial class LoginStaffForm : Form
+    public partial class LoginAdminForm : Form
     {
-        public LoginStaffForm()
+        public LoginAdminForm()
         {
             InitializeComponent();
             btnClose.FlatStyle = FlatStyle.Flat;
@@ -23,8 +23,8 @@ namespace InventorySystem
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Close();
-            StaffHomeForm staffHomePage = new StaffHomeForm();
-            staffHomePage.Show();
+            AdminHomeForm adminHomePage = new AdminHomeForm();
+            adminHomePage.Show();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
