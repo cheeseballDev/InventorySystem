@@ -11,15 +11,21 @@ namespace InventorySystem
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            
+            StaffLoginForm staffLoginForm = new StaffLoginForm();
+            staffLoginForm.Show();
             this.Hide();
-            StaffLoginForm loginStaffForm = new StaffLoginForm();
-            loginStaffForm.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            AdminLoginForm adminLoginForm = new AdminLoginForm();
+            adminLoginForm.Show();
+            this.Hide();
         }
     }
 }
