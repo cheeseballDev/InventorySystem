@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem
 {
-    partial class LoginAdminForm
+    partial class AdminLoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -129,7 +129,7 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
-            // LoginAdminForm
+            // AdminLoginForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -145,9 +145,9 @@
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "LoginAdminForm";
+            Name = "AdminLoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LoginUserForm1";
+            Text = "AdminLoginForm";
             ResumeLayout(false);
             PerformLayout();
         }

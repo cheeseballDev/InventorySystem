@@ -77,7 +77,7 @@ namespace InventorySystem
             lblTitle.Text = "Report";
             lblDescription.Text = "View the report and statuses of inventory, requests, and deliveries";
             this.pnlFormLoader.Controls.Clear();
-            StaffReportForm staffReportForm = new StaffReportForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ReportForm staffReportForm = new ReportForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             staffReportForm.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(staffReportForm);
             staffReportForm.Show();
@@ -136,6 +136,16 @@ namespace InventorySystem
             {
                 Application.Exit();
             }
+        }
+
+        private void btnAuditLog_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAccounts_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
