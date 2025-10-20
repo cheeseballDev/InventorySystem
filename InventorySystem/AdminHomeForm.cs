@@ -31,8 +31,8 @@ namespace InventorySystem
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             btnInventory_Click(new object(), new EventArgs());
 
-            cbxUser.Items.AddRange(new object[] { "Staff", "Logout", "Exit" });
-            cbxUser.SelectedItem = "Staff";
+            cbxUser.Items.AddRange(new object[] { "Admin", "Logout", "Exit" });
+            cbxUser.SelectedItem = "Admin";
             cbxUser.SelectedIndexChanged += new System.EventHandler(cbxUser_SelectedIndexChanged);
         }
 
@@ -92,6 +92,35 @@ namespace InventorySystem
             lblDescription.Text = "Not enough INT to learn forecasting!";
             this.pnlFormLoader.Controls.Clear();
         }
+        private void btnAuditLog_Click(object sender, EventArgs e)
+        {
+            pnlNavigation.Height = btnForecast.Height;
+            pnlNavigation.Top = btnForecast.Top;
+            btnAuditLog.BackColor = Color.FromArgb(50, 225, 212, 193);
+
+            lblTitle.Text = "Audit Log";
+            lblDescription.Text = "View the audit logs of the system";
+            this.pnlFormLoader.Controls.Clear();
+            AuditForm auditForm = new AuditForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            auditForm.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(auditForm);
+            auditForm.Show();
+        }
+
+        private void btnAccounts_Click(object sender, EventArgs e)
+        {
+            pnlNavigation.Height = btnForecast.Height;
+            pnlNavigation.Top = btnForecast.Top;
+            btnAccounts.BackColor = Color.FromArgb(50, 225, 212, 193);
+
+            lblTitle.Text = "Manage Accounts";
+            lblDescription.Text = "Add, remove, or modify user accounts";
+            this.pnlFormLoader.Controls.Clear();
+            AccountForm accountForm = new AccountForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            accountForm.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(accountForm);
+            accountForm.Show();
+        }
 
         private void btnInventory_Leave(object sender, EventArgs e)
         {
@@ -118,11 +147,20 @@ namespace InventorySystem
 
         }
 
+        private void btnAuditLog_Leave(object sender, EventArgs e)
+        {
+            btnAuditLog.BackColor = Color.FromArgb(28, 28, 28);
+        }
+
+        private void btnAccounts_Leave(object sender, EventArgs e)
+        {
+            btnAccounts.BackColor = Color.FromArgb(28, 28, 28);
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void cbxUser_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxUser.SelectedIndex == 1)
@@ -136,16 +174,6 @@ namespace InventorySystem
             {
                 Application.Exit();
             }
-        }
-
-        private void btnAuditLog_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAccounts_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
