@@ -29,9 +29,9 @@ namespace InventorySystem
                     }
                     else
                     {
+                        StaffLoginForm staffLoginForm = new StaffLoginForm();
+                        staffLoginForm.Show();
                         this.Hide();
-                        StaffLoginForm loginStaffForm = new StaffLoginForm();
-                        loginStaffForm.ShowDialog();
                     }
                 }
             }
@@ -56,9 +56,9 @@ namespace InventorySystem
                     }
                     else
                     {
+                        AdminLoginForm adminLoginForm = new AdminLoginForm();
+                        adminLoginForm.Show();
                         this.Hide();
-                        AdminLoginForm adminStaffForm = new AdminLoginForm();
-                        adminStaffForm.ShowDialog();
                     }
                 }
             }
@@ -70,7 +70,7 @@ namespace InventorySystem
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
