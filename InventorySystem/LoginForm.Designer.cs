@@ -62,6 +62,7 @@
             // btnClose
             // 
             btnClose.Cursor = Cursors.Hand;
+            btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.ForeColor = SystemColors.ControlText;
             btnClose.Location = new Point(980, 0);

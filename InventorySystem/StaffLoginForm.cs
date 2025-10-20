@@ -49,9 +49,8 @@ namespace InventorySystem
 
                     if (count > 0)
                     {
+                        this.Tag = "StaffHomeForm";
                         this.Close();
-                        StaffHomeForm staffHomePage = new StaffHomeForm();
-                        staffHomePage.Show();
                     }
                     else
                     {
@@ -67,15 +66,13 @@ namespace InventorySystem
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            this.Tag = "Back";
             this.Close();
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
         }
-
     }
 }

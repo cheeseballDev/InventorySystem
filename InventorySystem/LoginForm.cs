@@ -5,11 +5,10 @@ namespace InventorySystem
     {
         MySqlConnection con = new MySqlConnection("Server=sql12.freesqldatabase.com;Port=3306;Database=sql12803779;Uid=sql12803779;Pwd=3DiTUASBpH;SslMode=None;");
 
+        
         public LoginForm()
         {
             InitializeComponent();
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.FlatAppearance.BorderSize = 0;
             con.Open();
         }
 
@@ -29,9 +28,8 @@ namespace InventorySystem
                     }
                     else
                     {
-                        StaffLoginForm staffLoginForm = new StaffLoginForm();
-                        staffLoginForm.Show();
-                        this.Hide();
+                        this.Tag = "StaffLoginForm";
+                        this.Close();
                     }
                 }
             }
@@ -56,9 +54,8 @@ namespace InventorySystem
                     }
                     else
                     {
-                        AdminLoginForm adminLoginForm = new AdminLoginForm();
-                        adminLoginForm.Show();
-                        this.Hide();
+                        this.Tag = "AdminLoginForm";
+                        this.Close();
                     }
                 }
             }

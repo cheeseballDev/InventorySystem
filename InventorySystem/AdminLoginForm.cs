@@ -19,8 +19,6 @@ namespace InventorySystem
         public AdminLoginForm()
         {
             InitializeComponent();
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.FlatAppearance.BorderSize = 0;
             con.Open();
         }
 
@@ -48,9 +46,8 @@ namespace InventorySystem
 
                     if (count > 0)
                     {
+                        this.Tag = "AdminHomeForm";
                         this.Close();
-                        AdminHomeForm adminHomeForm = new AdminHomeForm();
-                        adminHomeForm.Show();
                     }
                     else
                     {
@@ -66,14 +63,13 @@ namespace InventorySystem
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            this.Tag = "Back";
             this.Close();
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
         }
     }
 }
