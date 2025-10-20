@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem
 {
-    partial class LoginStaffForm
+    partial class StaffLoginForm
     {
         /// <summary>
         /// Required designer variable.

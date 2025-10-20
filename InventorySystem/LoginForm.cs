@@ -13,7 +13,7 @@ namespace InventorySystem
         {
             
             this.Hide();
-            LoginStaffForm loginStaffForm = new LoginStaffForm();
+            StaffLoginForm loginStaffForm = new StaffLoginForm();
             loginStaffForm.ShowDialog();
         }
 
