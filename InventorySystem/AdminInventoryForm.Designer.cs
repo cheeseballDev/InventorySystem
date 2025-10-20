@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem
 {
-    partial class StaffInventoryForm
+    partial class AdminInventoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffInventoryForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminInventoryForm));
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            btnScanQR = new Button();
             dgPerfume = new DataGridView();
             PERFUME_ID = new DataGridViewTextBoxColumn();
             PERFUME_NAME = new DataGridViewTextBoxColumn();
@@ -46,13 +47,30 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             tbSearchProduct = new RichTextBox();
-            btnScanQR = new Button();
             cbxBranch = new ComboBox();
             cbxNote = new ComboBox();
+            btnAddProduct = new Button();
             ((System.ComponentModel.ISupportInitialize)dgPerfume).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // btnScanQR
+            // 
+            btnScanQR.BackColor = Color.FromArgb(225, 212, 193);
+            btnScanQR.Cursor = Cursors.Hand;
+            btnScanQR.FlatAppearance.BorderSize = 0;
+            btnScanQR.FlatStyle = FlatStyle.Flat;
+            btnScanQR.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnScanQR.ForeColor = Color.Black;
+            btnScanQR.Image = (Image)resources.GetObject("btnScanQR.Image");
+            btnScanQR.Location = new Point(716, 15);
+            btnScanQR.Name = "btnScanQR";
+            btnScanQR.Size = new Size(93, 31);
+            btnScanQR.TabIndex = 4;
+            btnScanQR.Text = "Scan QR";
+            btnScanQR.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnScanQR.UseVisualStyleBackColor = true;
             // 
             // dgPerfume
             // 
@@ -60,32 +78,32 @@
             dgPerfume.AllowUserToDeleteRows = false;
             dgPerfume.AllowUserToResizeColumns = false;
             dgPerfume.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgPerfume.BackgroundColor = Color.White;
             dgPerfume.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgPerfume.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgPerfume.Columns.AddRange(new DataGridViewColumn[] { PERFUME_ID, PERFUME_NAME, PERFUME_NOTE, PERFUME_BRANCH, PERFUME_DATECREATED, PERFUME_QTY });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgPerfume.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle6.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgPerfume.DefaultCellStyle = dataGridViewCellStyle6;
             dgPerfume.Location = new Point(12, 61);
             dgPerfume.Name = "dgPerfume";
             dgPerfume.ReadOnly = true;
@@ -197,10 +215,10 @@
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(tbSearchProduct);
-            panel1.Location = new Point(12, 17);
+            panel1.Location = new Point(12, 20);
             panel1.Name = "panel1";
-            panel1.Size = new Size(274, 24);
-            panel1.TabIndex = 14;
+            panel1.Size = new Size(255, 24);
+            panel1.TabIndex = 17;
             // 
             // pictureBox1
             // 
@@ -221,54 +239,54 @@
             tbSearchProduct.MaxLength = 20;
             tbSearchProduct.Multiline = false;
             tbSearchProduct.Name = "tbSearchProduct";
-            tbSearchProduct.Size = new Size(245, 21);
+            tbSearchProduct.Size = new Size(226, 21);
             tbSearchProduct.TabIndex = 0;
             tbSearchProduct.Text = "Search product";
-            // 
-            // btnScanQR
-            // 
-            btnScanQR.BackColor = Color.FromArgb(225, 212, 193);
-            btnScanQR.Cursor = Cursors.Hand;
-            btnScanQR.FlatAppearance.BorderSize = 0;
-            btnScanQR.FlatStyle = FlatStyle.Flat;
-            btnScanQR.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnScanQR.ForeColor = Color.Black;
-            btnScanQR.Image = (Image)resources.GetObject("btnScanQR.Image");
-            btnScanQR.Location = new Point(686, 13);
-            btnScanQR.Name = "btnScanQR";
-            btnScanQR.Size = new Size(123, 31);
-            btnScanQR.TabIndex = 13;
-            btnScanQR.Text = "Scan QR";
-            btnScanQR.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnScanQR.UseVisualStyleBackColor = true;
             // 
             // cbxBranch
             // 
             cbxBranch.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxBranch.FormattingEnabled = true;
-            cbxBranch.Location = new Point(478, 17);
+            cbxBranch.Location = new Point(427, 19);
             cbxBranch.Name = "cbxBranch";
-            cbxBranch.Size = new Size(148, 24);
-            cbxBranch.TabIndex = 12;
+            cbxBranch.Size = new Size(137, 24);
+            cbxBranch.TabIndex = 16;
             cbxBranch.Text = "Filter: Branch";
             // 
             // cbxNote
             // 
             cbxNote.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxNote.FormattingEnabled = true;
-            cbxNote.Location = new Point(313, 17);
+            cbxNote.Location = new Point(277, 19);
             cbxNote.Name = "cbxNote";
-            cbxNote.Size = new Size(148, 24);
-            cbxNote.TabIndex = 11;
+            cbxNote.Size = new Size(137, 24);
+            cbxNote.TabIndex = 15;
             cbxNote.Text = "Filter: Note Type";
             // 
-            // StaffInventoryForm
+            // btnAddProduct
+            // 
+            btnAddProduct.BackColor = Color.FromArgb(225, 212, 193);
+            btnAddProduct.Cursor = Cursors.Hand;
+            btnAddProduct.FlatAppearance.BorderSize = 0;
+            btnAddProduct.FlatStyle = FlatStyle.Flat;
+            btnAddProduct.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddProduct.ForeColor = Color.Black;
+            btnAddProduct.Image = (Image)resources.GetObject("btnAddProduct.Image");
+            btnAddProduct.Location = new Point(580, 15);
+            btnAddProduct.Name = "btnAddProduct";
+            btnAddProduct.Size = new Size(124, 31);
+            btnAddProduct.TabIndex = 18;
+            btnAddProduct.Text = "Add Product";
+            btnAddProduct.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAddProduct.UseVisualStyleBackColor = true;
+            // 
+            // AdminInventoryForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 504);
+            Controls.Add(btnAddProduct);
             Controls.Add(panel1);
-            Controls.Add(btnScanQR);
             Controls.Add(cbxBranch);
             Controls.Add(cbxNote);
             Controls.Add(btnRefresh);
@@ -276,11 +294,12 @@
             Controls.Add(btnDeduct);
             Controls.Add(btnAdd);
             Controls.Add(dgPerfume);
+            Controls.Add(btnScanQR);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "StaffInventoryForm";
-            Text = "StaffInventoryForm";
+            Name = "AdminInventoryForm";
+            Text = "InventoryForm1";
             ((System.ComponentModel.ISupportInitialize)dgPerfume).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -288,7 +307,8 @@
         }
 
         #endregion
-        private Button button1;
+        private Button btnAddProduct;
+        private Button btnScanQR;
         private DataGridView dgPerfume;
         private Button btnAdd;
         private Button btnDeduct;
@@ -303,7 +323,6 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private RichTextBox tbSearchProduct;
-        private Button btnScanQR;
         private ComboBox cbxBranch;
         private ComboBox cbxNote;
     }
