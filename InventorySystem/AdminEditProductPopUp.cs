@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace InventorySystem
 {
-    public partial class StaffInventoryForm : Form
+    public partial class AdminEditProductPopUp : Form
     {
-        public StaffInventoryForm()
+        public AdminEditProductPopUp()
         {
             InitializeComponent();
         }
 
-        private void tbSearchProduct_TextChanged(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            StaffEditProductPopUp editProductPopUp = new StaffEditProductPopUp();
-            editProductPopUp.ShowDialog();
+            this.Close();
         }
     }
 }

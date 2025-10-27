@@ -176,6 +176,7 @@
             btnEdit.Size = new Size(82, 38);
             btnEdit.TabIndex = 8;
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
             // 

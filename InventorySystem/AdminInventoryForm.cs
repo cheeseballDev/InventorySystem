@@ -15,11 +15,30 @@ namespace InventorySystem
         public AdminInventoryForm()
         {
             InitializeComponent();
+            // SHOULD I ADD ENUMS?
+            cbxNote.Items.AddRange(new string[] { "Premium", "Classic" });
+            cbxBranch.Items.AddRange(new string[] { "Sta. Lucia", "Riverbanks" });
         }
 
         private void tbSearchProduct_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnScanQR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            AdminEditProductPopUp editProductPopUp = new AdminEditProductPopUp();
+            editProductPopUp.ShowDialog();
         }
     }
 }
