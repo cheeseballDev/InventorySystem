@@ -148,6 +148,7 @@
             btnAdd.Size = new Size(82, 38);
             btnAdd.TabIndex = 6;
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnDeduct
             // 
@@ -289,7 +290,6 @@
         }
 
         #endregion
-        private Button button1;
         private DataGridView dgPerfume;
         private Button btnAdd;
         private Button btnDeduct;

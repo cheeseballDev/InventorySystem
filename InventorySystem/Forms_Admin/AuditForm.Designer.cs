@@ -294,7 +294,6 @@
 
         private RichTextBox tbSearchProduct;
         private ComboBox cbxUser;
-        private Button button1;
         private Button btnScanQR;
         private DataGridView dgPerfume;
         private RichTextBox richTextBox1;
