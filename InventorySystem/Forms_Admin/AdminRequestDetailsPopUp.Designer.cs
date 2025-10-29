@@ -120,6 +120,7 @@
             btnApproveRequest.Text = "Approve Request";
             btnApproveRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnApproveRequest.UseVisualStyleBackColor = true;
+            btnApproveRequest.Click += btnApproveRequest_Click;
             // 
             // btnRejectRequest
             // 
@@ -137,7 +138,7 @@
             btnRejectRequest.Text = "Reject Request";
             btnRejectRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRejectRequest.UseVisualStyleBackColor = true;
-            btnRejectRequest.Click += btnCancel_Click;
+            btnRejectRequest.Click += btnRejectRequest_Click;
             // 
             // btnArchiveRequest
             // 

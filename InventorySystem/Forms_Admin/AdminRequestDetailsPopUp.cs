@@ -22,9 +22,14 @@ namespace InventorySystem
             this.Close();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnApproveRequest_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+        }
+
+        private void btnRejectRequest_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

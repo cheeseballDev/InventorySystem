@@ -16,5 +16,11 @@ namespace InventorySystem
         {
             InitializeComponent();
         }
+
+        private void btnOpenDetails_Click(object sender, EventArgs e)
+        {
+            AdminRequestDetailsPopUp adminRequestDetailsPopUp = new AdminRequestDetailsPopUp();
+            adminRequestDetailsPopUp.ShowDialog();
+        }
     }
 }
