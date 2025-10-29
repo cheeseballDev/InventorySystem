@@ -167,7 +167,7 @@
             btnRequest.Name = "btnRequest";
             btnRequest.Size = new Size(180, 59);
             btnRequest.TabIndex = 2;
-            btnRequest.Text = "Request";
+            btnRequest.Text = "Approve";
             btnRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRequest.UseVisualStyleBackColor = true;
             btnRequest.Click += btnRequest_Click;

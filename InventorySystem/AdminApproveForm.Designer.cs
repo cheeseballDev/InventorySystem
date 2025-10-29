@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem
 {
-    partial class StaffRequestForm
+    partial class AdminApproveForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,18 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffRequestForm));
-            label1 = new Label();
-            cbxCurrentBranch = new ComboBox();
-            label2 = new Label();
-            label3 = new Label();
-            cbxRequestParfum = new ComboBox();
-            label4 = new Label();
-            numAmountToRequest = new NumericUpDown();
-            label5 = new Label();
-            tbMessage = new RichTextBox();
-            btnSubmit = new Button();
-            btnClear = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminApproveForm));
             label6 = new Label();
             dgExistingRequests = new DataGridView();
             PERFUME_ID = new DataGridViewTextBoxColumn();
@@ -53,140 +42,23 @@
             PERFUME_STATUS = new DataGridViewTextBoxColumn();
             label7 = new Label();
             btnRefresh = new Button();
-            dtpDateToRequest = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)numAmountToRequest).BeginInit();
+            btnGenerate = new Button();
+            label3 = new Label();
+            label2 = new Label();
+            cbxCurrentBranch = new ComboBox();
+            label1 = new Label();
+            dtpDateFrom = new DateTimePicker();
+            dtpDateTo = new DateTimePicker();
+            cbxStatus = new ComboBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgExistingRequests).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(135, 135, 135);
-            label1.Location = new Point(12, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(139, 16);
-            label1.TabIndex = 0;
-            label1.Text = "Select current branch:";
-            // 
-            // cbxCurrentBranch
-            // 
-            cbxCurrentBranch.Font = new Font("Montserrat", 9F);
-            cbxCurrentBranch.FormattingEnabled = true;
-            cbxCurrentBranch.Location = new Point(180, 14);
-            cbxCurrentBranch.Name = "cbxCurrentBranch";
-            cbxCurrentBranch.Size = new Size(199, 24);
-            cbxCurrentBranch.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(135, 135, 135);
-            label2.Location = new Point(409, 17);
-            label2.Name = "label2";
-            label2.Size = new Size(141, 16);
-            label2.TabIndex = 2;
-            label2.Text = "Select date to request:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(135, 135, 135);
-            label3.Location = new Point(12, 57);
-            label3.Name = "label3";
-            label3.Size = new Size(159, 16);
-            label3.TabIndex = 4;
-            label3.Text = "Select parfum to request:";
-            // 
-            // cbxRequestParfum
-            // 
-            cbxRequestParfum.Font = new Font("Montserrat", 9F);
-            cbxRequestParfum.FormattingEnabled = true;
-            cbxRequestParfum.Location = new Point(180, 53);
-            cbxRequestParfum.Name = "cbxRequestParfum";
-            cbxRequestParfum.Size = new Size(199, 24);
-            cbxRequestParfum.TabIndex = 5;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(135, 135, 135);
-            label4.Location = new Point(409, 56);
-            label4.Name = "label4";
-            label4.Size = new Size(126, 16);
-            label4.TabIndex = 6;
-            label4.Text = "Amount to request:";
-            // 
-            // numAmountToRequest
-            // 
-            numAmountToRequest.Font = new Font("Montserrat", 9F);
-            numAmountToRequest.Location = new Point(556, 56);
-            numAmountToRequest.Margin = new Padding(4);
-            numAmountToRequest.Name = "numAmountToRequest";
-            numAmountToRequest.Size = new Size(165, 22);
-            numAmountToRequest.TabIndex = 7;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Montserrat", 9F);
-            label5.ForeColor = Color.FromArgb(135, 135, 135);
-            label5.Location = new Point(12, 93);
-            label5.Name = "label5";
-            label5.Size = new Size(62, 16);
-            label5.TabIndex = 8;
-            label5.Text = "Message:";
-            // 
-            // tbMessage
-            // 
-            tbMessage.Location = new Point(80, 90);
-            tbMessage.MaxLength = 256;
-            tbMessage.Multiline = false;
-            tbMessage.Name = "tbMessage";
-            tbMessage.Size = new Size(641, 23);
-            tbMessage.TabIndex = 9;
-            tbMessage.Text = "";
-            // 
-            // btnSubmit
-            // 
-            btnSubmit.BackColor = Color.FromArgb(225, 212, 193);
-            btnSubmit.Cursor = Cursors.Hand;
-            btnSubmit.FlatAppearance.BorderSize = 0;
-            btnSubmit.FlatStyle = FlatStyle.Flat;
-            btnSubmit.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSubmit.ForeColor = Color.Black;
-            btnSubmit.Location = new Point(12, 134);
-            btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(139, 27);
-            btnSubmit.TabIndex = 10;
-            btnSubmit.Text = "Submit Request";
-            btnSubmit.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSubmit.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            btnClear.BackColor = Color.FromArgb(225, 212, 193);
-            btnClear.Cursor = Cursors.Hand;
-            btnClear.FlatAppearance.BorderSize = 0;
-            btnClear.FlatStyle = FlatStyle.Flat;
-            btnClear.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClear.ForeColor = Color.Black;
-            btnClear.Location = new Point(157, 134);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(67, 27);
-            btnClear.TabIndex = 11;
-            btnClear.Text = "Clear";
-            btnClear.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnClear.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(1, 164);
+            label6.Location = new Point(8, 93);
             label6.Name = "label6";
             label6.Size = new Size(270, 37);
             label6.TabIndex = 12;
@@ -224,7 +96,7 @@
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
             dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle6;
-            dgExistingRequests.Location = new Point(22, 224);
+            dgExistingRequests.Location = new Point(29, 153);
             dgExistingRequests.Name = "dgExistingRequests";
             dgExistingRequests.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgExistingRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -272,7 +144,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(135, 135, 135);
-            label7.Location = new Point(12, 201);
+            label7.Location = new Point(19, 130);
             label7.Name = "label7";
             label7.Size = new Size(218, 16);
             label7.TabIndex = 14;
@@ -286,67 +158,140 @@
             btnRefresh.Cursor = Cursors.Hand;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(756, 179);
+            btnRefresh.Location = new Point(756, 108);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(52, 38);
             btnRefresh.TabIndex = 15;
             btnRefresh.UseVisualStyleBackColor = false;
             // 
-            // dtpDateToRequest
+            // btnGenerate
             // 
-            dtpDateToRequest.CalendarFont = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateToRequest.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateToRequest.Format = DateTimePickerFormat.Short;
-            dtpDateToRequest.Location = new Point(556, 15);
-            dtpDateToRequest.Name = "dtpDateToRequest";
-            dtpDateToRequest.Size = new Size(165, 23);
-            dtpDateToRequest.TabIndex = 29;
+            btnGenerate.BackColor = Color.FromArgb(225, 212, 193);
+            btnGenerate.Cursor = Cursors.Hand;
+            btnGenerate.FlatAppearance.BorderSize = 0;
+            btnGenerate.FlatStyle = FlatStyle.Flat;
+            btnGenerate.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerate.ForeColor = Color.Black;
+            btnGenerate.Image = (Image)resources.GetObject("btnGenerate.Image");
+            btnGenerate.Location = new Point(699, 13);
+            btnGenerate.Name = "btnGenerate";
+            btnGenerate.Size = new Size(109, 27);
+            btnGenerate.TabIndex = 27;
+            btnGenerate.Text = "Search";
+            btnGenerate.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnGenerate.UseVisualStyleBackColor = true;
             // 
-            // StaffRequestForm
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(135, 135, 135);
+            label3.Location = new Point(523, 18);
+            label3.Name = "label3";
+            label3.Size = new Size(21, 16);
+            label3.TabIndex = 25;
+            label3.Text = "To";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(135, 135, 135);
+            label2.Location = new Point(312, 18);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 16);
+            label2.TabIndex = 23;
+            label2.Text = "Date from:";
+            // 
+            // cbxCurrentBranch
+            // 
+            cbxCurrentBranch.Font = new Font("Montserrat", 9F);
+            cbxCurrentBranch.FormattingEnabled = true;
+            cbxCurrentBranch.Location = new Point(104, 15);
+            cbxCurrentBranch.Name = "cbxCurrentBranch";
+            cbxCurrentBranch.Size = new Size(191, 24);
+            cbxCurrentBranch.TabIndex = 22;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(135, 135, 135);
+            label1.Location = new Point(8, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 16);
+            label1.TabIndex = 21;
+            label1.Text = "Filter: Branch:";
+            // 
+            // dtpDateFrom
+            // 
+            dtpDateFrom.CalendarFont = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDateFrom.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDateFrom.Format = DateTimePickerFormat.Short;
+            dtpDateFrom.Location = new Point(390, 15);
+            dtpDateFrom.Name = "dtpDateFrom";
+            dtpDateFrom.Size = new Size(118, 23);
+            dtpDateFrom.TabIndex = 28;
+            // 
+            // dtpDateTo
+            // 
+            dtpDateTo.CalendarFont = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDateTo.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDateTo.Format = DateTimePickerFormat.Short;
+            dtpDateTo.Location = new Point(559, 15);
+            dtpDateTo.Name = "dtpDateTo";
+            dtpDateTo.Size = new Size(118, 23);
+            dtpDateTo.TabIndex = 29;
+            // 
+            // cbxStatus
+            // 
+            cbxStatus.Font = new Font("Montserrat", 9F);
+            cbxStatus.FormattingEnabled = true;
+            cbxStatus.Location = new Point(104, 57);
+            cbxStatus.Name = "cbxStatus";
+            cbxStatus.Size = new Size(191, 24);
+            cbxStatus.TabIndex = 31;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(135, 135, 135);
+            label4.Location = new Point(8, 60);
+            label4.Name = "label4";
+            label4.Size = new Size(85, 16);
+            label4.TabIndex = 30;
+            label4.Text = "Filter: Status:";
+            // 
+            // AdminApproveForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 512);
-            Controls.Add(dtpDateToRequest);
-            Controls.Add(btnRefresh);
-            Controls.Add(label7);
-            Controls.Add(dgExistingRequests);
-            Controls.Add(label6);
-            Controls.Add(btnClear);
-            Controls.Add(btnSubmit);
-            Controls.Add(tbMessage);
-            Controls.Add(label5);
-            Controls.Add(numAmountToRequest);
+            Controls.Add(cbxStatus);
             Controls.Add(label4);
-            Controls.Add(cbxRequestParfum);
+            Controls.Add(dtpDateTo);
+            Controls.Add(dtpDateFrom);
+            Controls.Add(btnGenerate);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(cbxCurrentBranch);
             Controls.Add(label1);
+            Controls.Add(btnRefresh);
+            Controls.Add(label7);
+            Controls.Add(dgExistingRequests);
+            Controls.Add(label6);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "StaffRequestForm";
-            Text = "StaffRequestForm";
-            ((System.ComponentModel.ISupportInitialize)numAmountToRequest).EndInit();
+            Name = "AdminApproveForm";
+            Text = "AdminRequestPage";
             ((System.ComponentModel.ISupportInitialize)dgExistingRequests).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private ComboBox cbxCurrentBranch;
-        private Label label2;
-        private Label label3;
-        private ComboBox cbxRequestParfum;
-        private Label label4;
-        private NumericUpDown numAmountToRequest;
-        private Label label5;
-        private RichTextBox tbMessage;
-        private Button btnSubmit;
-        private Button btnClear;
         private Label label6;
         private DataGridView dgExistingRequests;
         private Label label7;
@@ -357,6 +302,14 @@
         private DataGridViewTextBoxColumn PERFUME_DATECREATED;
         private DataGridViewTextBoxColumn PERFUME_STATUS;
         private Button btnRefresh;
-        private DateTimePicker dtpDateToRequest;
+        private Button btnGenerate;
+        private Label label3;
+        private Label label2;
+        private ComboBox cbxCurrentBranch;
+        private Label label1;
+        private DateTimePicker dtpDateFrom;
+        private DateTimePicker dtpDateTo;
+        private ComboBox cbxStatus;
+        private Label label4;
     }
 }

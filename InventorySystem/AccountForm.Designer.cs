@@ -32,39 +32,39 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountForm));
-            dgPerfume = new DataGridView();
-            btnDeduct = new Button();
-            btnRefresh = new Button();
-            btnAdd = new Button();
-            tbSearchProduct = new RichTextBox();
-            btnSearch = new Button();
-            lblDescription = new Label();
-            lblTitle = new Label();
-            richTextBox1 = new RichTextBox();
-            btnCreateNewAccount = new Button();
+            dgAccounts = new DataGridView();
             USER_ID = new DataGridViewTextBoxColumn();
             USER_EMAIL = new DataGridViewTextBoxColumn();
             USER_NAME = new DataGridViewTextBoxColumn();
             USER_ROLE = new DataGridViewTextBoxColumn();
             USER_BRANCH = new DataGridViewTextBoxColumn();
             USER_DATE_CREATED = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dgPerfume).BeginInit();
+            btnResetPassword = new Button();
+            btnDeleteAccount = new Button();
+            btnEditAccount = new Button();
+            tbSearchProduct = new RichTextBox();
+            btnSearch = new Button();
+            lblDescription = new Label();
+            lblTitle = new Label();
+            tbSearchUser = new RichTextBox();
+            btnCreateNewAccount = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgAccounts).BeginInit();
             SuspendLayout();
             // 
-            // dgPerfume
+            // dgAccounts
             // 
-            dgPerfume.AllowUserToAddRows = false;
-            dgPerfume.AllowUserToDeleteRows = false;
-            dgPerfume.AllowUserToResizeColumns = false;
-            dgPerfume.AllowUserToResizeRows = false;
+            dgAccounts.AllowUserToAddRows = false;
+            dgAccounts.AllowUserToDeleteRows = false;
+            dgAccounts.AllowUserToResizeColumns = false;
+            dgAccounts.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = Color.White;
             dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgPerfume.BackgroundColor = Color.White;
-            dgPerfume.BorderStyle = BorderStyle.None;
+            dgAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgAccounts.BackgroundColor = Color.White;
+            dgAccounts.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = SystemColors.Control;
             dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -72,9 +72,9 @@
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dgPerfume.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgPerfume.Columns.AddRange(new DataGridViewColumn[] { USER_ID, USER_EMAIL, USER_NAME, USER_ROLE, USER_BRANCH, USER_DATE_CREATED });
+            dgAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgAccounts.Columns.AddRange(new DataGridViewColumn[] { USER_ID, USER_EMAIL, USER_NAME, USER_ROLE, USER_BRANCH, USER_DATE_CREATED });
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
             dataGridViewCellStyle6.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -82,63 +82,105 @@
             dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgPerfume.DefaultCellStyle = dataGridViewCellStyle6;
-            dgPerfume.Location = new Point(26, 120);
-            dgPerfume.Name = "dgPerfume";
-            dgPerfume.ReadOnly = true;
-            dgPerfume.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgPerfume.Size = new Size(783, 325);
-            dgPerfume.TabIndex = 5;
+            dgAccounts.DefaultCellStyle = dataGridViewCellStyle6;
+            dgAccounts.Location = new Point(26, 120);
+            dgAccounts.Name = "dgAccounts";
+            dgAccounts.ReadOnly = true;
+            dgAccounts.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgAccounts.Size = new Size(783, 325);
+            dgAccounts.TabIndex = 5;
             // 
-            // btnDeduct
+            // USER_ID
             // 
-            btnDeduct.BackColor = Color.FromArgb(225, 212, 193);
-            btnDeduct.BackgroundImageLayout = ImageLayout.Center;
-            btnDeduct.Cursor = Cursors.Hand;
-            btnDeduct.FlatAppearance.BorderSize = 0;
-            btnDeduct.FlatStyle = FlatStyle.Flat;
-            btnDeduct.Font = new Font("Montserrat", 9.749999F);
-            btnDeduct.ForeColor = SystemColors.ControlText;
-            btnDeduct.Location = new Point(188, 460);
-            btnDeduct.Name = "btnDeduct";
-            btnDeduct.Size = new Size(155, 28);
-            btnDeduct.TabIndex = 7;
-            btnDeduct.Text = "Reset Password";
-            btnDeduct.UseVisualStyleBackColor = false;
+            USER_ID.FillWeight = 60F;
+            USER_ID.HeaderText = "User ID";
+            USER_ID.MinimumWidth = 3;
+            USER_ID.Name = "USER_ID";
+            USER_ID.ReadOnly = true;
             // 
-            // btnRefresh
+            // USER_EMAIL
             // 
-            btnRefresh.BackColor = Color.FromArgb(126, 16, 44);
-            btnRefresh.BackgroundImageLayout = ImageLayout.Center;
-            btnRefresh.Cursor = Cursors.Hand;
-            btnRefresh.FlatAppearance.BorderSize = 0;
-            btnRefresh.FlatStyle = FlatStyle.Flat;
-            btnRefresh.Font = new Font("Montserrat", 9.749999F);
-            btnRefresh.ForeColor = SystemColors.Control;
-            btnRefresh.Location = new Point(365, 460);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(147, 28);
-            btnRefresh.TabIndex = 9;
-            btnRefresh.Text = "Delete Account";
-            btnRefresh.UseVisualStyleBackColor = false;
+            USER_EMAIL.FillWeight = 120F;
+            USER_EMAIL.HeaderText = "Email";
+            USER_EMAIL.Name = "USER_EMAIL";
+            USER_EMAIL.ReadOnly = true;
             // 
-            // btnAdd
+            // USER_NAME
             // 
-            btnAdd.BackColor = Color.FromArgb(225, 212, 193);
-            btnAdd.BackgroundImageLayout = ImageLayout.Center;
-            btnAdd.Cursor = Cursors.Hand;
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Montserrat", 9.749999F);
-            btnAdd.ForeColor = SystemColors.ControlText;
-            btnAdd.Location = new Point(26, 460);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(142, 28);
-            btnAdd.TabIndex = 6;
-            btnAdd.Text = "Edit Account";
-            btnAdd.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAdd.UseVisualStyleBackColor = false;
+            USER_NAME.HeaderText = "Name";
+            USER_NAME.Name = "USER_NAME";
+            USER_NAME.ReadOnly = true;
+            // 
+            // USER_ROLE
+            // 
+            USER_ROLE.FillWeight = 80F;
+            USER_ROLE.HeaderText = "Role";
+            USER_ROLE.Name = "USER_ROLE";
+            USER_ROLE.ReadOnly = true;
+            // 
+            // USER_BRANCH
+            // 
+            USER_BRANCH.FillWeight = 80F;
+            USER_BRANCH.HeaderText = "Branch";
+            USER_BRANCH.Name = "USER_BRANCH";
+            USER_BRANCH.ReadOnly = true;
+            // 
+            // USER_DATE_CREATED
+            // 
+            USER_DATE_CREATED.FillWeight = 90F;
+            USER_DATE_CREATED.HeaderText = "Date Created";
+            USER_DATE_CREATED.Name = "USER_DATE_CREATED";
+            USER_DATE_CREATED.ReadOnly = true;
+            // 
+            // btnResetPassword
+            // 
+            btnResetPassword.BackColor = Color.FromArgb(225, 212, 193);
+            btnResetPassword.BackgroundImageLayout = ImageLayout.Center;
+            btnResetPassword.Cursor = Cursors.Hand;
+            btnResetPassword.FlatAppearance.BorderSize = 0;
+            btnResetPassword.FlatStyle = FlatStyle.Flat;
+            btnResetPassword.Font = new Font("Montserrat", 9.749999F);
+            btnResetPassword.ForeColor = SystemColors.ControlText;
+            btnResetPassword.Location = new Point(188, 460);
+            btnResetPassword.Name = "btnResetPassword";
+            btnResetPassword.Size = new Size(155, 28);
+            btnResetPassword.TabIndex = 7;
+            btnResetPassword.Text = "Reset Password";
+            btnResetPassword.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteAccount
+            // 
+            btnDeleteAccount.BackColor = Color.FromArgb(126, 16, 44);
+            btnDeleteAccount.BackgroundImageLayout = ImageLayout.Center;
+            btnDeleteAccount.Cursor = Cursors.Hand;
+            btnDeleteAccount.FlatAppearance.BorderSize = 0;
+            btnDeleteAccount.FlatStyle = FlatStyle.Flat;
+            btnDeleteAccount.Font = new Font("Montserrat", 9.749999F);
+            btnDeleteAccount.ForeColor = SystemColors.Control;
+            btnDeleteAccount.Location = new Point(365, 460);
+            btnDeleteAccount.Name = "btnDeleteAccount";
+            btnDeleteAccount.Size = new Size(147, 28);
+            btnDeleteAccount.TabIndex = 9;
+            btnDeleteAccount.Text = "Delete Account";
+            btnDeleteAccount.UseVisualStyleBackColor = false;
+            // 
+            // btnEditAccount
+            // 
+            btnEditAccount.BackColor = Color.FromArgb(225, 212, 193);
+            btnEditAccount.BackgroundImageLayout = ImageLayout.Center;
+            btnEditAccount.Cursor = Cursors.Hand;
+            btnEditAccount.FlatAppearance.BorderSize = 0;
+            btnEditAccount.FlatStyle = FlatStyle.Flat;
+            btnEditAccount.Font = new Font("Montserrat", 9.749999F);
+            btnEditAccount.ForeColor = SystemColors.ControlText;
+            btnEditAccount.Location = new Point(26, 460);
+            btnEditAccount.Name = "btnEditAccount";
+            btnEditAccount.Size = new Size(142, 28);
+            btnEditAccount.TabIndex = 6;
+            btnEditAccount.Text = "Edit Account";
+            btnEditAccount.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEditAccount.UseVisualStyleBackColor = false;
             // 
             // tbSearchProduct
             // 
@@ -193,18 +235,18 @@
             lblTitle.Text = "Account List";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // richTextBox1
+            // tbSearchUser
             // 
-            richTextBox1.BorderStyle = BorderStyle.FixedSingle;
-            richTextBox1.DetectUrls = false;
-            richTextBox1.Font = new Font("Montserrat", 9.7F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox1.Location = new Point(92, 22);
-            richTextBox1.MaxLength = 20;
-            richTextBox1.Multiline = false;
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(215, 27);
-            richTextBox1.TabIndex = 11;
-            richTextBox1.Text = "Search product";
+            tbSearchUser.BorderStyle = BorderStyle.FixedSingle;
+            tbSearchUser.DetectUrls = false;
+            tbSearchUser.Font = new Font("Montserrat", 9.7F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbSearchUser.Location = new Point(92, 22);
+            tbSearchUser.MaxLength = 20;
+            tbSearchUser.Multiline = false;
+            tbSearchUser.Name = "tbSearchUser";
+            tbSearchUser.Size = new Size(215, 27);
+            tbSearchUser.TabIndex = 11;
+            tbSearchUser.Text = "Search product";
             // 
             // btnCreateNewAccount
             // 
@@ -222,48 +264,6 @@
             btnCreateNewAccount.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCreateNewAccount.UseVisualStyleBackColor = true;
             // 
-            // USER_ID
-            // 
-            USER_ID.FillWeight = 60F;
-            USER_ID.HeaderText = "User ID";
-            USER_ID.MinimumWidth = 3;
-            USER_ID.Name = "USER_ID";
-            USER_ID.ReadOnly = true;
-            // 
-            // USER_EMAIL
-            // 
-            USER_EMAIL.FillWeight = 120F;
-            USER_EMAIL.HeaderText = "Email";
-            USER_EMAIL.Name = "USER_EMAIL";
-            USER_EMAIL.ReadOnly = true;
-            // 
-            // USER_NAME
-            // 
-            USER_NAME.HeaderText = "Name";
-            USER_NAME.Name = "USER_NAME";
-            USER_NAME.ReadOnly = true;
-            // 
-            // USER_ROLE
-            // 
-            USER_ROLE.FillWeight = 80F;
-            USER_ROLE.HeaderText = "Role";
-            USER_ROLE.Name = "USER_ROLE";
-            USER_ROLE.ReadOnly = true;
-            // 
-            // USER_BRANCH
-            // 
-            USER_BRANCH.FillWeight = 80F;
-            USER_BRANCH.HeaderText = "Branch";
-            USER_BRANCH.Name = "USER_BRANCH";
-            USER_BRANCH.ReadOnly = true;
-            // 
-            // USER_DATE_CREATED
-            // 
-            USER_DATE_CREATED.FillWeight = 90F;
-            USER_DATE_CREATED.HeaderText = "Date Created";
-            USER_DATE_CREATED.Name = "USER_DATE_CREATED";
-            USER_DATE_CREATED.ReadOnly = true;
-            // 
             // AccountForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
@@ -273,33 +273,33 @@
             Controls.Add(lblDescription);
             Controls.Add(lblTitle);
             Controls.Add(btnSearch);
-            Controls.Add(richTextBox1);
+            Controls.Add(tbSearchUser);
             Controls.Add(tbSearchProduct);
-            Controls.Add(btnRefresh);
-            Controls.Add(btnDeduct);
-            Controls.Add(btnAdd);
-            Controls.Add(dgPerfume);
+            Controls.Add(btnDeleteAccount);
+            Controls.Add(btnResetPassword);
+            Controls.Add(btnEditAccount);
+            Controls.Add(dgAccounts);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "AccountForm";
             Text = "InventoryForm1";
-            ((System.ComponentModel.ISupportInitialize)dgPerfume).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgAccounts).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private Button btnCreateNewAccount;
-        private DataGridView dgPerfume;
-        private Button btnDeduct;
-        private Button btnRefresh;
-        private Button btnAdd;
+        private DataGridView dgAccounts;
+        private Button btnResetPassword;
+        private Button btnDeleteAccount;
+        private Button btnEditAccount;
         private RichTextBox tbSearchProduct;
         private Button btnSearch;
         private Label lblDescription;
         private Label lblTitle;
-        private RichTextBox richTextBox1;
+        private RichTextBox tbSearchUser;
         private DataGridViewTextBoxColumn USER_ID;
         private DataGridViewTextBoxColumn USER_EMAIL;
         private DataGridViewTextBoxColumn USER_NAME;

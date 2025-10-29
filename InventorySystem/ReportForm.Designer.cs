@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             label6 = new Label();
             cbxCurrentBranch = new ComboBox();
             label1 = new Label();
-            cbxDateFrom = new ComboBox();
             label2 = new Label();
             label3 = new Label();
-            comboBox1 = new ComboBox();
             btnGenerate = new Button();
             label4 = new Label();
             dgReportResults = new DataGridView();
@@ -51,6 +49,8 @@
             btnExportToExcel = new Button();
             btnExportToPDF = new Button();
             button1 = new Button();
+            dtpDateTo = new DateTimePicker();
+            dtpDateFrom = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgReportResults).BeginInit();
             SuspendLayout();
             // 
@@ -84,15 +84,6 @@
             label1.TabIndex = 14;
             label1.Text = "Select report type:";
             // 
-            // cbxDateFrom
-            // 
-            cbxDateFrom.Font = new Font("Montserrat", 9F);
-            cbxDateFrom.FormattingEnabled = true;
-            cbxDateFrom.Location = new Point(397, 10);
-            cbxDateFrom.Name = "cbxDateFrom";
-            cbxDateFrom.Size = new Size(128, 24);
-            cbxDateFrom.TabIndex = 17;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -114,15 +105,6 @@
             label3.Size = new Size(21, 16);
             label3.TabIndex = 18;
             label3.Text = "To";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Montserrat", 9F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(558, 10);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(128, 24);
-            comboBox1.TabIndex = 19;
             // 
             // btnGenerate
             // 
@@ -158,32 +140,32 @@
             dgReportResults.AllowUserToDeleteRows = false;
             dgReportResults.AllowUserToResizeColumns = false;
             dgReportResults.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgReportResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dgReportResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgReportResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgReportResults.BackgroundColor = Color.White;
             dgReportResults.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgReportResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgReportResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgReportResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgReportResults.Columns.AddRange(new DataGridViewColumn[] { PERFUME_ID, PERFUME_NAME, PERFUME_QTY, PERFUME_BRANCH, PERFUME_DATECREATED, PERFUME_STATUS });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgReportResults.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgReportResults.DefaultCellStyle = dataGridViewCellStyle6;
             dgReportResults.Location = new Point(22, 114);
             dgReportResults.Name = "dgReportResults";
             dgReportResults.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -278,20 +260,40 @@
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = true;
             // 
-            // StaffReportForm
+            // dtpDateTo
+            // 
+            dtpDateTo.CalendarFont = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDateTo.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDateTo.Format = DateTimePickerFormat.Short;
+            dtpDateTo.Location = new Point(570, 11);
+            dtpDateTo.Name = "dtpDateTo";
+            dtpDateTo.Size = new Size(118, 23);
+            dtpDateTo.TabIndex = 31;
+            // 
+            // dtpDateFrom
+            // 
+            dtpDateFrom.CalendarFont = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDateFrom.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpDateFrom.Format = DateTimePickerFormat.Short;
+            dtpDateFrom.Location = new Point(401, 11);
+            dtpDateFrom.Name = "dtpDateFrom";
+            dtpDateFrom.Size = new Size(118, 23);
+            dtpDateFrom.TabIndex = 30;
+            // 
+            // ReportForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 512);
+            Controls.Add(dtpDateTo);
+            Controls.Add(dtpDateFrom);
             Controls.Add(button1);
             Controls.Add(btnExportToPDF);
             Controls.Add(btnExportToExcel);
             Controls.Add(dgReportResults);
             Controls.Add(label4);
             Controls.Add(btnGenerate);
-            Controls.Add(comboBox1);
             Controls.Add(label3);
-            Controls.Add(cbxDateFrom);
             Controls.Add(label2);
             Controls.Add(cbxCurrentBranch);
             Controls.Add(label1);
@@ -299,7 +301,7 @@
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "StaffReportForm";
+            Name = "ReportForm";
             Text = "v";
             ((System.ComponentModel.ISupportInitialize)dgReportResults).EndInit();
             ResumeLayout(false);
@@ -311,10 +313,8 @@
         private Label label6;
         private ComboBox cbxCurrentBranch;
         private Label label1;
-        private ComboBox cbxDateFrom;
         private Label label2;
         private Label label3;
-        private ComboBox comboBox1;
         private Button btnGenerate;
         private Label label4;
         private DataGridView dgReportResults;
@@ -327,5 +327,7 @@
         private Button btnExportToExcel;
         private Button btnExportToPDF;
         private Button button1;
+        private DateTimePicker dtpDateTo;
+        private DateTimePicker dtpDateFrom;
     }
 }

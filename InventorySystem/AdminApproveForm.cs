@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace InventorySystem
 {
-    public partial class RequestDetailsPopUp : Form
+    public partial class AdminApproveForm : Form
     {
-        public RequestDetailsPopUp()
+        public AdminApproveForm()
         {
             InitializeComponent();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
