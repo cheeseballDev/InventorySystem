@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminApproveForm));
             label6 = new Label();
             dgExistingRequests = new DataGridView();
@@ -42,18 +42,18 @@
             PERFUME_STATUS = new DataGridViewTextBoxColumn();
             label7 = new Label();
             btnRefresh = new Button();
-            btnGenerate = new Button();
+            btnSearch = new Button();
             label3 = new Label();
             label2 = new Label();
-            cbxCurrentBranch = new ComboBox();
+            cbxRequestBranchFilter = new ComboBox();
             label1 = new Label();
-            dtpDateFrom = new DateTimePicker();
-            dtpDateTo = new DateTimePicker();
-            cbxStatus = new ComboBox();
+            dtpRequestDateFrom = new DateTimePicker();
+            dtpRequestDateTo = new DateTimePicker();
+            cbxRequestStatusFilter = new ComboBox();
             label4 = new Label();
             btnRejectRequest = new Button();
             btnApproveRequest = new Button();
-            btnOpenDetails = new Button();
+            btnOpenRequestDetails = new Button();
             ((System.ComponentModel.ISupportInitialize)dgExistingRequests).BeginInit();
             SuspendLayout();
             // 
@@ -73,32 +73,32 @@
             dgExistingRequests.AllowUserToDeleteRows = false;
             dgExistingRequests.AllowUserToResizeColumns = false;
             dgExistingRequests.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgExistingRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dgExistingRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgExistingRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgExistingRequests.BackgroundColor = Color.White;
             dgExistingRequests.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgExistingRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgExistingRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgExistingRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgExistingRequests.Columns.AddRange(new DataGridViewColumn[] { PERFUME_ID, PERFUME_NAME, PERFUME_QTY, PERFUME_BRANCH, PERFUME_DATECREATED, PERFUME_STATUS });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle6.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle6;
             dgExistingRequests.Location = new Point(29, 153);
             dgExistingRequests.Name = "dgExistingRequests";
             dgExistingRequests.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -167,22 +167,22 @@
             btnRefresh.TabIndex = 15;
             btnRefresh.UseVisualStyleBackColor = false;
             // 
-            // btnGenerate
+            // btnSearch
             // 
-            btnGenerate.BackColor = Color.FromArgb(225, 212, 193);
-            btnGenerate.Cursor = Cursors.Hand;
-            btnGenerate.FlatAppearance.BorderSize = 0;
-            btnGenerate.FlatStyle = FlatStyle.Flat;
-            btnGenerate.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGenerate.ForeColor = Color.Black;
-            btnGenerate.Image = (Image)resources.GetObject("btnGenerate.Image");
-            btnGenerate.Location = new Point(699, 13);
-            btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(109, 27);
-            btnGenerate.TabIndex = 27;
-            btnGenerate.Text = "Search";
-            btnGenerate.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnGenerate.UseVisualStyleBackColor = true;
+            btnSearch.BackColor = Color.FromArgb(225, 212, 193);
+            btnSearch.Cursor = Cursors.Hand;
+            btnSearch.FlatAppearance.BorderSize = 0;
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.Black;
+            btnSearch.Image = (Image)resources.GetObject("btnSearch.Image");
+            btnSearch.Location = new Point(699, 13);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(109, 27);
+            btnSearch.TabIndex = 27;
+            btnSearch.Text = "Search";
+            btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSearch.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -206,14 +206,15 @@
             label2.TabIndex = 23;
             label2.Text = "Date from:";
             // 
-            // cbxCurrentBranch
+            // cbxRequestBranchFilter
             // 
-            cbxCurrentBranch.Font = new Font("Montserrat", 9F);
-            cbxCurrentBranch.FormattingEnabled = true;
-            cbxCurrentBranch.Location = new Point(104, 15);
-            cbxCurrentBranch.Name = "cbxCurrentBranch";
-            cbxCurrentBranch.Size = new Size(191, 24);
-            cbxCurrentBranch.TabIndex = 22;
+            cbxRequestBranchFilter.Font = new Font("Montserrat", 9F);
+            cbxRequestBranchFilter.FormattingEnabled = true;
+            cbxRequestBranchFilter.Location = new Point(104, 15);
+            cbxRequestBranchFilter.Name = "cbxRequestBranchFilter";
+            cbxRequestBranchFilter.Size = new Size(191, 24);
+            cbxRequestBranchFilter.TabIndex = 22;
+            cbxRequestBranchFilter.Text = "Select branch...";
             // 
             // label1
             // 
@@ -226,34 +227,35 @@
             label1.TabIndex = 21;
             label1.Text = "Filter: Branch:";
             // 
-            // dtpDateFrom
+            // dtpRequestDateFrom
             // 
-            dtpDateFrom.CalendarFont = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateFrom.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateFrom.Format = DateTimePickerFormat.Short;
-            dtpDateFrom.Location = new Point(390, 15);
-            dtpDateFrom.Name = "dtpDateFrom";
-            dtpDateFrom.Size = new Size(118, 23);
-            dtpDateFrom.TabIndex = 28;
+            dtpRequestDateFrom.CalendarFont = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpRequestDateFrom.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpRequestDateFrom.Format = DateTimePickerFormat.Short;
+            dtpRequestDateFrom.Location = new Point(390, 15);
+            dtpRequestDateFrom.Name = "dtpRequestDateFrom";
+            dtpRequestDateFrom.Size = new Size(118, 23);
+            dtpRequestDateFrom.TabIndex = 28;
             // 
-            // dtpDateTo
+            // dtpRequestDateTo
             // 
-            dtpDateTo.CalendarFont = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateTo.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateTo.Format = DateTimePickerFormat.Short;
-            dtpDateTo.Location = new Point(559, 15);
-            dtpDateTo.Name = "dtpDateTo";
-            dtpDateTo.Size = new Size(118, 23);
-            dtpDateTo.TabIndex = 29;
+            dtpRequestDateTo.CalendarFont = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpRequestDateTo.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpRequestDateTo.Format = DateTimePickerFormat.Short;
+            dtpRequestDateTo.Location = new Point(559, 15);
+            dtpRequestDateTo.Name = "dtpRequestDateTo";
+            dtpRequestDateTo.Size = new Size(118, 23);
+            dtpRequestDateTo.TabIndex = 29;
             // 
-            // cbxStatus
+            // cbxRequestStatusFilter
             // 
-            cbxStatus.Font = new Font("Montserrat", 9F);
-            cbxStatus.FormattingEnabled = true;
-            cbxStatus.Location = new Point(104, 57);
-            cbxStatus.Name = "cbxStatus";
-            cbxStatus.Size = new Size(191, 24);
-            cbxStatus.TabIndex = 31;
+            cbxRequestStatusFilter.Font = new Font("Montserrat", 9F);
+            cbxRequestStatusFilter.FormattingEnabled = true;
+            cbxRequestStatusFilter.Location = new Point(104, 57);
+            cbxRequestStatusFilter.Name = "cbxRequestStatusFilter";
+            cbxRequestStatusFilter.Size = new Size(191, 24);
+            cbxRequestStatusFilter.TabIndex = 31;
+            cbxRequestStatusFilter.Text = "Select status...";
             // 
             // label4
             // 
@@ -300,40 +302,40 @@
             btnApproveRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnApproveRequest.UseVisualStyleBackColor = true;
             // 
-            // btnOpenDetails
+            // btnOpenRequestDetails
             // 
-            btnOpenDetails.BackColor = Color.FromArgb(225, 212, 193);
-            btnOpenDetails.Cursor = Cursors.Hand;
-            btnOpenDetails.FlatAppearance.BorderSize = 0;
-            btnOpenDetails.FlatStyle = FlatStyle.Flat;
-            btnOpenDetails.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnOpenDetails.ForeColor = Color.Black;
-            btnOpenDetails.Image = (Image)resources.GetObject("btnOpenDetails.Image");
-            btnOpenDetails.Location = new Point(93, 469);
-            btnOpenDetails.Name = "btnOpenDetails";
-            btnOpenDetails.Size = new Size(144, 31);
-            btnOpenDetails.TabIndex = 34;
-            btnOpenDetails.Text = "Open Details";
-            btnOpenDetails.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnOpenDetails.UseVisualStyleBackColor = true;
-            btnOpenDetails.Click += btnOpenDetails_Click;
+            btnOpenRequestDetails.BackColor = Color.FromArgb(225, 212, 193);
+            btnOpenRequestDetails.Cursor = Cursors.Hand;
+            btnOpenRequestDetails.FlatAppearance.BorderSize = 0;
+            btnOpenRequestDetails.FlatStyle = FlatStyle.Flat;
+            btnOpenRequestDetails.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOpenRequestDetails.ForeColor = Color.Black;
+            btnOpenRequestDetails.Image = (Image)resources.GetObject("btnOpenRequestDetails.Image");
+            btnOpenRequestDetails.Location = new Point(93, 469);
+            btnOpenRequestDetails.Name = "btnOpenRequestDetails";
+            btnOpenRequestDetails.Size = new Size(144, 31);
+            btnOpenRequestDetails.TabIndex = 34;
+            btnOpenRequestDetails.Text = "Open Details";
+            btnOpenRequestDetails.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnOpenRequestDetails.UseVisualStyleBackColor = true;
+            btnOpenRequestDetails.Click += btnOpenDetails_Click;
             // 
             // AdminApproveForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 512);
-            Controls.Add(btnOpenDetails);
+            Controls.Add(btnOpenRequestDetails);
             Controls.Add(btnRejectRequest);
             Controls.Add(btnApproveRequest);
-            Controls.Add(cbxStatus);
+            Controls.Add(cbxRequestStatusFilter);
             Controls.Add(label4);
-            Controls.Add(dtpDateTo);
-            Controls.Add(dtpDateFrom);
-            Controls.Add(btnGenerate);
+            Controls.Add(dtpRequestDateTo);
+            Controls.Add(dtpRequestDateFrom);
+            Controls.Add(btnSearch);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(cbxCurrentBranch);
+            Controls.Add(cbxRequestBranchFilter);
             Controls.Add(label1);
             Controls.Add(btnRefresh);
             Controls.Add(label7);
@@ -360,17 +362,17 @@
         private DataGridViewTextBoxColumn PERFUME_DATECREATED;
         private DataGridViewTextBoxColumn PERFUME_STATUS;
         private Button btnRefresh;
-        private Button btnGenerate;
+        private Button btnSearch;
         private Label label3;
         private Label label2;
-        private ComboBox cbxCurrentBranch;
+        private ComboBox cbxRequestBranchFilter;
         private Label label1;
-        private DateTimePicker dtpDateFrom;
-        private DateTimePicker dtpDateTo;
-        private ComboBox cbxStatus;
+        private DateTimePicker dtpRequestDateFrom;
+        private DateTimePicker dtpRequestDateTo;
+        private ComboBox cbxRequestStatusFilter;
         private Label label4;
         private Button btnRejectRequest;
         private Button btnApproveRequest;
-        private Button btnOpenDetails;
+        private Button btnOpenRequestDetails;
     }
 }

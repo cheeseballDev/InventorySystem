@@ -33,15 +33,15 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffRequestForm));
             label1 = new Label();
-            cbxCurrentBranch = new ComboBox();
+            cbxRequestCurrentBranchFilter = new ComboBox();
             label2 = new Label();
             label3 = new Label();
-            cbxRequestParfum = new ComboBox();
+            cbxRequestParfumFilter = new ComboBox();
             label4 = new Label();
-            numAmountToRequest = new NumericUpDown();
+            numPerfumeAmountToRequest = new NumericUpDown();
             label5 = new Label();
-            tbMessage = new RichTextBox();
-            btnSubmit = new Button();
+            tbRequestMessage = new RichTextBox();
+            btnSubmitRequest = new Button();
             btnClear = new Button();
             label6 = new Label();
             dgExistingRequests = new DataGridView();
@@ -54,7 +54,7 @@
             label7 = new Label();
             btnRefresh = new Button();
             dtpDateToRequest = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)numAmountToRequest).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numPerfumeAmountToRequest).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgExistingRequests).BeginInit();
             SuspendLayout();
             // 
@@ -69,14 +69,15 @@
             label1.TabIndex = 0;
             label1.Text = "Select current branch:";
             // 
-            // cbxCurrentBranch
+            // cbxRequestCurrentBranchFilter
             // 
-            cbxCurrentBranch.Font = new Font("Montserrat", 9F);
-            cbxCurrentBranch.FormattingEnabled = true;
-            cbxCurrentBranch.Location = new Point(180, 14);
-            cbxCurrentBranch.Name = "cbxCurrentBranch";
-            cbxCurrentBranch.Size = new Size(199, 24);
-            cbxCurrentBranch.TabIndex = 1;
+            cbxRequestCurrentBranchFilter.Font = new Font("Montserrat", 9F);
+            cbxRequestCurrentBranchFilter.FormattingEnabled = true;
+            cbxRequestCurrentBranchFilter.Location = new Point(180, 14);
+            cbxRequestCurrentBranchFilter.Name = "cbxRequestCurrentBranchFilter";
+            cbxRequestCurrentBranchFilter.Size = new Size(199, 24);
+            cbxRequestCurrentBranchFilter.TabIndex = 1;
+            cbxRequestCurrentBranchFilter.Text = "Select branch...";
             // 
             // label2
             // 
@@ -96,18 +97,19 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(12, 57);
             label3.Name = "label3";
-            label3.Size = new Size(159, 16);
+            label3.Size = new Size(166, 16);
             label3.TabIndex = 4;
-            label3.Text = "Select parfum to request:";
+            label3.Text = "Select perfume to request:";
             // 
-            // cbxRequestParfum
+            // cbxRequestParfumFilter
             // 
-            cbxRequestParfum.Font = new Font("Montserrat", 9F);
-            cbxRequestParfum.FormattingEnabled = true;
-            cbxRequestParfum.Location = new Point(180, 53);
-            cbxRequestParfum.Name = "cbxRequestParfum";
-            cbxRequestParfum.Size = new Size(199, 24);
-            cbxRequestParfum.TabIndex = 5;
+            cbxRequestParfumFilter.Font = new Font("Montserrat", 9F);
+            cbxRequestParfumFilter.FormattingEnabled = true;
+            cbxRequestParfumFilter.Location = new Point(180, 53);
+            cbxRequestParfumFilter.Name = "cbxRequestParfumFilter";
+            cbxRequestParfumFilter.Size = new Size(199, 24);
+            cbxRequestParfumFilter.TabIndex = 5;
+            cbxRequestParfumFilter.Text = "Select perfume...";
             // 
             // label4
             // 
@@ -120,14 +122,14 @@
             label4.TabIndex = 6;
             label4.Text = "Amount to request:";
             // 
-            // numAmountToRequest
+            // numPerfumeAmountToRequest
             // 
-            numAmountToRequest.Font = new Font("Montserrat", 9F);
-            numAmountToRequest.Location = new Point(556, 56);
-            numAmountToRequest.Margin = new Padding(4);
-            numAmountToRequest.Name = "numAmountToRequest";
-            numAmountToRequest.Size = new Size(165, 22);
-            numAmountToRequest.TabIndex = 7;
+            numPerfumeAmountToRequest.Font = new Font("Montserrat", 9F);
+            numPerfumeAmountToRequest.Location = new Point(556, 56);
+            numPerfumeAmountToRequest.Margin = new Padding(4);
+            numPerfumeAmountToRequest.Name = "numPerfumeAmountToRequest";
+            numPerfumeAmountToRequest.Size = new Size(165, 22);
+            numPerfumeAmountToRequest.TabIndex = 7;
             // 
             // label5
             // 
@@ -140,31 +142,31 @@
             label5.TabIndex = 8;
             label5.Text = "Message:";
             // 
-            // tbMessage
+            // tbRequestMessage
             // 
-            tbMessage.Location = new Point(80, 90);
-            tbMessage.MaxLength = 256;
-            tbMessage.Multiline = false;
-            tbMessage.Name = "tbMessage";
-            tbMessage.Size = new Size(641, 23);
-            tbMessage.TabIndex = 9;
-            tbMessage.Text = "";
+            tbRequestMessage.Location = new Point(80, 90);
+            tbRequestMessage.MaxLength = 256;
+            tbRequestMessage.Multiline = false;
+            tbRequestMessage.Name = "tbRequestMessage";
+            tbRequestMessage.Size = new Size(641, 23);
+            tbRequestMessage.TabIndex = 9;
+            tbRequestMessage.Text = "";
             // 
-            // btnSubmit
+            // btnSubmitRequest
             // 
-            btnSubmit.BackColor = Color.FromArgb(225, 212, 193);
-            btnSubmit.Cursor = Cursors.Hand;
-            btnSubmit.FlatAppearance.BorderSize = 0;
-            btnSubmit.FlatStyle = FlatStyle.Flat;
-            btnSubmit.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSubmit.ForeColor = Color.Black;
-            btnSubmit.Location = new Point(12, 134);
-            btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(139, 27);
-            btnSubmit.TabIndex = 10;
-            btnSubmit.Text = "Submit Request";
-            btnSubmit.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmitRequest.BackColor = Color.FromArgb(225, 212, 193);
+            btnSubmitRequest.Cursor = Cursors.Hand;
+            btnSubmitRequest.FlatAppearance.BorderSize = 0;
+            btnSubmitRequest.FlatStyle = FlatStyle.Flat;
+            btnSubmitRequest.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSubmitRequest.ForeColor = Color.Black;
+            btnSubmitRequest.Location = new Point(12, 134);
+            btnSubmitRequest.Name = "btnSubmitRequest";
+            btnSubmitRequest.Size = new Size(139, 27);
+            btnSubmitRequest.TabIndex = 10;
+            btnSubmitRequest.Text = "Submit Request";
+            btnSubmitRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSubmitRequest.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
@@ -313,22 +315,22 @@
             Controls.Add(dgExistingRequests);
             Controls.Add(label6);
             Controls.Add(btnClear);
-            Controls.Add(btnSubmit);
-            Controls.Add(tbMessage);
+            Controls.Add(btnSubmitRequest);
+            Controls.Add(tbRequestMessage);
             Controls.Add(label5);
-            Controls.Add(numAmountToRequest);
+            Controls.Add(numPerfumeAmountToRequest);
             Controls.Add(label4);
-            Controls.Add(cbxRequestParfum);
+            Controls.Add(cbxRequestParfumFilter);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(cbxCurrentBranch);
+            Controls.Add(cbxRequestCurrentBranchFilter);
             Controls.Add(label1);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "StaffRequestForm";
             Text = "StaffRequestForm";
-            ((System.ComponentModel.ISupportInitialize)numAmountToRequest).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numPerfumeAmountToRequest).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgExistingRequests).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -337,15 +339,15 @@
         #endregion
 
         private Label label1;
-        private ComboBox cbxCurrentBranch;
+        private ComboBox cbxRequestCurrentBranchFilter;
         private Label label2;
         private Label label3;
-        private ComboBox cbxRequestParfum;
+        private ComboBox cbxRequestParfumFilter;
         private Label label4;
-        private NumericUpDown numAmountToRequest;
+        private NumericUpDown numPerfumeAmountToRequest;
         private Label label5;
-        private RichTextBox tbMessage;
-        private Button btnSubmit;
+        private RichTextBox tbRequestMessage;
+        private Button btnSubmitRequest;
         private Button btnClear;
         private Label label6;
         private DataGridView dgExistingRequests;

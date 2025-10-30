@@ -16,8 +16,8 @@ namespace InventorySystem
         {
             InitializeComponent();
             // SHOULD I ADD ENUMS?
-            cbxNote.Items.AddRange(new string[] { "Premium", "Classic" });
-            cbxBranch.Items.AddRange(new string[] { "Sta. Lucia", "Riverbanks" });
+            cbxPerfumeNoteFilter.Items.AddRange(new string[] { "Premium", "Classic" });
+            cbxPerfumeBranchFilter.Items.AddRange(new string[] { "Sta. Lucia", "Riverbanks" });
         }
 
         private void tbSearchProduct_TextChanged(object sender, EventArgs e)

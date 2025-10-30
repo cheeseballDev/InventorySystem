@@ -33,16 +33,16 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            label3 = new Label();
+            lblPerfumeID = new Label();
             label4 = new Label();
             tbPerfumeName = new RichTextBox();
             label5 = new Label();
-            numericUpDown1 = new NumericUpDown();
+            numPerfumeQuantity = new NumericUpDown();
             btnSave = new Button();
             btnCancel = new Button();
-            btnArchive = new Button();
+            btnArchivePerfume = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numPerfumeQuantity).BeginInit();
             SuspendLayout();
             // 
             // btnClose
@@ -67,9 +67,9 @@
             label1.Font = new Font("Montserrat", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(12, 21);
             label1.Name = "label1";
-            label1.Size = new Size(209, 40);
+            label1.Size = new Size(217, 40);
             label1.TabIndex = 9;
-            label1.Text = "Edit Product";
+            label1.Text = "Edit Perfume";
             // 
             // pictureBox1
             // 
@@ -91,15 +91,15 @@
             label2.TabIndex = 11;
             label2.Text = "REQ ID:";
             // 
-            // label3
+            // lblPerfumeID
             // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.FromArgb(135, 135, 135);
-            label3.Location = new Point(122, 229);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 22);
-            label3.TabIndex = 12;
-            label3.Text = "###";
+            lblPerfumeID.AutoSize = true;
+            lblPerfumeID.ForeColor = Color.FromArgb(135, 135, 135);
+            lblPerfumeID.Location = new Point(122, 229);
+            lblPerfumeID.Name = "lblPerfumeID";
+            lblPerfumeID.Size = new Size(43, 22);
+            lblPerfumeID.TabIndex = 12;
+            lblPerfumeID.Text = "###";
             // 
             // label4
             // 
@@ -132,13 +132,13 @@
             label5.TabIndex = 15;
             label5.Text = "Quantity:";
             // 
-            // numericUpDown1
+            // numPerfumeQuantity
             // 
-            numericUpDown1.ForeColor = Color.FromArgb(135, 135, 135);
-            numericUpDown1.Location = new Point(122, 325);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 27);
-            numericUpDown1.TabIndex = 16;
+            numPerfumeQuantity.ForeColor = Color.FromArgb(135, 135, 135);
+            numPerfumeQuantity.Location = new Point(122, 325);
+            numPerfumeQuantity.Name = "numPerfumeQuantity";
+            numPerfumeQuantity.Size = new Size(120, 27);
+            numPerfumeQuantity.TabIndex = 16;
             // 
             // btnSave
             // 
@@ -176,37 +176,37 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
-            // btnArchive
+            // btnArchivePerfume
             // 
-            btnArchive.BackColor = Color.FromArgb(126, 16, 44);
-            btnArchive.Cursor = Cursors.Hand;
-            btnArchive.FlatAppearance.BorderSize = 0;
-            btnArchive.FlatStyle = FlatStyle.Flat;
-            btnArchive.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnArchive.ForeColor = SystemColors.Control;
-            btnArchive.Image = (Image)resources.GetObject("btnArchive.Image");
-            btnArchive.ImageAlign = ContentAlignment.MiddleLeft;
-            btnArchive.Location = new Point(28, 442);
-            btnArchive.Name = "btnArchive";
-            btnArchive.Size = new Size(299, 31);
-            btnArchive.TabIndex = 19;
-            btnArchive.Text = "Archive Product";
-            btnArchive.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnArchive.UseVisualStyleBackColor = false;
+            btnArchivePerfume.BackColor = Color.FromArgb(126, 16, 44);
+            btnArchivePerfume.Cursor = Cursors.Hand;
+            btnArchivePerfume.FlatAppearance.BorderSize = 0;
+            btnArchivePerfume.FlatStyle = FlatStyle.Flat;
+            btnArchivePerfume.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnArchivePerfume.ForeColor = SystemColors.Control;
+            btnArchivePerfume.Image = (Image)resources.GetObject("btnArchivePerfume.Image");
+            btnArchivePerfume.ImageAlign = ContentAlignment.MiddleLeft;
+            btnArchivePerfume.Location = new Point(28, 433);
+            btnArchivePerfume.Name = "btnArchivePerfume";
+            btnArchivePerfume.Size = new Size(299, 31);
+            btnArchivePerfume.TabIndex = 19;
+            btnArchivePerfume.Text = "Archive Perfume";
+            btnArchivePerfume.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnArchivePerfume.UseVisualStyleBackColor = false;
             // 
             // AdminEditProductPopUp
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(344, 485);
-            Controls.Add(btnArchive);
+            Controls.Add(btnArchivePerfume);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
-            Controls.Add(numericUpDown1);
+            Controls.Add(numPerfumeQuantity);
             Controls.Add(label5);
             Controls.Add(tbPerfumeName);
             Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(lblPerfumeID);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
@@ -218,7 +218,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminEditProductPopUp";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numPerfumeQuantity).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -229,13 +229,13 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Label label2;
-        private Label label3;
+        private Label lblPerfumeID;
         private Label label4;
         private RichTextBox tbPerfumeName;
         private Label label5;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numPerfumeQuantity;
         private Button btnSave;
         private Button btnCancel;
-        private Button btnArchive;
+        private Button btnArchivePerfume;
     }
 }

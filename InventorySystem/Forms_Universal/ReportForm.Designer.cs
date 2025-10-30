@@ -33,11 +33,11 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             label6 = new Label();
-            cbxCurrentBranch = new ComboBox();
+            cbxReportTypeFilter = new ComboBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            btnGenerate = new Button();
+            btnGenerateReport = new Button();
             label4 = new Label();
             dgReportResults = new DataGridView();
             PERFUME_ID = new DataGridViewTextBoxColumn();
@@ -48,9 +48,9 @@
             PERFUME_STATUS = new DataGridViewTextBoxColumn();
             btnExportToExcel = new Button();
             btnExportToPDF = new Button();
-            button1 = new Button();
-            dtpDateTo = new DateTimePicker();
-            dtpDateFrom = new DateTimePicker();
+            btnPrint = new Button();
+            dtpReportDateTo = new DateTimePicker();
+            dtpReportDateFrom = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgReportResults).BeginInit();
             SuspendLayout();
             // 
@@ -64,14 +64,15 @@
             label6.TabIndex = 13;
             label6.Text = "Report Results";
             // 
-            // cbxCurrentBranch
+            // cbxReportTypeFilter
             // 
-            cbxCurrentBranch.Font = new Font("Montserrat", 9F);
-            cbxCurrentBranch.FormattingEnabled = true;
-            cbxCurrentBranch.Location = new Point(135, 10);
-            cbxCurrentBranch.Name = "cbxCurrentBranch";
-            cbxCurrentBranch.Size = new Size(178, 24);
-            cbxCurrentBranch.TabIndex = 15;
+            cbxReportTypeFilter.Font = new Font("Montserrat", 9F);
+            cbxReportTypeFilter.FormattingEnabled = true;
+            cbxReportTypeFilter.Location = new Point(135, 10);
+            cbxReportTypeFilter.Name = "cbxReportTypeFilter";
+            cbxReportTypeFilter.Size = new Size(178, 24);
+            cbxReportTypeFilter.TabIndex = 15;
+            cbxReportTypeFilter.Text = "Select report...";
             // 
             // label1
             // 
@@ -106,22 +107,22 @@
             label3.TabIndex = 18;
             label3.Text = "To";
             // 
-            // btnGenerate
+            // btnGenerateReport
             // 
-            btnGenerate.BackColor = Color.FromArgb(225, 212, 193);
-            btnGenerate.Cursor = Cursors.Hand;
-            btnGenerate.FlatAppearance.BorderSize = 0;
-            btnGenerate.FlatStyle = FlatStyle.Flat;
-            btnGenerate.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGenerate.ForeColor = Color.Black;
-            btnGenerate.Image = (Image)resources.GetObject("btnGenerate.Image");
-            btnGenerate.Location = new Point(703, 8);
-            btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(105, 27);
-            btnGenerate.TabIndex = 20;
-            btnGenerate.Text = "Generate";
-            btnGenerate.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnGenerate.UseVisualStyleBackColor = true;
+            btnGenerateReport.BackColor = Color.FromArgb(225, 212, 193);
+            btnGenerateReport.Cursor = Cursors.Hand;
+            btnGenerateReport.FlatAppearance.BorderSize = 0;
+            btnGenerateReport.FlatStyle = FlatStyle.Flat;
+            btnGenerateReport.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerateReport.ForeColor = Color.Black;
+            btnGenerateReport.Image = (Image)resources.GetObject("btnGenerateReport.Image");
+            btnGenerateReport.Location = new Point(703, 8);
+            btnGenerateReport.Name = "btnGenerateReport";
+            btnGenerateReport.Size = new Size(105, 27);
+            btnGenerateReport.TabIndex = 20;
+            btnGenerateReport.Text = "Generate";
+            btnGenerateReport.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnGenerateReport.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -243,59 +244,59 @@
             btnExportToPDF.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnExportToPDF.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnPrint
             // 
-            button1.BackColor = Color.FromArgb(225, 212, 193);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Black;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(328, 467);
-            button1.Name = "button1";
-            button1.Size = new Size(85, 27);
-            button1.TabIndex = 25;
-            button1.Text = "Print";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
+            btnPrint.BackColor = Color.FromArgb(225, 212, 193);
+            btnPrint.Cursor = Cursors.Hand;
+            btnPrint.FlatAppearance.BorderSize = 0;
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPrint.ForeColor = Color.Black;
+            btnPrint.Image = (Image)resources.GetObject("btnPrint.Image");
+            btnPrint.Location = new Point(328, 467);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(85, 27);
+            btnPrint.TabIndex = 25;
+            btnPrint.Text = "Print";
+            btnPrint.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnPrint.UseVisualStyleBackColor = true;
             // 
-            // dtpDateTo
+            // dtpReportDateTo
             // 
-            dtpDateTo.CalendarFont = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateTo.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateTo.Format = DateTimePickerFormat.Short;
-            dtpDateTo.Location = new Point(570, 11);
-            dtpDateTo.Name = "dtpDateTo";
-            dtpDateTo.Size = new Size(118, 23);
-            dtpDateTo.TabIndex = 31;
+            dtpReportDateTo.CalendarFont = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpReportDateTo.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpReportDateTo.Format = DateTimePickerFormat.Short;
+            dtpReportDateTo.Location = new Point(570, 11);
+            dtpReportDateTo.Name = "dtpReportDateTo";
+            dtpReportDateTo.Size = new Size(118, 23);
+            dtpReportDateTo.TabIndex = 31;
             // 
-            // dtpDateFrom
+            // dtpReportDateFrom
             // 
-            dtpDateFrom.CalendarFont = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateFrom.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpDateFrom.Format = DateTimePickerFormat.Short;
-            dtpDateFrom.Location = new Point(401, 11);
-            dtpDateFrom.Name = "dtpDateFrom";
-            dtpDateFrom.Size = new Size(118, 23);
-            dtpDateFrom.TabIndex = 30;
+            dtpReportDateFrom.CalendarFont = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpReportDateFrom.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpReportDateFrom.Format = DateTimePickerFormat.Short;
+            dtpReportDateFrom.Location = new Point(401, 11);
+            dtpReportDateFrom.Name = "dtpReportDateFrom";
+            dtpReportDateFrom.Size = new Size(118, 23);
+            dtpReportDateFrom.TabIndex = 30;
             // 
             // ReportForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 512);
-            Controls.Add(dtpDateTo);
-            Controls.Add(dtpDateFrom);
-            Controls.Add(button1);
+            Controls.Add(dtpReportDateTo);
+            Controls.Add(dtpReportDateFrom);
+            Controls.Add(btnPrint);
             Controls.Add(btnExportToPDF);
             Controls.Add(btnExportToExcel);
             Controls.Add(dgReportResults);
             Controls.Add(label4);
-            Controls.Add(btnGenerate);
+            Controls.Add(btnGenerateReport);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(cbxCurrentBranch);
+            Controls.Add(cbxReportTypeFilter);
             Controls.Add(label1);
             Controls.Add(label6);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -311,11 +312,11 @@
         #endregion
 
         private Label label6;
-        private ComboBox cbxCurrentBranch;
+        private ComboBox cbxReportTypeFilter;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button btnGenerate;
+        private Button btnGenerateReport;
         private Label label4;
         private DataGridView dgReportResults;
         private DataGridViewTextBoxColumn PERFUME_ID;
@@ -326,8 +327,8 @@
         private DataGridViewTextBoxColumn PERFUME_STATUS;
         private Button btnExportToExcel;
         private Button btnExportToPDF;
-        private Button button1;
-        private DateTimePicker dtpDateTo;
-        private DateTimePicker dtpDateFrom;
+        private Button btnPrint;
+        private DateTimePicker dtpReportDateTo;
+        private DateTimePicker dtpReportDateFrom;
     }
 }
