@@ -41,7 +41,7 @@ namespace InventorySystem.Helper_Classes
         }
 
 
-        // EXECUTE SCALAR (TBH IDK WHAT THIS DOES)
+        // EXECUTE SCALAR 
         public static int ExecuteScalar(string query, params MySqlParameter[] parameters)
         {
             int result = 0;

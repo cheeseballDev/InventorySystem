@@ -19,8 +19,6 @@ namespace InventorySystem
         public StaffLoginForm()
         {
             InitializeComponent();
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.FlatAppearance.BorderSize = 0;
             con.Open();
         }
 
