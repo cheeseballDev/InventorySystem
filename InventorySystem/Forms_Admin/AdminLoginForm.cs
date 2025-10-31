@@ -8,18 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem
 {
     public partial class AdminLoginForm : Form
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;");
 
         public AdminLoginForm()
         {
             InitializeComponent();
-            con.Open();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -32,32 +31,21 @@ namespace InventorySystem
                 MessageBox.Show("Please enter both Email and Password.", "Error");
                 return;
             }
+            string query = "SELECT COUNT(*) FROM adminAccount WHERE email=@email AND password=@password";
 
-            try
+            int count = DatabaseHelper.ExecuteScalar(query, 
+                new MySqlParameter("@email", email),
+                new MySqlParameter("@password", password)
+                );
+
+            if (count > 0)
             {
-                string query = "SELECT COUNT(*) FROM adminAccount WHERE email=@email AND password=@password";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@password", password);
-
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    if (count > 0)
-                    {
-                        this.Tag = "AdminHomeForm";
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Email or Password.", "Login Failed");
-                    }
-                }
+                this.Tag = "AdminHomeForm";
+                this.Close();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message, "Database Error");
+                MessageBox.Show("Invalid Email or Password.", "Login Failed");
             }
         }
 
