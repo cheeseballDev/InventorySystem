@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InventorySystem
 {
-    public partial class AdminEditProductPopUp : Form
+    public partial class AdminEditPerfumePopUp : Form
     {
-        public AdminEditProductPopUp()
+        public AdminEditPerfumePopUp()
         {
             InitializeComponent();
         }

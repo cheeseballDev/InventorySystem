@@ -62,37 +62,38 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Montserrat", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(26, 12);
             label1.Name = "label1";
-            label1.Size = new Size(372, 33);
+            label1.Size = new Size(406, 40);
             label1.TabIndex = 9;
             label1.Text = "Selected Account Details:";
             // 
             // cbxAccountBranch
             // 
-            cbxAccountBranch.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxAccountBranch.Font = new Font("Montserrat", 8.999999F);
             cbxAccountBranch.FormattingEnabled = true;
             cbxAccountBranch.Items.AddRange(new object[] { "Branch 1", "Branch 2", "Branch 3" });
             cbxAccountBranch.Location = new Point(123, 152);
             cbxAccountBranch.Name = "cbxAccountBranch";
-            cbxAccountBranch.Size = new Size(330, 23);
+            cbxAccountBranch.Size = new Size(330, 24);
             cbxAccountBranch.TabIndex = 35;
             cbxAccountBranch.Text = "Select branch...";
             // 
             // cbxAccountRole
             // 
-            cbxAccountRole.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxAccountRole.Font = new Font("Montserrat", 8.999999F);
             cbxAccountRole.FormattingEnabled = true;
             cbxAccountRole.Items.AddRange(new object[] { "Inventory Guy", "Family Guy" });
             cbxAccountRole.Location = new Point(123, 196);
             cbxAccountRole.Name = "cbxAccountRole";
-            cbxAccountRole.Size = new Size(330, 23);
+            cbxAccountRole.Size = new Size(330, 24);
             cbxAccountRole.TabIndex = 34;
             cbxAccountRole.Text = "Select role...";
             // 
             // tbAccountEmail
             // 
+            tbAccountEmail.Font = new Font("Montserrat", 9.749999F);
             tbAccountEmail.ForeColor = Color.FromArgb(135, 135, 135);
             tbAccountEmail.Location = new Point(123, 110);
             tbAccountEmail.MaxLength = 32;
@@ -105,10 +106,11 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Montserrat", 12F);
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(29, 198);
             label3.Name = "label3";
-            label3.Size = new Size(46, 20);
+            label3.Size = new Size(49, 22);
             label3.TabIndex = 32;
             label3.Text = "Role:";
             // 
@@ -118,7 +120,7 @@
             btnCancel.Cursor = Cursors.Hand;
             btnCancel.FlatAppearance.BorderSize = 0;
             btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancel.Font = new Font("Montserrat", 9.749999F);
             btnCancel.ForeColor = Color.Black;
             btnCancel.Image = (Image)resources.GetObject("btnCancel.Image");
             btnCancel.Location = new Point(261, 246);
@@ -135,7 +137,7 @@
             btnSave.Cursor = Cursors.Hand;
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSave.Font = new Font("Montserrat", 9.749999F);
             btnSave.ForeColor = Color.Black;
             btnSave.Image = (Image)resources.GetObject("btnSave.Image");
             btnSave.Location = new Point(101, 246);
@@ -150,15 +152,17 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Montserrat", 12F);
             label5.ForeColor = Color.FromArgb(135, 135, 135);
             label5.Location = new Point(29, 150);
             label5.Name = "label5";
-            label5.Size = new Size(64, 20);
+            label5.Size = new Size(70, 22);
             label5.TabIndex = 29;
             label5.Text = "Branch:";
             // 
             // tbAccountName
             // 
+            tbAccountName.Font = new Font("Montserrat", 9.749999F);
             tbAccountName.ForeColor = Color.FromArgb(135, 135, 135);
             tbAccountName.Location = new Point(123, 64);
             tbAccountName.MaxLength = 32;
@@ -171,20 +175,22 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Montserrat", 12F);
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(29, 110);
             label4.Name = "label4";
-            label4.Size = new Size(52, 20);
+            label4.Size = new Size(58, 22);
             label4.TabIndex = 27;
             label4.Text = "Email:";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Montserrat", 12F);
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(29, 64);
             label2.Name = "label2";
-            label2.Size = new Size(55, 20);
+            label2.Size = new Size(62, 22);
             label2.TabIndex = 26;
             label2.Text = "Name:";
             // 

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InventorySystem
+namespace InventorySystem.Forms_Admin
 {
-    public partial class StaffEditProductPopUp : Form
+    public partial class AddNewPerfumePopUp : Form
     {
-        public StaffEditProductPopUp()
+        public AddNewPerfumePopUp()
         {
             InitializeComponent();
         }
@@ -25,6 +25,11 @@ namespace InventorySystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using InventorySystem.Forms_Admin;
 using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
@@ -74,7 +75,7 @@ namespace InventorySystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if(tbSearchUserFilter.Text == "Search user..." || string.IsNullOrWhiteSpace(tbSearchUserFilter.Text))
+            if (tbSearchUserFilter.Text == "Search user..." || string.IsNullOrWhiteSpace(tbSearchUserFilter.Text))
             {
                 displayAccounts();
                 return;
@@ -113,6 +114,7 @@ namespace InventorySystem
         {
             if (tbSearchUserFilter.Text == "Search user...")
             {
+                tbSearchUserFilter.ForeColor = Color.FromArgb(135, 135, 135);
                 tbSearchUserFilter.Text = "";
             }
         }
@@ -121,7 +123,19 @@ namespace InventorySystem
         {
             if (string.IsNullOrWhiteSpace(tbSearchUserFilter.Text))
             {
+                tbSearchUserFilter.ForeColor = Color.FromArgb(135, 135, 135);
                 tbSearchUserFilter.Text = "Search user...";
+            }
+        }
+
+        private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)
+        {
+            if (tbSearchUserFilter.Text == "Search user...")
+            {
+                tbSearchUserFilter.ForeColor = Color.FromArgb(135, 135, 135);
+            } else
+            {
+                tbSearchUserFilter.ForeColor = Color.Black;
             }
         }
     }

@@ -37,7 +37,7 @@ namespace InventorySystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            AdminEditProductPopUp editProductPopUp = new AdminEditProductPopUp();
+            AdminEditPerfumePopUp editProductPopUp = new AdminEditPerfumePopUp();
             editProductPopUp.ShowDialog();
         }
     }
