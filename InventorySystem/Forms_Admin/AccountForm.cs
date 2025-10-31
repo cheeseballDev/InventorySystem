@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InventorySystem.Forms_Admin;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Common;
 
@@ -21,11 +22,6 @@ namespace InventorySystem
         {
             InitializeComponent();
             displayAccounts();
-        }
-
-        private void tbSearchProduct_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCreateNewAccount_Click(object sender, EventArgs e)
@@ -78,6 +74,11 @@ namespace InventorySystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if(tbSearchUserFilter.Text == "Search user..." || string.IsNullOrWhiteSpace(tbSearchUserFilter.Text))
+            {
+                displayAccounts();
+                return;
+            }
             String query = "select ID, Name, Email, Branch, Role, Date_Created from employeeaccount where ID like @search or Name like @search or Email like @search or Branch like @search or Role like @search";
             MySqlParameter searchParameter = new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%");
 
@@ -108,5 +109,20 @@ namespace InventorySystem
             return tb;
         }
 
+        private void tbSearchUserFilter_Enter(object sender, EventArgs e)
+        {
+            if (tbSearchUserFilter.Text == "Search user...")
+            {
+                tbSearchUserFilter.Text = "";
+            }
+        }
+
+        private void tbSearchUserFilter_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbSearchUserFilter.Text))
+            {
+                tbSearchUserFilter.Text = "Search user...";
+            }
+        }
     }
 }
