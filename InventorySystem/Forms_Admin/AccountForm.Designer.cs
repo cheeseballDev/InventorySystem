@@ -61,7 +61,7 @@
             dgAccounts.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -70,7 +70,7 @@
             dgAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -91,7 +91,7 @@
             btnResetAccountPassword.Cursor = Cursors.Hand;
             btnResetAccountPassword.FlatAppearance.BorderSize = 0;
             btnResetAccountPassword.FlatStyle = FlatStyle.Flat;
-            btnResetAccountPassword.Font = new Font("Microsoft Sans Serif", 9.749999F);
+            btnResetAccountPassword.Font = new Font("Montserrat", 9.749999F);
             btnResetAccountPassword.ForeColor = SystemColors.ControlText;
             btnResetAccountPassword.Image = (Image)resources.GetObject("btnResetAccountPassword.Image");
             btnResetAccountPassword.Location = new Point(188, 460);
@@ -109,7 +109,7 @@
             btnArchiveAccount.Cursor = Cursors.Hand;
             btnArchiveAccount.FlatAppearance.BorderSize = 0;
             btnArchiveAccount.FlatStyle = FlatStyle.Flat;
-            btnArchiveAccount.Font = new Font("Microsoft Sans Serif", 9.749999F);
+            btnArchiveAccount.Font = new Font("Montserrat", 9.749999F);
             btnArchiveAccount.ForeColor = SystemColors.Control;
             btnArchiveAccount.Image = (Image)resources.GetObject("btnArchiveAccount.Image");
             btnArchiveAccount.Location = new Point(365, 460);
@@ -128,7 +128,7 @@
             btnEditAccount.Cursor = Cursors.Hand;
             btnEditAccount.FlatAppearance.BorderSize = 0;
             btnEditAccount.FlatStyle = FlatStyle.Flat;
-            btnEditAccount.Font = new Font("Microsoft Sans Serif", 9.749999F);
+            btnEditAccount.Font = new Font("Montserrat", 9.749999F);
             btnEditAccount.ForeColor = SystemColors.ControlText;
             btnEditAccount.Image = (Image)resources.GetObject("btnEditAccount.Image");
             btnEditAccount.Location = new Point(26, 460);
@@ -144,7 +144,7 @@
             // 
             tbSearchProduct.BorderStyle = BorderStyle.None;
             tbSearchProduct.DetectUrls = false;
-            tbSearchProduct.Font = new Font("Microsoft Sans Serif", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbSearchProduct.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbSearchProduct.ForeColor = Color.FromArgb(135, 135, 135);
             tbSearchProduct.Location = new Point(12, 28);
             tbSearchProduct.MaxLength = 20;
@@ -160,7 +160,7 @@
             btnSearch.Cursor = Cursors.Hand;
             btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSearch.Font = new Font("Montserrat", 9.749999F);
             btnSearch.ForeColor = Color.Black;
             btnSearch.Image = (Image)resources.GetObject("btnSearch.Image");
             btnSearch.Location = new Point(336, 22);
@@ -175,21 +175,21 @@
             // lblDescription
             // 
             lblDescription.AutoSize = true;
-            lblDescription.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDescription.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(26, 94);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(115, 16);
+            lblDescription.Size = new Size(124, 18);
             lblDescription.TabIndex = 14;
             lblDescription.Text = "List of all accounts";
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.Location = new Point(8, 54);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(175, 31);
+            lblTitle.Size = new Size(196, 37);
             lblTitle.TabIndex = 13;
             lblTitle.Text = "Account List";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -198,7 +198,7 @@
             // 
             tbSearchUserFilter.BorderStyle = BorderStyle.FixedSingle;
             tbSearchUserFilter.DetectUrls = false;
-            tbSearchUserFilter.Font = new Font("Microsoft Sans Serif", 9.7F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbSearchUserFilter.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbSearchUserFilter.Location = new Point(92, 22);
             tbSearchUserFilter.MaxLength = 20;
             tbSearchUserFilter.Multiline = false;
@@ -213,7 +213,7 @@
             btnCreateNewAccount.Cursor = Cursors.Hand;
             btnCreateNewAccount.FlatAppearance.BorderSize = 0;
             btnCreateNewAccount.FlatStyle = FlatStyle.Flat;
-            btnCreateNewAccount.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCreateNewAccount.Font = new Font("Montserrat", 9.749999F);
             btnCreateNewAccount.ForeColor = Color.Black;
             btnCreateNewAccount.Image = (Image)resources.GetObject("btnCreateNewAccount.Image");
             btnCreateNewAccount.Location = new Point(452, 22);
