@@ -18,7 +18,6 @@ namespace InventorySystem
 {
     public partial class AccountForm : Form
     {
-        private readonly string connectionString = "Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;";
 
         public AccountForm()
         {
@@ -36,7 +35,7 @@ namespace InventorySystem
         private void displayAccounts()
         {
             String query = "select ID, Name, Email, Branch, Role, Date_Created from employeeaccount";
-            dgAccounts.DataSource = ExecuteQuery(query);
+            dgAccounts.DataSource = DatabaseHelper.ExecuteQuery(query);
         }
 
         private void btnEditAccount_Click(object sender, EventArgs e)
@@ -85,31 +84,7 @@ namespace InventorySystem
             String query = "select ID, Name, Email, Branch, Role, Date_Created from employeeaccount where ID like @search or Name like @search or Email like @search or Branch like @search or Role like @search";
             MySqlParameter searchParameter = new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%");
 
-            dgAccounts.DataSource = ExecuteQuery(query, searchParameter);
-        }
-
-        private DataTable ExecuteQuery(string query, params MySqlParameter[] parameters)
-        {
-            DataTable tb = new DataTable();
-            try
-            {
-                using (MySqlConnection con = new MySqlConnection(connectionString))
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    if (parameters != null && parameters.Length > 0)
-                        cmd.Parameters.AddRange(parameters);
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
-                    {
-                        adapter.Fill(tb);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database error:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return tb;
+            dgAccounts.DataSource = DatabaseHelper.ExecuteQuery(query, searchParameter);
         }
     }
 }

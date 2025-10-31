@@ -1,67 +1,54 @@
-using MySql.Data.MySqlClient;
+
+using InventorySystem.Helper_Classes;
+
 namespace InventorySystem
 {
     public partial class LoginForm : Form
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;");
-
-        
         public LoginForm()
         {
             InitializeComponent();
-            con.Open();
+        }
+
+        private int lookForAccount(string type)
+        {
+            if(type == "staff")
+            {
+                String query = "SELECT COUNT(*) FROM employeeAccount";
+                return DatabaseHelper.ExecuteScalar(query);
+            } else if (type == "admin")
+            {
+                String query = "SELECT COUNT(*) FROM adminAccount";
+                return DatabaseHelper.ExecuteScalar(query);
+            }
+            return 0;
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-
-            try
+            int count = lookForAccount("staff");
+            if (count == 0)
             {
-                String query = "SELECT COUNT(*) FROM employeeAccount";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    if (count == 0)
-                    {
-                        MessageBox.Show("No accounts found, please ask the admin to add/create an account", "OK");
-                    }
-                    else
-                    {
-                        this.Tag = "StaffLoginForm";
-                        this.Close();
-                    }
-                }
+                MessageBox.Show("No accounts found, please ask the admin to add/create an account", "OK");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message, "Error");
+                this.Tag = "StaffLoginForm";
+                this.Close();
             }
-        }
+         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            try
+            int count = lookForAccount("admin");
+            if (count == 0)
             {
-                String query = "SELECT COUNT(*) FROM adminAccount";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    if (count == 0)
-                    {
-                        MessageBox.Show("No accounts found, add one through the database", "OK");
-                    }
-                    else
-                    {
-                        this.Tag = "AdminLoginForm";
-                        this.Close();
-                    }
-                }
+                MessageBox.Show("No accounts found, add one through the database", "OK");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message, "Error");
+                this.Tag = "AdminLoginForm";
+                this.Close();
             }
         }
 
