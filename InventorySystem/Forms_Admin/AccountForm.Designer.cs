@@ -206,9 +206,6 @@
             tbSearchUserFilter.Size = new Size(215, 27);
             tbSearchUserFilter.TabIndex = 11;
             tbSearchUserFilter.Text = "Search user...";
-            tbSearchUserFilter.TextChanged += tbSearchUserFilter_TextChanged;
-            tbSearchUserFilter.Enter += tbSearchUserFilter_Enter;
-            tbSearchUserFilter.Leave += tbSearchUserFilter_Leave;
             // 
             // btnCreateNewAccount
             // 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using InventorySystem.Forms_Admin;
+using InventorySystem.Helper_Classes;
 using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Common;
@@ -23,6 +24,7 @@ namespace InventorySystem
         {
             InitializeComponent();
             displayAccounts();
+            PlaceholderHelper.ApplyPlaceholder(tbSearchUserFilter, "Search user...");
         }
 
         private void btnCreateNewAccount_Click(object sender, EventArgs e)
@@ -108,35 +110,6 @@ namespace InventorySystem
                 MessageBox.Show("Database error:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return tb;
-        }
-
-        private void tbSearchUserFilter_Enter(object sender, EventArgs e)
-        {
-            if (tbSearchUserFilter.Text == "Search user...")
-            {
-                tbSearchUserFilter.ForeColor = Color.FromArgb(135, 135, 135);
-                tbSearchUserFilter.Text = "";
-            }
-        }
-
-        private void tbSearchUserFilter_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbSearchUserFilter.Text))
-            {
-                tbSearchUserFilter.ForeColor = Color.FromArgb(135, 135, 135);
-                tbSearchUserFilter.Text = "Search user...";
-            }
-        }
-
-        private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)
-        {
-            if (tbSearchUserFilter.Text == "Search user...")
-            {
-                tbSearchUserFilter.ForeColor = Color.FromArgb(135, 135, 135);
-            } else
-            {
-                tbSearchUserFilter.ForeColor = Color.Black;
-            }
         }
     }
 }
