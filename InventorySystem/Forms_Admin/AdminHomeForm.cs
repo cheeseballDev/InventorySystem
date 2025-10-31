@@ -165,9 +165,8 @@ namespace InventorySystem
         {
             if (cbxUser.SelectedIndex == 1)
             {
+                this.Tag = "Back";
                 this.Close();
-                LoginForm loginForm = new LoginForm();
-                loginForm.ShowDialog();
             }
 
             if (cbxUser.SelectedIndex == 2)

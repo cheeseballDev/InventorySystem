@@ -74,7 +74,7 @@
             cbxAccountBranch.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxAccountBranch.FormattingEnabled = true;
             cbxAccountBranch.Items.AddRange(new object[] { "Branch 1", "Branch 2", "Branch 3" });
-            cbxAccountBranch.Location = new Point(129, 182);
+            cbxAccountBranch.Location = new Point(123, 152);
             cbxAccountBranch.Name = "cbxAccountBranch";
             cbxAccountBranch.Size = new Size(330, 23);
             cbxAccountBranch.TabIndex = 35;
@@ -85,7 +85,7 @@
             cbxAccountRole.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxAccountRole.FormattingEnabled = true;
             cbxAccountRole.Items.AddRange(new object[] { "Inventory Guy", "Family Guy" });
-            cbxAccountRole.Location = new Point(129, 226);
+            cbxAccountRole.Location = new Point(123, 196);
             cbxAccountRole.Name = "cbxAccountRole";
             cbxAccountRole.Size = new Size(330, 23);
             cbxAccountRole.TabIndex = 34;
@@ -94,7 +94,7 @@
             // tbAccountEmail
             // 
             tbAccountEmail.ForeColor = Color.FromArgb(135, 135, 135);
-            tbAccountEmail.Location = new Point(129, 140);
+            tbAccountEmail.Location = new Point(123, 110);
             tbAccountEmail.MaxLength = 32;
             tbAccountEmail.Multiline = false;
             tbAccountEmail.Name = "tbAccountEmail";
@@ -106,7 +106,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.FromArgb(135, 135, 135);
-            label3.Location = new Point(35, 228);
+            label3.Location = new Point(29, 198);
             label3.Name = "label3";
             label3.Size = new Size(46, 20);
             label3.TabIndex = 32;
@@ -121,7 +121,7 @@
             btnCancel.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancel.ForeColor = Color.Black;
             btnCancel.Image = (Image)resources.GetObject("btnCancel.Image");
-            btnCancel.Location = new Point(267, 276);
+            btnCancel.Location = new Point(261, 246);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(137, 31);
             btnCancel.TabIndex = 31;
@@ -138,7 +138,7 @@
             btnSave.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSave.ForeColor = Color.Black;
             btnSave.Image = (Image)resources.GetObject("btnSave.Image");
-            btnSave.Location = new Point(107, 276);
+            btnSave.Location = new Point(101, 246);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(137, 31);
             btnSave.TabIndex = 30;
@@ -151,7 +151,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.FromArgb(135, 135, 135);
-            label5.Location = new Point(35, 180);
+            label5.Location = new Point(29, 150);
             label5.Name = "label5";
             label5.Size = new Size(64, 20);
             label5.TabIndex = 29;
@@ -160,7 +160,7 @@
             // tbAccountName
             // 
             tbAccountName.ForeColor = Color.FromArgb(135, 135, 135);
-            tbAccountName.Location = new Point(129, 94);
+            tbAccountName.Location = new Point(123, 64);
             tbAccountName.MaxLength = 32;
             tbAccountName.Multiline = false;
             tbAccountName.Name = "tbAccountName";
@@ -172,7 +172,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.FromArgb(135, 135, 135);
-            label4.Location = new Point(35, 140);
+            label4.Location = new Point(29, 110);
             label4.Name = "label4";
             label4.Size = new Size(52, 20);
             label4.TabIndex = 27;
@@ -182,7 +182,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(135, 135, 135);
-            label2.Location = new Point(35, 94);
+            label2.Location = new Point(29, 64);
             label2.Name = "label2";
             label2.Size = new Size(55, 20);
             label2.TabIndex = 26;
@@ -192,7 +192,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(494, 361);
+            ClientSize = new Size(500, 300);
             Controls.Add(cbxAccountBranch);
             Controls.Add(cbxAccountRole);
             Controls.Add(tbAccountEmail);
