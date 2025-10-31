@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using InventorySystem.Forms_Admin;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 
 namespace InventorySystem
 {
     public partial class AccountForm : Form
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;");
+        private readonly string connectionString = "Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;";
+
         public AccountForm()
         {
             InitializeComponent();
             displayAccounts();
-            con.Open();
         }
 
         private void tbSearchProduct_TextChanged(object sender, EventArgs e)
@@ -36,22 +37,7 @@ namespace InventorySystem
         private void displayAccounts()
         {
             String query = "select ID, Name, Email, Branch, Role, Date_Created from employeeaccount";
-            try
-            {
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
-                    {
-                        DataTable accs = new DataTable();
-                        adapter.Fill(accs);
-                        dgAccounts.DataSource = accs;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Database Error");
-            }
+            dgAccounts.DataSource = ExecuteQuery(query);
         }
 
         private void btnEditAccount_Click(object sender, EventArgs e)
@@ -69,11 +55,11 @@ namespace InventorySystem
             }
             else if (dgAccounts.SelectedRows.Count > 1)
             {
-                MessageBox.Show("One row at a time.");
+                MessageBox.Show("One row at a time.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Please select a row to edit.");
+                MessageBox.Show("Please select a row to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -93,23 +79,34 @@ namespace InventorySystem
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String query = "select ID, Name, Email, Branch, Role, Date_Created from employeeaccount where ID like @search or Name like @search or Email like @search or Branch like @search or Role like @search";
+            MySqlParameter searchParameter = new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%");
+
+            dgAccounts.DataSource = ExecuteQuery(query, searchParameter);
+        }
+
+        private DataTable ExecuteQuery(string query, params MySqlParameter[] parameters)
+        {
+            DataTable tb = new DataTable();
             try
             {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
+                    if (parameters != null && parameters.Length > 0)
+                        cmd.Parameters.AddRange(parameters);
+
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
                     {
-                        cmd.Parameters.AddWithValue("@search", "%" + tbSearchUserFilter.Text + "%");
-                        DataTable accs = new DataTable();
-                        adapter.Fill(accs);
-                        dgAccounts.DataSource = accs;
+                        adapter.Fill(tb);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Database Error");
+                MessageBox.Show("Database error:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            return tb;
         }
+
     }
 }
