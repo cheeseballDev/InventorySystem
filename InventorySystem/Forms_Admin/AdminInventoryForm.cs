@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventorySystem.Enums;
 
 namespace InventorySystem
 {
@@ -15,14 +16,10 @@ namespace InventorySystem
         public AdminInventoryForm()
         {
             InitializeComponent();
-            // SHOULD I ADD ENUMS?
-            cbxPerfumeNoteFilter.Items.AddRange(new string[] { "Premium", "Classic" });
-            cbxPerfumeBranchFilter.Items.AddRange(new string[] { "Sta. Lucia", "Riverbanks" });
-        }
+            Helper_Classes.PlaceholderHelper.ApplyPlaceholder(tbSearchPerfumeFilter, "Search Perfume...");
 
-        private void tbSearchProduct_TextChanged(object sender, EventArgs e)
-        {
-
+            cbxPerfumeNoteFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNote)));
+            cbxPerfumeBranchFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
