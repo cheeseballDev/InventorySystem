@@ -15,14 +15,13 @@ namespace InventorySystem.Helper_Classes
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["inventorysystemdatabase"].ConnectionString;
 
-        private static  MySqlConnection con = new MySqlConnection(connectionString);
         // EXECUTE QUERIES 
         public static DataTable ExecuteQuery(string query, params MySqlParameter[] parameters)
         {
             DataTable tb = new DataTable();
             try
             {
-                using (con)
+                using (MySqlConnection con = new MySqlConnection(connectionString))
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     if (parameters != null && parameters.Length > 0)
@@ -48,7 +47,7 @@ namespace InventorySystem.Helper_Classes
             int result = 0;
             try
             {
-                using (con)
+                using (MySqlConnection con = new MySqlConnection(connectionString))
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     if (parameters != null && parameters.Length > 0)
@@ -91,7 +90,7 @@ namespace InventorySystem.Helper_Classes
                 default:
                     throw new Exception("Invalid type specified.");
             }
-            using(con)
+            using(MySqlConnection con = new MySqlConnection(connectionString))
             using (MySqlCommand cmd = new MySqlCommand(query, con))
             {
                 using (var reader = cmd.ExecuteReader())
@@ -121,7 +120,7 @@ namespace InventorySystem.Helper_Classes
             int rowsAffected = 0;
             try
             {
-                using (con)
+                using (MySqlConnection con = new MySqlConnection(connectionString))
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     if (parameters != null && parameters.Length > 0)
