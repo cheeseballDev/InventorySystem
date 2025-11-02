@@ -66,7 +66,7 @@
             label1.Font = new Font("Montserrat", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(12, 21);
             label1.Name = "label1";
-            label1.Size = new Size(217, 40);
+            label1.Size = new Size(220, 45);
             label1.TabIndex = 9;
             label1.Text = "Edit Perfume";
             // 
@@ -86,17 +86,17 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(28, 229);
             label2.Name = "label2";
-            label2.Size = new Size(71, 22);
+            label2.Size = new Size(120, 25);
             label2.TabIndex = 11;
-            label2.Text = "REQ ID:";
+            label2.Text = "PERFUME ID:";
             // 
             // lblPerfumeID
             // 
             lblPerfumeID.AutoSize = true;
             lblPerfumeID.ForeColor = SystemColors.ControlText;
-            lblPerfumeID.Location = new Point(122, 229);
+            lblPerfumeID.Location = new Point(154, 229);
             lblPerfumeID.Name = "lblPerfumeID";
-            lblPerfumeID.Size = new Size(43, 22);
+            lblPerfumeID.Size = new Size(45, 25);
             lblPerfumeID.TabIndex = 12;
             lblPerfumeID.Text = "###";
             // 
@@ -106,7 +106,7 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(28, 275);
             label4.Name = "label4";
-            label4.Size = new Size(83, 22);
+            label4.Size = new Size(85, 25);
             label4.TabIndex = 13;
             label4.Text = "Perfume:";
             // 
@@ -128,7 +128,7 @@
             label5.ForeColor = Color.FromArgb(135, 135, 135);
             label5.Location = new Point(28, 325);
             label5.Name = "label5";
-            label5.Size = new Size(82, 22);
+            label5.Size = new Size(83, 25);
             label5.TabIndex = 15;
             label5.Text = "Quantity:";
             // 
@@ -157,6 +157,7 @@
             btnSave.Text = "Save Changes";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
@@ -176,9 +177,9 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
-            // StaffEditProductPopUp
+            // StaffEditPerfumePopUp
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(380, 448);
             Controls.Add(btnCancel);
@@ -195,7 +196,7 @@
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "StaffEditProductPopUp";
+            Name = "StaffEditPerfumePopUp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StaffEditProductPopUp";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -74,7 +74,7 @@ namespace InventorySystem
 
         private void tbSearchPerfumeFilter_TextChanged(object sender, EventArgs e)
         {
-            if (tbSearchPerfumeFilter.Text == "Search user..." || string.IsNullOrWhiteSpace(tbSearchPerfumeFilter.Text))
+            if (tbSearchPerfumeFilter.Text == "Search perfume..." || string.IsNullOrWhiteSpace(tbSearchPerfumeFilter.Text))
             {
                 loadProducts();
                 return;
@@ -93,7 +93,7 @@ namespace InventorySystem
 
                 string id = row.Cells["Product_ID"].Value.ToString();
 
-                String incrementQuery = "UPDATE perfumetable SET quantity = quantity + 1 WHERE @id";
+                String incrementQuery = "UPDATE perfumetable SET quantity = quantity + 1 WHERE PRODUCT_ID = @id";
 
                 using (MySqlCommand cmd = new MySqlCommand(incrementQuery, con))
                 {
@@ -119,7 +119,7 @@ namespace InventorySystem
 
                 string id = row.Cells["Product_ID"].Value.ToString();
 
-                String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE @id";
+                String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE PRODUCT_ID = @id";
 
                 using (MySqlCommand cmd = new MySqlCommand(decrementQuery, con))
                 {
