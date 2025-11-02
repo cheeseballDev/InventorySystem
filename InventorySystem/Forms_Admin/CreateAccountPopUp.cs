@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -54,65 +55,27 @@ namespace InventorySystem.Forms_Admin
                 return;
             }
 
-            try
+            string newID = DatabaseHelper.CheckForExistingId("select id from employeeaccount order by id desc limit 1", "E");
+
+            int rowsAffected = DatabaseHelper.ExecuteNonQuery(
+                "insert into employeeaccount (ID, Email, password, Name, Branch, Role) values (@id, @email, @password, @name, @branch, @role)",
+                    new MySqlParameter("@id", newID),
+                    new MySqlParameter("@email", email),
+                    new MySqlParameter("@password", password),
+                    new MySqlParameter("@name", name),
+                    new MySqlParameter("@branch", branch),
+                    new MySqlParameter("@role", role)
+                );
+
+            if (rowsAffected > 0)
             {
-                using (con)
-                {
-                    con.Open();
-                    string lastIDquery = "select id from employeeaccount order by id desc limit 1";
-                    string lastID = null;
-
-                    using (MySqlCommand cmd = new MySqlCommand(lastIDquery, con))
-                    {
-                        using (var reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                lastID = reader.GetString("id");
-                            }
-                        }
-
-                        string newID;
-                        if (lastID != null)
-                        {
-                            int numID = int.Parse(lastID.Substring(2));
-                            numID++;
-                            newID = $"E-{numID:D3}";
-                        }
-                        else
-                        {
-                            newID = "E-001";
-                        }
-
-
-                        String query = "insert into employeeaccount (ID, Email, password, Name, Branch, Role) values (@id, @email, @password, @name, @branch, @role)";
-                        using (MySqlCommand accountCreationCMD = new MySqlCommand(query, con))
-                        {
-                            accountCreationCMD.Parameters.AddWithValue("@id", newID);
-                            accountCreationCMD.Parameters.AddWithValue("@email", email);
-                            accountCreationCMD.Parameters.AddWithValue("@password", password);
-                            accountCreationCMD.Parameters.AddWithValue("@name", name);
-                            accountCreationCMD.Parameters.AddWithValue("@branch", branch);
-                            accountCreationCMD.Parameters.AddWithValue("@role", role);
-
-                            int rowsAffected = accountCreationCMD.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
-                            {
-                                MessageBox.Show($"Account created! Given ID is: {newID}");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Account creation error");
-                            }
-                        }    
-                    }
-                }
+                MessageBox.Show($"Account created! Given ID is: {newID}");
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message, "Database Error");
+                MessageBox.Show("Account creation error");
             }
+
         }
     }
 }

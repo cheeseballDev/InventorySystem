@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem
@@ -43,35 +44,20 @@ namespace InventorySystem
                 MessageBox.Show("Please fill up the name field.", "Warning", MessageBoxButtons.OK);
             }
 
+            int rowsAffected = DatabaseHelper.ExecuteNonQuery(
+                "update perfumetable set Perfume = @name, Quantity = @quantity where Product_ID = @id",
+                    new MySqlParameter("@id", prodID),
+                    new MySqlParameter("@name", perfumeName),
+                    new MySqlParameter("@quantity", quantity)
+                );
 
-            try
+            if (rowsAffected > 0)
             {
-                using (con)
-                {
-                    con.Open();
-                    String query = "update perfumetable set Perfume = @name, Quantity = @quantity where Product_ID = @id";
-                    using (MySqlCommand accountEditCMD = new MySqlCommand(query, con))
-                    {
-                        accountEditCMD.Parameters.AddWithValue("@id", prodID);
-                        accountEditCMD.Parameters.AddWithValue("@name", perfumeName);
-                        accountEditCMD.Parameters.AddWithValue("@quantity", quantity);
-
-                        int rowsAffected = accountEditCMD.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show($"Product successfully updated!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Product update error");
-                        }
-                    }
-                }
+                MessageBox.Show($"Product successfully updated!");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message, "Database Error");
+                MessageBox.Show("Product update error");
             }
         }
     }

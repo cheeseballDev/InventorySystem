@@ -43,6 +43,8 @@ namespace InventorySystem
             pnlNavigation.Left = btnInventory.Left + 168;
             btnInventory.BackColor = Color.FromArgb(50, 225, 212, 193);
 
+            
+
             lblTitle.Text = "Inventory";
             lblDescription.Text = "Overview of all available parfum products";
             this.pnlFormLoader.Controls.Clear();
