@@ -46,10 +46,10 @@ namespace InventorySystem
             lblTitle.Text = "Inventory";
             lblDescription.Text = "Overview of all available parfum products";
             this.pnlFormLoader.Controls.Clear();
-            StaffInventoryForm staffInventoryForm = new StaffInventoryForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            staffInventoryForm.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(staffInventoryForm);
-            staffInventoryForm.Show();
+            AdminInventoryForm adminInventoryForm = new AdminInventoryForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            adminInventoryForm.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(adminInventoryForm);
+            adminInventoryForm.Show();
 
         }
 
@@ -173,6 +173,11 @@ namespace InventorySystem
             {
                 Application.Exit();
             }
+        }
+
+        private void pnlFormLoader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

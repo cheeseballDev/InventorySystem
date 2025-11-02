@@ -75,7 +75,7 @@ namespace InventorySystem.Forms_Admin
                         }
                         else
                         {
-                            MessageBox.Show("Account creation error");
+                            MessageBox.Show("Account update error");
                         }
                     }
                 }
