@@ -14,16 +14,11 @@ namespace InventorySystem
 {
     public partial class StaffInventoryForm : Form
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;");
         public StaffInventoryForm()
         {
             InitializeComponent();
+            PlaceholderHelper.ApplyPlaceholder(tbSearchProductFilter, "Search perfume...");
             loadProducts();
-        }
-
-        private void tbSearchProduct_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -78,14 +73,7 @@ namespace InventorySystem
 
                 String incrementQuery = "UPDATE perfumetable SET quantity = quantity + 1 WHERE PRODUCT_ID = @id";
 
-                using (MySqlCommand cmd = new MySqlCommand(incrementQuery, con))
-                {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
-
+                DatabaseHelper.ExecuteNonQuery(incrementQuery, new MySqlParameter("@id", id));
                 loadProducts();
             }
             else
@@ -104,13 +92,7 @@ namespace InventorySystem
 
                 String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE PRODUCT_ID = @id";
 
-                using (MySqlCommand cmd = new MySqlCommand(decrementQuery, con))
-                {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
+                DatabaseHelper.ExecuteNonQuery(id, new MySqlParameter("@id", id));
 
                 loadProducts();
             }

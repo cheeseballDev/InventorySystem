@@ -8,6 +8,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Generators;
 
 namespace InventorySystem.Helper_Classes
 {
@@ -135,6 +136,8 @@ namespace InventorySystem.Helper_Classes
             }
             return rowsAffected;
         }
+
     }
+
 }
 
