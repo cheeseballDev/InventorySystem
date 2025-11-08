@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InventorySystem.Helper_Classes;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem
 {
     public partial class AdminLoginForm : Form
     {
-
+        MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;");
         public AdminLoginForm()
         {
             InitializeComponent();
@@ -42,6 +43,8 @@ namespace InventorySystem
             {
                 this.Tag = "AdminHomeForm";
                 this.Close();
+                String id = DatabaseHelper.getID(email);
+                CurrentUser.id = id;
             }
             else
             {

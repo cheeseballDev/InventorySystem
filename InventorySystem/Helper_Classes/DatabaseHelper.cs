@@ -62,5 +62,31 @@ namespace InventorySystem.Helper_Classes
             }
             return result;
         }
+
+        public static string getID (String email)
+        {
+            try
+            {
+                String query = "select id from adminaccount where email = @email";
+                using (var con = new MySqlConnection(connectionString))
+                using (var cmd = new MySqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@email", email);
+                    con.Open();
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader.GetString("id");
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error");
+            }
+            return "null";
+        }
     }
 }

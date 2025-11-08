@@ -35,12 +35,7 @@
             tbSearchProduct = new RichTextBox();
             cbxAuditLogUserFilter = new ComboBox();
             btnSearchAuditLog = new Button();
-            dgPerfume = new DataGridView();
-            AUDIT_ID = new DataGridViewTextBoxColumn();
-            AUDIT_TIMESTAMP = new DataGridViewTextBoxColumn();
-            AUDIT_USER = new DataGridViewTextBoxColumn();
-            AUDIT_MODULE = new DataGridViewTextBoxColumn();
-            AUDIT_ACTION = new DataGridViewTextBoxColumn();
+            dgAuditLog = new DataGridView();
             richTextBox1 = new RichTextBox();
             cbxAuditLogActionFilter = new ComboBox();
             richTextBox2 = new RichTextBox();
@@ -49,7 +44,7 @@
             lblTitle = new Label();
             dtpAuditLogDateTo = new DateTimePicker();
             dtpAuditLogDateFrom = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)dgPerfume).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgAuditLog).BeginInit();
             SuspendLayout();
             // 
             // tbSearchProduct
@@ -73,7 +68,7 @@
             cbxAuditLogUserFilter.FormattingEnabled = true;
             cbxAuditLogUserFilter.Location = new Point(115, 16);
             cbxAuditLogUserFilter.Name = "cbxAuditLogUserFilter";
-            cbxAuditLogUserFilter.Size = new Size(148, 24);
+            cbxAuditLogUserFilter.Size = new Size(148, 26);
             cbxAuditLogUserFilter.TabIndex = 1;
             cbxAuditLogUserFilter.Text = "Select user...";
             // 
@@ -94,20 +89,20 @@
             btnSearchAuditLog.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSearchAuditLog.UseVisualStyleBackColor = true;
             // 
-            // dgPerfume
+            // dgAuditLog
             // 
-            dgPerfume.AllowUserToAddRows = false;
-            dgPerfume.AllowUserToDeleteRows = false;
-            dgPerfume.AllowUserToResizeColumns = false;
-            dgPerfume.AllowUserToResizeRows = false;
+            dgAuditLog.AllowUserToAddRows = false;
+            dgAuditLog.AllowUserToDeleteRows = false;
+            dgAuditLog.AllowUserToResizeColumns = false;
+            dgAuditLog.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = Color.White;
             dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgPerfume.BackgroundColor = Color.White;
-            dgPerfume.BorderStyle = BorderStyle.None;
+            dgAuditLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgAuditLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgAuditLog.BackgroundColor = Color.White;
+            dgAuditLog.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = SystemColors.Control;
             dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -115,9 +110,8 @@
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dgPerfume.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgPerfume.Columns.AddRange(new DataGridViewColumn[] { AUDIT_ID, AUDIT_TIMESTAMP, AUDIT_USER, AUDIT_MODULE, AUDIT_ACTION });
+            dgAuditLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgAuditLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
             dataGridViewCellStyle6.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -125,48 +119,14 @@
             dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgPerfume.DefaultCellStyle = dataGridViewCellStyle6;
-            dgPerfume.Location = new Point(12, 151);
-            dgPerfume.Name = "dgPerfume";
-            dgPerfume.ReadOnly = true;
-            dgPerfume.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgPerfume.Size = new Size(797, 328);
-            dgPerfume.TabIndex = 5;
-            // 
-            // AUDIT_ID
-            // 
-            AUDIT_ID.FillWeight = 60F;
-            AUDIT_ID.HeaderText = "Log ID";
-            AUDIT_ID.MinimumWidth = 3;
-            AUDIT_ID.Name = "AUDIT_ID";
-            AUDIT_ID.ReadOnly = true;
-            // 
-            // AUDIT_TIMESTAMP
-            // 
-            AUDIT_TIMESTAMP.FillWeight = 110F;
-            AUDIT_TIMESTAMP.HeaderText = "Timestamp";
-            AUDIT_TIMESTAMP.Name = "AUDIT_TIMESTAMP";
-            AUDIT_TIMESTAMP.ReadOnly = true;
-            // 
-            // AUDIT_USER
-            // 
-            AUDIT_USER.HeaderText = "User";
-            AUDIT_USER.Name = "AUDIT_USER";
-            AUDIT_USER.ReadOnly = true;
-            // 
-            // AUDIT_MODULE
-            // 
-            AUDIT_MODULE.HeaderText = "Module";
-            AUDIT_MODULE.Name = "AUDIT_MODULE";
-            AUDIT_MODULE.ReadOnly = true;
-            // 
-            // AUDIT_ACTION
-            // 
-            AUDIT_ACTION.FillWeight = 150.817261F;
-            AUDIT_ACTION.HeaderText = "Action done by user";
-            AUDIT_ACTION.Name = "AUDIT_ACTION";
-            AUDIT_ACTION.ReadOnly = true;
+            dgAuditLog.DefaultCellStyle = dataGridViewCellStyle6;
+            dgAuditLog.Location = new Point(12, 151);
+            dgAuditLog.Name = "dgAuditLog";
+            dgAuditLog.ReadOnly = true;
+            dgAuditLog.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgAuditLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgAuditLog.Size = new Size(797, 328);
+            dgAuditLog.TabIndex = 5;
             // 
             // richTextBox1
             // 
@@ -188,7 +148,7 @@
             cbxAuditLogActionFilter.FormattingEnabled = true;
             cbxAuditLogActionFilter.Location = new Point(115, 56);
             cbxAuditLogActionFilter.Name = "cbxAuditLogActionFilter";
-            cbxAuditLogActionFilter.Size = new Size(148, 24);
+            cbxAuditLogActionFilter.Size = new Size(148, 26);
             cbxAuditLogActionFilter.TabIndex = 7;
             cbxAuditLogActionFilter.Text = "Select action...";
             // 
@@ -227,7 +187,7 @@
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(36, 130);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(209, 18);
+            lblDescription.Size = new Size(210, 20);
             lblDescription.TabIndex = 12;
             lblDescription.Text = "List of all actions done by a user";
             // 
@@ -238,7 +198,7 @@
             lblTitle.ForeColor = SystemColors.ControlText;
             lblTitle.Location = new Point(12, 90);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(265, 37);
+            lblTitle.Size = new Size(266, 42);
             lblTitle.TabIndex = 11;
             lblTitle.Text = "Audit Log Entries";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -265,7 +225,7 @@
             // 
             // AuditForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 504);
             Controls.Add(dtpAuditLogDateTo);
@@ -277,7 +237,7 @@
             Controls.Add(cbxAuditLogActionFilter);
             Controls.Add(richTextBox1);
             Controls.Add(tbSearchProduct);
-            Controls.Add(dgPerfume);
+            Controls.Add(dgAuditLog);
             Controls.Add(btnSearchAuditLog);
             Controls.Add(cbxAuditLogUserFilter);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -285,7 +245,7 @@
             Margin = new Padding(4);
             Name = "AuditForm";
             Text = "InventoryForm1";
-            ((System.ComponentModel.ISupportInitialize)dgPerfume).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgAuditLog).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -295,18 +255,13 @@
         private RichTextBox tbSearchProduct;
         private ComboBox cbxAuditLogUserFilter;
         private Button btnSearchAuditLog;
-        private DataGridView dgPerfume;
+        private DataGridView dgAuditLog;
         private RichTextBox richTextBox1;
         private ComboBox cbxAuditLogActionFilter;
         private RichTextBox richTextBox2;
         private RichTextBox richTextBox3;
         private Label lblDescription;
         private Label lblTitle;
-        private DataGridViewTextBoxColumn AUDIT_ID;
-        private DataGridViewTextBoxColumn AUDIT_TIMESTAMP;
-        private DataGridViewTextBoxColumn AUDIT_USER;
-        private DataGridViewTextBoxColumn AUDIT_MODULE;
-        private DataGridViewTextBoxColumn AUDIT_ACTION;
         private DateTimePicker dtpAuditLogDateTo;
         private DateTimePicker dtpAuditLogDateFrom;
     }

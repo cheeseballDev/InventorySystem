@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -100,6 +101,12 @@ namespace InventorySystem.Forms_Admin
                             if (rowsAffected > 0)
                             {
                                 MessageBox.Show($"Account created! Given ID is: {newID}");
+
+                                AuditLogQuery adq = new AuditLogQuery();
+
+                                adq.LogAction("Added new account", "Create Account Page");
+
+                                this.Close();
                             }
                             else
                             {
