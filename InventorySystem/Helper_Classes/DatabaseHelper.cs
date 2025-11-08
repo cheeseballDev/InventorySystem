@@ -101,20 +101,24 @@ namespace InventorySystem.Helper_Classes
 
             int substringType;
             string idFormat = "";
+            string moduleID = "";
 
             switch(type)
             {
                 case "PERF":
                     substringType = 5;
-                    idFormat = "PERF-";
+                    idFormat = "PERF";
+                    moduleID = "Product_ID";
                     break;
                 case "E":
                     substringType = 3;
-                    idFormat = "E-";
+                    idFormat = "E";
+                    moduleID = "ID";
                     break;
                 case "AL":
                     substringType = 4;
-                    idFormat = "AL-";
+                    idFormat = "AL";
+                    moduleID = "Log_ID";
                     break;
                 default:
                     throw new Exception("Invalid type specified.");
@@ -122,11 +126,12 @@ namespace InventorySystem.Helper_Classes
             using(MySqlConnection con = new MySqlConnection(connectionString))
             using (MySqlCommand cmd = new MySqlCommand(query, con))
             {
+                con.Open();
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        lastID = reader.GetString("Product_ID");
+                        lastID = reader.GetString(moduleID);
                     }
                 }
                 string newID;

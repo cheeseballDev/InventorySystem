@@ -31,7 +31,7 @@ namespace InventorySystem
                 MessageBox.Show("Please enter both Email and Password.", "Error");
                 return;
             }
-            string query = "SELECT COUNT(*) FROM adminAccount WHERE email=@email AND password=@password";
+            string query = "SELECT COUNT(*) FROM adminaccount WHERE email=@email AND password=@password";
 
             int count = DatabaseHelper.ExecuteScalar(query, 
                 new MySqlParameter("@email", email),

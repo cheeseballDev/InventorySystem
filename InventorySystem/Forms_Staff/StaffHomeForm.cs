@@ -35,8 +35,8 @@ namespace InventorySystem
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             btnInventory_Click(new object(), new EventArgs());
             
-            cbxUser.Items.AddRange(new object[] {"Staff", "Logout", "Exit"});
-            cbxUser.SelectedItem = "Staff";
+            cbxUser.Items.AddRange(new object[] {CurrentUser.id, "Logout", "Exit"});
+            cbxUser.SelectedItem = CurrentUser.id;
             cbxUser.SelectedIndexChanged += new System.EventHandler(cbxUser_SelectedIndexChanged);
         }
 

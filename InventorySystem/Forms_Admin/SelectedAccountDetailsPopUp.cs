@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
@@ -22,6 +23,7 @@ namespace InventorySystem.Forms_Admin
             cbxAccountBranch.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
             cbxAccountRole.Items.AddRange(Enum.GetNames(typeof(AccountRoles)));
             empID = id;
+            loadDetails();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -61,17 +63,47 @@ namespace InventorySystem.Forms_Admin
                     new MySqlParameter("@email", email),
                     new MySqlParameter("@name", name),
                     new MySqlParameter("@branch", branch),
-                    new MySqlParameter("@role", role)
+                    new MySqlParameter("@role", role),
+                    new MySqlParameter("@id", empID)
                 );
 
             if (rowsAffected > 0)
             {
+                AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Account successfully updated!");
+                alq.LogAction($"Edited Account Information for {empID}", "Edit Account Page");
             }
             else
             {
                 MessageBox.Show("Account update error");
             }
+        }
+
+        private void loadDetails()
+        {
+            using (MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;"))
+            {
+                con.Open();
+                string query = "SELECT * FROM employeeaccount WHERE ID = @id";
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", empID);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tbAccountEmail.Text = reader["Email"].ToString();
+                            tbAccountName.Text = reader["Name"].ToString();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

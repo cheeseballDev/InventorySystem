@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,16 +10,17 @@ namespace InventorySystem.Helper_Classes
 {
     internal class AuditLogQuery
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;");
+        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["inventorysystemdatabase"].ConnectionString;
 
         public void LogAction(string action, String module)
         {
             try
             {
-                using (con)
+                using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
-                String auditIDQuery = "select log_id from auditlogtable order by log_id desc limit 1";
-                String ID = DatabaseHelper.CheckForExistingId(auditIDQuery, "AL");
+                    con.Open();
+                    String auditIDQuery = "select log_id from auditlogtable order by log_id desc limit 1";
+                    String ID = DatabaseHelper.CheckForExistingId(auditIDQuery, "AL");
                     string query = "INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())";
                     using (var auditCMD = new MySqlCommand(query, con))
                     {

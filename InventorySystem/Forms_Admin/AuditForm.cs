@@ -23,7 +23,7 @@ namespace InventorySystem
             DatabaseHelper.cbxLoader("Admin", cbxAuditLogUserFilter);
             DatabaseHelper.cbxLoader("Staff", cbxAuditLogUserFilter);
             DatabaseHelper.cbxLoader("Action", cbxAuditLogActionFilter);
-
+            loadAuditLog();
         }
 
         private void tbSearchProduct_TextChanged(object sender, EventArgs e)
