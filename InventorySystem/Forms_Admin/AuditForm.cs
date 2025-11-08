@@ -16,6 +16,9 @@ namespace InventorySystem
         public AuditForm()
         {
             InitializeComponent();
+            // cbxAuditLogUserFilter
+            // cbxAuditLogActionFilter
+            // LAGAY MO DITO LAHAT NG ACTIONS AND USERS SA LOOB NG COMBOBOX
             loadAuditLog();
         }
 
@@ -28,6 +31,11 @@ namespace InventorySystem
         {
             String query = "select * from auditlogtable";
             dgAuditLog.DataSource = DatabaseHelper.ExecuteQuery(query);
+        }
+
+        private void btnSearchAuditLog_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

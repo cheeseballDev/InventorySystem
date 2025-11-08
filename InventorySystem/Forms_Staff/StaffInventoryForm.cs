@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InventorySystem.Helper_Classes;
+using InventorySystem.Enums;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem
@@ -18,6 +19,8 @@ namespace InventorySystem
         {
             InitializeComponent();
             PlaceholderHelper.ApplyPlaceholder(tbSearchProductFilter, "Search perfume...");
+            cbxPerfumeBranchFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
+            cbxPerfumeBranchFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNote)));
             loadProducts();
         }
 
@@ -105,6 +108,11 @@ namespace InventorySystem
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             loadProducts();
+        }
+
+        private void btnScanQR_Click(object sender, EventArgs e)
+        {
+            // temp
         }
     }
 }

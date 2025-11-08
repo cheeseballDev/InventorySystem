@@ -17,6 +17,8 @@ namespace InventorySystem.Forms_Admin
         public AddNewPerfumePopUp()
         {
             InitializeComponent();
+            cbxAddNewPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            cbxAddNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeNote)));
         }
 
         private void btnClose_Click(object sender, EventArgs e)

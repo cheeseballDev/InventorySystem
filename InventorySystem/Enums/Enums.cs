@@ -17,4 +17,10 @@ namespace InventorySystem.Enums
         StaLucia,
         Riverbanks
     }
+
+    public enum AccountRoles
+    {
+        Admin,
+        Staff
+    }
 }

@@ -183,6 +183,7 @@
             btnSearch.Text = "Search";
             btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // label3
             // 
@@ -208,13 +209,13 @@
             // 
             // cbxRequestBranchFilter
             // 
+            cbxRequestBranchFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxRequestBranchFilter.Font = new Font("Montserrat", 9F);
             cbxRequestBranchFilter.FormattingEnabled = true;
             cbxRequestBranchFilter.Location = new Point(104, 15);
             cbxRequestBranchFilter.Name = "cbxRequestBranchFilter";
             cbxRequestBranchFilter.Size = new Size(191, 24);
             cbxRequestBranchFilter.TabIndex = 22;
-            cbxRequestBranchFilter.Text = "Select branch...";
             // 
             // label1
             // 
@@ -249,13 +250,13 @@
             // 
             // cbxRequestStatusFilter
             // 
+            cbxRequestStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxRequestStatusFilter.Font = new Font("Montserrat", 9F);
             cbxRequestStatusFilter.FormattingEnabled = true;
             cbxRequestStatusFilter.Location = new Point(104, 57);
             cbxRequestStatusFilter.Name = "cbxRequestStatusFilter";
             cbxRequestStatusFilter.Size = new Size(191, 24);
             cbxRequestStatusFilter.TabIndex = 31;
-            cbxRequestStatusFilter.Text = "Select status...";
             // 
             // label4
             // 

@@ -17,10 +17,11 @@ namespace InventorySystem
     public partial class AdminEditPerfumePopUp : Form
     {
         private String prodID;
-        MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;");
         public AdminEditPerfumePopUp(String id)
         {
             InitializeComponent();
+            cbxAddNewPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            cbxAddNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeNote)));
             prodID = id;
             lblPerfumeID.Text = prodID;
         }

@@ -16,10 +16,11 @@ namespace InventorySystem.Forms_Admin
 {
     public partial class CreateAccountPopUp : Form
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;");
         public CreateAccountPopUp()
         {
             InitializeComponent();
+            cbxAccountBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            cbxAccountRole.Items.AddRange(Enum.GetNames(typeof(Enums.AccountRoles)));
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -198,26 +198,27 @@
             btnScanQR.Text = "Scan QR";
             btnScanQR.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnScanQR.UseVisualStyleBackColor = true;
+            btnScanQR.Click += btnScanQR_Click;
             // 
             // cbxPerfumeBranchFilter
             // 
+            cbxPerfumeBranchFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxPerfumeBranchFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxPerfumeBranchFilter.FormattingEnabled = true;
             cbxPerfumeBranchFilter.Location = new Point(478, 17);
             cbxPerfumeBranchFilter.Name = "cbxPerfumeBranchFilter";
             cbxPerfumeBranchFilter.Size = new Size(148, 24);
             cbxPerfumeBranchFilter.TabIndex = 12;
-            cbxPerfumeBranchFilter.Text = "Filter: Branch";
             // 
             // cbxPerfumeNoteFilter
             // 
+            cbxPerfumeNoteFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxPerfumeNoteFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxPerfumeNoteFilter.FormattingEnabled = true;
             cbxPerfumeNoteFilter.Location = new Point(313, 17);
             cbxPerfumeNoteFilter.Name = "cbxPerfumeNoteFilter";
             cbxPerfumeNoteFilter.Size = new Size(148, 24);
             cbxPerfumeNoteFilter.TabIndex = 11;
-            cbxPerfumeNoteFilter.Text = "Filter: Note Type";
             // 
             // StaffInventoryForm
             // 
