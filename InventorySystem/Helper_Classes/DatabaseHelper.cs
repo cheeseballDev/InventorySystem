@@ -185,6 +185,38 @@ namespace InventorySystem.Helper_Classes
             }
             return id;
         }
+
+        public static void cbxLoader(String type, ComboBox cbx)
+        {
+            String query;
+            switch (type)
+            {
+                case ("Staff"):
+                    query = "select ID from employeeaccount";
+                    break;
+                case ("Admin"):
+                    query = "select ID from adminaccount";
+                    break;
+                case ("Actions"):
+                    query = "select action from auditlogtable";
+                    break;
+                default:
+                    return;
+            }
+
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                con.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        cbx.Items.Add(reader[0].ToString());
+                    }
+                }
+            }
+        }
     }
 }
 

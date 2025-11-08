@@ -19,7 +19,11 @@ namespace InventorySystem
             // cbxAuditLogUserFilter
             // cbxAuditLogActionFilter
             // LAGAY MO DITO LAHAT NG ACTIONS AND USERS SA LOOB NG COMBOBOX
-            loadAuditLog();
+
+            DatabaseHelper.cbxLoader("Admin", cbxAuditLogUserFilter);
+            DatabaseHelper.cbxLoader("Staff", cbxAuditLogUserFilter);
+            DatabaseHelper.cbxLoader("Action", cbxAuditLogActionFilter);
+
         }
 
         private void tbSearchProduct_TextChanged(object sender, EventArgs e)
