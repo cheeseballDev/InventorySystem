@@ -37,6 +37,7 @@ namespace InventorySystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            AuditLogQuery alq = new AuditLogQuery();
             String perfumeName = tbPerfumeName.Text;
             String note = cbxAddNewPerfumeNoteType.Text;
             String branch = cbxAddNewPerfumeBranch.Text;
@@ -59,6 +60,7 @@ namespace InventorySystem
             if (rowsAffected > 0)
             {
                 MessageBox.Show($"Product successfully updated!");
+                alq.LogAction("Perfume Edit", "Perfume Edit Page");
             }
             else
             {

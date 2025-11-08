@@ -67,7 +67,7 @@ namespace InventorySystem.Helper_Classes
 
 
         // SELF EXPLANATORY
-        public static string CheckForExistingId(string query, string type, params MySqlParameter[] paramters)
+        public static string CheckForExistingId(string query, string type)
         {
             string lastID = null;
 
@@ -137,7 +137,26 @@ namespace InventorySystem.Helper_Classes
             return rowsAffected;
         }
 
-    }
+        public static string getID(string email, string employee)
+        {
+            string id = null;
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                con.Open();
+                string query = $"select id FROM {employee} where email = @email limit 1";
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@email", email);
 
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        id = result.ToString();
+                    }
+                }
+            }
+            return id;
+        }
+    }
 }
 

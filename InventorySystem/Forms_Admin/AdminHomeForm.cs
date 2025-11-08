@@ -36,7 +36,7 @@ namespace InventorySystem
             cbxUser.SelectedItem = CurrentUser.id;
             cbxUser.SelectedIndexChanged += new System.EventHandler(cbxUser_SelectedIndexChanged);
 
-            
+
         }
 
         private void btnInventory_Click(object sender, EventArgs e)

@@ -43,6 +43,8 @@ namespace InventorySystem
             {
                 this.Tag = "StaffHomeForm";
                 this.Close();
+                String id = DatabaseHelper.getID(email, "employeeaccount");
+                CurrentUser.id = id;
             }
             else
             {
