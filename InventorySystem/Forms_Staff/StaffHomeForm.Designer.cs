@@ -91,7 +91,6 @@
             btnForecast.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnForecast.UseVisualStyleBackColor = true;
             btnForecast.Click += btnForecast_Click;
-            btnForecast.Leave += btnForecast_Leave;
             // 
             // btnReport
             // 
@@ -110,7 +109,6 @@
             btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnReport.UseVisualStyleBackColor = true;
             btnReport.Click += btnReport_Click;
-            btnReport.Leave += btnReport_Leave;
             // 
             // btnRequest
             // 
@@ -129,7 +127,6 @@
             btnRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRequest.UseVisualStyleBackColor = true;
             btnRequest.Click += btnRequest_Click;
-            btnRequest.Leave += btnRequest_Leave;
             // 
             // btnInventory
             // 
@@ -148,7 +145,6 @@
             btnInventory.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInventory.UseVisualStyleBackColor = true;
             btnInventory.Click += btnInventory_Click;
-            btnInventory.Leave += btnInventory_Leave;
             // 
             // panel2
             // 

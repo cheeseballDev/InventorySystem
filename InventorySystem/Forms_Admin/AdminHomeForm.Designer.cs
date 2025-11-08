@@ -228,7 +228,7 @@
             lblTitle.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.Location = new Point(199, 13);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(156, 42);
+            lblTitle.Size = new Size(154, 37);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Inventory";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -240,7 +240,7 @@
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(203, 55);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(274, 20);
+            lblDescription.Size = new Size(273, 18);
             lblDescription.TabIndex = 2;
             lblDescription.Text = "Overview of all available parfum products";
             // 
@@ -285,7 +285,7 @@
             cbxUser.FormattingEnabled = true;
             cbxUser.Location = new Point(926, 27);
             cbxUser.Name = "cbxUser";
-            cbxUser.Size = new Size(81, 33);
+            cbxUser.Size = new Size(81, 30);
             cbxUser.TabIndex = 6;
             cbxUser.SelectedIndexChanged += cbxUser_SelectedIndexChanged;
             // 

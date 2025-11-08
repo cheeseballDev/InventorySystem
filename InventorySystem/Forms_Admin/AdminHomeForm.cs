@@ -18,6 +18,7 @@ namespace InventorySystem
     {
         private Color defaultButtonColor = Color.FromArgb(28, 28, 28);
         private Color hoverButtonColor = Color.FromArgb(50, 225, 212, 193);
+        private Boolean isButtonActive = false;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -28,18 +29,18 @@ namespace InventorySystem
             int nWidthEllipse,
             int nHeightEllipse
             );
-            
+
         public AdminHomeForm()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             btnInventory_Click(new object(), new EventArgs());
 
-            cbxUser.Items.AddRange(new object[] { CurrentUser.id, "Logout", "Exit" });
-            cbxUser.SelectedItem = CurrentUser.id;
+            cbxUser.Items.AddRange(new object[] { "Admin", "Logout", "Exit" });
+            cbxUser.SelectedItem = "Admin";
             cbxUser.SelectedIndexChanged += new System.EventHandler(cbxUser_SelectedIndexChanged);
 
-            
+
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
@@ -105,8 +106,8 @@ namespace InventorySystem
         private void btnAuditLog_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnAuditLog);
-            pnlNavigation.Height = btnForecast.Height;
-            pnlNavigation.Top = btnForecast.Top;
+            pnlNavigation.Height = btnAuditLog.Height;
+            pnlNavigation.Top = btnAuditLog.Top;
 
             FormLoaderHelper.LoadForm(
                pnlFormLoader,
@@ -121,8 +122,8 @@ namespace InventorySystem
         private void btnAccounts_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnAccounts);
-            pnlNavigation.Height = btnForecast.Height;
-            pnlNavigation.Top = btnForecast.Top;
+            pnlNavigation.Height = btnAccounts.Height;
+            pnlNavigation.Top = btnAccounts.Top;
 
             FormLoaderHelper.LoadForm(
                pnlFormLoader,
@@ -147,39 +148,12 @@ namespace InventorySystem
             button.BackColor = hoverButtonColor;
         }
 
-        private void btnInventory_Leave(object sender, EventArgs e)
-        {
-            btnInventory.BackColor = defaultButtonColor;
-        }
 
-        private void btnRequest_Leave(object sender, EventArgs e)
-        {
-            btnRequest.BackColor = defaultButtonColor;
-        }
 
-        private void btnReport_Leave(object sender, EventArgs e)
-        {
-            btnReport.BackColor = defaultButtonColor;
-        }
-
-        private void btnForecast_Leave(object sender, EventArgs e)
-        {
-            btnForecast.BackColor = defaultButtonColor;
-        }
 
         private void btnNotification_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnAuditLog_Leave(object sender, EventArgs e)
-        {
-            btnAuditLog.BackColor = defaultButtonColor;
-        }
-
-        private void btnAccounts_Leave(object sender, EventArgs e)
-        {
-            btnAccounts.BackColor = defaultButtonColor;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -198,6 +172,36 @@ namespace InventorySystem
             {
                 Application.Exit();
             }
+        }
+
+        private void btnInventory_Leave(object sender, EventArgs e)
+        {
+            SetActiveButton(btnInventory);
+        }
+
+        private void btnRequest_Leave(object sender, EventArgs e)
+        {
+            SetActiveButton(btnRequest);
+        }
+
+        private void btnReport_Leave(object sender, EventArgs e)
+        {
+            SetActiveButton(btnReport);
+        }
+
+        private void btnForecast_Leave(object sender, EventArgs e)
+        {
+            SetActiveButton(btnForecast);
+        }
+
+        private void btnAuditLog_Leave(object sender, EventArgs e)
+        {
+            SetActiveButton(btnAuditLog);
+        }
+
+        private void btnAccounts_Leave(object sender, EventArgs e)
+        {
+            SetActiveButton(btnAccounts);
         }
     }
 }

@@ -98,26 +98,6 @@ namespace InventorySystem
             this.pnlFormLoader.Controls.Clear();
         }
 
-        private void btnInventory_Leave(object sender, EventArgs e)
-        {
-            btnInventory.BackColor = Color.FromArgb(28, 28, 28);
-        }
-
-        private void btnRequest_Leave(object sender, EventArgs e)
-        {
-            btnRequest.BackColor = Color.FromArgb(28, 28, 28);
-        }
-
-        private void btnReport_Leave(object sender, EventArgs e)
-        {
-            btnReport.BackColor = Color.FromArgb(28, 28, 28);
-        }
-
-        private void btnForecast_Leave(object sender, EventArgs e)
-        {
-            btnForecast.BackColor = Color.FromArgb(28, 28, 28);
-        }
-
         private void btnNotification_Click(object sender, EventArgs e)
         {
 
