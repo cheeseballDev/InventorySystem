@@ -16,7 +16,7 @@ namespace InventorySystem.Helper_Classes
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["inventorysystemdatabase"].ConnectionString;
 
-        // EXECUTE QUERIES 
+        // EXECUTE QUERIES FOR DATATABLE
         public static DataTable ExecuteQuery(string query, params MySqlParameter[] parameters)
         {
             DataTable tb = new DataTable();
@@ -39,6 +39,34 @@ namespace InventorySystem.Helper_Classes
                 MessageBox.Show("Database error:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return tb;
+        }
+
+        // GETS ALL STRING LIST FROM QUERY
+        public static List<string> GetListQuery(string query, params MySqlParameter[] parameters)
+        {
+            List<string> results = new List<string>();
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    if (parameters != null && parameters.Length > 0)
+                        cmd.Parameters.AddRange(parameters);
+                    con.Open();
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            results.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return results;
         }
 
 
