@@ -250,7 +250,6 @@
             pnlFormLoader.Name = "pnlFormLoader";
             pnlFormLoader.Size = new Size(826, 512);
             pnlFormLoader.TabIndex = 3;
-            pnlFormLoader.Paint += pnlFormLoader_Paint;
             // 
             // imgBtnUser
             // 

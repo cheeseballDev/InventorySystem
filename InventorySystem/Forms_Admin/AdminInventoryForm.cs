@@ -21,7 +21,7 @@ namespace InventorySystem
         {
             InitializeComponent();
             loadProducts();
-            Helper_Classes.PlaceholderHelper.ApplyPlaceholder(tbSearchPerfumeFilter, "Search Perfume...");
+            Helper_Classes.PlaceholderHelper.ApplyPlaceholder(tbSearchPerfumeFilter, "Search perfume...");
 
             cbxPerfumeNoteFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNote)));
             cbxPerfumeBranchFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
@@ -95,13 +95,7 @@ namespace InventorySystem
 
                 String incrementQuery = "UPDATE perfumetable SET quantity = quantity + 1 WHERE PRODUCT_ID = @id";
 
-                using (MySqlCommand cmd = new MySqlCommand(incrementQuery, con))
-                {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
+                DatabaseHelper.ExecuteNonQuery(incrementQuery, new MySqlParameter("@id", id));
 
                 loadProducts();
             }
@@ -121,13 +115,7 @@ namespace InventorySystem
 
                 String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE PRODUCT_ID = @id";
 
-                using (MySqlCommand cmd = new MySqlCommand(decrementQuery, con))
-                {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
+                DatabaseHelper.ExecuteNonQuery(decrementQuery, new MySqlParameter("@id", id));
 
                 loadProducts();
             }

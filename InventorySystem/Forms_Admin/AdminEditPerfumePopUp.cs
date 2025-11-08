@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -46,37 +47,22 @@ namespace InventorySystem
                 MessageBox.Show("Please fill up the name field.", "Warning", MessageBoxButtons.OK);
             }
 
+            int rowsAffected = DatabaseHelper.ExecuteNonQuery(
+                "update perfumetable set Perfume = @name, Note = @note, Branch = @branch, Quantity = @quantity where Product_ID = @id",
+                    new MySqlParameter("@id", prodID),
+                    new MySqlParameter("@name", perfumeName),
+                    new MySqlParameter("@note", note),
+                    new MySqlParameter("@branch", branch),
+                    new MySqlParameter("@quantity", quantity)
+                );
 
-            try
+            if (rowsAffected > 0)
             {
-                using (con)
-                {
-                    con.Open();
-                    String query = "update perfumetable set Perfume = @name, Note = @note, Branch = @branch, Quantity = @quantity where Product_ID = @id";
-                    using (MySqlCommand accountEditCMD = new MySqlCommand(query, con))
-                    {
-                        accountEditCMD.Parameters.AddWithValue("@id", prodID);
-                        accountEditCMD.Parameters.AddWithValue("@name", perfumeName);
-                        accountEditCMD.Parameters.AddWithValue("@note", note);
-                        accountEditCMD.Parameters.AddWithValue("@branch", branch);
-                        accountEditCMD.Parameters.AddWithValue("@quantity", quantity);
-
-                        int rowsAffected = accountEditCMD.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show($"Product successfully updated!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Product update error");
-                        }
-                    }
-                }
+                MessageBox.Show($"Product successfully updated!");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message, "Database Error");
+                MessageBox.Show("Product update error");
             }
         }
     }

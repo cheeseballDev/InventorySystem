@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.CodeDom;
+using InventorySystem.Helper_Classes;
 
 
 namespace InventorySystem
@@ -43,14 +44,14 @@ namespace InventorySystem
             pnlNavigation.Left = btnInventory.Left + 168;
             btnInventory.BackColor = Color.FromArgb(50, 225, 212, 193);
 
-            lblTitle.Text = "Inventory";
-            lblDescription.Text = "Overview of all available parfum products";
-            this.pnlFormLoader.Controls.Clear();
-            StaffInventoryForm staffInventoryForm = new StaffInventoryForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            staffInventoryForm.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(staffInventoryForm);
-            staffInventoryForm.Show();
-
+            FormLoaderHelper.LoadForm(
+               pnlFormLoader,
+               new StaffInventoryForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+               lblTitle,
+               lblDescription,
+               "Inventory",
+               "Overview of all available parfum products"
+               );
         }
 
         private void btnRequest_Click(object sender, EventArgs e)
@@ -59,13 +60,15 @@ namespace InventorySystem
             pnlNavigation.Top = btnRequest.Top;
             btnRequest.BackColor = Color.FromArgb(50, 225, 212, 193);
 
-            lblTitle.Text = "Request";
-            lblDescription.Text = "Submit a request for restocking parfum products";
-            this.pnlFormLoader.Controls.Clear();
-            StaffRequestForm staffRequestForm = new StaffRequestForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            staffRequestForm.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(staffRequestForm);
-            staffRequestForm.Show();
+            FormLoaderHelper.LoadForm(
+              pnlFormLoader,
+              new StaffRequestForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+              lblTitle,
+              lblDescription,
+              "Request",
+              "Submit a request for restocking parfum products"
+              );
+
         }
 
         private void btnReport_Click(object sender, EventArgs e)
@@ -74,13 +77,15 @@ namespace InventorySystem
             pnlNavigation.Top = btnReport.Top;
             btnReport.BackColor = Color.FromArgb(50, 225, 212, 193);
 
-            lblTitle.Text = "Report";
-            lblDescription.Text = "View the report and statuses of inventory, requests, and deliveries";
-            this.pnlFormLoader.Controls.Clear();
-            ReportForm staffReportForm = new ReportForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            staffReportForm.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(staffReportForm);
-            staffReportForm.Show();
+            FormLoaderHelper.LoadForm(
+              pnlFormLoader,
+              new ReportForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+              lblTitle,
+              lblDescription,
+              "Report",
+              "View the report and statuses of inventory, requests, and deliveries"
+              );
+
         }
         private void btnForecast_Click(object sender, EventArgs e)
         {

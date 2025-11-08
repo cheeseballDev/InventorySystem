@@ -16,5 +16,10 @@ namespace InventorySystem
         {
             InitializeComponent();
         }
+
+        private void btnSubmitRequest_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

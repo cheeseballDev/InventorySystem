@@ -113,7 +113,6 @@
             label5.Size = new Size(83, 25);
             label5.TabIndex = 15;
             label5.Text = "Quantity:";
-            label5.Click += label5_Click;
             // 
             // numPerfumeQuantity
             // 

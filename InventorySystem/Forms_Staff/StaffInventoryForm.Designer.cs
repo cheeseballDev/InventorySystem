@@ -179,7 +179,7 @@
             tbSearchProductFilter.Name = "tbSearchProductFilter";
             tbSearchProductFilter.Size = new Size(245, 21);
             tbSearchProductFilter.TabIndex = 0;
-            tbSearchProductFilter.Text = "Search product";
+            tbSearchProductFilter.Text = "Search perfume...";
             tbSearchProductFilter.TextChanged += tbSearchProductFilter_TextChanged;
             // 
             // btnScanQR
@@ -205,7 +205,7 @@
             cbxPerfumeBranchFilter.FormattingEnabled = true;
             cbxPerfumeBranchFilter.Location = new Point(478, 17);
             cbxPerfumeBranchFilter.Name = "cbxPerfumeBranchFilter";
-            cbxPerfumeBranchFilter.Size = new Size(148, 26);
+            cbxPerfumeBranchFilter.Size = new Size(148, 24);
             cbxPerfumeBranchFilter.TabIndex = 12;
             cbxPerfumeBranchFilter.Text = "Filter: Branch";
             // 
@@ -215,13 +215,13 @@
             cbxPerfumeNoteFilter.FormattingEnabled = true;
             cbxPerfumeNoteFilter.Location = new Point(313, 17);
             cbxPerfumeNoteFilter.Name = "cbxPerfumeNoteFilter";
-            cbxPerfumeNoteFilter.Size = new Size(148, 26);
+            cbxPerfumeNoteFilter.Size = new Size(148, 24);
             cbxPerfumeNoteFilter.TabIndex = 11;
             cbxPerfumeNoteFilter.Text = "Filter: Note Type";
             // 
             // StaffInventoryForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 504);
             Controls.Add(panel1);
