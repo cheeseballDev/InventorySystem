@@ -16,6 +16,9 @@ namespace InventorySystem
 {
     public partial class AdminHomeForm : Form
     {
+        private Color defaultButtonColor = Color.FromArgb(28, 28, 28);
+        private Color hoverButtonColor = Color.FromArgb(50, 225, 212, 193);
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
             int nLeftRect,
@@ -25,7 +28,7 @@ namespace InventorySystem
             int nWidthEllipse,
             int nHeightEllipse
             );
-
+            
         public AdminHomeForm()
         {
             InitializeComponent();
@@ -39,10 +42,10 @@ namespace InventorySystem
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
+            SetActiveButton(btnInventory);
             pnlNavigation.Height = btnInventory.Height;
             pnlNavigation.Top = btnInventory.Top;
             pnlNavigation.Left = btnInventory.Left + 168;
-            btnInventory.BackColor = Color.FromArgb(50, 225, 212, 193);
 
             FormLoaderHelper.LoadForm(
                 pnlFormLoader,
@@ -56,10 +59,9 @@ namespace InventorySystem
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
+            SetActiveButton(btnRequest);
             pnlNavigation.Height = btnRequest.Height;
             pnlNavigation.Top = btnRequest.Top;
-            btnRequest.BackColor = Color.FromArgb(50, 225, 212, 193);
-
 
             FormLoaderHelper.LoadForm(
                 pnlFormLoader,
@@ -73,9 +75,9 @@ namespace InventorySystem
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+            SetActiveButton(btnReport);
             pnlNavigation.Height = btnReport.Height;
             pnlNavigation.Top = btnReport.Top;
-            btnReport.BackColor = Color.FromArgb(50, 225, 212, 193);
 
             FormLoaderHelper.LoadForm(
                 pnlFormLoader,
@@ -85,12 +87,14 @@ namespace InventorySystem
                 "Report",
                 "View the report and statuses of inventory, requests, and deliveries"
                 );
+
+
         }
         private void btnForecast_Click(object sender, EventArgs e)
         {
+            SetActiveButton(btnForecast);
             pnlNavigation.Height = btnForecast.Height;
             pnlNavigation.Top = btnForecast.Top;
-            btnForecast.BackColor = Color.FromArgb(50, 225, 212, 193);
 
             lblTitle.Text = "WORK IN PROGRESS !";
             lblDescription.Text = "Not enough INT to learn forecasting!";
@@ -98,9 +102,9 @@ namespace InventorySystem
         }
         private void btnAuditLog_Click(object sender, EventArgs e)
         {
+            SetActiveButton(btnAuditLog);
             pnlNavigation.Height = btnForecast.Height;
             pnlNavigation.Top = btnForecast.Top;
-            btnAuditLog.BackColor = Color.FromArgb(50, 225, 212, 193);
 
             FormLoaderHelper.LoadForm(
                pnlFormLoader,
@@ -114,9 +118,9 @@ namespace InventorySystem
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {
+            SetActiveButton(btnAccounts);
             pnlNavigation.Height = btnForecast.Height;
             pnlNavigation.Top = btnForecast.Top;
-            btnAccounts.BackColor = Color.FromArgb(50, 225, 212, 193);
 
             FormLoaderHelper.LoadForm(
                pnlFormLoader,
@@ -129,24 +133,36 @@ namespace InventorySystem
 
         }
 
+        private void SetActiveButton(Button button)
+        {
+            foreach (Control ctrl in pnlNavigation.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    btn.BackColor = defaultButtonColor;
+                }
+            }
+            button.BackColor = hoverButtonColor;
+        }
+
         private void btnInventory_Leave(object sender, EventArgs e)
         {
-            btnInventory.BackColor = Color.FromArgb(28, 28, 28);
+            btnInventory.BackColor = defaultButtonColor;
         }
 
         private void btnRequest_Leave(object sender, EventArgs e)
         {
-            btnRequest.BackColor = Color.FromArgb(28, 28, 28);
+            btnRequest.BackColor = defaultButtonColor;
         }
 
         private void btnReport_Leave(object sender, EventArgs e)
         {
-            btnReport.BackColor = Color.FromArgb(28, 28, 28);
+            btnReport.BackColor = defaultButtonColor;
         }
 
         private void btnForecast_Leave(object sender, EventArgs e)
         {
-            btnForecast.BackColor = Color.FromArgb(28, 28, 28);
+            btnForecast.BackColor = defaultButtonColor;
         }
 
         private void btnNotification_Click(object sender, EventArgs e)
@@ -156,12 +172,12 @@ namespace InventorySystem
 
         private void btnAuditLog_Leave(object sender, EventArgs e)
         {
-            btnAuditLog.BackColor = Color.FromArgb(28, 28, 28);
+            btnAuditLog.BackColor = defaultButtonColor;
         }
 
         private void btnAccounts_Leave(object sender, EventArgs e)
         {
-            btnAccounts.BackColor = Color.FromArgb(28, 28, 28);
+            btnAccounts.BackColor = defaultButtonColor;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
