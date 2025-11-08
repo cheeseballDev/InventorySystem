@@ -13,6 +13,7 @@ namespace InventorySystem.Helper_Classes
             lblTitle.Text = title;
             lblDescription.Text = description;
 
+            panel.Controls.Clear();
             formToLoad.FormBorderStyle = FormBorderStyle.None;
             panel.Controls.Add(formToLoad);
             formToLoad.Show();

@@ -56,9 +56,9 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(28, 28, 28);
+            panel1.Controls.Add(pnlNavigation);
             panel1.Controls.Add(btnAccounts);
             panel1.Controls.Add(btnAuditLog);
-            panel1.Controls.Add(pnlNavigation);
             panel1.Controls.Add(btnForecast);
             panel1.Controls.Add(btnReport);
             panel1.Controls.Add(btnRequest);
@@ -87,7 +87,6 @@
             btnAccounts.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAccounts.UseVisualStyleBackColor = true;
             btnAccounts.Click += btnAccounts_Click;
-            btnAccounts.Leave += btnAccounts_Leave;
             // 
             // btnAuditLog
             // 
@@ -106,7 +105,6 @@
             btnAuditLog.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAuditLog.UseVisualStyleBackColor = true;
             btnAuditLog.Click += btnAuditLog_Click;
-            btnAuditLog.Leave += btnAuditLog_Leave;
             // 
             // pnlNavigation
             // 
@@ -133,7 +131,6 @@
             btnForecast.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnForecast.UseVisualStyleBackColor = true;
             btnForecast.Click += btnForecast_Click;
-            btnForecast.Leave += btnForecast_Leave;
             // 
             // btnReport
             // 
@@ -152,7 +149,6 @@
             btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnReport.UseVisualStyleBackColor = true;
             btnReport.Click += btnReport_Click;
-            btnReport.Leave += btnReport_Leave;
             // 
             // btnRequest
             // 
@@ -171,7 +167,6 @@
             btnRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRequest.UseVisualStyleBackColor = true;
             btnRequest.Click += btnRequest_Click;
-            btnRequest.Leave += btnRequest_Leave;
             // 
             // btnInventory
             // 
@@ -190,7 +185,6 @@
             btnInventory.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInventory.UseVisualStyleBackColor = true;
             btnInventory.Click += btnInventory_Click;
-            btnInventory.Leave += btnInventory_Leave;
             // 
             // panel2
             // 

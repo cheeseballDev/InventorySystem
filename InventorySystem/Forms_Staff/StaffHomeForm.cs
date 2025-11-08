@@ -16,6 +16,9 @@ namespace InventorySystem
 {
     public partial class StaffHomeForm : Form
     {
+        private Color defaultButtonColor = Color.FromArgb(28, 28, 28);
+        private Color hoverButtonColor = Color.FromArgb(50, 225, 212, 193);
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
             int nLeftRect,
@@ -39,10 +42,12 @@ namespace InventorySystem
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
+            ResetButtons();
+            btnInventory.BackColor = hoverButtonColor;
+
             pnlNavigation.Height = btnInventory.Height;
             pnlNavigation.Top = btnInventory.Top;
             pnlNavigation.Left = btnInventory.Left + 168;
-            btnInventory.BackColor = Color.FromArgb(50, 225, 212, 193);
 
             FormLoaderHelper.LoadForm(
                pnlFormLoader,
@@ -56,6 +61,9 @@ namespace InventorySystem
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
+            ResetButtons();
+            btnRequest.BackColor = hoverButtonColor;
+
             pnlNavigation.Height = btnRequest.Height;
             pnlNavigation.Top = btnRequest.Top;
             btnRequest.BackColor = Color.FromArgb(50, 225, 212, 193);
@@ -73,6 +81,9 @@ namespace InventorySystem
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+            ResetButtons();
+            btnReport.BackColor = hoverButtonColor;
+
             pnlNavigation.Height = btnReport.Height;
             pnlNavigation.Top = btnReport.Top;
             btnReport.BackColor = Color.FromArgb(50, 225, 212, 193);
@@ -89,6 +100,9 @@ namespace InventorySystem
         }
         private void btnForecast_Click(object sender, EventArgs e)
         {
+            ResetButtons();
+            btnForecast.BackColor = hoverButtonColor;
+
             pnlNavigation.Height = btnForecast.Height;
             pnlNavigation.Top = btnForecast.Top;
             btnForecast.BackColor = Color.FromArgb(50, 225, 212, 193);
@@ -100,12 +114,20 @@ namespace InventorySystem
 
         private void btnNotification_Click(object sender, EventArgs e)
         {
-
+            // temp
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            // temp
+        }
 
+        private void ResetButtons()
+        {
+            btnInventory.BackColor = defaultButtonColor;
+            btnRequest.BackColor = defaultButtonColor;
+            btnReport.BackColor = defaultButtonColor;
+            btnForecast.BackColor = defaultButtonColor;
         }
 
         private void cbxUser_SelectedIndexChanged(object sender, EventArgs e)

@@ -16,7 +16,6 @@ namespace InventorySystem
 {
     public partial class AdminLoginForm : Form
     {
-        MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;");
         public AdminLoginForm()
         {
             InitializeComponent();
