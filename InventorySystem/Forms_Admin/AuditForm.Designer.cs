@@ -69,7 +69,7 @@
             cbxAuditLogUserFilter.FormattingEnabled = true;
             cbxAuditLogUserFilter.Location = new Point(115, 16);
             cbxAuditLogUserFilter.Name = "cbxAuditLogUserFilter";
-            cbxAuditLogUserFilter.Size = new Size(148, 24);
+            cbxAuditLogUserFilter.Size = new Size(148, 26);
             cbxAuditLogUserFilter.TabIndex = 1;
             // 
             // btnSearchAuditLog
@@ -148,9 +148,10 @@
             cbxAuditLogActionFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxAuditLogActionFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxAuditLogActionFilter.FormattingEnabled = true;
+            cbxAuditLogActionFilter.Items.AddRange(new object[] { "Edited account information", "Edited perfume information", "Added new account", "Added new perfume" });
             cbxAuditLogActionFilter.Location = new Point(115, 56);
             cbxAuditLogActionFilter.Name = "cbxAuditLogActionFilter";
-            cbxAuditLogActionFilter.Size = new Size(148, 24);
+            cbxAuditLogActionFilter.Size = new Size(148, 26);
             cbxAuditLogActionFilter.TabIndex = 7;
             // 
             // richTextBox2
@@ -188,7 +189,7 @@
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(36, 130);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(209, 18);
+            lblDescription.Size = new Size(210, 20);
             lblDescription.TabIndex = 12;
             lblDescription.Text = "List of all actions done by a user";
             // 
@@ -199,7 +200,7 @@
             lblTitle.ForeColor = SystemColors.ControlText;
             lblTitle.Location = new Point(12, 90);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(265, 37);
+            lblTitle.Size = new Size(266, 42);
             lblTitle.TabIndex = 11;
             lblTitle.Text = "Audit Log Entries";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -226,7 +227,7 @@
             // 
             // AuditForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 504);
             Controls.Add(dtpAuditLogDateTo);

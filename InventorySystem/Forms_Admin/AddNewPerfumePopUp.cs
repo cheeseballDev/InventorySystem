@@ -53,14 +53,16 @@ namespace InventorySystem.Forms_Admin
                     new MySqlParameter("@quantity", quantity)
                 );
 
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show($"Product added to the inventory! Product ID is: {newID}");
-                }
-                else
-                {
-                    MessageBox.Show("Product addition error");
-                }
+            if (rowsAffected > 0)
+            {
+                AuditLogQuery alq = new AuditLogQuery();
+                MessageBox.Show($"Product added to the inventory! Product ID is: {newID}");
+                alq.LogAction($"Added new perfume ({newID})", "Add perfume page");
+            }
+            else
+            {
+                MessageBox.Show("Product addition error");
+            }
         }   
     }
 }

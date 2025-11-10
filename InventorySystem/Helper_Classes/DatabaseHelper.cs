@@ -139,7 +139,7 @@ namespace InventorySystem.Helper_Classes
                 {
                     int numID = int.Parse(lastID.Substring(substringType));
                     numID++;
-                    return newID = $"{idFormat}{numID.ToString("D3")}";
+                    return newID = $"{idFormat}-{numID.ToString("D3")}";
                 }
                 else
                 {
@@ -201,9 +201,6 @@ namespace InventorySystem.Helper_Classes
                     break;
                 case ("Admin"):
                     query = "select ID from adminaccount";
-                    break;
-                case ("Actions"):
-                    query = "select action from auditlogtable";
                     break;
                 default:
                     return;

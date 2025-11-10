@@ -55,7 +55,7 @@ namespace InventorySystem
             {
                 AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Product successfully updated!");
-                alq.LogAction("Edited perfume information", "Inventory page");
+                alq.LogAction($"Edited perfume information for {prodID}", "Perfume Edit Page");
             }
             else
             {

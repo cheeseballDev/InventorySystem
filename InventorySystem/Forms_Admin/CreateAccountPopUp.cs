@@ -72,7 +72,7 @@ namespace InventorySystem.Forms_Admin
             {
                 AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Account created! Given ID is: {newID}");
-                alq.LogAction("Added new account", "Create Account Page");
+                alq.LogAction($"Added new account ({newID})", "Create Account Page");
             }
             else
             {
