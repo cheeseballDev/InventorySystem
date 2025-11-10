@@ -21,5 +21,10 @@
         {
 
         }
+
+        private void btnDeleteLog_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

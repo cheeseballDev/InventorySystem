@@ -84,8 +84,6 @@ namespace InventorySystem
 
                 string id = row.Cells["Product_ID"].Value.ToString();
 
-                String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE PRODUCT_ID = @id";
-
                 DatabaseHelper.ExecuteNonQuery(id, new MySqlParameter("@id", id));
 
                 loadProducts();
