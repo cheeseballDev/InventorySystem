@@ -105,7 +105,7 @@
             btnAddSelectedPerfumeQuantity.Cursor = Cursors.Hand;
             btnAddSelectedPerfumeQuantity.FlatStyle = FlatStyle.Flat;
             btnAddSelectedPerfumeQuantity.ForeColor = Color.White;
-            btnAddSelectedPerfumeQuantity.Location = new Point(225, 455);
+            btnAddSelectedPerfumeQuantity.Location = new Point(227, 450);
             btnAddSelectedPerfumeQuantity.Name = "btnAddSelectedPerfumeQuantity";
             btnAddSelectedPerfumeQuantity.Size = new Size(82, 38);
             btnAddSelectedPerfumeQuantity.TabIndex = 6;
@@ -120,7 +120,7 @@
             btnDeductSelectedPerfumeQuantity.Cursor = Cursors.Hand;
             btnDeductSelectedPerfumeQuantity.FlatStyle = FlatStyle.Flat;
             btnDeductSelectedPerfumeQuantity.ForeColor = Color.White;
-            btnDeductSelectedPerfumeQuantity.Location = new Point(313, 455);
+            btnDeductSelectedPerfumeQuantity.Location = new Point(315, 450);
             btnDeductSelectedPerfumeQuantity.Name = "btnDeductSelectedPerfumeQuantity";
             btnDeductSelectedPerfumeQuantity.Size = new Size(82, 38);
             btnDeductSelectedPerfumeQuantity.TabIndex = 7;
@@ -135,7 +135,7 @@
             btnEditSelectedPerfumeDetails.Cursor = Cursors.Hand;
             btnEditSelectedPerfumeDetails.FlatStyle = FlatStyle.Flat;
             btnEditSelectedPerfumeDetails.ForeColor = Color.White;
-            btnEditSelectedPerfumeDetails.Location = new Point(401, 455);
+            btnEditSelectedPerfumeDetails.Location = new Point(403, 450);
             btnEditSelectedPerfumeDetails.Name = "btnEditSelectedPerfumeDetails";
             btnEditSelectedPerfumeDetails.Size = new Size(82, 38);
             btnEditSelectedPerfumeDetails.TabIndex = 8;
@@ -150,7 +150,7 @@
             btnRefresh.Cursor = Cursors.Hand;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(489, 455);
+            btnRefresh.Location = new Point(491, 450);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(82, 38);
             btnRefresh.TabIndex = 9;

@@ -68,7 +68,7 @@
             label1.Font = new Font("Montserrat", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(12, 21);
             label1.Name = "label1";
-            label1.Size = new Size(297, 45);
+            label1.Size = new Size(294, 40);
             label1.TabIndex = 9;
             label1.Text = "Add New Perfume";
             // 
@@ -88,7 +88,7 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(29, 230);
             label4.Name = "label4";
-            label4.Size = new Size(85, 25);
+            label4.Size = new Size(83, 22);
             label4.TabIndex = 13;
             label4.Text = "Perfume:";
             // 
@@ -102,7 +102,7 @@
             tbPerfumeName.Name = "tbPerfumeName";
             tbPerfumeName.Size = new Size(221, 24);
             tbPerfumeName.TabIndex = 14;
-            tbPerfumeName.Text = "";
+            tbPerfumeName.Text = "Enter perfume name...";
             // 
             // label5
             // 
@@ -110,7 +110,7 @@
             label5.ForeColor = Color.FromArgb(135, 135, 135);
             label5.Location = new Point(30, 368);
             label5.Name = "label5";
-            label5.Size = new Size(83, 25);
+            label5.Size = new Size(82, 22);
             label5.TabIndex = 15;
             label5.Text = "Quantity:";
             // 
@@ -165,7 +165,7 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(29, 276);
             label2.Name = "label2";
-            label2.Size = new Size(54, 25);
+            label2.Size = new Size(52, 22);
             label2.TabIndex = 19;
             label2.Text = "Note:";
             // 
@@ -176,7 +176,7 @@
             cbxAddNewPerfumeNoteType.Items.AddRange(new object[] { "Note 1", "Note 2", "Note 3" });
             cbxAddNewPerfumeNoteType.Location = new Point(123, 273);
             cbxAddNewPerfumeNoteType.Name = "cbxAddNewPerfumeNoteType";
-            cbxAddNewPerfumeNoteType.Size = new Size(221, 28);
+            cbxAddNewPerfumeNoteType.Size = new Size(221, 26);
             cbxAddNewPerfumeNoteType.TabIndex = 23;
             cbxAddNewPerfumeNoteType.Text = "Select note type...";
             // 
@@ -187,7 +187,7 @@
             cbxAddNewPerfumeBranch.Items.AddRange(new object[] { "Branch 1", "Branch 2", "Branch 3" });
             cbxAddNewPerfumeBranch.Location = new Point(123, 320);
             cbxAddNewPerfumeBranch.Name = "cbxAddNewPerfumeBranch";
-            cbxAddNewPerfumeBranch.Size = new Size(221, 28);
+            cbxAddNewPerfumeBranch.Size = new Size(221, 26);
             cbxAddNewPerfumeBranch.TabIndex = 24;
             cbxAddNewPerfumeBranch.Text = "Select note type...";
             // 
@@ -197,13 +197,13 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(30, 320);
             label3.Name = "label3";
-            label3.Size = new Size(72, 25);
+            label3.Size = new Size(70, 22);
             label3.TabIndex = 25;
             label3.Text = "Branch:";
             // 
             // AddNewPerfumePopUp
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(380, 485);
             Controls.Add(label3);

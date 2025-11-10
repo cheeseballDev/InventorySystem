@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using System.CodeDom;
+﻿using System.Runtime.InteropServices;
 using InventorySystem.Helper_Classes;
 
 
@@ -34,8 +24,8 @@ namespace InventorySystem
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             btnInventory_Click(new object(), new EventArgs());
-            
-            cbxUser.Items.AddRange(new object[] {CurrentUser.id, "Logout", "Exit"});
+
+            cbxUser.Items.AddRange(new object[] { CurrentUser.id, "Logout", "Exit" });
             cbxUser.SelectedItem = CurrentUser.id;
             cbxUser.SelectedIndexChanged += new System.EventHandler(cbxUser_SelectedIndexChanged);
         }
@@ -138,7 +128,7 @@ namespace InventorySystem
                 this.Close();
             }
 
-            if(cbxUser.SelectedIndex == 2)
+            if (cbxUser.SelectedIndex == 2)
             {
                 Application.Exit();
             }

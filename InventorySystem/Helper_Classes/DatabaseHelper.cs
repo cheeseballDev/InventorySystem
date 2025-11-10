@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Crypto.Generators;
 
 namespace InventorySystem.Helper_Classes
 {
@@ -103,7 +95,7 @@ namespace InventorySystem.Helper_Classes
             string idFormat = "";
             string moduleID = "";
 
-            switch(type)
+            switch (type)
             {
                 case "PERF":
                     substringType = 5;
@@ -123,7 +115,7 @@ namespace InventorySystem.Helper_Classes
                 default:
                     throw new Exception("Invalid type specified.");
             }
-            using(MySqlConnection con = new MySqlConnection(connectionString))
+            using (MySqlConnection con = new MySqlConnection(connectionString))
             using (MySqlCommand cmd = new MySqlCommand(query, con))
             {
                 con.Open();

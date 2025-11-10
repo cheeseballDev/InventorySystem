@@ -1,29 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using InventorySystem.Helper_Classes;
+﻿using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace InventorySystem
 {
     public partial class AdminEditPerfumePopUp : Form
     {
-        private String prodID;
         public AdminEditPerfumePopUp(String id)
         {
             InitializeComponent();
             cbxAddNewPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
             cbxAddNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeNote)));
-            prodID = id;
-            lblPerfumeID.Text = prodID;
+            lblPerfumeID.Text = id;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -37,7 +24,7 @@ namespace InventorySystem
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {            
+        {
             String perfumeName = tbPerfumeName.Text;
             String note = cbxAddNewPerfumeNoteType.Text;
             String branch = cbxAddNewPerfumeBranch.Text;
