@@ -42,7 +42,7 @@ namespace InventorySystem
             {
                 this.Tag = "AdminHomeForm";
                 this.Close();
-                String id = DatabaseHelper.getID(email, "adminaccount");
+                String id = DatabaseHelper.getID("select id FROM adminaccount where email = @email limit 1", new MySqlParameter("@email", email));
                 CurrentUser.id = id;
             }
             else

@@ -28,18 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminApproveForm));
             label6 = new Label();
             dgExistingRequests = new DataGridView();
-            PERFUME_ID = new DataGridViewTextBoxColumn();
-            PERFUME_NAME = new DataGridViewTextBoxColumn();
-            PERFUME_QTY = new DataGridViewTextBoxColumn();
-            PERFUME_BRANCH = new DataGridViewTextBoxColumn();
-            PERFUME_DATECREATED = new DataGridViewTextBoxColumn();
-            PERFUME_STATUS = new DataGridViewTextBoxColumn();
             label7 = new Label();
             btnRefresh = new Button();
             btnSearch = new Button();
@@ -63,7 +56,7 @@
             label6.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(8, 93);
             label6.Name = "label6";
-            label6.Size = new Size(270, 37);
+            label6.Size = new Size(272, 42);
             label6.TabIndex = 12;
             label6.Text = "Existing Requests";
             // 
@@ -73,74 +66,29 @@
             dgExistingRequests.AllowUserToDeleteRows = false;
             dgExistingRequests.AllowUserToResizeColumns = false;
             dgExistingRequests.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dgExistingRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dgExistingRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgExistingRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgExistingRequests.BackgroundColor = Color.White;
             dgExistingRequests.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgExistingRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgExistingRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgExistingRequests.Columns.AddRange(new DataGridViewColumn[] { PERFUME_ID, PERFUME_NAME, PERFUME_QTY, PERFUME_BRANCH, PERFUME_DATECREATED, PERFUME_STATUS });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle6.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle2;
             dgExistingRequests.Location = new Point(29, 153);
             dgExistingRequests.Name = "dgExistingRequests";
             dgExistingRequests.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgExistingRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgExistingRequests.Size = new Size(786, 300);
             dgExistingRequests.TabIndex = 13;
-            // 
-            // PERFUME_ID
-            // 
-            PERFUME_ID.FillWeight = 60F;
-            PERFUME_ID.HeaderText = "REQ ID";
-            PERFUME_ID.MinimumWidth = 3;
-            PERFUME_ID.Name = "PERFUME_ID";
-            PERFUME_ID.ReadOnly = true;
-            // 
-            // PERFUME_NAME
-            // 
-            PERFUME_NAME.FillWeight = 110F;
-            PERFUME_NAME.HeaderText = "Perfume";
-            PERFUME_NAME.Name = "PERFUME_NAME";
-            PERFUME_NAME.ReadOnly = true;
-            // 
-            // PERFUME_QTY
-            // 
-            PERFUME_QTY.HeaderText = "Qty";
-            PERFUME_QTY.Name = "PERFUME_QTY";
-            // 
-            // PERFUME_BRANCH
-            // 
-            PERFUME_BRANCH.HeaderText = "Branch";
-            PERFUME_BRANCH.Name = "PERFUME_BRANCH";
-            // 
-            // PERFUME_DATECREATED
-            // 
-            PERFUME_DATECREATED.FillWeight = 107.817261F;
-            PERFUME_DATECREATED.HeaderText = "Date Created";
-            PERFUME_DATECREATED.Name = "PERFUME_DATECREATED";
-            // 
-            // PERFUME_STATUS
-            // 
-            PERFUME_STATUS.HeaderText = "Status";
-            PERFUME_STATUS.Name = "PERFUME_STATUS";
             // 
             // label7
             // 
@@ -149,7 +97,7 @@
             label7.ForeColor = Color.FromArgb(135, 135, 135);
             label7.Location = new Point(19, 130);
             label7.Name = "label7";
-            label7.Size = new Size(218, 16);
+            label7.Size = new Size(219, 18);
             label7.TabIndex = 14;
             label7.Text = "List of all previous existing requests";
             // 
@@ -166,6 +114,7 @@
             btnRefresh.Size = new Size(52, 38);
             btnRefresh.TabIndex = 15;
             btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnSearch
             // 
@@ -192,7 +141,7 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(523, 18);
             label3.Name = "label3";
-            label3.Size = new Size(21, 16);
+            label3.Size = new Size(22, 18);
             label3.TabIndex = 25;
             label3.Text = "To";
             // 
@@ -203,7 +152,7 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(312, 18);
             label2.Name = "label2";
-            label2.Size = new Size(72, 16);
+            label2.Size = new Size(73, 18);
             label2.TabIndex = 23;
             label2.Text = "Date from:";
             // 
@@ -214,7 +163,7 @@
             cbxRequestBranchFilter.FormattingEnabled = true;
             cbxRequestBranchFilter.Location = new Point(104, 15);
             cbxRequestBranchFilter.Name = "cbxRequestBranchFilter";
-            cbxRequestBranchFilter.Size = new Size(191, 24);
+            cbxRequestBranchFilter.Size = new Size(191, 26);
             cbxRequestBranchFilter.TabIndex = 22;
             // 
             // label1
@@ -224,7 +173,7 @@
             label1.ForeColor = Color.FromArgb(135, 135, 135);
             label1.Location = new Point(8, 18);
             label1.Name = "label1";
-            label1.Size = new Size(90, 16);
+            label1.Size = new Size(92, 18);
             label1.TabIndex = 21;
             label1.Text = "Filter: Branch:";
             // 
@@ -253,9 +202,10 @@
             cbxRequestStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxRequestStatusFilter.Font = new Font("Montserrat", 9F);
             cbxRequestStatusFilter.FormattingEnabled = true;
+            cbxRequestStatusFilter.Items.AddRange(new object[] { "Pending", "Approved", "Denied" });
             cbxRequestStatusFilter.Location = new Point(104, 57);
             cbxRequestStatusFilter.Name = "cbxRequestStatusFilter";
-            cbxRequestStatusFilter.Size = new Size(191, 24);
+            cbxRequestStatusFilter.Size = new Size(191, 26);
             cbxRequestStatusFilter.TabIndex = 31;
             // 
             // label4
@@ -265,7 +215,7 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(8, 60);
             label4.Name = "label4";
-            label4.Size = new Size(85, 16);
+            label4.Size = new Size(86, 18);
             label4.TabIndex = 30;
             label4.Text = "Filter: Status:";
             // 
@@ -285,6 +235,7 @@
             btnRejectRequest.Text = "Reject Request";
             btnRejectRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRejectRequest.UseVisualStyleBackColor = true;
+            btnRejectRequest.Click += btnRejectRequest_Click;
             // 
             // btnApproveRequest
             // 
@@ -302,6 +253,7 @@
             btnApproveRequest.Text = "Approve Request";
             btnApproveRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnApproveRequest.UseVisualStyleBackColor = true;
+            btnApproveRequest.Click += btnApproveRequest_Click;
             // 
             // btnOpenRequestDetails
             // 
@@ -323,7 +275,7 @@
             // 
             // AdminApproveForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 512);
             Controls.Add(btnOpenRequestDetails);
@@ -356,12 +308,6 @@
         private Label label6;
         private DataGridView dgExistingRequests;
         private Label label7;
-        private DataGridViewTextBoxColumn PERFUME_ID;
-        private DataGridViewTextBoxColumn PERFUME_NAME;
-        private DataGridViewTextBoxColumn PERFUME_QTY;
-        private DataGridViewTextBoxColumn PERFUME_BRANCH;
-        private DataGridViewTextBoxColumn PERFUME_DATECREATED;
-        private DataGridViewTextBoxColumn PERFUME_STATUS;
         private Button btnRefresh;
         private Button btnSearch;
         private Label label3;
@@ -375,5 +321,8 @@
         private Button btnRejectRequest;
         private Button btnApproveRequest;
         private Button btnOpenRequestDetails;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }
