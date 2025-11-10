@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem.Helper_Classes
@@ -28,14 +23,14 @@ namespace InventorySystem.Helper_Classes
                         auditCMD.Parameters.AddWithValue("@userID", CurrentUser.id);
                         auditCMD.Parameters.AddWithValue("@action", action);
                         auditCMD.Parameters.AddWithValue("@module", module);
-                        auditCMD.ExecuteNonQuery(); 
+                        auditCMD.ExecuteNonQuery();
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Database Error");
-            }  
+            }
         }
     }
 }

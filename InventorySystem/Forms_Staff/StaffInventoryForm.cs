@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
-using InventorySystem.Enums;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem
@@ -92,8 +83,6 @@ namespace InventorySystem
                 DataGridViewRow row = dgPerfume.SelectedRows[0];
 
                 string id = row.Cells["Product_ID"].Value.ToString();
-
-                String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE PRODUCT_ID = @id";
 
                 DatabaseHelper.ExecuteNonQuery(id, new MySqlParameter("@id", id));
 

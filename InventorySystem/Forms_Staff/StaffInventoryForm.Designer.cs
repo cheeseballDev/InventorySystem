@@ -250,12 +250,6 @@
         private Button btnAddSelectedPerfumeQuantity;
         private Button btnDeductSelectedPerfumeQuantity;
         private Button btnEditSelectedPerfume;
-        private DataGridViewTextBoxColumn PERFUME_ID;
-        private DataGridViewTextBoxColumn PERFUME_NAME;
-        private DataGridViewTextBoxColumn PERFUME_NOTE;
-        private DataGridViewTextBoxColumn PERFUME_BRANCH;
-        private DataGridViewTextBoxColumn PERFUME_DATECREATED;
-        private DataGridViewTextBoxColumn PERFUME_QTY;
         private Button btnRefresh;
         private Panel panel1;
         private PictureBox pictureBox1;

@@ -12,11 +12,12 @@ namespace InventorySystem
 
         private int lookForAccount(string type)
         {
-            if(type == "staff")
+            if (type == "staff")
             {
                 String query = "SELECT COUNT(*) FROM employeeAccount";
                 return DatabaseHelper.ExecuteScalar(query);
-            } else if (type == "admin")
+            }
+            else if (type == "admin")
             {
                 String query = "SELECT COUNT(*) FROM adminAccount";
                 return DatabaseHelper.ExecuteScalar(query);
@@ -36,7 +37,7 @@ namespace InventorySystem
                 this.Tag = "StaffLoginForm";
                 this.Close();
             }
-         }
+        }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {

@@ -118,7 +118,7 @@
             // tbPerfumeName
             // 
             tbPerfumeName.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPerfumeName.ForeColor = Color.FromArgb(135, 135, 135);
+            tbPerfumeName.ForeColor = SystemColors.ControlText;
             tbPerfumeName.Location = new Point(122, 275);
             tbPerfumeName.MaxLength = 32;
             tbPerfumeName.Multiline = false;

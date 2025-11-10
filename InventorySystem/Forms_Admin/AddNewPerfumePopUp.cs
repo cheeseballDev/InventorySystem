@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InventorySystem.Helper_Classes;
+﻿using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem.Forms_Admin
@@ -17,6 +8,7 @@ namespace InventorySystem.Forms_Admin
         public AddNewPerfumePopUp()
         {
             InitializeComponent();
+            PlaceholderHelper.ApplyPlaceholder(tbPerfumeName, "Enter perfume name...");
             cbxAddNewPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
             cbxAddNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeNote)));
         }
@@ -63,6 +55,6 @@ namespace InventorySystem.Forms_Admin
             {
                 MessageBox.Show("Product addition error");
             }
-        }   
+        }
     }
 }

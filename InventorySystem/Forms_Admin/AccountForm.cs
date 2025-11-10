@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using InventorySystem.Forms_Admin;
+﻿using InventorySystem.Forms_Admin;
 using InventorySystem.Helper_Classes;
-using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Common;
 
 namespace InventorySystem
 {
