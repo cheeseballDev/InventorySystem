@@ -14,9 +14,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace InventorySystem.Forms_Admin
 {
-    public partial class AccountCreatePopUp : Form
+    public partial class CreateAccountPopUp : Form
     {
-        public AccountCreatePopUp()
+        public CreateAccountPopUp()
         {
             InitializeComponent();
             cbxAccountBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));

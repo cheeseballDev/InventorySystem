@@ -28,7 +28,7 @@ namespace InventorySystem
 
         private void btnCreateNewAccount_Click(object sender, EventArgs e)
         {
-            AccountCreatePopUp capp = new AccountCreatePopUp();
+            CreateAccountPopUp capp = new CreateAccountPopUp();
             capp.ShowDialog();
         }
 
@@ -46,7 +46,7 @@ namespace InventorySystem
 
                 string id = row.Cells["ID"].Value.ToString();
 
-                AccountSelectedDetailsPopUp sapd = new AccountSelectedDetailsPopUp(id);
+                SelectedAccountDetailsPopUp sapd = new SelectedAccountDetailsPopUp(id);
                 sapd.ShowDialog();
 
                 displayAccounts();
@@ -85,11 +85,6 @@ namespace InventorySystem
             MySqlParameter searchParameter = new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%");
 
             dgAccounts.DataSource = DatabaseHelper.ExecuteQuery(query, searchParameter);
-        }
-
-        private void btnResetAccountPassword_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

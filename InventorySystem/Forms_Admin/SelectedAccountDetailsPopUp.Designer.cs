@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem.Forms_Admin
 {
-    partial class AccountSelectedDetailsPopUp
+    partial class SelectedAccountDetailsPopUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountSelectedDetailsPopUp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectedAccountDetailsPopUp));
             btnClose = new Button();
             label1 = new Label();
             cbxAccountBranch = new ComboBox();
@@ -65,7 +65,7 @@
             label1.Font = new Font("Montserrat", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(26, 12);
             label1.Name = "label1";
-            label1.Size = new Size(406, 40);
+            label1.Size = new Size(409, 45);
             label1.TabIndex = 9;
             label1.Text = "Selected Account Details:";
             // 
@@ -76,7 +76,7 @@
             cbxAccountBranch.Items.AddRange(new object[] { "Branch 1", "Branch 2", "Branch 3" });
             cbxAccountBranch.Location = new Point(123, 152);
             cbxAccountBranch.Name = "cbxAccountBranch";
-            cbxAccountBranch.Size = new Size(330, 24);
+            cbxAccountBranch.Size = new Size(330, 26);
             cbxAccountBranch.TabIndex = 35;
             cbxAccountBranch.Text = "Select branch...";
             // 
@@ -87,7 +87,7 @@
             cbxAccountRole.Items.AddRange(new object[] { "Inventory Guy", "Family Guy" });
             cbxAccountRole.Location = new Point(123, 196);
             cbxAccountRole.Name = "cbxAccountRole";
-            cbxAccountRole.Size = new Size(330, 24);
+            cbxAccountRole.Size = new Size(330, 26);
             cbxAccountRole.TabIndex = 34;
             cbxAccountRole.Text = "Select role...";
             // 
@@ -110,7 +110,7 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(29, 198);
             label3.Name = "label3";
-            label3.Size = new Size(49, 22);
+            label3.Size = new Size(51, 25);
             label3.TabIndex = 32;
             label3.Text = "Role:";
             // 
@@ -157,7 +157,7 @@
             label5.ForeColor = Color.FromArgb(135, 135, 135);
             label5.Location = new Point(29, 150);
             label5.Name = "label5";
-            label5.Size = new Size(70, 22);
+            label5.Size = new Size(72, 25);
             label5.TabIndex = 29;
             label5.Text = "Branch:";
             // 
@@ -180,7 +180,7 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(29, 110);
             label4.Name = "label4";
-            label4.Size = new Size(58, 22);
+            label4.Size = new Size(60, 25);
             label4.TabIndex = 27;
             label4.Text = "Email:";
             // 
@@ -191,7 +191,7 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(29, 64);
             label2.Name = "label2";
-            label2.Size = new Size(62, 22);
+            label2.Size = new Size(64, 25);
             label2.TabIndex = 26;
             label2.Text = "Name:";
             // 
