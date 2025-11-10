@@ -33,7 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountForm));
             dgAccounts = new DataGridView();
-            btnResetAccountPassword = new Button();
             btnArchiveAccount = new Button();
             btnEditAccount = new Button();
             tbSearchProduct = new RichTextBox();
@@ -84,24 +83,6 @@
             dgAccounts.Size = new Size(783, 325);
             dgAccounts.TabIndex = 5;
             // 
-            // btnResetAccountPassword
-            // 
-            btnResetAccountPassword.BackColor = Color.FromArgb(225, 212, 193);
-            btnResetAccountPassword.BackgroundImageLayout = ImageLayout.Center;
-            btnResetAccountPassword.Cursor = Cursors.Hand;
-            btnResetAccountPassword.FlatAppearance.BorderSize = 0;
-            btnResetAccountPassword.FlatStyle = FlatStyle.Flat;
-            btnResetAccountPassword.Font = new Font("Montserrat", 9.749999F);
-            btnResetAccountPassword.ForeColor = SystemColors.ControlText;
-            btnResetAccountPassword.Image = (Image)resources.GetObject("btnResetAccountPassword.Image");
-            btnResetAccountPassword.Location = new Point(188, 460);
-            btnResetAccountPassword.Name = "btnResetAccountPassword";
-            btnResetAccountPassword.Size = new Size(155, 28);
-            btnResetAccountPassword.TabIndex = 7;
-            btnResetAccountPassword.Text = "Reset Password";
-            btnResetAccountPassword.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnResetAccountPassword.UseVisualStyleBackColor = false;
-            // 
             // btnArchiveAccount
             // 
             btnArchiveAccount.BackColor = Color.FromArgb(126, 16, 44);
@@ -112,7 +93,7 @@
             btnArchiveAccount.Font = new Font("Montserrat", 9.749999F);
             btnArchiveAccount.ForeColor = SystemColors.Control;
             btnArchiveAccount.Image = (Image)resources.GetObject("btnArchiveAccount.Image");
-            btnArchiveAccount.Location = new Point(365, 460);
+            btnArchiveAccount.Location = new Point(186, 460);
             btnArchiveAccount.Name = "btnArchiveAccount";
             btnArchiveAccount.Size = new Size(147, 28);
             btnArchiveAccount.TabIndex = 9;
@@ -237,7 +218,6 @@
             Controls.Add(tbSearchUserFilter);
             Controls.Add(tbSearchProduct);
             Controls.Add(btnArchiveAccount);
-            Controls.Add(btnResetAccountPassword);
             Controls.Add(btnEditAccount);
             Controls.Add(dgAccounts);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -253,7 +233,6 @@
         #endregion
         private Button btnCreateNewAccount;
         private DataGridView dgAccounts;
-        private Button btnResetAccountPassword;
         private Button btnArchiveAccount;
         private Button btnEditAccount;
         private RichTextBox tbSearchProduct;
