@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuditForm));
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            tbSearchProduct = new RichTextBox();
-            cbxAuditLogUserFilter = new ComboBox();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnSearchAuditLog = new Button();
             dgAuditLog = new DataGridView();
             richTextBox1 = new RichTextBox();
@@ -44,33 +41,14 @@
             lblTitle = new Label();
             dtpAuditLogDateTo = new DateTimePicker();
             dtpAuditLogDateFrom = new DateTimePicker();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            tbSearchUserFilter = new RichTextBox();
+            btnOpenAuditDetails = new Button();
             ((System.ComponentModel.ISupportInitialize)dgAuditLog).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // tbSearchProduct
-            // 
-            tbSearchProduct.BorderStyle = BorderStyle.None;
-            tbSearchProduct.DetectUrls = false;
-            tbSearchProduct.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbSearchProduct.ForeColor = Color.FromArgb(135, 135, 135);
-            tbSearchProduct.Location = new Point(12, 23);
-            tbSearchProduct.MaxLength = 20;
-            tbSearchProduct.Multiline = false;
-            tbSearchProduct.Name = "tbSearchProduct";
-            tbSearchProduct.Size = new Size(97, 15);
-            tbSearchProduct.TabIndex = 0;
-            tbSearchProduct.Text = "Filter: User:";
-            tbSearchProduct.TextChanged += tbSearchProduct_TextChanged;
-            // 
-            // cbxAuditLogUserFilter
-            // 
-            cbxAuditLogUserFilter.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxAuditLogUserFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxAuditLogUserFilter.FormattingEnabled = true;
-            cbxAuditLogUserFilter.Location = new Point(115, 16);
-            cbxAuditLogUserFilter.Name = "cbxAuditLogUserFilter";
-            cbxAuditLogUserFilter.Size = new Size(148, 26);
-            cbxAuditLogUserFilter.TabIndex = 1;
             // 
             // btnSearchAuditLog
             // 
@@ -96,37 +74,29 @@
             dgAuditLog.AllowUserToDeleteRows = false;
             dgAuditLog.AllowUserToResizeColumns = false;
             dgAuditLog.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dgAuditLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dgAuditLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgAuditLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgAuditLog.BackgroundColor = Color.White;
             dgAuditLog.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Control;
-            dataGridViewCellStyle8.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgAuditLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgAuditLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle9.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle9.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            dgAuditLog.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgAuditLog.DefaultCellStyle = dataGridViewCellStyle2;
             dgAuditLog.Location = new Point(12, 151);
             dgAuditLog.Name = "dgAuditLog";
             dgAuditLog.ReadOnly = true;
             dgAuditLog.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgAuditLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgAuditLog.Size = new Size(797, 328);
+            dgAuditLog.Size = new Size(797, 312);
             dgAuditLog.TabIndex = 5;
             // 
             // richTextBox1
@@ -151,7 +121,7 @@
             cbxAuditLogActionFilter.Items.AddRange(new object[] { "Edited account information", "Edited perfume information", "Added new account", "Added new perfume" });
             cbxAuditLogActionFilter.Location = new Point(115, 56);
             cbxAuditLogActionFilter.Name = "cbxAuditLogActionFilter";
-            cbxAuditLogActionFilter.Size = new Size(148, 26);
+            cbxAuditLogActionFilter.Size = new Size(148, 24);
             cbxAuditLogActionFilter.TabIndex = 7;
             // 
             // richTextBox2
@@ -189,7 +159,7 @@
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(36, 130);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(210, 20);
+            lblDescription.Size = new Size(209, 18);
             lblDescription.TabIndex = 12;
             lblDescription.Text = "List of all actions done by a user";
             // 
@@ -200,7 +170,7 @@
             lblTitle.ForeColor = SystemColors.ControlText;
             lblTitle.Location = new Point(12, 90);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(266, 42);
+            lblTitle.Size = new Size(265, 37);
             lblTitle.TabIndex = 11;
             lblTitle.Text = "Audit Log Entries";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -225,11 +195,65 @@
             dtpAuditLogDateFrom.Size = new Size(118, 23);
             dtpAuditLogDateFrom.TabIndex = 30;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.Window;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(tbSearchUserFilter);
+            panel1.Location = new Point(12, 17);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(255, 24);
+            panel1.TabIndex = 32;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.Location = new Point(-2, -3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(23, 28);
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // tbSearchUserFilter
+            // 
+            tbSearchUserFilter.BorderStyle = BorderStyle.None;
+            tbSearchUserFilter.DetectUrls = false;
+            tbSearchUserFilter.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbSearchUserFilter.Location = new Point(22, 3);
+            tbSearchUserFilter.MaxLength = 20;
+            tbSearchUserFilter.Multiline = false;
+            tbSearchUserFilter.Name = "tbSearchUserFilter";
+            tbSearchUserFilter.Size = new Size(226, 18);
+            tbSearchUserFilter.TabIndex = 0;
+            tbSearchUserFilter.Text = "Search user...";
+            // 
+            // btnOpenAuditDetails
+            // 
+            btnOpenAuditDetails.BackColor = Color.FromArgb(225, 212, 193);
+            btnOpenAuditDetails.Cursor = Cursors.Hand;
+            btnOpenAuditDetails.FlatAppearance.BorderSize = 0;
+            btnOpenAuditDetails.FlatStyle = FlatStyle.Flat;
+            btnOpenAuditDetails.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOpenAuditDetails.ForeColor = Color.Black;
+            btnOpenAuditDetails.Image = (Image)resources.GetObject("btnOpenAuditDetails.Image");
+            btnOpenAuditDetails.Location = new Point(36, 461);
+            btnOpenAuditDetails.Name = "btnOpenAuditDetails";
+            btnOpenAuditDetails.Size = new Size(144, 31);
+            btnOpenAuditDetails.TabIndex = 35;
+            btnOpenAuditDetails.Text = "Open Details";
+            btnOpenAuditDetails.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnOpenAuditDetails.UseVisualStyleBackColor = true;
+            btnOpenAuditDetails.Click += btnOpenAuditDetails_Click;
+            // 
             // AuditForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 504);
+            Controls.Add(btnOpenAuditDetails);
+            Controls.Add(panel1);
             Controls.Add(dtpAuditLogDateTo);
             Controls.Add(dtpAuditLogDateFrom);
             Controls.Add(lblDescription);
@@ -238,24 +262,21 @@
             Controls.Add(richTextBox2);
             Controls.Add(cbxAuditLogActionFilter);
             Controls.Add(richTextBox1);
-            Controls.Add(tbSearchProduct);
             Controls.Add(dgAuditLog);
             Controls.Add(btnSearchAuditLog);
-            Controls.Add(cbxAuditLogUserFilter);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "AuditForm";
             Text = "InventoryForm1";
             ((System.ComponentModel.ISupportInitialize)dgAuditLog).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private RichTextBox tbSearchProduct;
-        private ComboBox cbxAuditLogUserFilter;
         private Button btnSearchAuditLog;
         private DataGridView dgAuditLog;
         private RichTextBox richTextBox1;
@@ -266,5 +287,9 @@
         private Label lblTitle;
         private DateTimePicker dtpAuditLogDateTo;
         private DateTimePicker dtpAuditLogDateFrom;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private RichTextBox tbSearchUserFilter;
+        private Button btnOpenAuditDetails;
     }
 }
