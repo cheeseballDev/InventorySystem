@@ -32,6 +32,8 @@ namespace InventorySystem
             String aprub = "APPROVED";
             String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
             DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", reqID), new MySqlParameter("@status", aprub));
+            AuditLogQuery alq = new AuditLogQuery();
+            alq.LogAction($"Approved product request {reqID}", "Request Details Module");
         }
 
         private void btnRejectRequest_Click(object sender, EventArgs e)
@@ -39,6 +41,8 @@ namespace InventorySystem
             String rejek = "REJECTED";
             String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
             DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", reqID), new MySqlParameter("@status", rejek));
+            AuditLogQuery alq = new AuditLogQuery();
+            alq.LogAction($"Rejected product request {reqID}", "Request Details Module");
         }
 
         private void lblDate_Click(object sender, EventArgs e)

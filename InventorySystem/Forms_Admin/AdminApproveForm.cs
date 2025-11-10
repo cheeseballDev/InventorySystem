@@ -68,6 +68,8 @@ namespace InventorySystem
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", aprub));
                 loadExistingRequests();
+                AuditLogQuery alq = new AuditLogQuery();
+                alq.LogAction($"Approved product request {id}", "Request Details Module");
             }
             else
             {
@@ -85,6 +87,8 @@ namespace InventorySystem
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", rejek));
                 loadExistingRequests();
+                AuditLogQuery alq = new AuditLogQuery();
+                alq.LogAction($"Rejected product request {id}", "Request Details Module");
             }
             else
             {
