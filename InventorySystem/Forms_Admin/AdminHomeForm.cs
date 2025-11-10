@@ -1,0 +1,167 @@
+﻿using System.Runtime.InteropServices;
+using InventorySystem.Helper_Classes;
+
+
+namespace InventorySystem
+{
+    public partial class AdminHomeForm : Form
+    {
+        private Color defaultButtonColor = Color.FromArgb(28, 28, 28);
+        private Color hoverButtonColor = Color.FromArgb(50, 225, 212, 193);
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+            );
+
+        public AdminHomeForm()
+        {
+            InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            btnInventory_Click(new object(), new EventArgs());
+
+            cbxUser.Items.AddRange(new object[] { CurrentUser.id, "Logout", "Exit" });
+            cbxUser.SelectedItem = CurrentUser.id;
+            cbxUser.SelectedIndexChanged += new System.EventHandler(cbxUser_SelectedIndexChanged);
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            ResetButtons();
+            btnInventory.BackColor = hoverButtonColor;
+            pnlNavigation.Height = btnInventory.Height;
+            pnlNavigation.Top = btnInventory.Top;
+            pnlNavigation.Left = btnInventory.Left + 168;
+
+            FormLoaderHelper.LoadForm(
+                pnlFormLoader,
+                new AdminInventoryForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+                lblTitle,
+                lblDescription,
+                "Inventory",
+                "Overview of all available parfum products"
+                );
+        }
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+            ResetButtons();
+            btnRequest.BackColor = hoverButtonColor;
+            pnlNavigation.Height = btnRequest.Height;
+            pnlNavigation.Top = btnRequest.Top;
+
+            FormLoaderHelper.LoadForm(
+                pnlFormLoader,
+                new AdminApproveForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+                lblTitle,
+                lblDescription,
+                "Request",
+                "Approve staff submitted requests"
+                );
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            ResetButtons();
+            btnReport.BackColor = hoverButtonColor;
+            pnlNavigation.Height = btnReport.Height;
+            pnlNavigation.Top = btnReport.Top;
+
+            FormLoaderHelper.LoadForm(
+                pnlFormLoader,
+                new ReportForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+                lblTitle,
+                lblDescription,
+                "Report",
+                "View the report and statuses of inventory, requests, and deliveries"
+                );
+        }
+
+        private void btnForecast_Click(object sender, EventArgs e)
+        {
+            ResetButtons();
+            btnForecast.BackColor = hoverButtonColor;
+            pnlNavigation.Height = btnForecast.Height;
+            pnlNavigation.Top = btnForecast.Top;
+
+
+            lblTitle.Text = "WORK IN PROGRESS !";
+            lblDescription.Text = "Not enough INT to learn forecasting!";
+            this.pnlFormLoader.Controls.Clear();
+        }
+        private void btnAuditLog_Click(object sender, EventArgs e)
+        {
+            ResetButtons();
+            btnAuditLog.BackColor = hoverButtonColor;
+            pnlNavigation.Height = btnAuditLog.Height;
+            pnlNavigation.Top = btnAuditLog.Top;
+
+            FormLoaderHelper.LoadForm(
+               pnlFormLoader,
+               new AuditForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+               lblTitle,
+               lblDescription,
+               "Audit Log",
+               "View the audit logs of the system"
+               );
+        }
+
+        private void btnAccounts_Click(object sender, EventArgs e)
+        {
+            ResetButtons();
+            btnAccounts.BackColor = hoverButtonColor;
+
+            pnlNavigation.Height = btnAccounts.Height;
+            pnlNavigation.Top = btnAccounts.Top;
+
+            FormLoaderHelper.LoadForm(
+               pnlFormLoader,
+               new AccountForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+               lblTitle,
+               lblDescription,
+               "Manage Accounts",
+               "Add, remove, or modify user accounts"
+               );
+
+        }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            // temp
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            // temp
+        }
+
+        private void ResetButtons()
+        {
+            btnInventory.BackColor = defaultButtonColor;
+            btnRequest.BackColor = defaultButtonColor;
+            btnReport.BackColor = defaultButtonColor;
+            btnForecast.BackColor = defaultButtonColor;
+            btnAuditLog.BackColor = defaultButtonColor;
+            btnAccounts.BackColor = defaultButtonColor;
+        }
+
+        private void cbxUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxUser.SelectedIndex == 1)
+            {
+                this.Tag = "Back";
+                this.Close();
+            }
+
+            if (cbxUser.SelectedIndex == 2)
+            {
+                Application.Exit();
+            }
+        }
+    }
+}

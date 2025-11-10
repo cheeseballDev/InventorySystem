@@ -1,0 +1,59 @@
+﻿using InventorySystem.Helper_Classes;
+using MySql.Data.MySqlClient;
+
+namespace InventorySystem
+{
+    public partial class AdminEditPerfumePopUp : Form
+    {
+        public AdminEditPerfumePopUp(String id)
+        {
+            InitializeComponent();
+            cbxAddNewPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            cbxAddNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeNote)));
+            lblPerfumeID.Text = id;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            String perfumeName = tbPerfumeName.Text;
+            String note = cbxAddNewPerfumeNoteType.Text;
+            String branch = cbxAddNewPerfumeBranch.Text;
+            int quantity = int.Parse(numPerfumeQuantity.Text);
+
+            if (String.IsNullOrEmpty(perfumeName))
+            {
+                MessageBox.Show("Please fill up the name field.", "Warning", MessageBoxButtons.OK);
+            }
+
+            int rowsAffected = DatabaseHelper.ExecuteNonQuery(
+                "update perfumetable set Perfume = @name, Note = @note, Branch = @branch, Quantity = @quantity where Product_ID = @id",
+                    new MySqlParameter("@id", prodID),
+                    new MySqlParameter("@name", perfumeName),
+                    new MySqlParameter("@note", note),
+                    new MySqlParameter("@branch", branch),
+                    new MySqlParameter("@quantity", quantity)
+                );
+
+            if (rowsAffected > 0)
+            {
+                AuditLogQuery alq = new AuditLogQuery();
+                MessageBox.Show($"Product successfully updated!");
+                alq.LogAction($"Edited perfume information for {prodID}", "Perfume Edit Page");
+            }
+            else
+            {
+                MessageBox.Show("Product update error");
+            }
+        }
+    }
+}
