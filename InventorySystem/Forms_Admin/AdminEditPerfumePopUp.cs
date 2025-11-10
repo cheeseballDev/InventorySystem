@@ -5,12 +5,14 @@ namespace InventorySystem
 {
     public partial class AdminEditPerfumePopUp : Form
     {
+        private string prodID;
         public AdminEditPerfumePopUp(String id)
         {
             InitializeComponent();
             cbxAddNewPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
             cbxAddNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeNote)));
-            lblPerfumeID.Text = id;
+            prodID = id;
+            lblPerfumeID.Text = prodID;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
