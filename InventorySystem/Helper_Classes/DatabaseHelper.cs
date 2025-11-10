@@ -112,6 +112,11 @@ namespace InventorySystem.Helper_Classes
                     idFormat = "AL";
                     moduleID = "Log_ID";
                     break;
+                case "REQ":
+                    substringType = 5;
+                    idFormat = "REQ";
+                    moduleID = "Request_ID";
+                    break;
                 default:
                     throw new Exception("Invalid type specified.");
             }
@@ -162,16 +167,17 @@ namespace InventorySystem.Helper_Classes
             return rowsAffected;
         }
 
-        public static string getID(string email, string employee)
+        public static string getID(string query, params MySqlParameter[] parameters)
         {
             string id = null;
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
                 con.Open();
-                string query = $"select id FROM {employee} where email = @email limit 1";
+                //string query = $"select {idType} FROM {table} where email = @email limit 1";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@email", email);
+                    if (parameters != null && parameters.Length > 0)
+                        cmd.Parameters.AddRange(parameters);
 
                     object result = cmd.ExecuteScalar();
                     if (result != null)
