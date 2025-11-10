@@ -57,11 +57,11 @@ namespace InventorySystem
 
             FormLoaderHelper.LoadForm(
                 pnlFormLoader,
-                new StaffRequestForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+                new AdminApproveForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
                 lblTitle,
                 lblDescription,
                 "Request",
-                "Submit a request for restocking parfum products"
+                "Approve staff submitted requests"
                 );
         }
 
@@ -80,9 +80,8 @@ namespace InventorySystem
                 "Report",
                 "View the report and statuses of inventory, requests, and deliveries"
                 );
-
-
         }
+
         private void btnForecast_Click(object sender, EventArgs e)
         {
             ResetButtons();
