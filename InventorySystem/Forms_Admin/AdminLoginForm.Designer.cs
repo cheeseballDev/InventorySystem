@@ -44,7 +44,7 @@
             label1.Font = new Font("Montserrat", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(356, 9);
             label1.Name = "label1";
-            label1.Size = new Size(281, 44);
+            label1.Size = new Size(284, 49);
             label1.TabIndex = 0;
             label1.Text = "Login as Admin";
             // 
@@ -66,7 +66,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(356, 195);
             label2.Name = "label2";
-            label2.Size = new Size(90, 22);
+            label2.Size = new Size(92, 25);
             label2.TabIndex = 4;
             label2.Text = "Password:";
             // 
@@ -75,7 +75,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(356, 135);
             label3.Name = "label3";
-            label3.Size = new Size(58, 22);
+            label3.Size = new Size(60, 25);
             label3.TabIndex = 5;
             label3.Text = "Email:";
             // 
@@ -113,6 +113,7 @@
             // 
             // tbPassword
             // 
+            tbPassword.BackColor = SystemColors.Control;
             tbPassword.Location = new Point(356, 220);
             tbPassword.MaxLength = 64;
             tbPassword.Name = "tbPassword";
@@ -122,6 +123,7 @@
             // 
             // tbEmail
             // 
+            tbEmail.BackColor = SystemColors.Control;
             tbEmail.Location = new Point(356, 160);
             tbEmail.MaxLength = 128;
             tbEmail.Name = "tbEmail";
@@ -130,7 +132,7 @@
             // 
             // AdminLoginForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 561);
             Controls.Add(tbEmail);

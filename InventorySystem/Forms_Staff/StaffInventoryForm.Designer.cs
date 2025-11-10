@@ -60,7 +60,7 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgPerfume.BackgroundColor = Color.White;
+            dgPerfume.BackgroundColor = SystemColors.Control;
             dgPerfume.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
@@ -207,7 +207,7 @@
             cbxPerfumeBranchFilter.FormattingEnabled = true;
             cbxPerfumeBranchFilter.Location = new Point(478, 17);
             cbxPerfumeBranchFilter.Name = "cbxPerfumeBranchFilter";
-            cbxPerfumeBranchFilter.Size = new Size(148, 24);
+            cbxPerfumeBranchFilter.Size = new Size(148, 26);
             cbxPerfumeBranchFilter.TabIndex = 12;
             // 
             // cbxPerfumeNoteFilter
@@ -217,12 +217,12 @@
             cbxPerfumeNoteFilter.FormattingEnabled = true;
             cbxPerfumeNoteFilter.Location = new Point(313, 17);
             cbxPerfumeNoteFilter.Name = "cbxPerfumeNoteFilter";
-            cbxPerfumeNoteFilter.Size = new Size(148, 24);
+            cbxPerfumeNoteFilter.Size = new Size(148, 26);
             cbxPerfumeNoteFilter.TabIndex = 11;
             // 
             // StaffInventoryForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 504);
             Controls.Add(panel1);

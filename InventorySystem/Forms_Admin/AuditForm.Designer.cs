@@ -80,7 +80,7 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dgAuditLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgAuditLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgAuditLog.BackgroundColor = Color.White;
+            dgAuditLog.BackgroundColor = SystemColors.Control;
             dgAuditLog.BorderStyle = BorderStyle.None;
             dgAuditLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -101,6 +101,7 @@
             // 
             // richTextBox1
             // 
+            richTextBox1.BackColor = SystemColors.Control;
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.DetectUrls = false;
             richTextBox1.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -121,11 +122,12 @@
             cbxAuditLogActionFilter.Items.AddRange(new object[] { "Edited account information", "Edited perfume information", "Added new account", "Added new perfume" });
             cbxAuditLogActionFilter.Location = new Point(115, 56);
             cbxAuditLogActionFilter.Name = "cbxAuditLogActionFilter";
-            cbxAuditLogActionFilter.Size = new Size(148, 24);
+            cbxAuditLogActionFilter.Size = new Size(148, 26);
             cbxAuditLogActionFilter.TabIndex = 7;
             // 
             // richTextBox2
             // 
+            richTextBox2.BackColor = SystemColors.Control;
             richTextBox2.BorderStyle = BorderStyle.None;
             richTextBox2.DetectUrls = false;
             richTextBox2.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -140,6 +142,7 @@
             // 
             // richTextBox3
             // 
+            richTextBox3.BackColor = SystemColors.Control;
             richTextBox3.BorderStyle = BorderStyle.None;
             richTextBox3.DetectUrls = false;
             richTextBox3.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -159,7 +162,7 @@
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(36, 130);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(209, 18);
+            lblDescription.Size = new Size(210, 20);
             lblDescription.TabIndex = 12;
             lblDescription.Text = "List of all actions done by a user";
             // 
@@ -170,7 +173,7 @@
             lblTitle.ForeColor = SystemColors.ControlText;
             lblTitle.Location = new Point(12, 90);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(265, 37);
+            lblTitle.Size = new Size(266, 42);
             lblTitle.TabIndex = 11;
             lblTitle.Text = "Audit Log Entries";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -249,7 +252,7 @@
             // 
             // AuditForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 504);
             Controls.Add(btnOpenAuditDetails);
