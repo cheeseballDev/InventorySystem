@@ -31,5 +31,15 @@ namespace InventorySystem
         {
 
         }
+
+        private void lblDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBranch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
