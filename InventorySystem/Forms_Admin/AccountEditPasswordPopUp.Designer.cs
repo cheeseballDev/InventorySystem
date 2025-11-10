@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem.Forms_Admin
 {
-    partial class CreateAccountPopUp
+    partial class AccountEditPasswordPopUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateAccountPopUp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountEditPasswordPopUp));
             btnClose = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -220,7 +220,7 @@
             label6.TabIndex = 24;
             label6.Text = "Password:";
             // 
-            // CreateAccountPopUp
+            // AccountEditPasswordPopUp
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -242,9 +242,10 @@
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "CreateAccountPopUp";
+            Name = "AccountEditPasswordPopUp";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CreateAccountPopUp";
+            Text = "AccountEditTemplate1";
+            Load += this.AccountEditPasswordPopUp_Load;
             ResumeLayout(false);
             PerformLayout();
         }

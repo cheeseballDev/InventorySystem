@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountForm));
             dgAccounts = new DataGridView();
-            btnResetAccountPassword = new Button();
             btnArchiveAccount = new Button();
             btnEditAccount = new Button();
             tbSearchProduct = new RichTextBox();
@@ -42,6 +40,7 @@
             lblTitle = new Label();
             tbSearchUserFilter = new RichTextBox();
             btnCreateNewAccount = new Button();
+            btnResetAccountPassword = new Button();
             ((System.ComponentModel.ISupportInitialize)dgAccounts).BeginInit();
             SuspendLayout();
             // 
@@ -51,31 +50,23 @@
             dgAccounts.AllowUserToDeleteRows = false;
             dgAccounts.AllowUserToResizeColumns = false;
             dgAccounts.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dgAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgAccounts.BackgroundColor = Color.White;
             dgAccounts.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgAccounts.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgAccounts.DefaultCellStyle = dataGridViewCellStyle6;
             dgAccounts.Location = new Point(26, 120);
             dgAccounts.Name = "dgAccounts";
             dgAccounts.ReadOnly = true;
@@ -83,24 +74,6 @@
             dgAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgAccounts.Size = new Size(783, 325);
             dgAccounts.TabIndex = 5;
-            // 
-            // btnResetAccountPassword
-            // 
-            btnResetAccountPassword.BackColor = Color.FromArgb(225, 212, 193);
-            btnResetAccountPassword.BackgroundImageLayout = ImageLayout.Center;
-            btnResetAccountPassword.Cursor = Cursors.Hand;
-            btnResetAccountPassword.FlatAppearance.BorderSize = 0;
-            btnResetAccountPassword.FlatStyle = FlatStyle.Flat;
-            btnResetAccountPassword.Font = new Font("Montserrat", 9.749999F);
-            btnResetAccountPassword.ForeColor = SystemColors.ControlText;
-            btnResetAccountPassword.Image = (Image)resources.GetObject("btnResetAccountPassword.Image");
-            btnResetAccountPassword.Location = new Point(188, 460);
-            btnResetAccountPassword.Name = "btnResetAccountPassword";
-            btnResetAccountPassword.Size = new Size(155, 28);
-            btnResetAccountPassword.TabIndex = 7;
-            btnResetAccountPassword.Text = "Reset Password";
-            btnResetAccountPassword.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnResetAccountPassword.UseVisualStyleBackColor = false;
             // 
             // btnArchiveAccount
             // 
@@ -112,7 +85,7 @@
             btnArchiveAccount.Font = new Font("Montserrat", 9.749999F);
             btnArchiveAccount.ForeColor = SystemColors.Control;
             btnArchiveAccount.Image = (Image)resources.GetObject("btnArchiveAccount.Image");
-            btnArchiveAccount.Location = new Point(365, 460);
+            btnArchiveAccount.Location = new Point(401, 460);
             btnArchiveAccount.Name = "btnArchiveAccount";
             btnArchiveAccount.Size = new Size(147, 28);
             btnArchiveAccount.TabIndex = 9;
@@ -225,6 +198,25 @@
             btnCreateNewAccount.UseVisualStyleBackColor = true;
             btnCreateNewAccount.Click += btnCreateNewAccount_Click;
             // 
+            // btnResetAccountPassword
+            // 
+            btnResetAccountPassword.BackColor = Color.FromArgb(225, 212, 193);
+            btnResetAccountPassword.BackgroundImageLayout = ImageLayout.Center;
+            btnResetAccountPassword.Cursor = Cursors.Hand;
+            btnResetAccountPassword.FlatAppearance.BorderSize = 0;
+            btnResetAccountPassword.FlatStyle = FlatStyle.Flat;
+            btnResetAccountPassword.Font = new Font("Montserrat", 9.749999F);
+            btnResetAccountPassword.ForeColor = SystemColors.ControlText;
+            btnResetAccountPassword.Image = (Image)resources.GetObject("btnResetAccountPassword.Image");
+            btnResetAccountPassword.Location = new Point(185, 460);
+            btnResetAccountPassword.Name = "btnResetAccountPassword";
+            btnResetAccountPassword.Size = new Size(200, 28);
+            btnResetAccountPassword.TabIndex = 7;
+            btnResetAccountPassword.Text = "Reset Account Password";
+            btnResetAccountPassword.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnResetAccountPassword.UseVisualStyleBackColor = false;
+            btnResetAccountPassword.Click += btnResetAccountPassword_Click;
+            // 
             // AccountForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -253,7 +245,6 @@
         #endregion
         private Button btnCreateNewAccount;
         private DataGridView dgAccounts;
-        private Button btnResetAccountPassword;
         private Button btnArchiveAccount;
         private Button btnEditAccount;
         private RichTextBox tbSearchProduct;
@@ -261,5 +252,6 @@
         private Label lblDescription;
         private Label lblTitle;
         private RichTextBox tbSearchUserFilter;
+        private Button btnResetAccountPassword;
     }
 }
