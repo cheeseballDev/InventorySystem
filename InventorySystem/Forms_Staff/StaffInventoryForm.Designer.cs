@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffInventoryForm));
             dgPerfume = new DataGridView();
             btnAddSelectedPerfumeQuantity = new Button();
@@ -54,37 +54,37 @@
             dgPerfume.AllowUserToDeleteRows = false;
             dgPerfume.AllowUserToResizeColumns = false;
             dgPerfume.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgPerfume.BackgroundColor = SystemColors.Control;
             dgPerfume.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgPerfume.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle6.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgPerfume.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgPerfume.DefaultCellStyle = dataGridViewCellStyle3;
             dgPerfume.Location = new Point(12, 61);
             dgPerfume.Name = "dgPerfume";
             dgPerfume.ReadOnly = true;
             dgPerfume.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgPerfume.Size = new Size(797, 383);
+            dgPerfume.Size = new Size(797, 353);
             dgPerfume.TabIndex = 5;
             // 
             // btnAddSelectedPerfumeQuantity
@@ -95,7 +95,7 @@
             btnAddSelectedPerfumeQuantity.Cursor = Cursors.Hand;
             btnAddSelectedPerfumeQuantity.FlatStyle = FlatStyle.Flat;
             btnAddSelectedPerfumeQuantity.ForeColor = Color.White;
-            btnAddSelectedPerfumeQuantity.Location = new Point(225, 455);
+            btnAddSelectedPerfumeQuantity.Location = new Point(230, 420);
             btnAddSelectedPerfumeQuantity.Name = "btnAddSelectedPerfumeQuantity";
             btnAddSelectedPerfumeQuantity.Size = new Size(82, 38);
             btnAddSelectedPerfumeQuantity.TabIndex = 6;
@@ -110,7 +110,7 @@
             btnDeductSelectedPerfumeQuantity.Cursor = Cursors.Hand;
             btnDeductSelectedPerfumeQuantity.FlatStyle = FlatStyle.Flat;
             btnDeductSelectedPerfumeQuantity.ForeColor = Color.White;
-            btnDeductSelectedPerfumeQuantity.Location = new Point(313, 455);
+            btnDeductSelectedPerfumeQuantity.Location = new Point(318, 420);
             btnDeductSelectedPerfumeQuantity.Name = "btnDeductSelectedPerfumeQuantity";
             btnDeductSelectedPerfumeQuantity.Size = new Size(82, 38);
             btnDeductSelectedPerfumeQuantity.TabIndex = 7;
@@ -125,7 +125,7 @@
             btnEditSelectedPerfume.Cursor = Cursors.Hand;
             btnEditSelectedPerfume.FlatStyle = FlatStyle.Flat;
             btnEditSelectedPerfume.ForeColor = Color.White;
-            btnEditSelectedPerfume.Location = new Point(401, 455);
+            btnEditSelectedPerfume.Location = new Point(406, 420);
             btnEditSelectedPerfume.Name = "btnEditSelectedPerfume";
             btnEditSelectedPerfume.Size = new Size(82, 38);
             btnEditSelectedPerfume.TabIndex = 8;
@@ -140,7 +140,7 @@
             btnRefresh.Cursor = Cursors.Hand;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(489, 455);
+            btnRefresh.Location = new Point(494, 420);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(82, 38);
             btnRefresh.TabIndex = 9;
@@ -207,7 +207,7 @@
             cbxPerfumeBranchFilter.FormattingEnabled = true;
             cbxPerfumeBranchFilter.Location = new Point(478, 17);
             cbxPerfumeBranchFilter.Name = "cbxPerfumeBranchFilter";
-            cbxPerfumeBranchFilter.Size = new Size(148, 24);
+            cbxPerfumeBranchFilter.Size = new Size(148, 26);
             cbxPerfumeBranchFilter.TabIndex = 12;
             // 
             // cbxPerfumeNoteFilter
@@ -217,14 +217,14 @@
             cbxPerfumeNoteFilter.FormattingEnabled = true;
             cbxPerfumeNoteFilter.Location = new Point(313, 17);
             cbxPerfumeNoteFilter.Name = "cbxPerfumeNoteFilter";
-            cbxPerfumeNoteFilter.Size = new Size(148, 24);
+            cbxPerfumeNoteFilter.Size = new Size(148, 26);
             cbxPerfumeNoteFilter.TabIndex = 11;
             // 
             // StaffInventoryForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(821, 504);
+            ClientSize = new Size(821, 470);
             Controls.Add(panel1);
             Controls.Add(btnScanQR);
             Controls.Add(cbxPerfumeBranchFilter);

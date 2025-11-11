@@ -21,14 +21,14 @@ namespace InventorySystem
 
         private void btnSubmitRequest_Click(object sender, EventArgs e)
         {
-            if (cbxRequestCurrentBranchFilter.SelectedIndex != -1)
+            if (cbxRequestCurrentBranchFilter.SelectedIndex < -1)
             {
-                MessageBox.Show("Please select a perfume to request.");
+                MessageBox.Show("Please select your current branch.");
                 return;
             }
-            if (cbxRequestParfumFilter.SelectedIndex == -1)
+            if (cbxRequestParfumFilter.SelectedIndex < -1)
             {
-                MessageBox.Show("Please select a perfume to request.");
+                MessageBox.Show("Please select the perfume you want to request");
                 return;
             }
             if (numPerfumeAmountToRequest.Value <= 0)
@@ -54,6 +54,7 @@ namespace InventorySystem
             {
                 MessageBox.Show($"Request submitted! Given ID is: {reqID}");
                 DatabaseHelper.LogAction($"Sent product request ({reqID})", "Request Product Page");
+                btnClear_Click(new object(), new EventArgs());
             }
             else
             {
@@ -74,6 +75,8 @@ namespace InventorySystem
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            cbxRequestCurrentBranchFilter.Items.Clear();
+            cbxRequestParfumFilter.Items.Clear();
             tbRequestMessage.Clear();
             numPerfumeAmountToRequest.Value = 0;
         }
