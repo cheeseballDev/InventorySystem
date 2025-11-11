@@ -51,7 +51,7 @@ namespace InventorySystem
             {
                 AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Request submitted! Given ID is: {reqID}");
-                alq.LogAction($"Requested order ({reqID})", "Request Product Page");
+                alq.LogAction($"Sent product request ({reqID})", "Request Product Page");
             }
             else
             {
@@ -63,6 +63,17 @@ namespace InventorySystem
         {
             String query = "select * from requestlogtable";
             dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadExistingRequests();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbRequestMessage.Clear();
+            numPerfumeAmountToRequest.Value = 0;
         }
     }
 }
