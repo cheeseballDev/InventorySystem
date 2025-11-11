@@ -89,12 +89,12 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgPerfume.DefaultCellStyle = dataGridViewCellStyle2;
-            dgPerfume.Location = new Point(12, 79);
+            dgPerfume.Location = new Point(12, 67);
             dgPerfume.Name = "dgPerfume";
             dgPerfume.ReadOnly = true;
             dgPerfume.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgPerfume.Size = new Size(797, 348);
+            dgPerfume.Size = new Size(797, 360);
             dgPerfume.TabIndex = 5;
             // 
             // btnAddSelectedPerfumeQuantity
@@ -199,7 +199,7 @@
             cbxPerfumeBranchFilter.FormattingEnabled = true;
             cbxPerfumeBranchFilter.Location = new Point(427, 19);
             cbxPerfumeBranchFilter.Name = "cbxPerfumeBranchFilter";
-            cbxPerfumeBranchFilter.Size = new Size(137, 26);
+            cbxPerfumeBranchFilter.Size = new Size(137, 24);
             cbxPerfumeBranchFilter.TabIndex = 16;
             // 
             // cbxPerfumeNoteFilter
@@ -209,7 +209,7 @@
             cbxPerfumeNoteFilter.FormattingEnabled = true;
             cbxPerfumeNoteFilter.Location = new Point(277, 19);
             cbxPerfumeNoteFilter.Name = "cbxPerfumeNoteFilter";
-            cbxPerfumeNoteFilter.Size = new Size(137, 26);
+            cbxPerfumeNoteFilter.Size = new Size(137, 24);
             cbxPerfumeNoteFilter.TabIndex = 15;
             // 
             // btnAddPerfume
@@ -232,7 +232,7 @@
             // 
             // AdminInventoryForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 483);
             Controls.Add(btnAddPerfume);

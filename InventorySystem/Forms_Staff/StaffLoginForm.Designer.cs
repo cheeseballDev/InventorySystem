@@ -44,7 +44,7 @@
             label1.Font = new Font("Montserrat", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(371, 9);
             label1.Name = "label1";
-            label1.Size = new Size(248, 49);
+            label1.Size = new Size(246, 44);
             label1.TabIndex = 0;
             label1.Text = "Login as Staff";
             // 
@@ -55,7 +55,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Location = new Point(356, 278);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(279, 32);
+            btnLogin.Size = new Size(279, 35);
             btnLogin.TabIndex = 3;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -66,7 +66,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(356, 195);
             label2.Name = "label2";
-            label2.Size = new Size(92, 25);
+            label2.Size = new Size(90, 22);
             label2.TabIndex = 4;
             label2.Text = "Password:";
             // 
@@ -75,7 +75,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(356, 135);
             label3.Name = "label3";
-            label3.Size = new Size(60, 25);
+            label3.Size = new Size(58, 22);
             label3.TabIndex = 5;
             label3.Text = "Email:";
             // 
@@ -132,7 +132,7 @@
             // 
             // StaffLoginForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 561);
             Controls.Add(tbEmail);

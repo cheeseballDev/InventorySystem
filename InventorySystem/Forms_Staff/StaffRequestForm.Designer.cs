@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffRequestForm));
             label1 = new Label();
             cbxRequestCurrentBranchFilter = new ComboBox();
@@ -59,7 +59,7 @@
             label1.ForeColor = Color.FromArgb(135, 135, 135);
             label1.Location = new Point(12, 18);
             label1.Name = "label1";
-            label1.Size = new Size(141, 18);
+            label1.Size = new Size(139, 16);
             label1.TabIndex = 0;
             label1.Text = "Select current branch:";
             // 
@@ -70,7 +70,7 @@
             cbxRequestCurrentBranchFilter.FormattingEnabled = true;
             cbxRequestCurrentBranchFilter.Location = new Point(180, 14);
             cbxRequestCurrentBranchFilter.Name = "cbxRequestCurrentBranchFilter";
-            cbxRequestCurrentBranchFilter.Size = new Size(199, 26);
+            cbxRequestCurrentBranchFilter.Size = new Size(199, 24);
             cbxRequestCurrentBranchFilter.TabIndex = 1;
             // 
             // label2
@@ -80,7 +80,7 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(409, 17);
             label2.Name = "label2";
-            label2.Size = new Size(142, 18);
+            label2.Size = new Size(141, 16);
             label2.TabIndex = 2;
             label2.Text = "Select date to request:";
             // 
@@ -91,7 +91,7 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(12, 57);
             label3.Name = "label3";
-            label3.Size = new Size(167, 18);
+            label3.Size = new Size(166, 16);
             label3.TabIndex = 4;
             label3.Text = "Select perfume to request:";
             // 
@@ -102,7 +102,7 @@
             cbxRequestParfumFilter.FormattingEnabled = true;
             cbxRequestParfumFilter.Location = new Point(180, 53);
             cbxRequestParfumFilter.Name = "cbxRequestParfumFilter";
-            cbxRequestParfumFilter.Size = new Size(199, 26);
+            cbxRequestParfumFilter.Size = new Size(199, 24);
             cbxRequestParfumFilter.TabIndex = 5;
             // 
             // label4
@@ -112,7 +112,7 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(409, 56);
             label4.Name = "label4";
-            label4.Size = new Size(127, 18);
+            label4.Size = new Size(126, 16);
             label4.TabIndex = 6;
             label4.Text = "Amount to request:";
             // 
@@ -130,19 +130,20 @@
             label5.AutoSize = true;
             label5.Font = new Font("Montserrat", 9F);
             label5.ForeColor = Color.FromArgb(135, 135, 135);
-            label5.Location = new Point(12, 93);
+            label5.Location = new Point(12, 94);
             label5.Name = "label5";
-            label5.Size = new Size(63, 18);
+            label5.Size = new Size(62, 16);
             label5.TabIndex = 8;
             label5.Text = "Message:";
             // 
             // tbRequestMessage
             // 
+            tbRequestMessage.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbRequestMessage.Location = new Point(80, 90);
             tbRequestMessage.MaxLength = 256;
             tbRequestMessage.Multiline = false;
             tbRequestMessage.Name = "tbRequestMessage";
-            tbRequestMessage.Size = new Size(641, 23);
+            tbRequestMessage.Size = new Size(641, 29);
             tbRequestMessage.TabIndex = 9;
             tbRequestMessage.Text = "";
             // 
@@ -185,7 +186,7 @@
             label6.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(1, 164);
             label6.Name = "label6";
-            label6.Size = new Size(272, 42);
+            label6.Size = new Size(270, 37);
             label6.TabIndex = 12;
             label6.Text = "Existing Requests";
             // 
@@ -195,31 +196,31 @@
             dgExistingRequests.AllowUserToDeleteRows = false;
             dgExistingRequests.AllowUserToResizeColumns = false;
             dgExistingRequests.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgExistingRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dgExistingRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             dgExistingRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgExistingRequests.BackgroundColor = SystemColors.Control;
             dgExistingRequests.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgExistingRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgExistingRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgExistingRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle9.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle9;
             dgExistingRequests.Location = new Point(22, 224);
             dgExistingRequests.Name = "dgExistingRequests";
             dgExistingRequests.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -234,7 +235,7 @@
             label7.ForeColor = Color.FromArgb(135, 135, 135);
             label7.Location = new Point(12, 201);
             label7.Name = "label7";
-            label7.Size = new Size(219, 18);
+            label7.Size = new Size(218, 16);
             label7.TabIndex = 14;
             label7.Text = "List of all previous existing requests";
             // 
@@ -264,7 +265,7 @@
             // 
             // StaffRequestForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 512);
             Controls.Add(dtpDateToRequest);

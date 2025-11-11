@@ -23,7 +23,6 @@ namespace InventorySystem
                 return;
             }
             string query = "SELECT COUNT(*) FROM employeeaccount WHERE email=@email AND password=@password";
-
             int count = DatabaseHelper.ExecuteScalar(query,
                 new MySqlParameter("@email", email),
                 new MySqlParameter("@password", password)
