@@ -62,12 +62,13 @@ namespace InventorySystem
             if (dgPerfume.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgPerfume.SelectedRows[0];
-
                 string id = row.Cells["Product_ID"].Value.ToString();
-
                 String incrementQuery = "UPDATE perfumetable SET quantity = quantity + 1 WHERE PRODUCT_ID = @id";
-
                 DatabaseHelper.ExecuteNonQuery(incrementQuery, new MySqlParameter("@id", id));
+
+                String addReport = "Added 1 to product quantity";
+                String incrementReportQuery = "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id";
+                DatabaseHelper.ExecuteNonQuery(incrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", addReport));
                 loadProducts();
             }
             else
@@ -81,11 +82,13 @@ namespace InventorySystem
             if (dgPerfume.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgPerfume.SelectedRows[0];
-
                 string id = row.Cells["Product_ID"].Value.ToString();
+                String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE PRODUCT_ID = @id";
+                DatabaseHelper.ExecuteNonQuery(decrementQuery, new MySqlParameter("@id", id));
 
-                DatabaseHelper.ExecuteNonQuery(id, new MySqlParameter("@id", id));
-
+                String deductReport = "Deducted 1 to product quantity";
+                String decrementReportQuery = "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id";
+                DatabaseHelper.ExecuteNonQuery(decrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", deductReport));
                 loadProducts();
             }
             else
