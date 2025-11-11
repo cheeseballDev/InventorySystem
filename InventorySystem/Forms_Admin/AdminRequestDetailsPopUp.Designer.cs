@@ -59,7 +59,7 @@
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClose.ForeColor = SystemColors.ControlText;
-            btnClose.Location = new Point(779, 12);
+            btnClose.Location = new Point(754, 12);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(28, 32);
             btnClose.TabIndex = 8;
@@ -92,7 +92,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.FromArgb(135, 135, 135);
-            label4.Location = new Point(209, 94);
+            label4.Location = new Point(30, 135);
             label4.Name = "label4";
             label4.Size = new Size(99, 22);
             label4.TabIndex = 13;
@@ -102,7 +102,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.FromArgb(135, 135, 135);
-            label5.Location = new Point(308, 140);
+            label5.Location = new Point(428, 178);
             label5.Name = "label5";
             label5.Size = new Size(82, 22);
             label5.TabIndex = 15;
@@ -117,7 +117,7 @@
             btnApproveRequest.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnApproveRequest.ForeColor = Color.Black;
             btnApproveRequest.Image = (Image)resources.GetObject("btnApproveRequest.Image");
-            btnApproveRequest.Location = new Point(29, 256);
+            btnApproveRequest.Location = new Point(29, 280);
             btnApproveRequest.Name = "btnApproveRequest";
             btnApproveRequest.Size = new Size(211, 31);
             btnApproveRequest.TabIndex = 17;
@@ -135,7 +135,7 @@
             btnRejectRequest.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRejectRequest.ForeColor = Color.Black;
             btnRejectRequest.Image = (Image)resources.GetObject("btnRejectRequest.Image");
-            btnRejectRequest.Location = new Point(308, 256);
+            btnRejectRequest.Location = new Point(284, 280);
             btnRejectRequest.Name = "btnRejectRequest";
             btnRejectRequest.Size = new Size(211, 31);
             btnRejectRequest.TabIndex = 18;
@@ -154,7 +154,7 @@
             btnArchiveRequest.Font = new Font("Montserrat", 9.749999F);
             btnArchiveRequest.ForeColor = SystemColors.Control;
             btnArchiveRequest.Image = (Image)resources.GetObject("btnArchiveRequest.Image");
-            btnArchiveRequest.Location = new Point(587, 256);
+            btnArchiveRequest.Location = new Point(543, 280);
             btnArchiveRequest.Name = "btnArchiveRequest";
             btnArchiveRequest.Size = new Size(211, 31);
             btnArchiveRequest.TabIndex = 19;
@@ -167,7 +167,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.FromArgb(135, 135, 135);
-            label3.Location = new Point(465, 140);
+            label3.Location = new Point(30, 178);
             label3.Name = "label3";
             label3.Size = new Size(70, 22);
             label3.TabIndex = 20;
@@ -177,17 +177,18 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.FromArgb(135, 135, 135);
-            label6.Location = new Point(568, 94);
+            label6.Location = new Point(429, 94);
             label6.Name = "label6";
             label6.Size = new Size(123, 22);
             label6.TabIndex = 21;
             label6.Text = "Request Date:";
+            label6.Click += label6_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.FromArgb(135, 135, 135);
-            label7.Location = new Point(387, 94);
+            label7.Location = new Point(224, 94);
             label7.Name = "label7";
             label7.Size = new Size(63, 22);
             label7.TabIndex = 22;
@@ -207,7 +208,7 @@
             // 
             lblProductId.AutoSize = true;
             lblProductId.ForeColor = SystemColors.ActiveCaptionText;
-            lblProductId.Location = new Point(317, 94);
+            lblProductId.Location = new Point(138, 135);
             lblProductId.Name = "lblProductId";
             lblProductId.Size = new Size(65, 22);
             lblProductId.TabIndex = 24;
@@ -217,18 +218,17 @@
             // 
             lblBranch.AutoSize = true;
             lblBranch.ForeColor = SystemColors.ActiveCaptionText;
-            lblBranch.Location = new Point(541, 140);
+            lblBranch.Location = new Point(106, 178);
             lblBranch.Name = "lblBranch";
             lblBranch.Size = new Size(164, 22);
             lblBranch.TabIndex = 25;
             lblBranch.Text = "##############";
-            lblBranch.Click += lblBranch_Click;
             // 
             // lblQuantity
             // 
             lblQuantity.AutoSize = true;
             lblQuantity.ForeColor = SystemColors.ActiveCaptionText;
-            lblQuantity.Location = new Point(396, 140);
+            lblQuantity.Location = new Point(516, 178);
             lblQuantity.Name = "lblQuantity";
             lblQuantity.Size = new Size(43, 22);
             lblQuantity.TabIndex = 26;
@@ -238,18 +238,17 @@
             // 
             lblRequestDate.AutoSize = true;
             lblRequestDate.ForeColor = SystemColors.ActiveCaptionText;
-            lblRequestDate.Location = new Point(697, 94);
+            lblRequestDate.Location = new Point(558, 94);
             lblRequestDate.Name = "lblRequestDate";
             lblRequestDate.Size = new Size(110, 22);
             lblRequestDate.TabIndex = 27;
             lblRequestDate.Text = "##-##-####";
-            lblRequestDate.Click += lblDate_Click;
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
             lblStatus.ForeColor = SystemColors.ActiveCaptionText;
-            lblStatus.Location = new Point(456, 94);
+            lblStatus.Location = new Point(293, 94);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(88, 22);
             lblStatus.TabIndex = 28;
@@ -259,7 +258,7 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.FromArgb(135, 135, 135);
-            label9.Location = new Point(29, 140);
+            label9.Location = new Point(225, 135);
             label9.Name = "label9";
             label9.Size = new Size(83, 22);
             label9.TabIndex = 29;
@@ -269,7 +268,7 @@
             // 
             lblPerfume.AutoSize = true;
             lblPerfume.ForeColor = SystemColors.ActiveCaptionText;
-            lblPerfume.Location = new Point(112, 140);
+            lblPerfume.Location = new Point(308, 135);
             lblPerfume.Name = "lblPerfume";
             lblPerfume.Size = new Size(164, 22);
             lblPerfume.TabIndex = 30;
@@ -279,7 +278,7 @@
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.FromArgb(135, 135, 135);
-            label10.Location = new Point(29, 187);
+            label10.Location = new Point(30, 221);
             label10.Name = "label10";
             label10.Size = new Size(84, 22);
             label10.TabIndex = 31;
@@ -289,7 +288,7 @@
             // 
             lblMessage.AutoSize = true;
             lblMessage.ForeColor = SystemColors.ActiveCaptionText;
-            lblMessage.Location = new Point(119, 187);
+            lblMessage.Location = new Point(120, 221);
             lblMessage.Name = "lblMessage";
             lblMessage.Size = new Size(604, 22);
             lblMessage.TabIndex = 32;
@@ -299,7 +298,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(819, 299);
+            ClientSize = new Size(794, 323);
             Controls.Add(lblMessage);
             Controls.Add(label10);
             Controls.Add(lblPerfume);

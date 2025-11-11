@@ -45,16 +45,6 @@ namespace InventorySystem
             alq.LogAction($"Rejected product request {reqID}", "Request Details Module");
         }
 
-        private void lblDate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblBranch_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void loadDetails()
         {
             using (MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;"))
@@ -81,6 +71,11 @@ namespace InventorySystem
                     }
                 }
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
