@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InventorySystem.Helper_Classes;
+﻿using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem
@@ -41,11 +32,11 @@ namespace InventorySystem
             List<MySqlParameter> parameters = new List<MySqlParameter>();
 
             String query = "select * from requestlogtable where 1=1";
-            if(cbxRequestBranchFilter.SelectedIndex != -1)
+            if (cbxRequestBranchFilter.SelectedIndex != -1)
             {
                 query += " and branch like @branch";
                 parameters.Add(new MySqlParameter("@branch", "%" + cbxRequestBranchFilter.Text + "%"));
-            } 
+            }
             if (cbxRequestStatusFilter.SelectedIndex != -1)
             {
                 query += " and status like @status";
@@ -99,11 +90,6 @@ namespace InventorySystem
             {
                 MessageBox.Show("Please select a row to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void btnRefresh_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

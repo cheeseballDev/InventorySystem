@@ -123,7 +123,6 @@
             btnRefresh.Size = new Size(52, 38);
             btnRefresh.TabIndex = 15;
             btnRefresh.UseVisualStyleBackColor = false;
-            btnRefresh.Click += btnRefresh_Click_1;
             // 
             // btnSearch
             // 

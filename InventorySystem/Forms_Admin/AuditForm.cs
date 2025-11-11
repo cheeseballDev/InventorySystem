@@ -1,5 +1,4 @@
 ﻿using InventorySystem.Helper_Classes;
-using iTextSharp.text.pdf.parser;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem

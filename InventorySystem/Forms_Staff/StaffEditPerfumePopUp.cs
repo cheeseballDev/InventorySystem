@@ -30,11 +30,11 @@ namespace InventorySystem
             String perfumeName = tbPerfumeName.Text;
             int quantity = int.Parse(numPerfumeQuantity.Text);
             String status = null;
-            if(quantity > origQty)
+            if (quantity > origQty)
             {
                 status = $"Added {quantity - origQty} to product quantity";
             }
-            else if(quantity < origQty)
+            else if (quantity < origQty)
             {
                 status = $"Deducted {origQty - quantity} to product quantity";
             }
