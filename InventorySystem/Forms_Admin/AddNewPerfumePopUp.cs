@@ -47,9 +47,8 @@ namespace InventorySystem.Forms_Admin
 
             if (rowsAffected > 0)
             {
-                AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Product added to the inventory! Product ID is: {newID}");
-                alq.LogAction($"Added new perfume ({newID})", "Add perfume page");
+                DatabaseHelper.LogAction($"Added new perfume ({newID})", "Add perfume page");
             }
             else
             {

@@ -59,9 +59,8 @@ namespace InventorySystem.Forms_Admin
 
             if (rowsAffected > 0)
             {
-                AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Account created! Given ID is: {newID}");
-                alq.LogAction($"Added new account ({newID})", "Create Account Page");
+                DatabaseHelper.LogAction($"Added new account ({newID})", "Create Account Page");
             }
             else
             {
