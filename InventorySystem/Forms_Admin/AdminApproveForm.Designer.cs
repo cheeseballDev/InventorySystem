@@ -57,7 +57,7 @@
             label6.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(8, 93);
             label6.Name = "label6";
-            label6.Size = new Size(272, 42);
+            label6.Size = new Size(270, 37);
             label6.TabIndex = 12;
             label6.Text = "Existing Requests";
             // 
@@ -106,7 +106,7 @@
             label7.ForeColor = Color.FromArgb(135, 135, 135);
             label7.Location = new Point(19, 130);
             label7.Name = "label7";
-            label7.Size = new Size(219, 18);
+            label7.Size = new Size(218, 16);
             label7.TabIndex = 14;
             label7.Text = "List of all previous existing requests";
             // 
@@ -123,6 +123,7 @@
             btnRefresh.Size = new Size(52, 38);
             btnRefresh.TabIndex = 15;
             btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click_1;
             // 
             // btnSearch
             // 
@@ -149,7 +150,7 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(523, 18);
             label3.Name = "label3";
-            label3.Size = new Size(22, 18);
+            label3.Size = new Size(21, 16);
             label3.TabIndex = 25;
             label3.Text = "To";
             // 
@@ -160,7 +161,7 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(312, 18);
             label2.Name = "label2";
-            label2.Size = new Size(73, 18);
+            label2.Size = new Size(72, 16);
             label2.TabIndex = 23;
             label2.Text = "Date from:";
             // 
@@ -171,7 +172,7 @@
             cbxRequestBranchFilter.FormattingEnabled = true;
             cbxRequestBranchFilter.Location = new Point(104, 15);
             cbxRequestBranchFilter.Name = "cbxRequestBranchFilter";
-            cbxRequestBranchFilter.Size = new Size(191, 26);
+            cbxRequestBranchFilter.Size = new Size(191, 24);
             cbxRequestBranchFilter.TabIndex = 22;
             // 
             // label1
@@ -181,7 +182,7 @@
             label1.ForeColor = Color.FromArgb(135, 135, 135);
             label1.Location = new Point(8, 18);
             label1.Name = "label1";
-            label1.Size = new Size(92, 18);
+            label1.Size = new Size(90, 16);
             label1.TabIndex = 21;
             label1.Text = "Filter: Branch:";
             // 
@@ -212,7 +213,7 @@
             cbxRequestStatusFilter.FormattingEnabled = true;
             cbxRequestStatusFilter.Location = new Point(104, 57);
             cbxRequestStatusFilter.Name = "cbxRequestStatusFilter";
-            cbxRequestStatusFilter.Size = new Size(191, 26);
+            cbxRequestStatusFilter.Size = new Size(191, 24);
             cbxRequestStatusFilter.TabIndex = 31;
             // 
             // label4
@@ -222,7 +223,7 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(8, 60);
             label4.Name = "label4";
-            label4.Size = new Size(86, 18);
+            label4.Size = new Size(85, 16);
             label4.TabIndex = 30;
             label4.Text = "Filter: Status:";
             // 
@@ -280,7 +281,7 @@
             // 
             // AdminApproveForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 512);
             Controls.Add(btnOpenRequestDetails);

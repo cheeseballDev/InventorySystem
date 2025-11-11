@@ -33,24 +33,31 @@ namespace InventorySystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cbxRequestBranchFilter.Text) || string.IsNullOrWhiteSpace(cbxRequestStatusFilter.Text))
-            {
-                loadExistingRequests();
-                return;
-            }
-            String query = "select * from requestlogtable where branch like @branch and status like @status and date(request_date) between @startDate and @endDate";
-            MySqlParameter actionParameter = new MySqlParameter("@branch", "%" + cbxRequestBranchFilter.Text + "%");
-            MySqlParameter userParameter = new MySqlParameter("@status", "%" + cbxRequestStatusFilter.Text + "%");
-            MySqlParameter startDateParameter = new MySqlParameter("@startDate", dtpRequestDateFrom.Value.Date);
-            MySqlParameter endDateParameter = new MySqlParameter("@endDate", dtpRequestDateTo.Value.Date);
-
-            dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query, actionParameter, userParameter, startDateParameter, endDateParameter);
+            loadExistingRequests();
         }
 
         private void loadExistingRequests()
         {
-            String query = "select * from requestlogtable";
-            dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query);
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+
+            String query = "select * from requestlogtable where 1=1";
+            if(cbxRequestBranchFilter.SelectedIndex != -1)
+            {
+                query += " and branch like @branch";
+                parameters.Add(new MySqlParameter("@branch", "%" + cbxRequestBranchFilter.Text + "%"));
+            } 
+            if (cbxRequestStatusFilter.SelectedIndex != -1)
+            {
+                query += " and status like @status";
+                parameters.Add(new MySqlParameter("@status", "%" + cbxRequestStatusFilter.Text + "%"));
+            }
+            if (dtpRequestDateFrom.Value <= dtpRequestDateTo.Value)
+            {
+                query += " and date(Timestamp) between @startDate and @endDate";
+                parameters.Add(new MySqlParameter("@startDate", dtpRequestDateFrom.Value.Date));
+                parameters.Add(new MySqlParameter("@endDate", dtpRequestDateTo.Value.Date));
+            }
+            dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -68,8 +75,7 @@ namespace InventorySystem
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", aprub));
                 loadExistingRequests();
-                AuditLogQuery alq = new AuditLogQuery();
-                alq.LogAction($"Approved product request {id}", "Request Details Module");
+                DatabaseHelper.LogAction($"Approved product request {id}", "Request Details Module");
             }
             else
             {
@@ -87,13 +93,17 @@ namespace InventorySystem
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", rejek));
                 loadExistingRequests();
-                AuditLogQuery alq = new AuditLogQuery();
-                alq.LogAction($"Rejected product request {id}", "Request Details Module");
+                DatabaseHelper.LogAction($"Rejected product request {id}", "Request Details Module");
             }
             else
             {
                 MessageBox.Show("Please select a row to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

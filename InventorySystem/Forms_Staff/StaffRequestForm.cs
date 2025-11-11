@@ -33,6 +33,21 @@ namespace InventorySystem
 
         private void btnSubmitRequest_Click(object sender, EventArgs e)
         {
+            if (cbxRequestCurrentBranchFilter.SelectedIndex != -1)
+            {
+                MessageBox.Show("Please select a perfume to request.");
+                return;
+            }
+            if (cbxRequestParfumFilter.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a perfume to request.");
+                return;
+            }
+            if (numPerfumeAmountToRequest.Value <= 0)
+            {
+                MessageBox.Show("Please enter a valid quantity to request.");
+                return;
+            }
             String reqID = DatabaseHelper.CheckForExistingId("select request_id from requestlogtable order by request_id desc limit 1", "REQ");
             String prodID = DatabaseHelper.getID($"select product_id from perfumetable where perfume = @perfume",
                 new MySqlParameter("@perfume", cbxRequestParfumFilter.Text));
@@ -49,9 +64,8 @@ namespace InventorySystem
 
             if (rowsAffected > 0)
             {
-                AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Request submitted! Given ID is: {reqID}");
-                alq.LogAction($"Sent product request ({reqID})", "Request Product Page");
+                DatabaseHelper.LogAction($"Sent product request ({reqID})", "Request Product Page");
             }
             else
             {

@@ -42,7 +42,6 @@
             dgReportResults = new DataGridView();
             btnExportToExcel = new Button();
             btnExportToPDF = new Button();
-            btnPrint = new Button();
             dtpReportDateTo = new DateTimePicker();
             dtpReportDateFrom = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgReportResults).BeginInit();
@@ -205,23 +204,6 @@
             btnExportToPDF.UseVisualStyleBackColor = true;
             btnExportToPDF.Click += btnExportToPDF_Click;
             // 
-            // btnPrint
-            // 
-            btnPrint.BackColor = Color.FromArgb(225, 212, 193);
-            btnPrint.Cursor = Cursors.Hand;
-            btnPrint.FlatAppearance.BorderSize = 0;
-            btnPrint.FlatStyle = FlatStyle.Flat;
-            btnPrint.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPrint.ForeColor = Color.Black;
-            btnPrint.Image = (Image)resources.GetObject("btnPrint.Image");
-            btnPrint.Location = new Point(328, 467);
-            btnPrint.Name = "btnPrint";
-            btnPrint.Size = new Size(85, 27);
-            btnPrint.TabIndex = 25;
-            btnPrint.Text = "Print";
-            btnPrint.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnPrint.UseVisualStyleBackColor = true;
-            // 
             // dtpReportDateTo
             // 
             dtpReportDateTo.CalendarFont = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -249,7 +231,6 @@
             ClientSize = new Size(820, 512);
             Controls.Add(dtpReportDateTo);
             Controls.Add(dtpReportDateFrom);
-            Controls.Add(btnPrint);
             Controls.Add(btnExportToPDF);
             Controls.Add(btnExportToExcel);
             Controls.Add(dgReportResults);
@@ -282,7 +263,6 @@
         private DataGridView dgReportResults;
         private Button btnExportToExcel;
         private Button btnExportToPDF;
-        private Button btnPrint;
         private DateTimePicker dtpReportDateTo;
         private DateTimePicker dtpReportDateFrom;
     }
