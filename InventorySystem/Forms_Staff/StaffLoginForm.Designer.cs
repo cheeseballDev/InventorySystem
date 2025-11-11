@@ -55,7 +55,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Location = new Point(356, 278);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(279, 32);
+            btnLogin.Size = new Size(279, 35);
             btnLogin.TabIndex = 3;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -113,6 +113,7 @@
             // 
             // tbPassword
             // 
+            tbPassword.BackColor = SystemColors.Control;
             tbPassword.Location = new Point(356, 220);
             tbPassword.MaxLength = 64;
             tbPassword.Name = "tbPassword";
@@ -122,6 +123,7 @@
             // 
             // tbEmail
             // 
+            tbEmail.BackColor = SystemColors.Control;
             tbEmail.Location = new Point(356, 160);
             tbEmail.MaxLength = 128;
             tbEmail.Name = "tbEmail";

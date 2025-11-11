@@ -121,19 +121,18 @@
   <data name="btnCancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAAKRJREFUOE+lkkEKwjAQRefqCop3UBfqTkSKuFNceLH4p+moryRg7IcH86e8QNtY
-        SmkSxWULxWULLGY3cfahkpN4wkExuwof9l5G2Qp/doeDkrMR40NC3nmBg/JJCAsxH+b3gXBQmBCdlS8i
-        cFCYSQfEKyzFbJgPog8clJy1gKDEgf13gINidvHn4luOxN95wEHJF6nzoZKjqF+kfyguWygufyfZCzXn
-        +NLPvQGGAAAAAElFTkSuQmCC
+        IgAALiIBquLdkgAAAJFJREFUOE+9kkEKgzAQRd/VK1R6B9uFuisiUrqruPBikSkOxMROjYIfPsxM+A+S
+        DM45jjgapDoapHrZwAdopfihBhgtwBuQogqTwGM+6y2A6L4C0XApzT+AH7gCWQjcAhBpUHzzD04B6BVy
+        4DLX9VZAEQY84PcdLMBrJazS3xksgCxSFyY9Pc1F2uNokOpokOoJNef40jVY0qkAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAALFJREFUOE+ljssJwkAURQPagTtdCcGlpADdWIR9WEIWWUWwCFc2ILjTKqzCAtw4
-        3jNO8JOnZMYDh7x387hM5pz7SzOM0QxjfA7d2csytaCWHFcpBXPJ4ZEltqAvb8EeQWzBSXI085uwCgZy
-        zPDBSnKw9lvAKtiRywVLYCLJzn57wSqYyiv/ZEEgLpKd171hFcBINiWH8F3KFt8KYCgJcEtg8asAcrl5
-        jDatglTNsLsuuwP5lI3XoIgCzwAAAABJRU5ErkJggg==
+        IgAALiIBquLdkgAAAKpJREFUOE9j+P//PwMlGEOAVIwhQCpGMIgH2xgYGBrJNaCbgYEBpLiVHANsoZoP
+        gDikGsDCwMDwD4qZQQKkGnAQarsNTACbAcIMDAyKKNogoBCquQdZEJsBK6EKnZDUqUHFriOJgQE2A/QY
+        GBh+QjUYQNW9hfJBrkMB2AwAAWkkQ3ZC6TBUrRCAywAQkIJqBOHFyBLIAJ8BIKDCwMDQjy6IDDAMIBdj
+        CJCKAfmUjdch90nLAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

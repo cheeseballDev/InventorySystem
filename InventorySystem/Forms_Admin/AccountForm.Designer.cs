@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountForm));
             dgAccounts = new DataGridView();
             btnArchiveAccount = new Button();
@@ -50,31 +50,31 @@
             dgAccounts.AllowUserToDeleteRows = false;
             dgAccounts.AllowUserToResizeColumns = false;
             dgAccounts.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dgAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgAccounts.BackgroundColor = Color.White;
+            dgAccounts.BackgroundColor = SystemColors.Control;
             dgAccounts.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgAccounts.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle6.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgAccounts.DefaultCellStyle = dataGridViewCellStyle6;
             dgAccounts.Location = new Point(26, 120);
             dgAccounts.Name = "dgAccounts";
             dgAccounts.ReadOnly = true;
@@ -123,6 +123,7 @@
             // 
             // tbSearchProduct
             // 
+            tbSearchProduct.BackColor = SystemColors.Control;
             tbSearchProduct.BorderStyle = BorderStyle.None;
             tbSearchProduct.DetectUrls = false;
             tbSearchProduct.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -160,7 +161,7 @@
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(26, 94);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(124, 18);
+            lblDescription.Size = new Size(125, 20);
             lblDescription.TabIndex = 14;
             lblDescription.Text = "List of all accounts";
             // 
@@ -170,7 +171,7 @@
             lblTitle.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.Location = new Point(8, 54);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(196, 37);
+            lblTitle.Size = new Size(197, 42);
             lblTitle.TabIndex = 13;
             lblTitle.Text = "Account List";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -199,7 +200,7 @@
             btnCreateNewAccount.Image = (Image)resources.GetObject("btnCreateNewAccount.Image");
             btnCreateNewAccount.Location = new Point(452, 22);
             btnCreateNewAccount.Name = "btnCreateNewAccount";
-            btnCreateNewAccount.Size = new Size(165, 28);
+            btnCreateNewAccount.Size = new Size(179, 28);
             btnCreateNewAccount.TabIndex = 15;
             btnCreateNewAccount.Text = "Create New Account";
             btnCreateNewAccount.TextImageRelation = TextImageRelation.ImageBeforeText;

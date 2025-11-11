@@ -9,7 +9,7 @@ namespace InventorySystem
         public StaffInventoryForm()
         {
             InitializeComponent();
-            PlaceholderHelper.ApplyPlaceholder(tbSearchProductFilter, "Search perfume...");
+            PlaceholderHelper.ApplyPlaceholder(tbSearchPerfumeFilter, "Search perfume...");
             cbxPerfumeBranchFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
             cbxPerfumeBranchFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNote)));
             loadProducts();
@@ -40,21 +40,30 @@ namespace InventorySystem
 
         private void tbSearchProductFilter_TextChanged(object sender, EventArgs e)
         {
-            if (tbSearchProductFilter.Text == "Search product" || string.IsNullOrWhiteSpace(tbSearchProductFilter.Text))
-            {
-                loadProducts();
-                return;
-            }
-            String query = "select Product_ID, Perfume, Note, Branch, Quantity, Date_Created from perfumetable where Product_ID like @search or Perfume like @search or Note like @search or Branch like @search";
-            MySqlParameter searchParameter = new MySqlParameter("@search", "%" + tbSearchProductFilter.Text + "%");
-
-            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, searchParameter);
+            loadProducts();
         }
 
         private void loadProducts()
         {
-            String query = "select * from perfumetable";
-            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query);
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            string query = "select Product_ID, Perfume, Note, Branch, Quantity, Date_Created from perfumetable where 1=1 ";
+
+            if (cbxPerfumeBranchFilter.SelectedIndex != -1)
+            {
+                query += " and Branch like @branch";
+                parameters.Add(new MySqlParameter("@branch", "%" + cbxPerfumeBranchFilter.Text + "%"));
+            }
+            if (cbxPerfumeNoteFilter.SelectedIndex != -1)
+            {
+                query += " and Note like @note";
+                parameters.Add(new MySqlParameter("@note", "%" + cbxPerfumeNoteFilter.Text + "%"));
+            }
+            if (!tbSearchPerfumeFilter.Text.Equals("Search perfume...") && !string.IsNullOrEmpty(tbSearchPerfumeFilter.Text))
+            {
+                query += " and (Product_ID like @search or Perfume like @search or Note like @search or Branch like @search)";
+                parameters.Add(new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%"));
+            }
+            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -62,12 +71,13 @@ namespace InventorySystem
             if (dgPerfume.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgPerfume.SelectedRows[0];
-
                 string id = row.Cells["Product_ID"].Value.ToString();
-
                 String incrementQuery = "UPDATE perfumetable SET quantity = quantity + 1 WHERE PRODUCT_ID = @id";
-
                 DatabaseHelper.ExecuteNonQuery(incrementQuery, new MySqlParameter("@id", id));
+
+                String addReport = "Added 1 to product quantity";
+                String incrementReportQuery = "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id";
+                DatabaseHelper.ExecuteNonQuery(incrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", addReport));
                 loadProducts();
             }
             else
@@ -81,13 +91,13 @@ namespace InventorySystem
             if (dgPerfume.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgPerfume.SelectedRows[0];
-
                 string id = row.Cells["Product_ID"].Value.ToString();
-
                 String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE PRODUCT_ID = @id";
+                DatabaseHelper.ExecuteNonQuery(decrementQuery, new MySqlParameter("@id", id));
 
-                DatabaseHelper.ExecuteNonQuery(id, new MySqlParameter("@id", id));
-
+                String deductReport = "Deducted 1 to product quantity";
+                String decrementReportQuery = "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id";
+                DatabaseHelper.ExecuteNonQuery(decrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", deductReport));
                 loadProducts();
             }
             else

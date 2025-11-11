@@ -188,6 +188,7 @@
             btnDeleteLog.TextAlign = ContentAlignment.MiddleLeft;
             btnDeleteLog.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDeleteLog.UseVisualStyleBackColor = false;
+            btnDeleteLog.Click += btnDeleteLog_Click;
             // 
             // AuditDetailsPopUp
             // 
@@ -226,13 +227,11 @@
         private Label label5;
         private Label label3;
         private Label label6;
-        private Label label7;
         private Label lblAuditLogId;
         private Label lblAuditUserId;
         private Label lblAuditAction;
         private Label lblAuditModule;
         private Label lblAuditTimestamp;
         private Button btnDeleteLog;
-        private Label label8;
     }
 }

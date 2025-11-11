@@ -28,18 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminApproveForm));
             label6 = new Label();
             dgExistingRequests = new DataGridView();
-            PERFUME_ID = new DataGridViewTextBoxColumn();
-            PERFUME_NAME = new DataGridViewTextBoxColumn();
-            PERFUME_QTY = new DataGridViewTextBoxColumn();
-            PERFUME_BRANCH = new DataGridViewTextBoxColumn();
-            PERFUME_DATECREATED = new DataGridViewTextBoxColumn();
-            PERFUME_STATUS = new DataGridViewTextBoxColumn();
             label7 = new Label();
             btnRefresh = new Button();
             btnSearch = new Button();
@@ -73,74 +67,37 @@
             dgExistingRequests.AllowUserToDeleteRows = false;
             dgExistingRequests.AllowUserToResizeColumns = false;
             dgExistingRequests.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dgExistingRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dgExistingRequests.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgExistingRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgExistingRequests.BackgroundColor = Color.White;
+            dgExistingRequests.BackgroundColor = SystemColors.Control;
             dgExistingRequests.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgExistingRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgExistingRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgExistingRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgExistingRequests.Columns.AddRange(new DataGridViewColumn[] { PERFUME_ID, PERFUME_NAME, PERFUME_QTY, PERFUME_BRANCH, PERFUME_DATECREATED, PERFUME_STATUS });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle6.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle3;
             dgExistingRequests.Location = new Point(29, 153);
             dgExistingRequests.Name = "dgExistingRequests";
             dgExistingRequests.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgExistingRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgExistingRequests.Size = new Size(786, 300);
             dgExistingRequests.TabIndex = 13;
-            // 
-            // PERFUME_ID
-            // 
-            PERFUME_ID.FillWeight = 60F;
-            PERFUME_ID.HeaderText = "REQ ID";
-            PERFUME_ID.MinimumWidth = 3;
-            PERFUME_ID.Name = "PERFUME_ID";
-            PERFUME_ID.ReadOnly = true;
-            // 
-            // PERFUME_NAME
-            // 
-            PERFUME_NAME.FillWeight = 110F;
-            PERFUME_NAME.HeaderText = "Perfume";
-            PERFUME_NAME.Name = "PERFUME_NAME";
-            PERFUME_NAME.ReadOnly = true;
-            // 
-            // PERFUME_QTY
-            // 
-            PERFUME_QTY.HeaderText = "Qty";
-            PERFUME_QTY.Name = "PERFUME_QTY";
-            // 
-            // PERFUME_BRANCH
-            // 
-            PERFUME_BRANCH.HeaderText = "Branch";
-            PERFUME_BRANCH.Name = "PERFUME_BRANCH";
-            // 
-            // PERFUME_DATECREATED
-            // 
-            PERFUME_DATECREATED.FillWeight = 107.817261F;
-            PERFUME_DATECREATED.HeaderText = "Date Created";
-            PERFUME_DATECREATED.Name = "PERFUME_DATECREATED";
-            // 
-            // PERFUME_STATUS
-            // 
-            PERFUME_STATUS.HeaderText = "Status";
-            PERFUME_STATUS.Name = "PERFUME_STATUS";
             // 
             // label7
             // 
@@ -356,12 +313,6 @@
         private Label label6;
         private DataGridView dgExistingRequests;
         private Label label7;
-        private DataGridViewTextBoxColumn PERFUME_ID;
-        private DataGridViewTextBoxColumn PERFUME_NAME;
-        private DataGridViewTextBoxColumn PERFUME_QTY;
-        private DataGridViewTextBoxColumn PERFUME_BRANCH;
-        private DataGridViewTextBoxColumn PERFUME_DATECREATED;
-        private DataGridViewTextBoxColumn PERFUME_STATUS;
         private Button btnRefresh;
         private Button btnSearch;
         private Label label3;

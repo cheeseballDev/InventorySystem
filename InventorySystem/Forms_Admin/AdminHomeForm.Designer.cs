@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomeForm));
             panel1 = new Panel();
+            pnlNavigation = new Panel();
             btnAccounts = new Button();
             btnAuditLog = new Button();
-            pnlNavigation = new Panel();
             btnForecast = new Button();
             btnReport = new Button();
             btnRequest = new Button();
@@ -70,6 +70,14 @@
             panel1.Size = new Size(180, 600);
             panel1.TabIndex = 0;
             // 
+            // pnlNavigation
+            // 
+            pnlNavigation.BackColor = Color.FromArgb(225, 212, 193);
+            pnlNavigation.Location = new Point(168, 177);
+            pnlNavigation.Name = "pnlNavigation";
+            pnlNavigation.Size = new Size(12, 100);
+            pnlNavigation.TabIndex = 1;
+            // 
             // btnAccounts
             // 
             btnAccounts.BackgroundImageLayout = ImageLayout.Center;
@@ -105,14 +113,6 @@
             btnAuditLog.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAuditLog.UseVisualStyleBackColor = true;
             btnAuditLog.Click += btnAuditLog_Click;
-            // 
-            // pnlNavigation
-            // 
-            pnlNavigation.BackColor = Color.FromArgb(225, 212, 193);
-            pnlNavigation.Location = new Point(168, 177);
-            pnlNavigation.Name = "pnlNavigation";
-            pnlNavigation.Size = new Size(12, 100);
-            pnlNavigation.TabIndex = 1;
             // 
             // btnForecast
             // 
@@ -222,7 +222,7 @@
             lblTitle.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.Location = new Point(199, 13);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(154, 37);
+            lblTitle.Size = new Size(156, 42);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Inventory";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -234,7 +234,7 @@
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(203, 55);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(273, 18);
+            lblDescription.Size = new Size(274, 20);
             lblDescription.TabIndex = 2;
             lblDescription.Text = "Overview of all available parfum products";
             // 
@@ -247,7 +247,7 @@
             // 
             // imgBtnUser
             // 
-            imgBtnUser.BackColor = Color.White;
+            imgBtnUser.BackColor = SystemColors.Control;
             imgBtnUser.BackgroundImage = (Image)resources.GetObject("imgBtnUser.BackgroundImage");
             imgBtnUser.BackgroundImageLayout = ImageLayout.Center;
             imgBtnUser.Location = new Point(877, 25);
@@ -260,7 +260,7 @@
             // btnNotification
             // 
             btnNotification.FlatStyle = FlatStyle.Flat;
-            btnNotification.ForeColor = Color.White;
+            btnNotification.ForeColor = SystemColors.Control;
             btnNotification.Image = (Image)resources.GetObject("btnNotification.Image");
             btnNotification.Location = new Point(844, 27);
             btnNotification.Name = "btnNotification";
@@ -271,7 +271,7 @@
             // 
             // cbxUser
             // 
-            cbxUser.BackColor = Color.White;
+            cbxUser.BackColor = SystemColors.Control;
             cbxUser.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxUser.FlatStyle = FlatStyle.Flat;
             cbxUser.Font = new Font("Montserrat", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -279,7 +279,7 @@
             cbxUser.FormattingEnabled = true;
             cbxUser.Location = new Point(926, 27);
             cbxUser.Name = "cbxUser";
-            cbxUser.Size = new Size(81, 30);
+            cbxUser.Size = new Size(81, 33);
             cbxUser.TabIndex = 6;
             cbxUser.SelectedIndexChanged += cbxUser_SelectedIndexChanged;
             // 

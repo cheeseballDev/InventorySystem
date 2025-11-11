@@ -23,7 +23,6 @@ namespace InventorySystem
                 return;
             }
             string query = "SELECT COUNT(*) FROM employeeaccount WHERE email=@email AND password=@password";
-
             int count = DatabaseHelper.ExecuteScalar(query,
                 new MySqlParameter("@email", email),
                 new MySqlParameter("@password", password)
@@ -33,7 +32,7 @@ namespace InventorySystem
             {
                 this.Tag = "StaffHomeForm";
                 this.Close();
-                String id = DatabaseHelper.getID(email, "employeeaccount");
+                String id = DatabaseHelper.getID("select id FROM employeeaccount where email = @email limit 1", new MySqlParameter("@email", email));
                 CurrentUser.id = id;
             }
             else

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportForm));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label6 = new Label();
             cbxReportTypeFilter = new ComboBox();
             label1 = new Label();
@@ -40,15 +40,8 @@
             btnGenerateReport = new Button();
             label4 = new Label();
             dgReportResults = new DataGridView();
-            PERFUME_ID = new DataGridViewTextBoxColumn();
-            PERFUME_NAME = new DataGridViewTextBoxColumn();
-            PERFUME_QTY = new DataGridViewTextBoxColumn();
-            PERFUME_BRANCH = new DataGridViewTextBoxColumn();
-            PERFUME_DATECREATED = new DataGridViewTextBoxColumn();
-            PERFUME_STATUS = new DataGridViewTextBoxColumn();
             btnExportToExcel = new Button();
             btnExportToPDF = new Button();
-            btnPrint = new Button();
             dtpReportDateTo = new DateTimePicker();
             dtpReportDateFrom = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgReportResults).BeginInit();
@@ -66,13 +59,14 @@
             // 
             // cbxReportTypeFilter
             // 
+            cbxReportTypeFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxReportTypeFilter.Font = new Font("Montserrat", 9F);
             cbxReportTypeFilter.FormattingEnabled = true;
+            cbxReportTypeFilter.Items.AddRange(new object[] { "Added Quantity", "Deducted Quantity" });
             cbxReportTypeFilter.Location = new Point(135, 10);
             cbxReportTypeFilter.Name = "cbxReportTypeFilter";
             cbxReportTypeFilter.Size = new Size(178, 24);
             cbxReportTypeFilter.TabIndex = 15;
-            cbxReportTypeFilter.Text = "Select report...";
             // 
             // label1
             // 
@@ -123,6 +117,7 @@
             btnGenerateReport.Text = "Generate";
             btnGenerateReport.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGenerateReport.UseVisualStyleBackColor = true;
+            btnGenerateReport.Click += btnGenerateReport_Click;
             // 
             // label4
             // 
@@ -141,74 +136,37 @@
             dgReportResults.AllowUserToDeleteRows = false;
             dgReportResults.AllowUserToResizeColumns = false;
             dgReportResults.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dgReportResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dgReportResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgReportResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgReportResults.BackgroundColor = Color.White;
             dgReportResults.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgReportResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgReportResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgReportResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgReportResults.Columns.AddRange(new DataGridViewColumn[] { PERFUME_ID, PERFUME_NAME, PERFUME_QTY, PERFUME_BRANCH, PERFUME_DATECREATED, PERFUME_STATUS });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgReportResults.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgReportResults.DefaultCellStyle = dataGridViewCellStyle3;
             dgReportResults.Location = new Point(22, 114);
             dgReportResults.Name = "dgReportResults";
             dgReportResults.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgReportResults.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgReportResults.Size = new Size(786, 337);
             dgReportResults.TabIndex = 22;
-            // 
-            // PERFUME_ID
-            // 
-            PERFUME_ID.FillWeight = 60F;
-            PERFUME_ID.HeaderText = "REQ ID";
-            PERFUME_ID.MinimumWidth = 3;
-            PERFUME_ID.Name = "PERFUME_ID";
-            PERFUME_ID.ReadOnly = true;
-            // 
-            // PERFUME_NAME
-            // 
-            PERFUME_NAME.FillWeight = 110F;
-            PERFUME_NAME.HeaderText = "Perfume";
-            PERFUME_NAME.Name = "PERFUME_NAME";
-            PERFUME_NAME.ReadOnly = true;
-            // 
-            // PERFUME_QTY
-            // 
-            PERFUME_QTY.HeaderText = "Qty";
-            PERFUME_QTY.Name = "PERFUME_QTY";
-            // 
-            // PERFUME_BRANCH
-            // 
-            PERFUME_BRANCH.HeaderText = "Branch";
-            PERFUME_BRANCH.Name = "PERFUME_BRANCH";
-            // 
-            // PERFUME_DATECREATED
-            // 
-            PERFUME_DATECREATED.FillWeight = 107.817261F;
-            PERFUME_DATECREATED.HeaderText = "Date Created";
-            PERFUME_DATECREATED.Name = "PERFUME_DATECREATED";
-            // 
-            // PERFUME_STATUS
-            // 
-            PERFUME_STATUS.HeaderText = "Status";
-            PERFUME_STATUS.Name = "PERFUME_STATUS";
             // 
             // btnExportToExcel
             // 
@@ -226,6 +184,7 @@
             btnExportToExcel.Text = "Export to Excel";
             btnExportToExcel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnExportToExcel.UseVisualStyleBackColor = true;
+            btnExportToExcel.Click += btnExportToExcel_Click_1;
             // 
             // btnExportToPDF
             // 
@@ -243,23 +202,7 @@
             btnExportToPDF.Text = "Export to PDF";
             btnExportToPDF.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnExportToPDF.UseVisualStyleBackColor = true;
-            // 
-            // btnPrint
-            // 
-            btnPrint.BackColor = Color.FromArgb(225, 212, 193);
-            btnPrint.Cursor = Cursors.Hand;
-            btnPrint.FlatAppearance.BorderSize = 0;
-            btnPrint.FlatStyle = FlatStyle.Flat;
-            btnPrint.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPrint.ForeColor = Color.Black;
-            btnPrint.Image = (Image)resources.GetObject("btnPrint.Image");
-            btnPrint.Location = new Point(328, 467);
-            btnPrint.Name = "btnPrint";
-            btnPrint.Size = new Size(85, 27);
-            btnPrint.TabIndex = 25;
-            btnPrint.Text = "Print";
-            btnPrint.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnPrint.UseVisualStyleBackColor = true;
+            btnExportToPDF.Click += btnExportToPDF_Click;
             // 
             // dtpReportDateTo
             // 
@@ -288,7 +231,6 @@
             ClientSize = new Size(820, 512);
             Controls.Add(dtpReportDateTo);
             Controls.Add(dtpReportDateFrom);
-            Controls.Add(btnPrint);
             Controls.Add(btnExportToPDF);
             Controls.Add(btnExportToExcel);
             Controls.Add(dgReportResults);
@@ -319,15 +261,8 @@
         private Button btnGenerateReport;
         private Label label4;
         private DataGridView dgReportResults;
-        private DataGridViewTextBoxColumn PERFUME_ID;
-        private DataGridViewTextBoxColumn PERFUME_NAME;
-        private DataGridViewTextBoxColumn PERFUME_QTY;
-        private DataGridViewTextBoxColumn PERFUME_BRANCH;
-        private DataGridViewTextBoxColumn PERFUME_DATECREATED;
-        private DataGridViewTextBoxColumn PERFUME_STATUS;
         private Button btnExportToExcel;
         private Button btnExportToPDF;
-        private Button btnPrint;
         private DateTimePicker dtpReportDateTo;
         private DateTimePicker dtpReportDateFrom;
     }

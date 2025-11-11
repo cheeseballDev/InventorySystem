@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuditForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             btnSearchAuditLog = new Button();
             dgAuditLog = new DataGridView();
             richTextBox1 = new RichTextBox();
@@ -74,23 +74,23 @@
             dgAuditLog.AllowUserToDeleteRows = false;
             dgAuditLog.AllowUserToResizeColumns = false;
             dgAuditLog.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgAuditLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dgAuditLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             dgAuditLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgAuditLog.BackgroundColor = Color.White;
+            dgAuditLog.BackgroundColor = SystemColors.Control;
             dgAuditLog.BorderStyle = BorderStyle.None;
             dgAuditLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgAuditLog.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle4.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgAuditLog.DefaultCellStyle = dataGridViewCellStyle4;
             dgAuditLog.Location = new Point(12, 151);
             dgAuditLog.Name = "dgAuditLog";
             dgAuditLog.ReadOnly = true;
@@ -101,6 +101,7 @@
             // 
             // richTextBox1
             // 
+            richTextBox1.BackColor = SystemColors.Control;
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.DetectUrls = false;
             richTextBox1.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -118,14 +119,15 @@
             cbxAuditLogActionFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxAuditLogActionFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxAuditLogActionFilter.FormattingEnabled = true;
-            cbxAuditLogActionFilter.Items.AddRange(new object[] { "Edited account information", "Edited perfume information", "Added new account", "Added new perfume" });
-            cbxAuditLogActionFilter.Location = new Point(115, 56);
+            cbxAuditLogActionFilter.Items.AddRange(new object[] { "Edited account information", "Edited perfume information", "Added new account", "Added new perfume", "Sent product request", "Approved product request", "Rejected product request" });
+            cbxAuditLogActionFilter.Location = new Point(106, 56);
             cbxAuditLogActionFilter.Name = "cbxAuditLogActionFilter";
-            cbxAuditLogActionFilter.Size = new Size(148, 24);
+            cbxAuditLogActionFilter.Size = new Size(372, 24);
             cbxAuditLogActionFilter.TabIndex = 7;
             // 
             // richTextBox2
             // 
+            richTextBox2.BackColor = SystemColors.Control;
             richTextBox2.BorderStyle = BorderStyle.None;
             richTextBox2.DetectUrls = false;
             richTextBox2.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -140,6 +142,7 @@
             // 
             // richTextBox3
             // 
+            richTextBox3.BackColor = SystemColors.Control;
             richTextBox3.BorderStyle = BorderStyle.None;
             richTextBox3.DetectUrls = false;
             richTextBox3.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);

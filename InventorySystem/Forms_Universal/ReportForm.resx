@@ -128,24 +128,6 @@
         9in4/nKwRbRPgUgAvteXS88JaN8NqvKGv0vkBUG1AiiRiWFOAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="PERFUME_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PERFUME_NAME.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PERFUME_QTY.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PERFUME_BRANCH.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PERFUME_DATECREATED.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PERFUME_STATUS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btnExportToExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
@@ -164,16 +146,6 @@
         /sAJWOm3cBxWhqpQ8rASUniBTaxjB01UYW4lK70KLxGSOZQw1auwAuUHGp9Bi1+T8Qkm8QmtbbiF+kjb
         gKLj5eT7FNfYxy9WoPk9FN1C9+WwDUUL9dh9oYYrLKCNNdxDu+7aofv60g5HoZN61Bahm1njQ+iHVpOx
         /rSua2iiR0pymMcTzC0yg2dot8eYhs7rWv71mMLBiKMOMLDxC96oPGEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAAOxJREFUOE+t1M8OwUAQBvA6OApnHgmPIS7esAcJD+DmKHFyRvwNWd+3se1EZ7pt
-        dZJf6Hbms7SVOOdapS7+I3+T1xR2cDIcYQVDyMoK7MINuBBzgBH4sgL78AI5WGYDHTADByAHquAmzEDW
-        DBYVzcFXWWCj0gJjV/fXHTi4h7EWWPXqStvv61MLrHN1aQksH6oFnnmihgus4QFXLVA2v0H73STZj4hi
-        YAqhkbvlo9Uz8Fz4RpxJtUAWG3nAHcaKPez1z7QVyOJBaNR2R+GDs0ErsM6fA7GXM2YgawK8weWghj3s
-        9VUIbIu62JxLPp+KUKp7eyxYAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
