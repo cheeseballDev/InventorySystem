@@ -178,6 +178,7 @@
             btnClear.Text = "Clear";
             btnClear.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // label6
             // 
@@ -251,6 +252,7 @@
             btnRefresh.Size = new Size(52, 38);
             btnRefresh.TabIndex = 15;
             btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // dtpDateToRequest
             // 

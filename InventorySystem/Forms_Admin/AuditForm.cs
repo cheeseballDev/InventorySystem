@@ -30,7 +30,7 @@ namespace InventorySystem
                 loadAuditLog();
                 return;
             }
-            String query = "select Log_ID, User_ID, Action, Module, Timestamp from auditlogtable where Action like @action and User_ID like @user and date(Timestamp) between @startDate and @endDate";
+            String query = "select Log_ID, User_ID, Action, Module, Timestamp from auditlogtable where Action like @action or User_ID like @user and date(Timestamp) between @startDate and @endDate";
             MySqlParameter actionParameter = new MySqlParameter("@action", "%" + cbxAuditLogActionFilter.Text + "%");
             MySqlParameter userParameter = new MySqlParameter("@user", "%" + tbSearchUserFilter.Text + "%");
             MySqlParameter startDateParameter = new MySqlParameter("@startDate", dtpAuditLogDateFrom.Value.Date);
@@ -41,7 +41,9 @@ namespace InventorySystem
 
         private void btnOpenAuditDetails_Click(object sender, EventArgs e)
         {
-            AuditDetailsPopUp auditDetailsPopUp = new AuditDetailsPopUp();
+            DataGridViewRow row = dgAuditLog.SelectedRows[0];
+            string id = row.Cells["Log_ID"].Value.ToString();
+            AuditDetailsPopUp auditDetailsPopUp = new AuditDetailsPopUp(id);
             auditDetailsPopUp.ShowDialog();
         }
     }
