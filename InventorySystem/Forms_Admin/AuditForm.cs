@@ -50,7 +50,9 @@ namespace InventorySystem
 
         private void btnOpenAuditDetails_Click(object sender, EventArgs e)
         {
-            AuditDetailsPopUp auditDetailsPopUp = new AuditDetailsPopUp();
+            DataGridViewRow row = dgAuditLog.SelectedRows[0];
+            string id = row.Cells["Log_ID"].Value.ToString();
+            AuditDetailsPopUp auditDetailsPopUp = new AuditDetailsPopUp(id);
             auditDetailsPopUp.ShowDialog();
         }
     }
