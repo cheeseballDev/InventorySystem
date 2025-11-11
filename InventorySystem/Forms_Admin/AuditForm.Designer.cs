@@ -85,7 +85,7 @@
             dgAuditLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle4.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
@@ -241,7 +241,7 @@
             btnOpenAuditDetails.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnOpenAuditDetails.ForeColor = Color.Black;
             btnOpenAuditDetails.Image = (Image)resources.GetObject("btnOpenAuditDetails.Image");
-            btnOpenAuditDetails.Location = new Point(36, 461);
+            btnOpenAuditDetails.Location = new Point(36, 469);
             btnOpenAuditDetails.Name = "btnOpenAuditDetails";
             btnOpenAuditDetails.Size = new Size(144, 31);
             btnOpenAuditDetails.TabIndex = 35;

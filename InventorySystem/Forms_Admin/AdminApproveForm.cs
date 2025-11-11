@@ -44,7 +44,7 @@ namespace InventorySystem
             }
             if (dtpRequestDateFrom.Value <= dtpRequestDateTo.Value)
             {
-                query += " and date(Timestamp) between @startDate and @endDate";
+                query += " and date(request_date) between @startDate and @endDate";
                 parameters.Add(new MySqlParameter("@startDate", dtpRequestDateFrom.Value.Date));
                 parameters.Add(new MySqlParameter("@endDate", dtpRequestDateTo.Value.Date));
             }
