@@ -26,7 +26,6 @@ namespace InventorySystem
                 loadAuditLog();
                 return;
             }
-            /*
             string query = "select Log_ID, User_ID, Action, Module, Timestamp from auditlogtable where 1=1 ";
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (!tbSearchUserFilter.Text.Equals("Search user...") && !string.IsNullOrEmpty(tbSearchUserFilter.Text)) 
@@ -45,16 +44,9 @@ namespace InventorySystem
                 parameters.Add(new MySqlParameter("@startDate", dtpAuditLogDateFrom.Value.Date));
                 parameters.Add(new MySqlParameter("@endDate", dtpAuditLogDateTo.Value.Date));
             }
-            */
-
-            String query = "select Log_ID, User_ID, Action, Module, Timestamp from auditlogtable where Action like @action OR User_ID like @user and date(Timestamp) between @startDate and @endDate";
-            MySqlParameter actionParameter = new MySqlParameter("@action", "%" + cbxAuditLogActionFilter.Text + "%");
-            MySqlParameter userParameter = new MySqlParameter("@user", "%" + tbSearchUserFilter.Text + "%");
-            MySqlParameter startDateParameter = new MySqlParameter("@startDate", dtpAuditLogDateFrom.Value.Date);
-            MySqlParameter endDateParameter = new MySqlParameter("@endDate", dtpAuditLogDateTo.Value.Date);
 
 
-            dgAuditLog.DataSource = DatabaseHelper.ExecuteQuery(query, actionParameter, userParameter, startDateParameter, endDateParameter);
+            dgAuditLog.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
 
         }
 
