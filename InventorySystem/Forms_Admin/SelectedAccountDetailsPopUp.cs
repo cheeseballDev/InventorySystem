@@ -59,9 +59,8 @@ namespace InventorySystem.Forms_Admin
 
             if (rowsAffected > 0)
             {
-                AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Account successfully updated!");
-                alq.LogAction($"Edited Account Information for {empID}", "Edit Account Page");
+                DatabaseHelper.LogAction($"Edited Account Information for {empID}", "Edit Account Page");
             }
             else
             {
