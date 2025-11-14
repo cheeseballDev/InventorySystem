@@ -67,7 +67,7 @@
             label1.Font = new Font("Montserrat", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(26, 12);
             label1.Name = "label1";
-            label1.Size = new Size(406, 40);
+            label1.Size = new Size(409, 45);
             label1.TabIndex = 9;
             label1.Text = "Selected Account Details:";
             // 
@@ -78,7 +78,7 @@
             cbxAccountBranch.Items.AddRange(new object[] { "Branch 1", "Branch 2", "Branch 3" });
             cbxAccountBranch.Location = new Point(123, 194);
             cbxAccountBranch.Name = "cbxAccountBranch";
-            cbxAccountBranch.Size = new Size(330, 24);
+            cbxAccountBranch.Size = new Size(330, 26);
             cbxAccountBranch.TabIndex = 35;
             cbxAccountBranch.Text = "Select branch...";
             // 
@@ -89,7 +89,7 @@
             cbxAccountRole.Items.AddRange(new object[] { "Inventory Guy", "Family Guy" });
             cbxAccountRole.Location = new Point(123, 238);
             cbxAccountRole.Name = "cbxAccountRole";
-            cbxAccountRole.Size = new Size(330, 24);
+            cbxAccountRole.Size = new Size(330, 26);
             cbxAccountRole.TabIndex = 34;
             cbxAccountRole.Text = "Select role...";
             // 
@@ -112,7 +112,7 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(29, 240);
             label3.Name = "label3";
-            label3.Size = new Size(49, 22);
+            label3.Size = new Size(51, 25);
             label3.TabIndex = 32;
             label3.Text = "Role:";
             // 
@@ -125,9 +125,9 @@
             btnCancel.Font = new Font("Montserrat", 9.749999F);
             btnCancel.ForeColor = Color.Black;
             btnCancel.Image = (Image)resources.GetObject("btnCancel.Image");
-            btnCancel.Location = new Point(261, 288);
+            btnCancel.Location = new Point(266, 288);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(137, 31);
+            btnCancel.Size = new Size(144, 31);
             btnCancel.TabIndex = 31;
             btnCancel.Text = "Cancel Changes";
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -159,7 +159,7 @@
             label5.ForeColor = Color.FromArgb(135, 135, 135);
             label5.Location = new Point(29, 192);
             label5.Name = "label5";
-            label5.Size = new Size(70, 22);
+            label5.Size = new Size(72, 25);
             label5.TabIndex = 29;
             label5.Text = "Branch:";
             // 
@@ -182,7 +182,7 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(29, 110);
             label4.Name = "label4";
-            label4.Size = new Size(58, 22);
+            label4.Size = new Size(60, 25);
             label4.TabIndex = 27;
             label4.Text = "Email:";
             // 
@@ -193,7 +193,7 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(29, 64);
             label2.Name = "label2";
-            label2.Size = new Size(62, 22);
+            label2.Size = new Size(64, 25);
             label2.TabIndex = 26;
             label2.Text = "Name:";
             // 
@@ -204,7 +204,7 @@
             label6.ForeColor = Color.FromArgb(135, 135, 135);
             label6.Location = new Point(29, 150);
             label6.Name = "label6";
-            label6.Size = new Size(90, 22);
+            label6.Size = new Size(92, 25);
             label6.TabIndex = 36;
             label6.Text = "Password:";
             // 

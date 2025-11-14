@@ -39,7 +39,7 @@
             btnRefresh = new Button();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            tbSearchProductFilter = new RichTextBox();
+            tbSearchPerfumeFilter = new RichTextBox();
             btnScanQR = new Button();
             cbxPerfumeBranchFilter = new ComboBox();
             cbxPerfumeNoteFilter = new ComboBox();
@@ -84,7 +84,7 @@
             dgPerfume.ReadOnly = true;
             dgPerfume.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgPerfume.Size = new Size(797, 383);
+            dgPerfume.Size = new Size(797, 353);
             dgPerfume.TabIndex = 5;
             // 
             // btnAddSelectedPerfumeQuantity
@@ -95,7 +95,7 @@
             btnAddSelectedPerfumeQuantity.Cursor = Cursors.Hand;
             btnAddSelectedPerfumeQuantity.FlatStyle = FlatStyle.Flat;
             btnAddSelectedPerfumeQuantity.ForeColor = Color.White;
-            btnAddSelectedPerfumeQuantity.Location = new Point(225, 455);
+            btnAddSelectedPerfumeQuantity.Location = new Point(230, 420);
             btnAddSelectedPerfumeQuantity.Name = "btnAddSelectedPerfumeQuantity";
             btnAddSelectedPerfumeQuantity.Size = new Size(82, 38);
             btnAddSelectedPerfumeQuantity.TabIndex = 6;
@@ -110,7 +110,7 @@
             btnDeductSelectedPerfumeQuantity.Cursor = Cursors.Hand;
             btnDeductSelectedPerfumeQuantity.FlatStyle = FlatStyle.Flat;
             btnDeductSelectedPerfumeQuantity.ForeColor = Color.White;
-            btnDeductSelectedPerfumeQuantity.Location = new Point(313, 455);
+            btnDeductSelectedPerfumeQuantity.Location = new Point(318, 420);
             btnDeductSelectedPerfumeQuantity.Name = "btnDeductSelectedPerfumeQuantity";
             btnDeductSelectedPerfumeQuantity.Size = new Size(82, 38);
             btnDeductSelectedPerfumeQuantity.TabIndex = 7;
@@ -125,7 +125,7 @@
             btnEditSelectedPerfume.Cursor = Cursors.Hand;
             btnEditSelectedPerfume.FlatStyle = FlatStyle.Flat;
             btnEditSelectedPerfume.ForeColor = Color.White;
-            btnEditSelectedPerfume.Location = new Point(401, 455);
+            btnEditSelectedPerfume.Location = new Point(406, 420);
             btnEditSelectedPerfume.Name = "btnEditSelectedPerfume";
             btnEditSelectedPerfume.Size = new Size(82, 38);
             btnEditSelectedPerfume.TabIndex = 8;
@@ -140,7 +140,7 @@
             btnRefresh.Cursor = Cursors.Hand;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(489, 455);
+            btnRefresh.Location = new Point(494, 420);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(82, 38);
             btnRefresh.TabIndex = 9;
@@ -152,7 +152,7 @@
             panel1.BackColor = SystemColors.Window;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(tbSearchProductFilter);
+            panel1.Controls.Add(tbSearchPerfumeFilter);
             panel1.Location = new Point(12, 17);
             panel1.Name = "panel1";
             panel1.Size = new Size(274, 24);
@@ -168,19 +168,19 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // tbSearchProductFilter
+            // tbSearchPerfumeFilter
             // 
-            tbSearchProductFilter.BorderStyle = BorderStyle.None;
-            tbSearchProductFilter.DetectUrls = false;
-            tbSearchProductFilter.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbSearchProductFilter.Location = new Point(22, 3);
-            tbSearchProductFilter.MaxLength = 20;
-            tbSearchProductFilter.Multiline = false;
-            tbSearchProductFilter.Name = "tbSearchProductFilter";
-            tbSearchProductFilter.Size = new Size(245, 21);
-            tbSearchProductFilter.TabIndex = 0;
-            tbSearchProductFilter.Text = "Search perfume...";
-            tbSearchProductFilter.TextChanged += tbSearchProductFilter_TextChanged;
+            tbSearchPerfumeFilter.BorderStyle = BorderStyle.None;
+            tbSearchPerfumeFilter.DetectUrls = false;
+            tbSearchPerfumeFilter.Font = new Font("Montserrat", 8.95F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbSearchPerfumeFilter.Location = new Point(22, 3);
+            tbSearchPerfumeFilter.MaxLength = 20;
+            tbSearchPerfumeFilter.Multiline = false;
+            tbSearchPerfumeFilter.Name = "tbSearchPerfumeFilter";
+            tbSearchPerfumeFilter.Size = new Size(245, 21);
+            tbSearchPerfumeFilter.TabIndex = 0;
+            tbSearchPerfumeFilter.Text = "Search perfume...";
+            tbSearchPerfumeFilter.TextChanged += tbSearchProductFilter_TextChanged;
             // 
             // btnScanQR
             // 
@@ -224,7 +224,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(821, 504);
+            ClientSize = new Size(821, 470);
             Controls.Add(panel1);
             Controls.Add(btnScanQR);
             Controls.Add(cbxPerfumeBranchFilter);
@@ -253,7 +253,7 @@
         private Button btnRefresh;
         private Panel panel1;
         private PictureBox pictureBox1;
-        private RichTextBox tbSearchProductFilter;
+        private RichTextBox tbSearchPerfumeFilter;
         private Button btnScanQR;
         private ComboBox cbxPerfumeBranchFilter;
         private ComboBox cbxPerfumeNoteFilter;

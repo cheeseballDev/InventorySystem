@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InventorySystem.Helper_Classes;
+﻿using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem
@@ -44,11 +35,8 @@ namespace InventorySystem
             String rejek = "REJECTED";
             String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
             DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", reqID), new MySqlParameter("@status", rejek));
-            DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
-                new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
-                new MySqlParameter("@userId", CurrentUser.id),
-                new MySqlParameter("@action", $"Rejected product request {reqID}"),
-                new MySqlParameter("@module", "Request Details Module"));
+            AuditLogQuery alq = new AuditLogQuery();
+            alq.LogAction($"Rejected product request {reqID}", "Request Details Module");
         }
 
         private void loadDetails()

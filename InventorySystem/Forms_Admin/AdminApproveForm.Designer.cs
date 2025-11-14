@@ -235,7 +235,7 @@
             btnRejectRequest.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRejectRequest.ForeColor = Color.Black;
             btnRejectRequest.Image = (Image)resources.GetObject("btnRejectRequest.Image");
-            btnRejectRequest.Location = new Point(430, 469);
+            btnRejectRequest.Location = new Point(451, 469);
             btnRejectRequest.Name = "btnRejectRequest";
             btnRejectRequest.Size = new Size(144, 31);
             btnRejectRequest.TabIndex = 33;
@@ -254,7 +254,7 @@
             btnApproveRequest.Image = (Image)resources.GetObject("btnApproveRequest.Image");
             btnApproveRequest.Location = new Point(263, 469);
             btnApproveRequest.Name = "btnApproveRequest";
-            btnApproveRequest.Size = new Size(144, 31);
+            btnApproveRequest.Size = new Size(161, 31);
             btnApproveRequest.TabIndex = 32;
             btnApproveRequest.Text = "Approve Request";
             btnApproveRequest.TextImageRelation = TextImageRelation.ImageBeforeText;

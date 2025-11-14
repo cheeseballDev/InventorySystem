@@ -1,6 +1,5 @@
 ﻿using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace InventorySystem
 {

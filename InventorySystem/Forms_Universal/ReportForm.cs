@@ -1,8 +1,4 @@
-﻿using System.Drawing.Printing;
-using System.Reflection.Metadata;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using InventorySystem.Helper_Classes;
+﻿using InventorySystem.Helper_Classes;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using MySql.Data.MySqlClient;
@@ -108,7 +104,7 @@ namespace InventorySystem
             {
                 MessageBox.Show("No Record To Export", "Info");
             }
-        }   
+        }
 
         private void btnExportToExcel_Click_1(object sender, EventArgs e)
         {

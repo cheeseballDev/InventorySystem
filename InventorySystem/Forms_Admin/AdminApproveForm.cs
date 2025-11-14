@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using InventorySystem.Helper_Classes;
+﻿using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem
@@ -33,24 +24,31 @@ namespace InventorySystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cbxRequestBranchFilter.Text) || string.IsNullOrWhiteSpace(cbxRequestStatusFilter.Text))
-            {
-                loadExistingRequests();
-                return;
-            }
-            String query = "select * from requestlogtable where branch like @branch and status like @status and date(request_date) between @startDate and @endDate";
-            MySqlParameter actionParameter = new MySqlParameter("@branch", "%" + cbxRequestBranchFilter.Text + "%");
-            MySqlParameter userParameter = new MySqlParameter("@status", "%" + cbxRequestStatusFilter.Text + "%");
-            MySqlParameter startDateParameter = new MySqlParameter("@startDate", dtpRequestDateFrom.Value.Date);
-            MySqlParameter endDateParameter = new MySqlParameter("@endDate", dtpRequestDateTo.Value.Date);
-
-            dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query, actionParameter, userParameter, startDateParameter, endDateParameter);
+            loadExistingRequests();
         }
 
         private void loadExistingRequests()
         {
-            String query = "select * from requestlogtable";
-            dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query);
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+
+            String query = "select * from requestlogtable where 1=1";
+            if (cbxRequestBranchFilter.SelectedIndex != -1)
+            {
+                query += " and branch like @branch";
+                parameters.Add(new MySqlParameter("@branch", "%" + cbxRequestBranchFilter.Text + "%"));
+            }
+            if (cbxRequestStatusFilter.SelectedIndex != -1)
+            {
+                query += " and status like @status";
+                parameters.Add(new MySqlParameter("@status", "%" + cbxRequestStatusFilter.Text + "%"));
+            }
+            if (dtpRequestDateFrom.Value <= dtpRequestDateTo.Value)
+            {
+                query += " and date(request_date) between @startDate and @endDate";
+                parameters.Add(new MySqlParameter("@startDate", dtpRequestDateFrom.Value.Date));
+                parameters.Add(new MySqlParameter("@endDate", dtpRequestDateTo.Value.Date));
+            }
+            dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -90,12 +88,8 @@ namespace InventorySystem
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", rejek));
                 loadExistingRequests();
-                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
-                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
-                    new MySqlParameter("@userId", CurrentUser.id),
-                    new MySqlParameter("@action", $"Rejected product request {id}"),
-                    new MySqlParameter("@module", "Request Details Module"));
-
+                AuditLogQuery alq = new AuditLogQuery();
+                alq.LogAction($"Rejected product request {id}", "Request Details Module");
             }
             else
             {

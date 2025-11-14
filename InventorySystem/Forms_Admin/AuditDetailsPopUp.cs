@@ -28,7 +28,7 @@ namespace InventorySystem
                 DatabaseHelper.ExecuteQuery(query, new MySqlParameter("@id", logID));
                 MessageBox.Show("Log deleted");
                 this.Close();
-            }           
+            }
         }
 
         private void loadDetails()
@@ -48,7 +48,7 @@ namespace InventorySystem
                             lblAuditUserId.Text = reader["User_ID"].ToString();
                             lblAuditAction.Text = reader["Action"].ToString();
                             lblAuditModule.Text = reader["Module"].ToString();
-                            lblAuditTimestamp.Text = reader["Timestamp"].ToString();                           
+                            lblAuditTimestamp.Text = reader["Timestamp"].ToString();
                         }
                     }
                 }

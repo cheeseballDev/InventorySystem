@@ -94,7 +94,7 @@
             dgPerfume.ReadOnly = true;
             dgPerfume.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgPerfume.Size = new Size(797, 360);
+            dgPerfume.Size = new Size(797, 357);
             dgPerfume.TabIndex = 5;
             // 
             // btnAddSelectedPerfumeQuantity
@@ -105,7 +105,7 @@
             btnAddSelectedPerfumeQuantity.Cursor = Cursors.Hand;
             btnAddSelectedPerfumeQuantity.FlatStyle = FlatStyle.Flat;
             btnAddSelectedPerfumeQuantity.ForeColor = Color.White;
-            btnAddSelectedPerfumeQuantity.Location = new Point(234, 433);
+            btnAddSelectedPerfumeQuantity.Location = new Point(232, 430);
             btnAddSelectedPerfumeQuantity.Name = "btnAddSelectedPerfumeQuantity";
             btnAddSelectedPerfumeQuantity.Size = new Size(82, 38);
             btnAddSelectedPerfumeQuantity.TabIndex = 6;
@@ -120,7 +120,7 @@
             btnDeductSelectedPerfumeQuantity.Cursor = Cursors.Hand;
             btnDeductSelectedPerfumeQuantity.FlatStyle = FlatStyle.Flat;
             btnDeductSelectedPerfumeQuantity.ForeColor = Color.White;
-            btnDeductSelectedPerfumeQuantity.Location = new Point(322, 433);
+            btnDeductSelectedPerfumeQuantity.Location = new Point(320, 430);
             btnDeductSelectedPerfumeQuantity.Name = "btnDeductSelectedPerfumeQuantity";
             btnDeductSelectedPerfumeQuantity.Size = new Size(82, 38);
             btnDeductSelectedPerfumeQuantity.TabIndex = 7;
@@ -135,7 +135,7 @@
             btnEditSelectedPerfumeDetails.Cursor = Cursors.Hand;
             btnEditSelectedPerfumeDetails.FlatStyle = FlatStyle.Flat;
             btnEditSelectedPerfumeDetails.ForeColor = Color.White;
-            btnEditSelectedPerfumeDetails.Location = new Point(410, 433);
+            btnEditSelectedPerfumeDetails.Location = new Point(408, 430);
             btnEditSelectedPerfumeDetails.Name = "btnEditSelectedPerfumeDetails";
             btnEditSelectedPerfumeDetails.Size = new Size(82, 38);
             btnEditSelectedPerfumeDetails.TabIndex = 8;
@@ -150,7 +150,7 @@
             btnRefresh.Cursor = Cursors.Hand;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(498, 433);
+            btnRefresh.Location = new Point(496, 430);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(82, 38);
             btnRefresh.TabIndex = 9;
@@ -199,7 +199,7 @@
             cbxPerfumeBranchFilter.FormattingEnabled = true;
             cbxPerfumeBranchFilter.Location = new Point(427, 19);
             cbxPerfumeBranchFilter.Name = "cbxPerfumeBranchFilter";
-            cbxPerfumeBranchFilter.Size = new Size(137, 24);
+            cbxPerfumeBranchFilter.Size = new Size(137, 26);
             cbxPerfumeBranchFilter.TabIndex = 16;
             // 
             // cbxPerfumeNoteFilter
@@ -209,7 +209,7 @@
             cbxPerfumeNoteFilter.FormattingEnabled = true;
             cbxPerfumeNoteFilter.Location = new Point(277, 19);
             cbxPerfumeNoteFilter.Name = "cbxPerfumeNoteFilter";
-            cbxPerfumeNoteFilter.Size = new Size(137, 24);
+            cbxPerfumeNoteFilter.Size = new Size(137, 26);
             cbxPerfumeNoteFilter.TabIndex = 15;
             // 
             // btnAddPerfume
@@ -232,9 +232,9 @@
             // 
             // AdminInventoryForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 22F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(821, 483);
+            ClientSize = new Size(821, 480);
             Controls.Add(btnAddPerfume);
             Controls.Add(panel1);
             Controls.Add(cbxPerfumeBranchFilter);

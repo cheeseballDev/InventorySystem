@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using InventorySystem.Enums;
+﻿using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace InventorySystem
 {
@@ -33,6 +21,21 @@ namespace InventorySystem
 
         private void btnSubmitRequest_Click(object sender, EventArgs e)
         {
+            if (cbxRequestCurrentBranchFilter.SelectedIndex < -1)
+            {
+                MessageBox.Show("Please select your current branch.");
+                return;
+            }
+            if (cbxRequestParfumFilter.SelectedIndex < -1)
+            {
+                MessageBox.Show("Please select the perfume you want to request");
+                return;
+            }
+            if (numPerfumeAmountToRequest.Value <= 0)
+            {
+                MessageBox.Show("Please enter a valid quantity to request.");
+                return;
+            }
             String reqID = DatabaseHelper.CheckForExistingId("select request_id from requestlogtable order by request_id desc limit 1", "REQ");
             String prodID = DatabaseHelper.getID($"select product_id from perfumetable where perfume = @perfume",
                 new MySqlParameter("@perfume", cbxRequestParfumFilter.Text));
@@ -75,6 +78,8 @@ namespace InventorySystem
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            cbxRequestCurrentBranchFilter.Items.Clear();
+            cbxRequestParfumFilter.Items.Clear();
             tbRequestMessage.Clear();
             numPerfumeAmountToRequest.Value = 0;
         }

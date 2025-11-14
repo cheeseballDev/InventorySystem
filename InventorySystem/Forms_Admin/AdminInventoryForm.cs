@@ -53,8 +53,25 @@ namespace InventorySystem
 
         private void loadProducts()
         {
-            String query = "select * from perfumetable";
-            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query);
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            string query = "select Product_ID, Perfume, Note, Branch, Quantity, Date_Created from perfumetable where 1=1 ";
+
+            if (cbxPerfumeBranchFilter.SelectedIndex != -1)
+            {
+                query += " and Branch like @branch";
+                parameters.Add(new MySqlParameter("@branch", "%" + cbxPerfumeBranchFilter.Text + "%"));
+            }
+            if (cbxPerfumeNoteFilter.SelectedIndex != -1)
+            {
+                query += " and Note like @note";
+                parameters.Add(new MySqlParameter("@note", "%" + cbxPerfumeNoteFilter.Text + "%"));
+            }
+            if (!tbSearchPerfumeFilter.Text.Equals("Search perfume...") && !string.IsNullOrEmpty(tbSearchPerfumeFilter.Text))
+            {
+                query += " and (Product_ID like @search or Perfume like @search or Note like @search or Branch like @search)";
+                parameters.Add(new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%"));
+            }
+            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -64,15 +81,7 @@ namespace InventorySystem
 
         private void tbSearchPerfumeFilter_TextChanged(object sender, EventArgs e)
         {
-            if (tbSearchPerfumeFilter.Text == "Search perfume..." || string.IsNullOrWhiteSpace(tbSearchPerfumeFilter.Text))
-            {
-                loadProducts();
-                return;
-            }
-            String query = "select Product_ID, Perfume, Note, Branch, Quantity, Date_Created from perfumetable where Product_ID like @search or Perfume like @search or Note like @search or Branch like @search";
-            MySqlParameter searchParameter = new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%");
-
-            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, searchParameter);
+            loadProducts();
         }
 
         private void btnAddSelectedPerfumeQuantity_Click(object sender, EventArgs e)
