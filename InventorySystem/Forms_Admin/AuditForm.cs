@@ -13,6 +13,11 @@ namespace InventorySystem
         }
 
         private void loadAuditLog()
+        {           
+            dgAuditLog.DataSource = DatabaseHelper.ExecuteQuery("select * from auditlogtable");
+        }
+
+        private void btnSearchAuditLog_Click(object sender, EventArgs e)
         {
             string query = "select Log_ID, User_ID, Action, Module, Timestamp from auditlogtable where 1=1 ";
             List<MySqlParameter> parameters = new List<MySqlParameter>();
@@ -32,14 +37,7 @@ namespace InventorySystem
                 parameters.Add(new MySqlParameter("@startDate", dtpAuditLogDateFrom.Value.Date));
                 parameters.Add(new MySqlParameter("@endDate", dtpAuditLogDateTo.Value.Date));
             }
-
-            dgAuditLog.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
-        }
-
-        private void btnSearchAuditLog_Click(object sender, EventArgs e)
-        {
             loadAuditLog();
-            return;
         }
 
         private void btnOpenAuditDetails_Click(object sender, EventArgs e)

@@ -169,6 +169,7 @@
             cbxRequestBranchFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxRequestBranchFilter.Font = new Font("Montserrat", 9F);
             cbxRequestBranchFilter.FormattingEnabled = true;
+            cbxRequestBranchFilter.Items.AddRange(new object[] { "" });
             cbxRequestBranchFilter.Location = new Point(104, 15);
             cbxRequestBranchFilter.Name = "cbxRequestBranchFilter";
             cbxRequestBranchFilter.Size = new Size(191, 26);
@@ -210,6 +211,7 @@
             cbxRequestStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxRequestStatusFilter.Font = new Font("Montserrat", 9F);
             cbxRequestStatusFilter.FormattingEnabled = true;
+            cbxRequestStatusFilter.Items.AddRange(new object[] { "", "Approved", "Rejected", "Pending" });
             cbxRequestStatusFilter.Location = new Point(104, 57);
             cbxRequestStatusFilter.Name = "cbxRequestStatusFilter";
             cbxRequestStatusFilter.Size = new Size(191, 26);
@@ -242,6 +244,7 @@
             btnRejectRequest.Text = "Reject Request";
             btnRejectRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRejectRequest.UseVisualStyleBackColor = true;
+            btnRejectRequest.Click += btnRejectRequest_Click_1;
             // 
             // btnApproveRequest
             // 
@@ -259,6 +262,7 @@
             btnApproveRequest.Text = "Approve Request";
             btnApproveRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnApproveRequest.UseVisualStyleBackColor = true;
+            btnApproveRequest.Click += btnApproveRequest_Click_1;
             // 
             // btnOpenRequestDetails
             // 

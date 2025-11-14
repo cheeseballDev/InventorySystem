@@ -52,6 +52,11 @@ namespace InventorySystem
         }
 
         private void loadProducts()
+        {          
+            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery("select * from perfumetable");
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             string query = "select Product_ID, Perfume, Note, Branch, Quantity, Date_Created from perfumetable where 1=1 ";
@@ -71,11 +76,6 @@ namespace InventorySystem
                 query += " and (Product_ID like @search or Perfume like @search or Note like @search or Branch like @search)";
                 parameters.Add(new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%"));
             }
-            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
             loadProducts();
         }
 

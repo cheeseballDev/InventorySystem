@@ -8,10 +8,17 @@ namespace InventorySystem
 {
     public partial class ReportForm : Form
     {
+        private DateTime firstDay;
+        private DateTime lastDay;
         public ReportForm()
         {
             InitializeComponent();
             loadReport();
+            firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            lastDay = firstDay.AddMonths(1).AddDays(-1);
+
+            dtpReportDateFrom.Value = firstDay;
+            dtpReportDateTo.Value = lastDay;
         }
 
         private void btnGenerateReport_Click(object sender, EventArgs e)

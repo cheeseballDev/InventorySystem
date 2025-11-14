@@ -5,11 +5,18 @@ namespace InventorySystem
 {
     public partial class AdminApproveForm : Form
     {
+        private DateTime firstDay;
+        private DateTime lastDay;
         public AdminApproveForm()
         {
             InitializeComponent();
-            cbxRequestBranchFilter.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
             loadExistingRequests();
+            cbxRequestBranchFilter.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            lastDay = firstDay.AddMonths(1).AddDays(-1);
+
+            dtpRequestDateFrom.Value = firstDay;
+            dtpRequestDateTo.Value = lastDay;
         }
 
         private void btnOpenDetails_Click(object sender, EventArgs e)
@@ -23,11 +30,6 @@ namespace InventorySystem
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {
-            loadExistingRequests();
-        }
-
-        private void loadExistingRequests()
         {
             List<MySqlParameter> parameters = new List<MySqlParameter>();
 
@@ -51,12 +53,31 @@ namespace InventorySystem
             dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
         }
 
+        private void loadExistingRequests()
+        {
+            dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery("select * from requestlogtable");
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            cbxRequestBranchFilter.SelectedIndex = 0;
+            cbxRequestStatusFilter.SelectedIndex = 0;
+            dtpRequestDateFrom.Value = firstDay;
+            dtpRequestDateTo.Value = lastDay;
             loadExistingRequests();
         }
 
         private void btnApproveRequest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRejectRequest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnApproveRequest_Click_1(object sender, EventArgs e)
         {
             if (dgExistingRequests.SelectedRows.Count > 0)
             {
@@ -65,12 +86,12 @@ namespace InventorySystem
                 String aprub = "APPROVED";
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", aprub));
-                loadExistingRequests();
                 DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
                     new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
                     new MySqlParameter("@userId", CurrentUser.id),
                     new MySqlParameter("@action", $"Approved product request {id}"),
                     new MySqlParameter("@module", "Request Details Module"));
+                loadExistingRequests();
             }
             else
             {
@@ -78,7 +99,7 @@ namespace InventorySystem
             }
         }
 
-        private void btnRejectRequest_Click(object sender, EventArgs e)
+        private void btnRejectRequest_Click_1(object sender, EventArgs e)
         {
             if (dgExistingRequests.SelectedRows.Count > 0)
             {
@@ -87,9 +108,12 @@ namespace InventorySystem
                 String rejek = "REJECTED";
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", rejek));
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Rejected product request {id}"),
+                    new MySqlParameter("@module", "Request Details Module"));
                 loadExistingRequests();
-                AuditLogQuery alq = new AuditLogQuery();
-                alq.LogAction($"Rejected product request {id}", "Request Details Module");
             }
             else
             {
