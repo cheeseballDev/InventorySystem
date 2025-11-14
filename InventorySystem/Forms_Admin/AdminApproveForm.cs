@@ -68,8 +68,11 @@ namespace InventorySystem
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", aprub));
                 loadExistingRequests();
-                AuditLogQuery alq = new AuditLogQuery();
-                alq.LogAction($"Approved product request {id}", "Request Details Module");
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Approved product request {id}"),
+                    new MySqlParameter("@module", "Request Details Module"));
             }
             else
             {
@@ -87,8 +90,12 @@ namespace InventorySystem
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", rejek));
                 loadExistingRequests();
-                AuditLogQuery alq = new AuditLogQuery();
-                alq.LogAction($"Rejected product request {id}", "Request Details Module");
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Rejected product request {id}"),
+                    new MySqlParameter("@module", "Request Details Module"));
+
             }
             else
             {

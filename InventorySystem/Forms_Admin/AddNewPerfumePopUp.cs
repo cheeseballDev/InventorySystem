@@ -47,9 +47,12 @@ namespace InventorySystem.Forms_Admin
 
             if (rowsAffected > 0)
             {
-                AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Product added to the inventory! Product ID is: {newID}");
-                alq.LogAction($"Added new perfume ({newID})", "Add perfume page");
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Added new perfume ({newID})"),
+                    new MySqlParameter("@module", "Add perfume page"));
             }
             else
             {

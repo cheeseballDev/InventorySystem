@@ -53,9 +53,12 @@ namespace InventorySystem
 
             if (rowsAffected1 > 0)
             {
-                AuditLogQuery alq = new AuditLogQuery();
                 MessageBox.Show($"Product successfully updated!");
-                alq.LogAction($"Edited perfume information for {prodID}", "Perfume Edit Page");
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Edited perfume information for {prodID}"),
+                    new MySqlParameter("@module", "Perfume Edit Page"));
             }
             else
             {
