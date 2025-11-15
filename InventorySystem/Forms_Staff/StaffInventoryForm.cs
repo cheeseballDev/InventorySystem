@@ -26,7 +26,7 @@ namespace InventorySystem
                 StaffEditPerfumePopUp editProductPopUp = new StaffEditPerfumePopUp(id);
                 editProductPopUp.ShowDialog();
 
-                loadProducts();
+                loadResults();
             }
             else if (dgPerfume.SelectedRows.Count > 1)
             {
@@ -40,7 +40,7 @@ namespace InventorySystem
 
         private void tbSearchProductFilter_TextChanged(object sender, EventArgs e)
         {
-            loadProducts();
+            loadResults();
         }
 
         private void loadProducts()
@@ -60,7 +60,7 @@ namespace InventorySystem
                 String addReport = "Added 1 to product quantity";
                 String incrementReportQuery = "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id";
                 DatabaseHelper.ExecuteNonQuery(incrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", addReport));
-                loadProducts();
+                loadResults();
             }
             else
             {
@@ -74,13 +74,17 @@ namespace InventorySystem
             {
                 DataGridViewRow row = dgPerfume.SelectedRows[0];
                 string id = row.Cells["Product_ID"].Value.ToString();
-                String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE PRODUCT_ID = @id";
-                DatabaseHelper.ExecuteNonQuery(decrementQuery, new MySqlParameter("@id", id));
+                int qty = int.Parse(row.Cells["Quantity"].Value.ToString());
+                if (qty > 0)
+                {
+                    String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE PRODUCT_ID = @id";
+                    DatabaseHelper.ExecuteNonQuery(decrementQuery, new MySqlParameter("@id", id));
 
-                String deductReport = "Deducted 1 to product quantity";
-                String decrementReportQuery = "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id";
-                DatabaseHelper.ExecuteNonQuery(decrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", deductReport));
-                loadProducts();
+                    String deductReport = "Deducted 1 to product quantity";
+                    String decrementReportQuery = "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id";
+                    DatabaseHelper.ExecuteNonQuery(decrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", deductReport));
+                    loadResults();
+                }             
             }
             else
             {
@@ -112,6 +116,28 @@ namespace InventorySystem
             {
                 query += " and (Product_ID like @search or Perfume like @search or Note like @search or Branch like @search)";
                 parameters.Add(new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%"));
+            }
+            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
+        }
+
+        private void loadResults()
+        {
+            string query = "select Product_ID, Perfume, Note, Branch, Quantity, Date_created from perfumetable where 1=1 ";
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (!tbSearchPerfumeFilter.Text.Equals("Search perfume...") && !string.IsNullOrEmpty(tbSearchPerfumeFilter.Text))
+            {
+                query += " and Perfume like @perfume";
+                parameters.Add(new MySqlParameter("@perfume", "%" + tbSearchPerfumeFilter.Text + "%"));
+            }
+            if (cbxPerfumeBranchFilter.SelectedIndex != -1)
+            {
+                query += " and Branch like @branch";
+                parameters.Add(new MySqlParameter("@branch", "%" + cbxPerfumeBranchFilter.Text + "%"));
+            }
+            if (cbxPerfumeNoteFilter.SelectedIndex != -1)
+            {
+                query += " and Note like @note";
+                parameters.Add(new MySqlParameter("@note", "%" + cbxPerfumeNoteFilter.Text + "%"));
             }
             dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
         }

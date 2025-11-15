@@ -31,6 +31,11 @@ namespace InventorySystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            loadResults();
+        }
+
+        private void loadResults()
+        {
             List<MySqlParameter> parameters = new List<MySqlParameter>();
 
             String query = "select * from requestlogtable where 1=1";
@@ -91,7 +96,7 @@ namespace InventorySystem
                     new MySqlParameter("@userId", CurrentUser.id),
                     new MySqlParameter("@action", $"Approved product request {id}"),
                     new MySqlParameter("@module", "Request Details Module"));
-                loadExistingRequests();
+                loadResults();
             }
             else
             {
@@ -113,7 +118,7 @@ namespace InventorySystem
                     new MySqlParameter("@userId", CurrentUser.id),
                     new MySqlParameter("@action", $"Rejected product request {id}"),
                     new MySqlParameter("@module", "Request Details Module"));
-                loadExistingRequests();
+                loadResults();
             }
             else
             {
