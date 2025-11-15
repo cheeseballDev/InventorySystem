@@ -3,10 +3,10 @@ using MySql.Data.MySqlClient;
 
 namespace InventorySystem
 {
-    public partial class AdminRequestDetailsPopUp : Form
+    public partial class RequestDetailsPopUp : Form
     {
         private String reqID;
-        public AdminRequestDetailsPopUp(String id)
+        public RequestDetailsPopUp(String id)
         {
             reqID = id;
             InitializeComponent();

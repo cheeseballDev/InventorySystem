@@ -25,7 +25,7 @@ namespace InventorySystem
 
             string id = row.Cells["Request_ID"].Value.ToString();
 
-            AdminRequestDetailsPopUp adminRequestDetailsPopUp = new AdminRequestDetailsPopUp(id);
+            RequestDetailsPopUp adminRequestDetailsPopUp = new RequestDetailsPopUp(id);
             adminRequestDetailsPopUp.ShowDialog();
         }
 
