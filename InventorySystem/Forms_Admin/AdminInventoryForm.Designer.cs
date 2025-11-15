@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminInventoryForm));
             dgPerfume = new DataGridView();
             btnAddSelectedPerfumeQuantity = new Button();
@@ -56,23 +56,23 @@
             dgPerfume.AllowUserToDeleteRows = false;
             dgPerfume.AllowUserToResizeColumns = false;
             dgPerfume.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgPerfume.BackgroundColor = SystemColors.Control;
             dgPerfume.BorderStyle = BorderStyle.None;
             dgPerfume.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle4.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgPerfume.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgPerfume.DefaultCellStyle = dataGridViewCellStyle2;
             dgPerfume.Location = new Point(12, 86);
             dgPerfume.Name = "dgPerfume";
             dgPerfume.ReadOnly = true;
@@ -95,6 +95,7 @@
             btnAddSelectedPerfumeQuantity.TabIndex = 6;
             btnAddSelectedPerfumeQuantity.UseVisualStyleBackColor = false;
             btnAddSelectedPerfumeQuantity.Click += btnAdd_Click;
+            btnAddSelectedPerfumeQuantity.Leave += btnAddSelectedPerfumeQuantity_Leave;
             // 
             // btnDeductSelectedPerfumeQuantity
             // 
@@ -110,6 +111,7 @@
             btnDeductSelectedPerfumeQuantity.TabIndex = 7;
             btnDeductSelectedPerfumeQuantity.UseVisualStyleBackColor = false;
             btnDeductSelectedPerfumeQuantity.Click += btnDeductSelectedPerfumeQuantity_Click;
+            btnDeductSelectedPerfumeQuantity.Leave += btnDeductSelectedPerfumeQuantity_Leave;
             // 
             // btnEditSelectedPerfume
             // 

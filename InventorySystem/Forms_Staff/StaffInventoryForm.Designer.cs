@@ -94,6 +94,7 @@
             btnAddSelectedPerfumeQuantity.TabIndex = 6;
             btnAddSelectedPerfumeQuantity.UseVisualStyleBackColor = false;
             btnAddSelectedPerfumeQuantity.Click += btnAdd_Click;
+            btnAddSelectedPerfumeQuantity.Leave += btnAddSelectedPerfumeQuantity_Leave;
             // 
             // btnDeductSelectedPerfumeQuantity
             // 
@@ -109,6 +110,7 @@
             btnDeductSelectedPerfumeQuantity.TabIndex = 7;
             btnDeductSelectedPerfumeQuantity.UseVisualStyleBackColor = false;
             btnDeductSelectedPerfumeQuantity.Click += btnDeductSelectedPerfumeQuantity_Click;
+            btnDeductSelectedPerfumeQuantity.Leave += btnDeductSelectedPerfumeQuantity_Leave;
             // 
             // btnEditSelectedPerfume
             // 
