@@ -19,40 +19,18 @@ namespace InventorySystem
             this.Close();
         }
 
-        private void btnDeleteLog_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Do you want to delete this log?", "Delete Log", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                String query = "delete from auditlogtable where log_id = @id";
-                DatabaseHelper.ExecuteQuery(query, new MySqlParameter("@id", logID));
-                MessageBox.Show("Log deleted");
-                this.Close();
-            }
-        }
-
         private void loadDetails()
         {
-            using (MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;"))
+            string query = "SELECT * FROM auditlogtable WHERE log_id = @id";
+            DatabaseHelper.ExecuteReader(query, reader =>
             {
-                con.Open();
-                string query = "SELECT * FROM auditlogtable WHERE log_id = @id";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@id", logID);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            lblAuditUserId.Text = reader["User_ID"].ToString();
-                            lblAuditAction.Text = reader["Action"].ToString();
-                            lblAuditModule.Text = reader["Module"].ToString();
-                            lblAuditTimestamp.Text = reader["Timestamp"].ToString();
-                        }
-                    }
-                }
-            }
+                lblAuditUserId.Text = reader["User_ID"].ToString();
+                lblAuditAction.Text = reader["Action"].ToString();
+                lblAuditModule.Text = reader["Module"].ToString();
+                lblAuditTimestamp.Text = reader["Timestamp"].ToString();
+            },
+            new MySqlParameter("@id", logID)
+            );
         }
     }
 }

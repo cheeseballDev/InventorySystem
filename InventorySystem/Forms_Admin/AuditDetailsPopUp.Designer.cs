@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuditDetailsPopUp));
             btnClose = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -41,7 +40,6 @@
             lblAuditAction = new Label();
             lblAuditModule = new Label();
             lblAuditTimestamp = new Label();
-            btnDeleteLog = new Button();
             SuspendLayout();
             // 
             // btnClose
@@ -170,31 +168,11 @@
             lblAuditTimestamp.TabIndex = 27;
             lblAuditTimestamp.Text = "##-##-####-#####";
             // 
-            // btnDeleteLog
-            // 
-            btnDeleteLog.BackColor = Color.FromArgb(126, 16, 44);
-            btnDeleteLog.BackgroundImageLayout = ImageLayout.Center;
-            btnDeleteLog.Cursor = Cursors.Hand;
-            btnDeleteLog.FlatAppearance.BorderSize = 0;
-            btnDeleteLog.FlatStyle = FlatStyle.Flat;
-            btnDeleteLog.Font = new Font("Montserrat", 9.749999F);
-            btnDeleteLog.ForeColor = SystemColors.Control;
-            btnDeleteLog.Image = (Image)resources.GetObject("btnDeleteLog.Image");
-            btnDeleteLog.Location = new Point(29, 227);
-            btnDeleteLog.Name = "btnDeleteLog";
-            btnDeleteLog.Size = new Size(152, 31);
-            btnDeleteLog.TabIndex = 19;
-            btnDeleteLog.Text = "Delete Log";
-            btnDeleteLog.TextAlign = ContentAlignment.MiddleLeft;
-            btnDeleteLog.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnDeleteLog.UseVisualStyleBackColor = false;
-            btnDeleteLog.Click += btnDeleteLog_Click;
-            // 
             // AuditDetailsPopUp
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(735, 275);
+            ClientSize = new Size(735, 247);
             Controls.Add(lblAuditTimestamp);
             Controls.Add(lblAuditModule);
             Controls.Add(lblAuditAction);
@@ -202,7 +180,6 @@
             Controls.Add(lblAuditLogId);
             Controls.Add(label6);
             Controls.Add(label3);
-            Controls.Add(btnDeleteLog);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -232,6 +209,5 @@
         private Label lblAuditAction;
         private Label lblAuditModule;
         private Label lblAuditTimestamp;
-        private Button btnDeleteLog;
     }
 }

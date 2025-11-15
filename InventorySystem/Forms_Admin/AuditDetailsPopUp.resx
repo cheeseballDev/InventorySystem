@@ -117,15 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnDeleteLog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAANdJREFUOE+lkzEOgkAQRSfb0UktJpIYDkDvbSg9ClEbe2MstPAKxpJwCm5ARUnW
-        P7OLCFow+pM3O7Oz/xckkLX2L1whmoOlkrn30gbNT2IvB+z8rBZ7OWAN7uChhD3rj4+ixRWiHFRK8leA
-        MeaIUyUEsMcFhGF4bprG1nXdLTMwG5HJ0gtzHxAEwaltW8v4ZQn2I0pZemHuA5IkuXbmqRoEpGl6k1uF
-        BgFxHF/kVqFBQBRFh6IoZDFVCNjK4XpagUo2E8Rv2SMtF3dHBizAtz/vHX5jnM/SEzgsifCuQCBtAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
 </root>

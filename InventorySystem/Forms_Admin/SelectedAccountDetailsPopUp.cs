@@ -74,29 +74,24 @@ namespace InventorySystem.Forms_Admin
 
         private void loadDetails()
         {
-            using (MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;"))
+            string query = "SELECT * FROM employeeaccount WHERE ID = @id";
+            DatabaseHelper.ExecuteReader(query, reader =>
             {
-                con.Open();
-                string query = "SELECT * FROM employeeaccount WHERE ID = @id";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@id", empID);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            tbAccountEmail.Text = reader["Email"].ToString();
-                            tbAccountName.Text = reader["Name"].ToString();
-                        }
-                    }
-                }
-            }
+                tbAccountEmail.Text = reader["Email"].ToString();
+                tbAccountName.Text = reader["Name"].ToString();
+            },
+            new MySqlParameter("@id", empID)
+            );
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnArchiveAccount_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
