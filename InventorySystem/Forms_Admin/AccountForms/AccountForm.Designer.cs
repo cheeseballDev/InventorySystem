@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountForm));
             dgAccounts = new DataGridView();
             btnArchiveAccount = new Button();
             btnEditAccount = new Button();
             tbSearchProduct = new RichTextBox();
-            btnSearch = new Button();
             lblDescription = new Label();
             lblTitle = new Label();
             tbSearchUserFilter = new RichTextBox();
@@ -50,54 +49,53 @@
             dgAccounts.AllowUserToDeleteRows = false;
             dgAccounts.AllowUserToResizeColumns = false;
             dgAccounts.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dgAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgAccounts.BackgroundColor = SystemColors.Control;
             dgAccounts.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgAccounts.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle6.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgAccounts.DefaultCellStyle = dataGridViewCellStyle6;
             dgAccounts.Location = new Point(26, 120);
             dgAccounts.Name = "dgAccounts";
             dgAccounts.ReadOnly = true;
             dgAccounts.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgAccounts.Size = new Size(783, 325);
+            dgAccounts.Size = new Size(771, 325);
             dgAccounts.TabIndex = 5;
             // 
             // btnArchiveAccount
             // 
-            btnArchiveAccount.BackColor = Color.FromArgb(126, 16, 44);
+            btnArchiveAccount.BackColor = Color.FromArgb(225, 212, 193);
             btnArchiveAccount.BackgroundImageLayout = ImageLayout.Center;
             btnArchiveAccount.Cursor = Cursors.Hand;
             btnArchiveAccount.FlatAppearance.BorderSize = 0;
             btnArchiveAccount.FlatStyle = FlatStyle.Flat;
             btnArchiveAccount.Font = new Font("Montserrat", 9.749999F);
-            btnArchiveAccount.ForeColor = SystemColors.Control;
-            btnArchiveAccount.Image = (Image)resources.GetObject("btnArchiveAccount.Image");
-            btnArchiveAccount.Location = new Point(186, 460);
+            btnArchiveAccount.ForeColor = SystemColors.ControlText;
+            btnArchiveAccount.Location = new Point(618, 22);
             btnArchiveAccount.Name = "btnArchiveAccount";
-            btnArchiveAccount.Size = new Size(147, 28);
+            btnArchiveAccount.Size = new Size(179, 28);
             btnArchiveAccount.TabIndex = 9;
-            btnArchiveAccount.Text = "Archive Account";
+            btnArchiveAccount.Text = "Archived Account List";
             btnArchiveAccount.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnArchiveAccount.UseVisualStyleBackColor = false;
             btnArchiveAccount.Click += btnArchiveAccount_Click;
@@ -112,7 +110,7 @@
             btnEditAccount.Font = new Font("Montserrat", 9.749999F);
             btnEditAccount.ForeColor = SystemColors.ControlText;
             btnEditAccount.Image = (Image)resources.GetObject("btnEditAccount.Image");
-            btnEditAccount.Location = new Point(26, 460);
+            btnEditAccount.Location = new Point(26, 451);
             btnEditAccount.Name = "btnEditAccount";
             btnEditAccount.Size = new Size(142, 28);
             btnEditAccount.TabIndex = 6;
@@ -135,24 +133,6 @@
             tbSearchProduct.Size = new Size(74, 15);
             tbSearchProduct.TabIndex = 10;
             tbSearchProduct.Text = "Filter: User:";
-            // 
-            // btnSearch
-            // 
-            btnSearch.BackColor = Color.FromArgb(225, 212, 193);
-            btnSearch.Cursor = Cursors.Hand;
-            btnSearch.FlatAppearance.BorderSize = 0;
-            btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.Font = new Font("Montserrat", 9.749999F);
-            btnSearch.ForeColor = Color.Black;
-            btnSearch.Image = (Image)resources.GetObject("btnSearch.Image");
-            btnSearch.Location = new Point(336, 22);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(99, 28);
-            btnSearch.TabIndex = 12;
-            btnSearch.Text = "Search";
-            btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
             // 
             // lblDescription
             // 
@@ -185,9 +165,10 @@
             tbSearchUserFilter.MaxLength = 20;
             tbSearchUserFilter.Multiline = false;
             tbSearchUserFilter.Name = "tbSearchUserFilter";
-            tbSearchUserFilter.Size = new Size(215, 27);
+            tbSearchUserFilter.Size = new Size(306, 27);
             tbSearchUserFilter.TabIndex = 11;
             tbSearchUserFilter.Text = "Search user...";
+            tbSearchUserFilter.TextChanged += tbSearchUserFilter_TextChanged;
             // 
             // btnCreateNewAccount
             // 
@@ -198,7 +179,7 @@
             btnCreateNewAccount.Font = new Font("Montserrat", 9.749999F);
             btnCreateNewAccount.ForeColor = Color.Black;
             btnCreateNewAccount.Image = (Image)resources.GetObject("btnCreateNewAccount.Image");
-            btnCreateNewAccount.Location = new Point(452, 22);
+            btnCreateNewAccount.Location = new Point(421, 22);
             btnCreateNewAccount.Name = "btnCreateNewAccount";
             btnCreateNewAccount.Size = new Size(179, 28);
             btnCreateNewAccount.TabIndex = 15;
@@ -215,12 +196,11 @@
             Controls.Add(btnCreateNewAccount);
             Controls.Add(lblDescription);
             Controls.Add(lblTitle);
-            Controls.Add(btnSearch);
-            Controls.Add(tbSearchUserFilter);
             Controls.Add(tbSearchProduct);
             Controls.Add(btnArchiveAccount);
             Controls.Add(btnEditAccount);
             Controls.Add(dgAccounts);
+            Controls.Add(tbSearchUserFilter);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
@@ -237,7 +217,6 @@
         private Button btnArchiveAccount;
         private Button btnEditAccount;
         private RichTextBox tbSearchProduct;
-        private Button btnSearch;
         private Label lblDescription;
         private Label lblTitle;
         private RichTextBox tbSearchUserFilter;

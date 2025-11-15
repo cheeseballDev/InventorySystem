@@ -67,7 +67,7 @@
             label1.Font = new Font("Montserrat", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(26, 12);
             label1.Name = "label1";
-            label1.Size = new Size(341, 45);
+            label1.Size = new Size(337, 40);
             label1.TabIndex = 9;
             label1.Text = "Create New Account:";
             // 
@@ -78,7 +78,7 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(28, 69);
             label2.Name = "label2";
-            label2.Size = new Size(64, 25);
+            label2.Size = new Size(62, 22);
             label2.TabIndex = 11;
             label2.Text = "Name:";
             // 
@@ -89,14 +89,14 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(28, 115);
             label4.Name = "label4";
-            label4.Size = new Size(60, 25);
+            label4.Size = new Size(58, 22);
             label4.TabIndex = 13;
             label4.Text = "Email:";
             // 
             // tbAccountName
             // 
             tbAccountName.Font = new Font("Montserrat", 12F);
-            tbAccountName.ForeColor = Color.FromArgb(135, 135, 135);
+            tbAccountName.ForeColor = SystemColors.ControlText;
             tbAccountName.Location = new Point(122, 69);
             tbAccountName.MaxLength = 64;
             tbAccountName.Multiline = false;
@@ -112,7 +112,7 @@
             label5.ForeColor = Color.FromArgb(135, 135, 135);
             label5.Location = new Point(28, 197);
             label5.Name = "label5";
-            label5.Size = new Size(72, 25);
+            label5.Size = new Size(70, 22);
             label5.TabIndex = 15;
             label5.Text = "Branch:";
             // 
@@ -159,14 +159,14 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(28, 245);
             label3.Name = "label3";
-            label3.Size = new Size(51, 25);
+            label3.Size = new Size(49, 22);
             label3.TabIndex = 19;
             label3.Text = "Role:";
             // 
             // tbAccountEmail
             // 
             tbAccountEmail.Font = new Font("Montserrat", 12F);
-            tbAccountEmail.ForeColor = Color.FromArgb(135, 135, 135);
+            tbAccountEmail.ForeColor = SystemColors.ControlText;
             tbAccountEmail.Location = new Point(122, 115);
             tbAccountEmail.MaxLength = 64;
             tbAccountEmail.Multiline = false;
@@ -182,7 +182,7 @@
             cbxAccountRole.Items.AddRange(new object[] { "Inventory Guy", "Family Guy" });
             cbxAccountRole.Location = new Point(122, 243);
             cbxAccountRole.Name = "cbxAccountRole";
-            cbxAccountRole.Size = new Size(330, 26);
+            cbxAccountRole.Size = new Size(330, 24);
             cbxAccountRole.TabIndex = 22;
             cbxAccountRole.Text = "Select role...";
             // 
@@ -193,14 +193,14 @@
             cbxAccountBranch.Items.AddRange(new object[] { "Branch 1", "Branch 2", "Branch 3" });
             cbxAccountBranch.Location = new Point(122, 199);
             cbxAccountBranch.Name = "cbxAccountBranch";
-            cbxAccountBranch.Size = new Size(330, 26);
+            cbxAccountBranch.Size = new Size(330, 24);
             cbxAccountBranch.TabIndex = 23;
             cbxAccountBranch.Text = "Select branch...";
             // 
             // tbPassword
             // 
             tbPassword.Font = new Font("Montserrat", 12F);
-            tbPassword.ForeColor = Color.FromArgb(135, 135, 135);
+            tbPassword.ForeColor = SystemColors.ControlText;
             tbPassword.Location = new Point(122, 156);
             tbPassword.MaxLength = 64;
             tbPassword.Multiline = false;
@@ -216,7 +216,7 @@
             label6.ForeColor = Color.FromArgb(135, 135, 135);
             label6.Location = new Point(26, 156);
             label6.Name = "label6";
-            label6.Size = new Size(92, 25);
+            label6.Size = new Size(90, 22);
             label6.TabIndex = 24;
             label6.Text = "Password:";
             // 

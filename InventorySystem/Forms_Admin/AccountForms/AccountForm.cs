@@ -51,18 +51,10 @@ namespace InventorySystem
 
         private void btnArchiveAccount_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to archieve this account?", "Archiving of Account", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                MessageBox.Show("There is no account archieve page yet, this account will stay here for now.");
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                //wala lang
-            }
+            
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)
         {
             if (tbSearchUserFilter.Text == "Search user..." || string.IsNullOrWhiteSpace(tbSearchUserFilter.Text))
             {
