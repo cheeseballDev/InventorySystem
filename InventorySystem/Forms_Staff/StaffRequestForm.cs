@@ -14,6 +14,8 @@ namespace InventorySystem
             List<string> parfumList = new List<string>();
             parfumList = Helper_Classes.DatabaseHelper.GetListQuery("SELECT Perfume FROM perfumetable GROUP BY Perfume");
 
+            cbxRequestCurrentBranchFilter.Items.RemoveAt(0);
+
             cbxRequestParfumFilter.Items.AddRange(parfumList.ToArray());
 
             loadExistingRequests();
@@ -21,14 +23,14 @@ namespace InventorySystem
 
         private void btnSubmitRequest_Click(object sender, EventArgs e)
         {
-            if (cbxRequestCurrentBranchFilter.SelectedIndex != -1)
+            if (cbxRequestCurrentBranchFilter.SelectedIndex < -1)
             {
-                MessageBox.Show("Please select a perfume to request.");
+                MessageBox.Show("Please select your current branch.");
                 return;
             }
-            if (cbxRequestParfumFilter.SelectedIndex == -1)
+            if (cbxRequestParfumFilter.SelectedIndex < -1)
             {
-                MessageBox.Show("Please select a perfume to request.");
+                MessageBox.Show("Please select the perfume you want to request");
                 return;
             }
             if (numPerfumeAmountToRequest.Value <= 0)
@@ -53,7 +55,11 @@ namespace InventorySystem
             if (rowsAffected > 0)
             {
                 MessageBox.Show($"Request submitted! Given ID is: {reqID}");
-                DatabaseHelper.LogAction($"Sent product request ({reqID})", "Request Product Page");
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Sent product request ({reqID})"),
+                    new MySqlParameter("@module", "Request Product Page"));
             }
             else
             {
@@ -74,8 +80,11 @@ namespace InventorySystem
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            cbxRequestCurrentBranchFilter.Items.Clear();
+            cbxRequestParfumFilter.Items.Clear();
             tbRequestMessage.Clear();
             numPerfumeAmountToRequest.Value = 0;
         }
+
     }
 }

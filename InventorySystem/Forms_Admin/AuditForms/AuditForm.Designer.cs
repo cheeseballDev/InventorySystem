@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuditForm));
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            btnSearchAuditLog = new Button();
+            btnRefresh = new Button();
             dgAuditLog = new DataGridView();
             richTextBox1 = new RichTextBox();
             cbxAuditLogActionFilter = new ComboBox();
@@ -45,28 +45,30 @@
             pictureBox1 = new PictureBox();
             tbSearchUserFilter = new RichTextBox();
             btnOpenAuditDetails = new Button();
+            btnClear = new Button();
             ((System.ComponentModel.ISupportInitialize)dgAuditLog).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // btnSearchAuditLog
+            // btnRefresh
             // 
-            btnSearchAuditLog.BackColor = Color.FromArgb(225, 212, 193);
-            btnSearchAuditLog.Cursor = Cursors.Hand;
-            btnSearchAuditLog.FlatAppearance.BorderSize = 0;
-            btnSearchAuditLog.FlatStyle = FlatStyle.Flat;
-            btnSearchAuditLog.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSearchAuditLog.ForeColor = Color.Black;
-            btnSearchAuditLog.Image = (Image)resources.GetObject("btnSearchAuditLog.Image");
-            btnSearchAuditLog.Location = new Point(699, 14);
-            btnSearchAuditLog.Name = "btnSearchAuditLog";
-            btnSearchAuditLog.Size = new Size(99, 28);
-            btnSearchAuditLog.TabIndex = 4;
-            btnSearchAuditLog.Text = "Search";
-            btnSearchAuditLog.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSearchAuditLog.UseVisualStyleBackColor = true;
-            btnSearchAuditLog.Click += btnSearchAuditLog_Click;
+            btnRefresh.BackColor = Color.FromArgb(225, 212, 193);
+            btnRefresh.Cursor = Cursors.Hand;
+            btnRefresh.FlatAppearance.BorderSize = 0;
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRefresh.ForeColor = Color.Black;
+            btnRefresh.Image = (Image)resources.GetObject("btnRefresh.Image");
+            btnRefresh.ImageAlign = ContentAlignment.MiddleRight;
+            btnRefresh.Location = new Point(500, 102);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(142, 28);
+            btnRefresh.TabIndex = 4;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // dgAuditLog
             // 
@@ -85,7 +87,7 @@
             dgAuditLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle4.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
@@ -96,7 +98,7 @@
             dgAuditLog.ReadOnly = true;
             dgAuditLog.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgAuditLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgAuditLog.Size = new Size(797, 312);
+            dgAuditLog.Size = new Size(797, 288);
             dgAuditLog.TabIndex = 5;
             // 
             // richTextBox1
@@ -119,11 +121,12 @@
             cbxAuditLogActionFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxAuditLogActionFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxAuditLogActionFilter.FormattingEnabled = true;
-            cbxAuditLogActionFilter.Items.AddRange(new object[] { "Edited account information", "Edited perfume information", "Added new account", "Added new perfume", "Sent product request", "Approved product request", "Rejected product request" });
+            cbxAuditLogActionFilter.Items.AddRange(new object[] { "All", "Edited account information", "Edited perfume information", "Added new account", "Added new perfume", "Sent product request", "Approved product request", "Rejected product request" });
             cbxAuditLogActionFilter.Location = new Point(106, 56);
             cbxAuditLogActionFilter.Name = "cbxAuditLogActionFilter";
             cbxAuditLogActionFilter.Size = new Size(372, 24);
             cbxAuditLogActionFilter.TabIndex = 7;
+            cbxAuditLogActionFilter.SelectedValueChanged += cbxAuditLogActionFilter_SelectedValueChanged;
             // 
             // richTextBox2
             // 
@@ -231,6 +234,7 @@
             tbSearchUserFilter.Size = new Size(226, 18);
             tbSearchUserFilter.TabIndex = 0;
             tbSearchUserFilter.Text = "Search user...";
+            tbSearchUserFilter.TextChanged += tbSearchUserFilter_TextChanged;
             // 
             // btnOpenAuditDetails
             // 
@@ -241,7 +245,7 @@
             btnOpenAuditDetails.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnOpenAuditDetails.ForeColor = Color.Black;
             btnOpenAuditDetails.Image = (Image)resources.GetObject("btnOpenAuditDetails.Image");
-            btnOpenAuditDetails.Location = new Point(36, 461);
+            btnOpenAuditDetails.Location = new Point(36, 445);
             btnOpenAuditDetails.Name = "btnOpenAuditDetails";
             btnOpenAuditDetails.Size = new Size(144, 31);
             btnOpenAuditDetails.TabIndex = 35;
@@ -250,11 +254,29 @@
             btnOpenAuditDetails.UseVisualStyleBackColor = true;
             btnOpenAuditDetails.Click += btnOpenAuditDetails_Click;
             // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.FromArgb(126, 16, 44);
+            btnClear.Cursor = Cursors.Hand;
+            btnClear.FlatAppearance.BorderSize = 0;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClear.ForeColor = SystemColors.Control;
+            btnClear.Location = new Point(656, 101);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(142, 29);
+            btnClear.TabIndex = 36;
+            btnClear.Text = "Clear Selection";
+            btnClear.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
             // AuditForm
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 504);
+            Controls.Add(btnClear);
             Controls.Add(btnOpenAuditDetails);
             Controls.Add(panel1);
             Controls.Add(dtpAuditLogDateTo);
@@ -266,7 +288,7 @@
             Controls.Add(cbxAuditLogActionFilter);
             Controls.Add(richTextBox1);
             Controls.Add(dgAuditLog);
-            Controls.Add(btnSearchAuditLog);
+            Controls.Add(btnRefresh);
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
@@ -280,7 +302,7 @@
         }
 
         #endregion
-        private Button btnSearchAuditLog;
+        private Button btnRefresh;
         private DataGridView dgAuditLog;
         private RichTextBox richTextBox1;
         private ComboBox cbxAuditLogActionFilter;
@@ -294,5 +316,6 @@
         private PictureBox pictureBox1;
         private RichTextBox tbSearchUserFilter;
         private Button btnOpenAuditDetails;
+        private Button btnClear;
     }
 }

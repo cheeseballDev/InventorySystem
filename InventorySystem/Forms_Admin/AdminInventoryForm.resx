@@ -118,17 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnScanQR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAARBJREFUOE+l0r1KA1EQhuEjCCqK8ScGgiZ3IAgSSwlWFmkCBixT2IoohtyFjQp2
-        ggYFTacQKy9MkfX9NnPYZZ3C6MAD35lhZ8PmhCRJ/sVtTiILIazjCs94wDlinUI9za5R9xbcQSGvjOVC
-        TwbeghcbqvagvIGq5RZUyq/egpEND3FpuYa44AaaKY+8BWc2jL4wjzl8Wi/qeQtUa9AbZVqNXG2hAc2y
-        5woLllAxsaawOo5pzWDRW3AChegDs1ix8z5Uyu/egjcbdqEPprwD/YIOjqGPe4Btb0H+b2xCeTc9jesC
-        cZ49l1twr36B7kHJchsq5SdvQR26pkM8og/VAnRLN9NTCLc4+rHgr9zm7yXhG6OskucsPhLDAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
   <data name="btnAddSelectedPerfumeQuantity.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
@@ -144,7 +133,7 @@
         rXGi/z+4hdHAaGA0MBoYDYznUgP25sslKK0mIgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnEditSelectedPerfumeDetails.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEditSelectedPerfume.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
         IgAALiIBquLdkgAAAPZJREFUOE+l0rFOwlAYxfEOsrkZjIMh0TdgYGZoYqIkJC6OEjfeggUnNwKD0cDo
@@ -152,16 +141,6 @@
         LmjbxYwnKA+YJmNwA2eBDh+4RAnnUOqwwjlOUfYV9DVkcgXbbOK38hUMNaSpwTaZZ8TZVXAM22ResIqv
         YKSBNGAb5RWKvso7LnwFbxrIF3T+jUctpGlB66GvwJ50i+tkXIv9B1VfwQxnOklzhBMUUwPovoqrQE9f
         QK+v/2HTJ34xQWGr4L+ci/lFwRJbiJRiZleZ+gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnRefresh.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IgAALiIBquLdkgAAAOZJREFUOE+lz71qAkEYhWERQWzUdII3YeElhBSiRdLYWngfae1tLcQmwUYtRTsl
-        jdgJIlrkEkQbQWF9D+zgz36ajR54lpn5dg67Ec/znmIe/sdpcZl3jKGB00UeSu1ewRfcpR90MDs7+0T/
-        VkEb2jTwooOzJKCv0HxtFbz6w5Y2Rr6xgt7hSrBg4Q+txDDCL/RbA6tAj6UWYWIVvCGrRYgUrAKXpO9W
-        4thaBRNsNIQOhrBSAVeCBXo4TRRxnRT2+LOghxzSiCKDKg7QvGQV6PPrKMMVTaFfmfv7HT5wuucWjzIP
-        w/MiR115ilUo9Wv4AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -174,7 +153,17 @@
         grjnlcULAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnAddPerfume.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
+        IgAALiIBquLdkgAAAOZJREFUOE+lz71qAkEYhWERQWzUdII3YeElhBSiRdLYWngfae1tLcQmwUYtRTsl
+        jdgJIlrkEkQbQWF9D+zgz36ajR54lpn5dg67Ec/znmIe/sdpcZl3jKGB00UeSu1ewRfcpR90MDs7+0T/
+        VkEb2jTwooOzJKCv0HxtFbz6w5Y2Rr6xgt7hSrBg4Q+txDDCL/RbA6tAj6UWYWIVvCGrRYgUrAKXpO9W
+        4thaBRNsNIQOhrBSAVeCBXo4TRRxnRT2+LOghxzSiCKDKg7QvGQV6PPrKMMVTaFfmfv7HT5wuucWjzIP
+        w/MiR115ilUo9Wv4AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnAddNewPerfume.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
         IgAALiIBquLdkgAAAH9JREFUOE+lkVsKgDAMBHtlkd7YB3oHiVlisbH7kdqFgZDINK1JRIagzR7egmdS

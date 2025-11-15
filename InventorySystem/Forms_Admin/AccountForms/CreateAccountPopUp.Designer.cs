@@ -96,7 +96,7 @@
             // tbAccountName
             // 
             tbAccountName.Font = new Font("Montserrat", 12F);
-            tbAccountName.ForeColor = Color.FromArgb(135, 135, 135);
+            tbAccountName.ForeColor = SystemColors.ControlText;
             tbAccountName.Location = new Point(122, 69);
             tbAccountName.MaxLength = 64;
             tbAccountName.Multiline = false;
@@ -145,7 +145,7 @@
             btnCancel.Image = (Image)resources.GetObject("btnCancel.Image");
             btnCancel.Location = new Point(260, 293);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(137, 31);
+            btnCancel.Size = new Size(144, 31);
             btnCancel.TabIndex = 18;
             btnCancel.Text = "Cancel Changes";
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -166,7 +166,7 @@
             // tbAccountEmail
             // 
             tbAccountEmail.Font = new Font("Montserrat", 12F);
-            tbAccountEmail.ForeColor = Color.FromArgb(135, 135, 135);
+            tbAccountEmail.ForeColor = SystemColors.ControlText;
             tbAccountEmail.Location = new Point(122, 115);
             tbAccountEmail.MaxLength = 64;
             tbAccountEmail.Multiline = false;
@@ -200,7 +200,7 @@
             // tbPassword
             // 
             tbPassword.Font = new Font("Montserrat", 12F);
-            tbPassword.ForeColor = Color.FromArgb(135, 135, 135);
+            tbPassword.ForeColor = SystemColors.ControlText;
             tbPassword.Location = new Point(122, 156);
             tbPassword.MaxLength = 64;
             tbPassword.Multiline = false;

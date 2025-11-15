@@ -5,10 +5,22 @@ namespace InventorySystem
 {
     public partial class AdminApproveForm : Form
     {
+        private DateTime firstDay;
+        private DateTime lastDay;
         public AdminApproveForm()
         {
             InitializeComponent();
+            loadExistingRequests();
             cbxRequestBranchFilter.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            cbxRequestStatusFilter.Items.AddRange(Enum.GetNames(typeof(Enums.RequestStatus)));
+            cbxRequestBranchFilter.SelectedIndex = 0;
+            cbxRequestStatusFilter.SelectedIndex = 0;
+
+            firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            lastDay = firstDay.AddMonths(1).AddDays(-1);
+
+            dtpRequestDateFrom.Value = firstDay;
+            dtpRequestDateTo.Value = lastDay;
             loadExistingRequests();
         }
 
@@ -18,41 +30,45 @@ namespace InventorySystem
 
             string id = row.Cells["Request_ID"].Value.ToString();
 
-            AdminRequestDetailsPopUp adminRequestDetailsPopUp = new AdminRequestDetailsPopUp(id);
+            RequestDetailsPopUp adminRequestDetailsPopUp = new RequestDetailsPopUp(id);
             adminRequestDetailsPopUp.ShowDialog();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            loadExistingRequests();
-        }
-
-        private void loadExistingRequests()
+        private void loadResults()
         {
             List<MySqlParameter> parameters = new List<MySqlParameter>();
 
             String query = "select * from requestlogtable where 1=1";
-            if (cbxRequestBranchFilter.SelectedIndex != -1)
+            if (!cbxRequestBranchFilter.Text.Equals("All"))
             {
                 query += " and branch like @branch";
                 parameters.Add(new MySqlParameter("@branch", "%" + cbxRequestBranchFilter.Text + "%"));
             }
-            if (cbxRequestStatusFilter.SelectedIndex != -1)
+            if (!cbxRequestStatusFilter.Text.Equals("All"))
             {
                 query += " and status like @status";
                 parameters.Add(new MySqlParameter("@status", "%" + cbxRequestStatusFilter.Text + "%"));
             }
             if (dtpRequestDateFrom.Value <= dtpRequestDateTo.Value)
             {
-                query += " and date(Timestamp) between @startDate and @endDate";
+                query += " and date(request_date) between @startDate and @endDate";
                 parameters.Add(new MySqlParameter("@startDate", dtpRequestDateFrom.Value.Date));
                 parameters.Add(new MySqlParameter("@endDate", dtpRequestDateTo.Value.Date));
             }
             dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
         }
 
+        private void loadExistingRequests()
+        {
+            dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery("select * from requestlogtable");
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            cbxRequestBranchFilter.SelectedIndex = 0;
+            cbxRequestStatusFilter.SelectedIndex = 0;
+            dtpRequestDateFrom.Value = firstDay;
+            dtpRequestDateTo.Value = lastDay;
             loadExistingRequests();
         }
 
@@ -65,8 +81,12 @@ namespace InventorySystem
                 String aprub = "APPROVED";
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", aprub));
-                loadExistingRequests();
-                DatabaseHelper.LogAction($"Approved product request {id}", "Request Details Module");
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Approved product request {id}"),
+                    new MySqlParameter("@module", "Request Details Module"));
+                loadResults();
             }
             else
             {
@@ -83,13 +103,36 @@ namespace InventorySystem
                 String rejek = "REJECTED";
                 String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
                 DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", rejek));
-                loadExistingRequests();
-                DatabaseHelper.LogAction($"Rejected product request {id}", "Request Details Module");
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Rejected product request {id}"),
+                    new MySqlParameter("@module", "Request Details Module"));
+                loadResults();
             }
             else
             {
                 MessageBox.Show("Please select a row to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void cbxRequestBranchFilter_SelectedValueChanged(object sender, EventArgs e)
+        {
+            loadResults();
+        }
+
+        private void cbxRequestStatusFilter_SelectedValueChanged(object sender, EventArgs e)
+        {
+            loadResults();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cbxRequestBranchFilter.SelectedIndex = 0;
+            cbxRequestStatusFilter.SelectedIndex = 0;
+            dtpRequestDateFrom.Value = firstDay;
+            dtpRequestDateTo.Value = lastDay;
+            loadResults();
         }
     }
 }

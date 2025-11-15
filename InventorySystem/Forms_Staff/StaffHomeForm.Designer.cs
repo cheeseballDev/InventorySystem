@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffHomeForm));
             panel1 = new Panel();
             pnlNavigation = new Panel();
-            btnForecast = new Button();
             btnReport = new Button();
             btnRequest = new Button();
             btnInventory = new Button();
@@ -55,7 +54,6 @@
             // 
             panel1.BackColor = Color.FromArgb(28, 28, 28);
             panel1.Controls.Add(pnlNavigation);
-            panel1.Controls.Add(btnForecast);
             panel1.Controls.Add(btnReport);
             panel1.Controls.Add(btnRequest);
             panel1.Controls.Add(btnInventory);
@@ -73,24 +71,6 @@
             pnlNavigation.Name = "pnlNavigation";
             pnlNavigation.Size = new Size(12, 100);
             pnlNavigation.TabIndex = 1;
-            // 
-            // btnForecast
-            // 
-            btnForecast.BackgroundImageLayout = ImageLayout.Center;
-            btnForecast.Cursor = Cursors.Hand;
-            btnForecast.Dock = DockStyle.Top;
-            btnForecast.FlatAppearance.BorderSize = 0;
-            btnForecast.FlatStyle = FlatStyle.Flat;
-            btnForecast.ForeColor = SystemColors.Control;
-            btnForecast.Image = (Image)resources.GetObject("btnForecast.Image");
-            btnForecast.Location = new Point(0, 277);
-            btnForecast.Name = "btnForecast";
-            btnForecast.Size = new Size(180, 59);
-            btnForecast.TabIndex = 4;
-            btnForecast.Text = "Forecast";
-            btnForecast.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnForecast.UseVisualStyleBackColor = true;
-            btnForecast.Click += btnForecast_Click;
             // 
             // btnReport
             // 
@@ -182,7 +162,7 @@
             lblTitle.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.Location = new Point(199, 13);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(156, 42);
+            lblTitle.Size = new Size(154, 37);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Inventory";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -194,7 +174,7 @@
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(203, 55);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(274, 20);
+            lblDescription.Size = new Size(273, 18);
             lblDescription.TabIndex = 2;
             lblDescription.Text = "Overview of all available parfum products";
             // 
@@ -239,7 +219,7 @@
             cbxUser.FormattingEnabled = true;
             cbxUser.Location = new Point(935, 27);
             cbxUser.Name = "cbxUser";
-            cbxUser.Size = new Size(72, 33);
+            cbxUser.Size = new Size(72, 30);
             cbxUser.TabIndex = 6;
             cbxUser.SelectedIndexChanged += cbxUser_SelectedIndexChanged;
             // 
@@ -277,7 +257,6 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Button btnInventory;
-        private Button btnForecast;
         private Button btnReport;
         private Button btnRequest;
         private HelpProvider helpProvider1;

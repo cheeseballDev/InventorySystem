@@ -167,6 +167,32 @@ namespace InventorySystem.Helper_Classes
             return rowsAffected;
         }
 
+        // READER
+        public static void ExecuteReader(string query, Action<MySqlDataReader> action, params MySqlParameter[] parameters)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionString))
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    if (parameters != null && parameters.Length > 0)
+                        cmd.Parameters.AddRange(parameters);
+                    con.Open();
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            action(reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error");
+            }
+        }
+
         public static string getID(string query, params MySqlParameter[] parameters)
         {
             string id = null;

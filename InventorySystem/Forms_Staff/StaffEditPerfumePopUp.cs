@@ -54,7 +54,11 @@ namespace InventorySystem
             if (rowsAffected1 > 0)
             {
                 MessageBox.Show($"Product successfully updated!");
-                DatabaseHelper.LogAction($"Edited perfume information for {prodID}", "Perfume Edit Page");
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Edited perfume information for {prodID}"),
+                    new MySqlParameter("@module", "Perfume Edit Page"));
             }
             else
             {
@@ -66,11 +70,7 @@ namespace InventorySystem
                 new MySqlParameter("@status", status),
                 new MySqlParameter("@id", prodID));
 
-            if (rowsAffected2 > 0)
-            {
-                //blank
-            }
-            else
+            if (rowsAffected2 < 0)
             {
                 MessageBox.Show("Writing report error");
             }
@@ -78,34 +78,23 @@ namespace InventorySystem
 
         private void loadDetails()
         {
-            using (MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;"))
+            string query = "SELECT * FROM perfumetable WHERE product_id = @id";
+            DatabaseHelper.ExecuteReader(query, reader =>
             {
-                con.Open();
-                string query = "SELECT * FROM perfumetable WHERE product_id = @id";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                tbPerfumeName.Text = reader["Perfume"].ToString();
+                numPerfumeQuantity.Text = reader["Quantity"].ToString();
+                if (reader["Quantity"] != DBNull.Value)
                 {
-                    cmd.Parameters.AddWithValue("@id", prodID);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            tbPerfumeName.Text = reader["Perfume"].ToString();
-                            numPerfumeQuantity.Text = reader["Quantity"].ToString();
-
-                            if (reader["Quantity"] != DBNull.Value)
-                            {
-                                numPerfumeQuantity.Value = Convert.ToDecimal(reader["Quantity"]);
-                                origQty = Convert.ToInt32(numPerfumeQuantity.Value);
-                            }
-                            else
-                            {
-                                numPerfumeQuantity.Value = 0;
-                            }
-                        }
-                    }
+                    numPerfumeQuantity.Value = Convert.ToDecimal(reader["Quantity"]);
+                    origQty = Convert.ToInt32(numPerfumeQuantity.Value);
                 }
-            }
+                else
+                {
+                    numPerfumeQuantity.Value = 0;
+                }
+            },
+            new MySqlParameter("@id", prodID)
+            );
         }
     }
 }

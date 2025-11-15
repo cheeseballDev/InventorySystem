@@ -3,10 +3,10 @@ using MySql.Data.MySqlClient;
 
 namespace InventorySystem
 {
-    public partial class AdminRequestDetailsPopUp : Form
+    public partial class RequestDetailsPopUp : Form
     {
         private String reqID;
-        public AdminRequestDetailsPopUp(String id)
+        public RequestDetailsPopUp(String id)
         {
             reqID = id;
             InitializeComponent();
@@ -23,7 +23,11 @@ namespace InventorySystem
             String aprub = "APPROVED";
             String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
             DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", reqID), new MySqlParameter("@status", aprub));
-            DatabaseHelper.LogAction($"Approved product request {reqID}", "Request Details Module");
+            DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                new MySqlParameter("@userId", CurrentUser.id),
+                new MySqlParameter("@action", $"Approved product request {reqID}"),
+                new MySqlParameter("@module", "Request Details Module"));
         }
 
         private void btnRejectRequest_Click(object sender, EventArgs e)
@@ -31,7 +35,11 @@ namespace InventorySystem
             String rejek = "REJECTED";
             String approveQuery = $"UPDATE requestlogtable SET status = @status WHERE request_id = @id";
             DatabaseHelper.ExecuteNonQuery(approveQuery, new MySqlParameter("@id", reqID), new MySqlParameter("@status", rejek));
-            DatabaseHelper.LogAction($"Rejected product request {reqID}", "Request Details Module");
+            DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                new MySqlParameter("@userId", CurrentUser.id),
+                new MySqlParameter("@action", $"Rejected product request {reqID}"),
+                new MySqlParameter("@module", "Request Details Module"));
         }
 
         private void loadDetails()

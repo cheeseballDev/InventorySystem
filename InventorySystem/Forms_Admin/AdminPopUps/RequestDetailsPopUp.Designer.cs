@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem
 {
-    partial class AdminRequestDetailsPopUp
+    partial class RequestDetailsPopUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminRequestDetailsPopUp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestDetailsPopUp));
             btnClose = new Button();
             label1 = new Label();
             label2 = new Label();

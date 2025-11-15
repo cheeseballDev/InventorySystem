@@ -88,20 +88,6 @@ namespace InventorySystem
               );
 
         }
-        private void btnForecast_Click(object sender, EventArgs e)
-        {
-            ResetButtons();
-            btnForecast.BackColor = hoverButtonColor;
-
-            pnlNavigation.Height = btnForecast.Height;
-            pnlNavigation.Top = btnForecast.Top;
-            btnForecast.BackColor = Color.FromArgb(50, 225, 212, 193);
-
-            lblTitle.Text = "WORK IN PROGRESS !";
-            lblDescription.Text = "Not enough INT to learn forecasting!";
-            this.pnlFormLoader.Controls.Clear();
-        }
-
         private void btnNotification_Click(object sender, EventArgs e)
         {
             // temp
@@ -117,7 +103,6 @@ namespace InventorySystem
             btnInventory.BackColor = defaultButtonColor;
             btnRequest.BackColor = defaultButtonColor;
             btnReport.BackColor = defaultButtonColor;
-            btnForecast.BackColor = defaultButtonColor;
         }
 
         private void cbxUser_SelectedIndexChanged(object sender, EventArgs e)
