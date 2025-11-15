@@ -13,6 +13,8 @@ namespace InventorySystem
             PlaceholderHelper.ApplyPlaceholder(tbSearchUserFilter, "Search user...");
             loadAuditLog();
 
+            cbxAuditLogActionFilter.SelectedIndex = 0;
+
             firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             lastDay = firstDay.AddMonths(1).AddDays(-1);
 
@@ -22,11 +24,6 @@ namespace InventorySystem
         }
 
         private void loadAuditLog()
-        {           
-            dgAuditLog.DataSource = DatabaseHelper.ExecuteQuery("select * from auditlogtable");
-        }
-
-        private void btnSearchAuditLog_Click(object sender, EventArgs e)
         {
             string query = "select Log_ID, User_ID, Action, Module, Timestamp from auditlogtable where 1=1 ";
             List<MySqlParameter> parameters = new List<MySqlParameter>();
@@ -35,7 +32,7 @@ namespace InventorySystem
                 query += " and User_ID like @user";
                 parameters.Add(new MySqlParameter("@user", "%" + tbSearchUserFilter.Text + "%"));
             }
-            if (cbxAuditLogActionFilter.SelectedIndex != -1)
+            if (!cbxAuditLogActionFilter.Text.Equals("All"))
             {
                 query += " and Action like @action";
                 parameters.Add(new MySqlParameter("@action", "%" + cbxAuditLogActionFilter.Text + "%"));
@@ -55,6 +52,29 @@ namespace InventorySystem
             string id = row.Cells["Log_ID"].Value.ToString();
             AuditDetailsPopUp auditDetailsPopUp = new AuditDetailsPopUp(id);
             auditDetailsPopUp.ShowDialog();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadAuditLog();
+        }
+
+        private void cbxAuditLogActionFilter_SelectedValueChanged(object sender, EventArgs e)
+        {
+            loadAuditLog();
+        }
+
+        private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)
+        {
+            loadAuditLog();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbSearchUserFilter.Text = "Search user...";
+            cbxAuditLogActionFilter.SelectedIndex = 0;
+            dtpAuditLogDateFrom.Value = firstDay;
+            dtpAuditLogDateTo.Value = lastDay;
         }
     }
 }

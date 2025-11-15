@@ -14,6 +14,8 @@ namespace InventorySystem
             List<string> parfumList = new List<string>();
             parfumList = Helper_Classes.DatabaseHelper.GetListQuery("SELECT Perfume FROM perfumetable GROUP BY Perfume");
 
+            cbxRequestCurrentBranchFilter.Items.RemoveAt(0);
+
             cbxRequestParfumFilter.Items.AddRange(parfumList.ToArray());
 
             loadExistingRequests();
@@ -83,5 +85,6 @@ namespace InventorySystem
             tbRequestMessage.Clear();
             numPerfumeAmountToRequest.Value = 0;
         }
+
     }
 }

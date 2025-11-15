@@ -1,4 +1,7 @@
-﻿namespace InventorySystem.Enums
+﻿using Org.BouncyCastle.Asn1.Ocsp;
+using System.Security.Principal;
+
+namespace InventorySystem.Enums
 {
     public enum PerfumeNote
     {
@@ -97,7 +100,16 @@
 
     public enum AccountRoles
     {
+        All,
         Admin,
         Staff
+    }
+
+    public enum RequestStatus
+    {
+        All,
+        Approved,
+        Rejected,
+        Pending
     }
 }

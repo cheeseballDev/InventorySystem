@@ -30,13 +30,10 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminApproveForm));
             label6 = new Label();
             dgExistingRequests = new DataGridView();
             label7 = new Label();
-            btnRefresh = new Button();
-            btnSearch = new Button();
             label3 = new Label();
             label2 = new Label();
             cbxRequestBranchFilter = new ComboBox();
@@ -48,6 +45,8 @@
             btnRejectRequest = new Button();
             btnApproveRequest = new Button();
             btnOpenRequestDetails = new Button();
+            btnRefresh = new Button();
+            btnClear = new Button();
             ((System.ComponentModel.ISupportInitialize)dgExistingRequests).BeginInit();
             SuspendLayout();
             // 
@@ -57,7 +56,7 @@
             label6.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(8, 93);
             label6.Name = "label6";
-            label6.Size = new Size(272, 42);
+            label6.Size = new Size(270, 37);
             label6.TabIndex = 12;
             label6.Text = "Existing Requests";
             // 
@@ -75,23 +74,15 @@
             dgExistingRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgExistingRequests.BackgroundColor = SystemColors.Control;
             dgExistingRequests.BorderStyle = BorderStyle.None;
+            dgExistingRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgExistingRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgExistingRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 8.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle2;
             dgExistingRequests.Location = new Point(29, 153);
             dgExistingRequests.Name = "dgExistingRequests";
             dgExistingRequests.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -106,41 +97,9 @@
             label7.ForeColor = Color.FromArgb(135, 135, 135);
             label7.Location = new Point(19, 130);
             label7.Name = "label7";
-            label7.Size = new Size(219, 18);
+            label7.Size = new Size(218, 16);
             label7.TabIndex = 14;
             label7.Text = "List of all previous existing requests";
-            // 
-            // btnRefresh
-            // 
-            btnRefresh.BackColor = Color.FromArgb(225, 212, 193);
-            btnRefresh.BackgroundImage = (Image)resources.GetObject("btnRefresh.BackgroundImage");
-            btnRefresh.BackgroundImageLayout = ImageLayout.Center;
-            btnRefresh.Cursor = Cursors.Hand;
-            btnRefresh.FlatStyle = FlatStyle.Flat;
-            btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(756, 108);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(52, 38);
-            btnRefresh.TabIndex = 15;
-            btnRefresh.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            btnSearch.BackColor = Color.FromArgb(225, 212, 193);
-            btnSearch.Cursor = Cursors.Hand;
-            btnSearch.FlatAppearance.BorderSize = 0;
-            btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSearch.ForeColor = Color.Black;
-            btnSearch.Image = (Image)resources.GetObject("btnSearch.Image");
-            btnSearch.Location = new Point(699, 13);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(109, 27);
-            btnSearch.TabIndex = 27;
-            btnSearch.Text = "Search";
-            btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
             // 
             // label3
             // 
@@ -149,7 +108,7 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(523, 18);
             label3.Name = "label3";
-            label3.Size = new Size(22, 18);
+            label3.Size = new Size(21, 16);
             label3.TabIndex = 25;
             label3.Text = "To";
             // 
@@ -160,7 +119,7 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(312, 18);
             label2.Name = "label2";
-            label2.Size = new Size(73, 18);
+            label2.Size = new Size(72, 16);
             label2.TabIndex = 23;
             label2.Text = "Date from:";
             // 
@@ -169,11 +128,11 @@
             cbxRequestBranchFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxRequestBranchFilter.Font = new Font("Montserrat", 9F);
             cbxRequestBranchFilter.FormattingEnabled = true;
-            cbxRequestBranchFilter.Items.AddRange(new object[] { "" });
             cbxRequestBranchFilter.Location = new Point(104, 15);
             cbxRequestBranchFilter.Name = "cbxRequestBranchFilter";
-            cbxRequestBranchFilter.Size = new Size(191, 26);
+            cbxRequestBranchFilter.Size = new Size(191, 24);
             cbxRequestBranchFilter.TabIndex = 22;
+            cbxRequestBranchFilter.SelectedValueChanged += cbxRequestBranchFilter_SelectedValueChanged;
             // 
             // label1
             // 
@@ -182,7 +141,7 @@
             label1.ForeColor = Color.FromArgb(135, 135, 135);
             label1.Location = new Point(8, 18);
             label1.Name = "label1";
-            label1.Size = new Size(92, 18);
+            label1.Size = new Size(90, 16);
             label1.TabIndex = 21;
             label1.Text = "Filter: Branch:";
             // 
@@ -211,11 +170,11 @@
             cbxRequestStatusFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxRequestStatusFilter.Font = new Font("Montserrat", 9F);
             cbxRequestStatusFilter.FormattingEnabled = true;
-            cbxRequestStatusFilter.Items.AddRange(new object[] { "", "Approved", "Rejected", "Pending" });
             cbxRequestStatusFilter.Location = new Point(104, 57);
             cbxRequestStatusFilter.Name = "cbxRequestStatusFilter";
-            cbxRequestStatusFilter.Size = new Size(191, 26);
+            cbxRequestStatusFilter.Size = new Size(191, 24);
             cbxRequestStatusFilter.TabIndex = 31;
+            cbxRequestStatusFilter.SelectedValueChanged += cbxRequestStatusFilter_SelectedValueChanged;
             // 
             // label4
             // 
@@ -224,7 +183,7 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(8, 60);
             label4.Name = "label4";
-            label4.Size = new Size(86, 18);
+            label4.Size = new Size(85, 16);
             label4.TabIndex = 30;
             label4.Text = "Filter: Status:";
             // 
@@ -244,7 +203,7 @@
             btnRejectRequest.Text = "Reject Request";
             btnRejectRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRejectRequest.UseVisualStyleBackColor = true;
-            btnRejectRequest.Click += btnRejectRequest_Click_1;
+            btnRejectRequest.Click += btnRejectRequest_Click;
             // 
             // btnApproveRequest
             // 
@@ -262,7 +221,7 @@
             btnApproveRequest.Text = "Approve Request";
             btnApproveRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnApproveRequest.UseVisualStyleBackColor = true;
-            btnApproveRequest.Click += btnApproveRequest_Click_1;
+            btnApproveRequest.Click += btnApproveRequest_Click;
             // 
             // btnOpenRequestDetails
             // 
@@ -282,11 +241,48 @@
             btnOpenRequestDetails.UseVisualStyleBackColor = true;
             btnOpenRequestDetails.Click += btnOpenDetails_Click;
             // 
+            // btnRefresh
+            // 
+            btnRefresh.BackColor = Color.FromArgb(225, 212, 193);
+            btnRefresh.Cursor = Cursors.Hand;
+            btnRefresh.FlatAppearance.BorderSize = 0;
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRefresh.ForeColor = Color.Black;
+            btnRefresh.Image = (Image)resources.GetObject("btnRefresh.Image");
+            btnRefresh.ImageAlign = ContentAlignment.MiddleRight;
+            btnRefresh.Location = new Point(509, 104);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(142, 29);
+            btnRefresh.TabIndex = 27;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.FromArgb(126, 16, 44);
+            btnClear.Cursor = Cursors.Hand;
+            btnClear.FlatAppearance.BorderSize = 0;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnClear.ForeColor = SystemColors.Control;
+            btnClear.Location = new Point(666, 104);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(142, 29);
+            btnClear.TabIndex = 35;
+            btnClear.Text = "Clear Selection";
+            btnClear.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
             // AdminApproveForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 512);
+            Controls.Add(btnClear);
             Controls.Add(btnOpenRequestDetails);
             Controls.Add(btnRejectRequest);
             Controls.Add(btnApproveRequest);
@@ -294,12 +290,11 @@
             Controls.Add(label4);
             Controls.Add(dtpRequestDateTo);
             Controls.Add(dtpRequestDateFrom);
-            Controls.Add(btnSearch);
+            Controls.Add(btnRefresh);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(cbxRequestBranchFilter);
             Controls.Add(label1);
-            Controls.Add(btnRefresh);
             Controls.Add(label7);
             Controls.Add(dgExistingRequests);
             Controls.Add(label6);
@@ -317,8 +312,6 @@
         private Label label6;
         private DataGridView dgExistingRequests;
         private Label label7;
-        private Button btnRefresh;
-        private Button btnSearch;
         private Label label3;
         private Label label2;
         private ComboBox cbxRequestBranchFilter;
@@ -330,5 +323,7 @@
         private Button btnRejectRequest;
         private Button btnApproveRequest;
         private Button btnOpenRequestDetails;
+        private Button btnClear;
+        private Button btnRefresh;
     }
 }

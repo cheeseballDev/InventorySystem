@@ -12,11 +12,16 @@ namespace InventorySystem
             InitializeComponent();
             loadExistingRequests();
             cbxRequestBranchFilter.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            cbxRequestStatusFilter.Items.AddRange(Enum.GetNames(typeof(Enums.RequestStatus)));
+            cbxRequestBranchFilter.SelectedIndex = 0;
+            cbxRequestStatusFilter.SelectedIndex = 0;
+
             firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             lastDay = firstDay.AddMonths(1).AddDays(-1);
 
             dtpRequestDateFrom.Value = firstDay;
             dtpRequestDateTo.Value = lastDay;
+            loadExistingRequests();
         }
 
         private void btnOpenDetails_Click(object sender, EventArgs e)
@@ -29,22 +34,17 @@ namespace InventorySystem
             adminRequestDetailsPopUp.ShowDialog();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            loadResults();
-        }
-
         private void loadResults()
         {
             List<MySqlParameter> parameters = new List<MySqlParameter>();
 
             String query = "select * from requestlogtable where 1=1";
-            if (cbxRequestBranchFilter.SelectedIndex != -1)
+            if (!cbxRequestBranchFilter.Text.Equals("All"))
             {
                 query += " and branch like @branch";
                 parameters.Add(new MySqlParameter("@branch", "%" + cbxRequestBranchFilter.Text + "%"));
             }
-            if (cbxRequestStatusFilter.SelectedIndex != -1)
+            if (!cbxRequestStatusFilter.Text.Equals("All"))
             {
                 query += " and status like @status";
                 parameters.Add(new MySqlParameter("@status", "%" + cbxRequestStatusFilter.Text + "%"));
@@ -74,16 +74,6 @@ namespace InventorySystem
 
         private void btnApproveRequest_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnRejectRequest_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnApproveRequest_Click_1(object sender, EventArgs e)
-        {
             if (dgExistingRequests.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgExistingRequests.SelectedRows[0];
@@ -104,7 +94,7 @@ namespace InventorySystem
             }
         }
 
-        private void btnRejectRequest_Click_1(object sender, EventArgs e)
+        private void btnRejectRequest_Click(object sender, EventArgs e)
         {
             if (dgExistingRequests.SelectedRows.Count > 0)
             {
@@ -124,6 +114,25 @@ namespace InventorySystem
             {
                 MessageBox.Show("Please select a row to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void cbxRequestBranchFilter_SelectedValueChanged(object sender, EventArgs e)
+        {
+            loadResults();
+        }
+
+        private void cbxRequestStatusFilter_SelectedValueChanged(object sender, EventArgs e)
+        {
+            loadResults();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cbxRequestBranchFilter.SelectedIndex = 0;
+            cbxRequestStatusFilter.SelectedIndex = 0;
+            dtpRequestDateFrom.Value = firstDay;
+            dtpRequestDateTo.Value = lastDay;
+            loadResults();
         }
     }
 }
