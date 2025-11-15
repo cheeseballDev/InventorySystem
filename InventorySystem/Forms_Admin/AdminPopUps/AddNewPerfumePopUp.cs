@@ -8,7 +8,7 @@ namespace InventorySystem
     {
         private string currentSelectedPerfumeNote;
         private string currentSelectedPerfumeGender;
-        public AddNewPerfumePopUp(String id)
+        public AddNewPerfumePopUp()
         {
             InitializeComponent();
             cbxNewPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
@@ -54,7 +54,11 @@ namespace InventorySystem
             if (rowsAffected > 0)
             {
                 MessageBox.Show($"Product added to the inventory! Product ID is: {newID}");
-                DatabaseHelper.LogAction($"Added new perfume ({newID})", "Add perfume page");
+                DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                    new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                    new MySqlParameter("@userId", CurrentUser.id),
+                    new MySqlParameter("@action", $"Added new perfume ({newID})"),
+                    new MySqlParameter("@module", "Add perfume page"));
             }
             else
             {

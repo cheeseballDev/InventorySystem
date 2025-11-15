@@ -88,19 +88,17 @@ namespace InventorySystem
             }
 
             int rowsAffected2 = DatabaseHelper.ExecuteNonQuery(
-                "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id",
+                "INSERT INTO reporttable (product_id, perfume, note, branch, gender, fragrance, quantity, status) SELECT product_id, perfume, note, branch, gender, fragrance, quantity, @status FROM perfumetable WHERE product_id = @id",
                 new MySqlParameter("@status", status),
                 new MySqlParameter("@id", prodID),
                 new MySqlParameter("@name", perfumeName),
                 new MySqlParameter("@note", note),
                 new MySqlParameter("@branch", branch),
+                new MySqlParameter("@gender", gender),
+                new MySqlParameter("@fragrance", fragrance),
                 new MySqlParameter("@quantity", quantity));
 
-            if (rowsAffected2 > 0)
-            {
-                MessageBox.Show($"Report successfully written!");
-            }
-            else
+            if (rowsAffected2 < 0)
             {
                 MessageBox.Show("Writing report error");
             }

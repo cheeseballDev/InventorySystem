@@ -271,6 +271,7 @@ namespace InventorySystem
 
         private void btnAddNewPerfume_Click(object sender, EventArgs e)
         {
+
             AddNewPerfumePopUp addPerfume = new AddNewPerfumePopUp();
             addPerfume.ShowDialog();
         }

@@ -70,11 +70,7 @@ namespace InventorySystem
                 new MySqlParameter("@status", status),
                 new MySqlParameter("@id", prodID));
 
-            if (rowsAffected2 > 0)
-            {
-                MessageBox.Show("Report successfully written!");
-            }
-            else
+            if (rowsAffected2 < 0)
             {
                 MessageBox.Show("Writing report error");
             }
