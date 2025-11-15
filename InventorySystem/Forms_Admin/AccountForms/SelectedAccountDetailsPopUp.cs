@@ -91,7 +91,7 @@ namespace InventorySystem.Forms_Admin
 
         private void btnArchiveAccount_Click(object sender, EventArgs e)
         {
-
+            //TODO: Archive Account Functionality
         }
     }
 }
