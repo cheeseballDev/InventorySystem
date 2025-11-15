@@ -10,9 +10,9 @@ namespace InventorySystem
         public AdminInventoryForm()
         {
             InitializeComponent();
-            loadProducts();
             Helper_Classes.PlaceholderHelper.ApplyPlaceholder(tbSearchPerfumeFilter, "Search perfume...");
 
+            loadProducts();
             cbxPerfumeNoteFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNote)));
             cbxPerfumeBranchFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
         }
@@ -23,9 +23,9 @@ namespace InventorySystem
             addPerfume.ShowDialog();
         }
 
-        private void btnScanQR_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("NOT PART OF THIS MINI-THESIS' SCOPE", "WIP", MessageBoxButtons.OK);
+            loadProducts();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -52,15 +52,14 @@ namespace InventorySystem
         }
 
         private void loadProducts()
-        {          
-            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery("select * from perfumetable");
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
         {
+            string query = "select Product_ID, Perfume, Note, Branch, Quantity, Date_created from perfumetable where 1=1 ";
             List<MySqlParameter> parameters = new List<MySqlParameter>();
-            string query = "select Product_ID, Perfume, Note, Branch, Quantity, Date_Created from perfumetable where 1=1 ";
-
+            if (!tbSearchPerfumeFilter.Text.Equals("Search perfume...") && !string.IsNullOrEmpty(tbSearchPerfumeFilter.Text))
+            {
+                query += " and Perfume like @perfume";
+                parameters.Add(new MySqlParameter("@perfume", "%" + tbSearchPerfumeFilter.Text + "%"));
+            }
             if (cbxPerfumeBranchFilter.SelectedIndex != -1)
             {
                 query += " and Branch like @branch";
@@ -71,16 +70,17 @@ namespace InventorySystem
                 query += " and Note like @note";
                 parameters.Add(new MySqlParameter("@note", "%" + cbxPerfumeNoteFilter.Text + "%"));
             }
-            if (!tbSearchPerfumeFilter.Text.Equals("Search perfume...") && !string.IsNullOrEmpty(tbSearchPerfumeFilter.Text))
-            {
-                query += " and (Product_ID like @search or Perfume like @search or Note like @search or Branch like @search)";
-                parameters.Add(new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%"));
-            }
+            dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
             loadProducts();
         }
 
         private void tbSearchPerfumeFilter_TextChanged(object sender, EventArgs e)
         {
+            
             loadProducts();
         }
 

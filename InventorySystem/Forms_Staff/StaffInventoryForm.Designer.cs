@@ -195,10 +195,10 @@
             btnScanQR.Name = "btnScanQR";
             btnScanQR.Size = new Size(123, 31);
             btnScanQR.TabIndex = 13;
-            btnScanQR.Text = "Scan QR";
+            btnScanQR.Text = "Search";
             btnScanQR.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnScanQR.UseVisualStyleBackColor = true;
-            btnScanQR.Click += btnScanQR_Click;
+            btnScanQR.Click += btnSearch;
             // 
             // cbxPerfumeBranchFilter
             // 

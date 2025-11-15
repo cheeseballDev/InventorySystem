@@ -5,11 +5,20 @@ namespace InventorySystem
 {
     public partial class AuditForm : Form
     {
+        private DateTime firstDay;
+        private DateTime lastDay;
         public AuditForm()
         {
             InitializeComponent();
             PlaceholderHelper.ApplyPlaceholder(tbSearchUserFilter, "Search user...");
             loadAuditLog();
+
+            firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            lastDay = firstDay.AddMonths(1).AddDays(-1);
+
+            dtpAuditLogDateFrom.Value = firstDay;
+            dtpAuditLogDateTo.Value = lastDay;
+
         }
 
         private void loadAuditLog()
@@ -37,7 +46,7 @@ namespace InventorySystem
                 parameters.Add(new MySqlParameter("@startDate", dtpAuditLogDateFrom.Value.Date));
                 parameters.Add(new MySqlParameter("@endDate", dtpAuditLogDateTo.Value.Date));
             }
-            loadAuditLog();
+            dgAuditLog.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
         }
 
         private void btnOpenAuditDetails_Click(object sender, EventArgs e)

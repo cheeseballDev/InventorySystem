@@ -42,6 +42,10 @@ namespace InventorySystem
             {
                 status = $"Deducted {origQty - quantity} to product quantity";
             }
+            else if (quantity == origQty)
+            {
+                status = "Stock unchanged";
+            }
 
             if (String.IsNullOrEmpty(perfumeName))
             {
