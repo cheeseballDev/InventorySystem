@@ -1,7 +1,4 @@
-﻿using Org.BouncyCastle.Asn1.Ocsp;
-using System.Security.Principal;
-
-namespace InventorySystem.Enums
+﻿namespace InventorySystem.Enums
 {
     public enum PerfumeNote
     {

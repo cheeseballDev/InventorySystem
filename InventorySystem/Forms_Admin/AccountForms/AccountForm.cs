@@ -51,7 +51,7 @@ namespace InventorySystem
 
         private void btnArchiveAccount_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)

@@ -83,6 +83,7 @@ namespace InventorySystem
 
         private void btnAddSelectedPerfumeQuantity_Leave(object sender, EventArgs e)
         {
+            loadResults();
             DataGridViewRow row = dgPerfume.SelectedRows[0];
             string id = row.Cells["Product_ID"].Value.ToString();
 
@@ -116,6 +117,7 @@ namespace InventorySystem
 
         private void btnDeductSelectedPerfumeQuantity_Leave(object sender, EventArgs e)
         {
+            loadResults();
             DataGridViewRow row = dgPerfume.SelectedRows[0];
             string id = row.Cells["Product_ID"].Value.ToString();
 
@@ -285,7 +287,5 @@ namespace InventorySystem
             cbxPerfumeFragranceFilter.SelectedIndex = 0;
             loadResults();
         }
-
-
     }
 }
