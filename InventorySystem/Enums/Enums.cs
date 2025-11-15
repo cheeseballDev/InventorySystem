@@ -2,14 +2,12 @@
 {
     public enum PerfumeNote
     {
-        All,
         Premium,
         Classic
     }
 
     public enum PerfumeGender
     {
-        All,
         Male,
         Female,
         Unisex
@@ -17,7 +15,6 @@
 
     public enum PerfumeFragranceClassicFemale
     {
-        All,
         Amber,
         Apricot,
         Bergamot,
@@ -42,9 +39,8 @@
         Mew
     }
 
-    public enum PerfumeFragrancesClassicMale
+    public enum PerfumeFragranceClassicMale
     {
-        All,
         Aqua,
         Agape,
         Blackwood,
@@ -68,7 +64,6 @@
 
     public enum PerfumeFragrancePremiumMale
     {
-        All,
         Desire,
         Ginger,
         Guilty,
@@ -79,7 +74,6 @@
 
     public enum PerfumeFragrancePremiumFemale
     {
-        All,
         Anise,
         Pear,
         Neroli
@@ -87,7 +81,6 @@
 
     public enum PerfumeFragrancePremiumUnisex
     {
-        All,
         Karat,
         Lime,
         Cucumber,
