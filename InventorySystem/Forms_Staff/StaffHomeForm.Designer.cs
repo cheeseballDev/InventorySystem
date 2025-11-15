@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffHomeForm));
             panel1 = new Panel();
             pnlNavigation = new Panel();
-            btnForecast = new Button();
             btnReport = new Button();
             btnRequest = new Button();
             btnInventory = new Button();
@@ -55,7 +54,6 @@
             // 
             panel1.BackColor = Color.FromArgb(28, 28, 28);
             panel1.Controls.Add(pnlNavigation);
-            panel1.Controls.Add(btnForecast);
             panel1.Controls.Add(btnReport);
             panel1.Controls.Add(btnRequest);
             panel1.Controls.Add(btnInventory);
@@ -73,24 +71,6 @@
             pnlNavigation.Name = "pnlNavigation";
             pnlNavigation.Size = new Size(12, 100);
             pnlNavigation.TabIndex = 1;
-            // 
-            // btnForecast
-            // 
-            btnForecast.BackgroundImageLayout = ImageLayout.Center;
-            btnForecast.Cursor = Cursors.Hand;
-            btnForecast.Dock = DockStyle.Top;
-            btnForecast.FlatAppearance.BorderSize = 0;
-            btnForecast.FlatStyle = FlatStyle.Flat;
-            btnForecast.ForeColor = SystemColors.Control;
-            btnForecast.Image = (Image)resources.GetObject("btnForecast.Image");
-            btnForecast.Location = new Point(0, 277);
-            btnForecast.Name = "btnForecast";
-            btnForecast.Size = new Size(180, 59);
-            btnForecast.TabIndex = 4;
-            btnForecast.Text = "Forecast";
-            btnForecast.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnForecast.UseVisualStyleBackColor = true;
-            btnForecast.Click += btnForecast_Click;
             // 
             // btnReport
             // 
@@ -277,7 +257,6 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Button btnInventory;
-        private Button btnForecast;
         private Button btnReport;
         private Button btnRequest;
         private HelpProvider helpProvider1;

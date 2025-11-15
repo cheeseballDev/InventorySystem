@@ -119,7 +119,7 @@
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
             tbPassword.Size = new Size(279, 27);
-            tbPassword.TabIndex = 10;
+            tbPassword.TabIndex = 2;
             // 
             // tbEmail
             // 
@@ -128,7 +128,7 @@
             tbEmail.MaxLength = 128;
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(279, 27);
-            tbEmail.TabIndex = 11;
+            tbEmail.TabIndex = 1;
             // 
             // StaffLoginForm
             // 
