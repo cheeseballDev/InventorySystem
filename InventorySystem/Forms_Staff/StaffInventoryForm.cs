@@ -102,10 +102,10 @@ namespace InventorySystem
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             string query = "select Product_ID, Perfume, Note, Branch, Quantity, Date_Created from perfumetable where 1=1 ";
 
-            if (cbxPerfumeBranchFilter.SelectedIndex != -1)
+            if (cbxPerfumeFragranceFilter.SelectedIndex != -1)
             {
                 query += " and Branch like @branch";
-                parameters.Add(new MySqlParameter("@branch", "%" + cbxPerfumeBranchFilter.Text + "%"));
+                parameters.Add(new MySqlParameter("@branch", "%" + cbxPerfumeFragranceFilter.Text + "%"));
             }
             if (cbxPerfumeNoteFilter.SelectedIndex != -1)
             {
@@ -129,10 +129,10 @@ namespace InventorySystem
                 query += " and Perfume like @perfume";
                 parameters.Add(new MySqlParameter("@perfume", "%" + tbSearchPerfumeFilter.Text + "%"));
             }
-            if (cbxPerfumeBranchFilter.SelectedIndex != -1)
+            if (cbxPerfumeFragranceFilter.SelectedIndex != -1)
             {
                 query += " and Branch like @branch";
-                parameters.Add(new MySqlParameter("@branch", "%" + cbxPerfumeBranchFilter.Text + "%"));
+                parameters.Add(new MySqlParameter("@branch", "%" + cbxPerfumeFragranceFilter.Text + "%"));
             }
             if (cbxPerfumeNoteFilter.SelectedIndex != -1)
             {

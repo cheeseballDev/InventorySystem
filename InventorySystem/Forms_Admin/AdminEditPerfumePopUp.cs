@@ -101,36 +101,26 @@ namespace InventorySystem
 
         private void loadDetails()
         {
-            using (MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;"))
+            string query = "SELECT * FROM perfumetable WHERE product_id = @id";
+            DatabaseHelper.ExecuteReader(query, reader =>
             {
-                con.Open();
-                string query = "SELECT * FROM perfumetable WHERE product_id = @id";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                lblPerfumeID.Text = reader["Product_ID"].ToString();
+                tbPerfumeName.Text = reader["Perfume"].ToString();
+                numPerfumeQuantity.Text = reader["Quantity"].ToString();
+                cbxAddNewPerfumeBranch.Text = reader["Branch"].ToString();
+                cbxAddNewPerfumeNoteType.Text = reader["Note"].ToString();
+                if (reader["Quantity"] != DBNull.Value)
                 {
-                    cmd.Parameters.AddWithValue("@id", prodID);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            lblPerfumeID.Text = reader["Product_ID"].ToString();
-                            tbPerfumeName.Text = reader["Perfume"].ToString();
-                            numPerfumeQuantity.Text = reader["Quantity"].ToString();
-                            cbxAddNewPerfumeBranch.Text = reader["Branch"].ToString();
-                            cbxAddNewPerfumeNoteType.Text = reader["Note"].ToString();
-                            if (reader["Quantity"] != DBNull.Value)
-                            {
-                                numPerfumeQuantity.Value = Convert.ToDecimal(reader["Quantity"]);
-                                origQty = Convert.ToInt32(numPerfumeQuantity.Value);
-                            }
-                            else
-                            {
-                                numPerfumeQuantity.Value = 0;
-                            }
-                        }
-                    }
+                    numPerfumeQuantity.Value = Convert.ToDecimal(reader["Quantity"]);
+                    origQty = Convert.ToInt32(numPerfumeQuantity.Value);
                 }
-            }
+                else
+                {
+                    numPerfumeQuantity.Value = 0;
+                }
+            },
+            new MySqlParameter("@id", prodID)
+            );
         }
     }
 }

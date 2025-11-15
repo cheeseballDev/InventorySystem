@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffInventoryForm));
             dgPerfume = new DataGridView();
             btnAddSelectedPerfumeQuantity = new Button();
@@ -41,8 +40,10 @@
             pictureBox1 = new PictureBox();
             tbSearchPerfumeFilter = new RichTextBox();
             btnScanQR = new Button();
-            cbxPerfumeBranchFilter = new ComboBox();
+            cbxPerfumeFragranceFilter = new ComboBox();
             cbxPerfumeNoteFilter = new ComboBox();
+            cbxPerfumeBranchFilter = new ComboBox();
+            cbxPerfumeGenderFilter = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgPerfume).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -54,37 +55,29 @@
             dgPerfume.AllowUserToDeleteRows = false;
             dgPerfume.AllowUserToResizeColumns = false;
             dgPerfume.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dgPerfume.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgPerfume.BackgroundColor = SystemColors.Control;
             dgPerfume.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgPerfume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgPerfume.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgPerfume.DefaultCellStyle = dataGridViewCellStyle3;
-            dgPerfume.Location = new Point(12, 61);
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle6.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgPerfume.DefaultCellStyle = dataGridViewCellStyle6;
+            dgPerfume.Location = new Point(12, 84);
             dgPerfume.Name = "dgPerfume";
             dgPerfume.ReadOnly = true;
             dgPerfume.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgPerfume.Size = new Size(797, 353);
+            dgPerfume.Size = new Size(797, 330);
             dgPerfume.TabIndex = 5;
             // 
             // btnAddSelectedPerfumeQuantity
@@ -155,7 +148,7 @@
             panel1.Controls.Add(tbSearchPerfumeFilter);
             panel1.Location = new Point(12, 17);
             panel1.Name = "panel1";
-            panel1.Size = new Size(274, 24);
+            panel1.Size = new Size(503, 24);
             panel1.TabIndex = 14;
             // 
             // pictureBox1
@@ -177,7 +170,7 @@
             tbSearchPerfumeFilter.MaxLength = 20;
             tbSearchPerfumeFilter.Multiline = false;
             tbSearchPerfumeFilter.Name = "tbSearchPerfumeFilter";
-            tbSearchPerfumeFilter.Size = new Size(245, 21);
+            tbSearchPerfumeFilter.Size = new Size(474, 21);
             tbSearchPerfumeFilter.TabIndex = 0;
             tbSearchPerfumeFilter.Text = "Search perfume...";
             tbSearchPerfumeFilter.TextChanged += tbSearchProductFilter_TextChanged;
@@ -191,43 +184,65 @@
             btnScanQR.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnScanQR.ForeColor = Color.Black;
             btnScanQR.Image = (Image)resources.GetObject("btnScanQR.Image");
-            btnScanQR.Location = new Point(686, 13);
+            btnScanQR.Location = new Point(686, 15);
             btnScanQR.Name = "btnScanQR";
-            btnScanQR.Size = new Size(123, 31);
-            btnScanQR.TabIndex = 13;
+            btnScanQR.Size = new Size(123, 29);
+            btnScanQR.TabIndex = 4;
             btnScanQR.Text = "Search";
             btnScanQR.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnScanQR.UseVisualStyleBackColor = true;
             btnScanQR.Click += btnSearch;
             // 
-            // cbxPerfumeBranchFilter
+            // cbxPerfumeFragranceFilter
             // 
-            cbxPerfumeBranchFilter.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxPerfumeBranchFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxPerfumeBranchFilter.FormattingEnabled = true;
-            cbxPerfumeBranchFilter.Location = new Point(478, 17);
-            cbxPerfumeBranchFilter.Name = "cbxPerfumeBranchFilter";
-            cbxPerfumeBranchFilter.Size = new Size(148, 26);
-            cbxPerfumeBranchFilter.TabIndex = 12;
+            cbxPerfumeFragranceFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxPerfumeFragranceFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxPerfumeFragranceFilter.FormattingEnabled = true;
+            cbxPerfumeFragranceFilter.Location = new Point(230, 47);
+            cbxPerfumeFragranceFilter.Name = "cbxPerfumeFragranceFilter";
+            cbxPerfumeFragranceFilter.Size = new Size(201, 24);
+            cbxPerfumeFragranceFilter.TabIndex = 3;
             // 
             // cbxPerfumeNoteFilter
             // 
             cbxPerfumeNoteFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxPerfumeNoteFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbxPerfumeNoteFilter.FormattingEnabled = true;
-            cbxPerfumeNoteFilter.Location = new Point(313, 17);
+            cbxPerfumeNoteFilter.Location = new Point(12, 49);
             cbxPerfumeNoteFilter.Name = "cbxPerfumeNoteFilter";
-            cbxPerfumeNoteFilter.Size = new Size(148, 26);
-            cbxPerfumeNoteFilter.TabIndex = 11;
+            cbxPerfumeNoteFilter.Size = new Size(201, 24);
+            cbxPerfumeNoteFilter.TabIndex = 2;
+            // 
+            // cbxPerfumeBranchFilter
+            // 
+            cbxPerfumeBranchFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxPerfumeBranchFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxPerfumeBranchFilter.FormattingEnabled = true;
+            cbxPerfumeBranchFilter.Location = new Point(528, 16);
+            cbxPerfumeBranchFilter.Name = "cbxPerfumeBranchFilter";
+            cbxPerfumeBranchFilter.Size = new Size(152, 24);
+            cbxPerfumeBranchFilter.TabIndex = 1;
+            // 
+            // cbxPerfumeGenderFilter
+            // 
+            cbxPerfumeGenderFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxPerfumeGenderFilter.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxPerfumeGenderFilter.FormattingEnabled = true;
+            cbxPerfumeGenderFilter.Location = new Point(449, 47);
+            cbxPerfumeGenderFilter.Name = "cbxPerfumeGenderFilter";
+            cbxPerfumeGenderFilter.Size = new Size(201, 24);
+            cbxPerfumeGenderFilter.TabIndex = 15;
             // 
             // StaffInventoryForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 470);
+            Controls.Add(cbxPerfumeGenderFilter);
+            Controls.Add(cbxPerfumeBranchFilter);
             Controls.Add(panel1);
             Controls.Add(btnScanQR);
-            Controls.Add(cbxPerfumeBranchFilter);
+            Controls.Add(cbxPerfumeFragranceFilter);
             Controls.Add(cbxPerfumeNoteFilter);
             Controls.Add(btnRefresh);
             Controls.Add(btnEditSelectedPerfume);
@@ -255,7 +270,9 @@
         private PictureBox pictureBox1;
         private RichTextBox tbSearchPerfumeFilter;
         private Button btnScanQR;
-        private ComboBox cbxPerfumeBranchFilter;
+        private ComboBox cbxPerfumeFragranceFilter;
         private ComboBox cbxPerfumeNoteFilter;
+        private ComboBox cbxPerfumeBranchFilter;
+        private ComboBox cbxPerfumeGenderFilter;
     }
 }
