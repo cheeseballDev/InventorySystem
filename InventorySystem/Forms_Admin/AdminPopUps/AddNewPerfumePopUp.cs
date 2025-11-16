@@ -138,12 +138,6 @@ namespace InventorySystem
             else
             {
                 cbxNewPerfumeNoteType.Enabled = false;
-                cbxNewPerfumeNoteType.Items.Clear();
-                cbxNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNotePremiumFemale)));
-                cbxNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNoteClassicFemale)));
-                cbxNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNotePremiumMale)));
-                cbxNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNoteClassicMale)));
-                cbxNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNotePremiumUnisex)));
             }
         }
 

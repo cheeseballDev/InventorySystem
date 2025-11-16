@@ -36,7 +36,7 @@ namespace InventorySystem
 
             dgReportResults.DataSource = DatabaseHelper.ExecuteQuery(query, actionParameter, startDateParameter, endDateParameter);
             dgReportResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dgReportResults.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgReportResults.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgReportResults.ScrollBars = ScrollBars.Both;
         }
 

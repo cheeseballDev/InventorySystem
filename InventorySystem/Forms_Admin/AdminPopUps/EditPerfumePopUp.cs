@@ -125,8 +125,8 @@ namespace InventorySystem
                 numPerfumeQuantity.Text = reader["Quantity"].ToString();
                 cbxEditPerfumeBranch.Text = reader["Branch"].ToString();
                 cbxEditPerfumeGenderType.Text = reader["Gender"].ToString();
-                cbxEditPerfumeNoteType.Text = reader["Note"].ToString();
                 cbxEditPerfumeType.Text = reader["Perfume_Type"].ToString();
+                cbxEditPerfumeNoteType.Text = reader["Note"].ToString();
                 if (reader["Quantity"] != DBNull.Value)
                 {
                     numPerfumeQuantity.Value = Convert.ToDecimal(reader["Quantity"]);
@@ -181,12 +181,6 @@ namespace InventorySystem
             else
             {
                 cbxEditPerfumeNoteType.Enabled = false;
-                cbxEditPerfumeNoteType.Items.Clear();
-                cbxEditPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNotePremiumFemale)));
-                cbxEditPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNoteClassicFemale)));
-                cbxEditPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNotePremiumMale)));
-                cbxEditPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNoteClassicMale)));
-                cbxEditPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(PerfumeNotePremiumUnisex)));
             }
         }
 
