@@ -131,8 +131,8 @@ namespace InventorySystem
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (!tbSearchPerfumeFilter.Text.Equals("Search perfume...") && !string.IsNullOrEmpty(tbSearchPerfumeFilter.Text))
             {
-                query += " and Perfume like @perfume";
-                parameters.Add(new MySqlParameter("@perfume", "%" + tbSearchPerfumeFilter.Text + "%"));
+                query += " and Perfume_Name like @perfume_name";
+                parameters.Add(new MySqlParameter("@perfume_name", "%" + tbSearchPerfumeFilter.Text + "%"));
             }
             if (!cbxPerfumeBranchFilter.Text.Equals("All"))
             {
