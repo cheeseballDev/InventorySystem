@@ -1,13 +1,10 @@
-﻿using InventorySystem.Enums;
-using InventorySystem.Helper_Classes;
+﻿using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem
 {
     public partial class ArchivesForm : Form
     {
-        private string currentSelectedPerfumeNote;
-        private string currentSelectedPerfumeGender;
         public ArchivesForm()
         {
             InitializeComponent();
@@ -35,7 +32,7 @@ namespace InventorySystem
             {
                 query += " and Perfume_ID like @search or Perfume like @search or Branch like @search";
                 parameters.Add(new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%"));
-            } 
+            }
             dgArchivedPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
             dgArchivedPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgArchivedPerfume.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);

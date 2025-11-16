@@ -279,6 +279,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(794, 319);
             Controls.Add(lblMessage);
             Controls.Add(label10);

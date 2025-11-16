@@ -12,11 +12,11 @@ namespace InventorySystem
             cbxRequestCurrentBranchFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
 
             List<string> parfumList = new List<string>();
-            parfumList = Helper_Classes.DatabaseHelper.GetListQuery("SELECT Perfume FROM perfumetable GROUP BY Perfume");
+            parfumList = Helper_Classes.DatabaseHelper.GetListQuery("SELECT Perfume_Name FROM perfumetable GROUP BY Perfume_Name");
 
             cbxRequestCurrentBranchFilter.Items.RemoveAt(0);
 
-            cbxRequestParfumFilter.Items.AddRange(parfumList.ToArray());
+            cbxRequestPerfumeFilter.Items.AddRange(parfumList.ToArray());
 
             loadExistingRequests();
         }
@@ -28,7 +28,7 @@ namespace InventorySystem
                 MessageBox.Show("Please select your current branch.");
                 return;
             }
-            if (cbxRequestParfumFilter.SelectedIndex < -1)
+            if (cbxRequestPerfumeFilter.SelectedIndex < -1)
             {
                 MessageBox.Show("Please select the perfume you want to request");
                 return;
@@ -39,13 +39,13 @@ namespace InventorySystem
                 return;
             }
             String reqID = DatabaseHelper.CheckForExistingId("select request_id from requestlogtable order by request_id desc limit 1", "REQ");
-            String prodID = DatabaseHelper.getID($"select Perfume_ID from perfumetable where perfume = @perfume",
-                new MySqlParameter("@perfume", cbxRequestParfumFilter.Text));
+            String perfID = DatabaseHelper.getID($"select Perfume_ID from perfumetable where Perfume_Name = @perfume_name",
+                new MySqlParameter("@perfume", cbxRequestPerfumeFilter.Text));
             int rowsAffected = DatabaseHelper.ExecuteNonQuery(
-                "insert into requestlogtable values (@reqid, @prodid, @perfume, @quantity, @branch, NOW(), @message, @status)",
-                    new MySqlParameter("@reqid", reqID),
-                    new MySqlParameter("@prodid", prodID),
-                    new MySqlParameter("@perfume", cbxRequestParfumFilter.Text),
+                "insert into requestlogtable values (@request_id, @perfume_id, @perfume_name, @quantity, @branch, NOW(), @message, @status)",
+                    new MySqlParameter("@request_id", reqID),
+                    new MySqlParameter("@perfume_id", perfID),
+                    new MySqlParameter("@perfume", cbxRequestPerfumeFilter.Text),
                     new MySqlParameter("@quantity", int.Parse(numPerfumeAmountToRequest.Text)),
                     new MySqlParameter("@branch", cbxRequestCurrentBranchFilter.Text),
                     new MySqlParameter("@message", tbRequestMessage.Text),
@@ -84,7 +84,7 @@ namespace InventorySystem
         private void btnClear_Click(object sender, EventArgs e)
         {
             cbxRequestCurrentBranchFilter.Items.Clear();
-            cbxRequestParfumFilter.Items.Clear();
+            cbxRequestPerfumeFilter.Items.Clear();
             tbRequestMessage.Clear();
             numPerfumeAmountToRequest.Value = 0;
         }

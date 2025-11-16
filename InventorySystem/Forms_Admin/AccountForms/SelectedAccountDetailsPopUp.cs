@@ -1,10 +1,6 @@
-﻿using System.Data;
-using InventorySystem.Enums;
+﻿using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
-using Microsoft.Office.Interop.Excel;
 using MySql.Data.MySqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace InventorySystem.Forms_Admin
 {
@@ -17,7 +13,7 @@ namespace InventorySystem.Forms_Admin
             cbxAccountBranch.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
             cbxAccountRole.Items.AddRange(Enum.GetNames(typeof(AccountRoles)));
             empID = id;
-            loadDetails();           
+            loadDetails();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

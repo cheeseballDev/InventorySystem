@@ -256,6 +256,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(650, 471);
             Controls.Add(cbxNewPerfumeGenderType);
             Controls.Add(label8);

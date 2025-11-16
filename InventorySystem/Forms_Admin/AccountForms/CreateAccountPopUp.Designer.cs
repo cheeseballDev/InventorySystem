@@ -224,6 +224,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(500, 340);
             Controls.Add(tbPassword);
             Controls.Add(label6);
@@ -253,7 +254,6 @@
 
         private Button btnClose;
         private Label label1;
-        private PictureBox pictureBox1;
         private Label label2;
         private Label label3;
         private Label label4;

@@ -245,6 +245,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(500, 334);
             Controls.Add(btnArchiveAccount);
             Controls.Add(tbAccountPassword);
@@ -275,7 +276,6 @@
 
         private Button btnClose;
         private Label label1;
-        private PictureBox pictureBox1;
         private ComboBox cbxAccountBranch;
         private ComboBox cbxAccountRole;
         private RichTextBox tbAccountEmail;

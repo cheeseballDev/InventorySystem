@@ -172,6 +172,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(735, 247);
             Controls.Add(lblAuditTimestamp);
             Controls.Add(lblAuditModule);

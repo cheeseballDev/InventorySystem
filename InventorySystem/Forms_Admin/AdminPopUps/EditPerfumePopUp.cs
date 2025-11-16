@@ -213,7 +213,7 @@ namespace InventorySystem
 
                 int rowsAffected = DatabaseHelper.ExecuteNonQuery(query,
                         new MySqlParameter("@perfume_name", perfumeName),
-                        new MySqlParameter("@perfume_type",  perfumeType),
+                        new MySqlParameter("@perfume_type", perfumeType),
                         new MySqlParameter("@gender", gender),
                         new MySqlParameter("@note", note),
                         new MySqlParameter("@branch", branch),
