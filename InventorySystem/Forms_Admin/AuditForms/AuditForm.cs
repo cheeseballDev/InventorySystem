@@ -44,6 +44,9 @@ namespace InventorySystem
                 parameters.Add(new MySqlParameter("@endDate", dtpAuditLogDateTo.Value.Date));
             }
             dgAuditLog.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
+            dgAuditLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgAuditLog.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgAuditLog.ScrollBars = ScrollBars.Both;
         }
 
         private void btnOpenAuditDetails_Click(object sender, EventArgs e)

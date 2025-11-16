@@ -35,6 +35,9 @@ namespace InventorySystem
             MySqlParameter endDateParameter = new MySqlParameter("@endDate", dtpReportDateTo.Value.Date);
 
             dgReportResults.DataSource = DatabaseHelper.ExecuteQuery(query, actionParameter, startDateParameter, endDateParameter);
+            dgReportResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgReportResults.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgReportResults.ScrollBars = ScrollBars.Both;
         }
 
         private void loadReport()

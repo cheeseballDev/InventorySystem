@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem.Enums
 {
-    public enum PerfumeNote
+    public enum PerfumeType
     {
         Premium,
         Classic
@@ -13,7 +13,7 @@
         Unisex
     }
 
-    public enum PerfumeFragranceClassicFemale
+    public enum PerfumeNoteClassicFemale
     {
         Amber,
         Apricot,
@@ -39,7 +39,7 @@
         Mew
     }
 
-    public enum PerfumeFragranceClassicMale
+    public enum PerfumeNoteClassicMale
     {
         Aqua,
         Agape,
@@ -62,7 +62,7 @@
         Ginger
     }
 
-    public enum PerfumeFragrancePremiumMale
+    public enum PerfumeNotePremiumMale
     {
         Desire,
         Ginger,
@@ -72,14 +72,14 @@
         Woodsy
     }
 
-    public enum PerfumeFragrancePremiumFemale
+    public enum PerfumeNotePremiumFemale
     {
         Anise,
         Pear,
         Neroli
     }
 
-    public enum PerfumeFragrancePremiumUnisex
+    public enum PerfumeNotePremiumUnisex
     {
         Karat,
         Lime,

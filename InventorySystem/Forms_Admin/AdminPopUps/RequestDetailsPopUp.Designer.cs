@@ -36,12 +36,11 @@
             label5 = new Label();
             btnApproveRequest = new Button();
             btnRejectRequest = new Button();
-            btnArchiveRequest = new Button();
             label3 = new Label();
             label6 = new Label();
             label7 = new Label();
             lblRequestID = new Label();
-            lblProductId = new Label();
+            lblPerfumeId = new Label();
             lblBranch = new Label();
             lblQuantity = new Label();
             lblRequestDate = new Label();
@@ -117,7 +116,8 @@
             btnApproveRequest.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnApproveRequest.ForeColor = Color.Black;
             btnApproveRequest.Image = (Image)resources.GetObject("btnApproveRequest.Image");
-            btnApproveRequest.Location = new Point(29, 280);
+            btnApproveRequest.ImageAlign = ContentAlignment.MiddleRight;
+            btnApproveRequest.Location = new Point(162, 269);
             btnApproveRequest.Name = "btnApproveRequest";
             btnApproveRequest.Size = new Size(211, 31);
             btnApproveRequest.TabIndex = 17;
@@ -135,7 +135,8 @@
             btnRejectRequest.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRejectRequest.ForeColor = Color.Black;
             btnRejectRequest.Image = (Image)resources.GetObject("btnRejectRequest.Image");
-            btnRejectRequest.Location = new Point(284, 280);
+            btnRejectRequest.ImageAlign = ContentAlignment.MiddleRight;
+            btnRejectRequest.Location = new Point(417, 269);
             btnRejectRequest.Name = "btnRejectRequest";
             btnRejectRequest.Size = new Size(211, 31);
             btnRejectRequest.TabIndex = 18;
@@ -143,25 +144,6 @@
             btnRejectRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRejectRequest.UseVisualStyleBackColor = true;
             btnRejectRequest.Click += btnRejectRequest_Click;
-            // 
-            // btnArchiveRequest
-            // 
-            btnArchiveRequest.BackColor = Color.FromArgb(126, 16, 44);
-            btnArchiveRequest.BackgroundImageLayout = ImageLayout.Center;
-            btnArchiveRequest.Cursor = Cursors.Hand;
-            btnArchiveRequest.FlatAppearance.BorderSize = 0;
-            btnArchiveRequest.FlatStyle = FlatStyle.Flat;
-            btnArchiveRequest.Font = new Font("Montserrat", 9.749999F);
-            btnArchiveRequest.ForeColor = SystemColors.Control;
-            btnArchiveRequest.Image = (Image)resources.GetObject("btnArchiveRequest.Image");
-            btnArchiveRequest.Location = new Point(543, 280);
-            btnArchiveRequest.Name = "btnArchiveRequest";
-            btnArchiveRequest.Size = new Size(211, 31);
-            btnArchiveRequest.TabIndex = 19;
-            btnArchiveRequest.Text = "Archive Request";
-            btnArchiveRequest.TextAlign = ContentAlignment.MiddleLeft;
-            btnArchiveRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnArchiveRequest.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -182,7 +164,6 @@
             label6.Size = new Size(123, 22);
             label6.TabIndex = 21;
             label6.Text = "Request Date:";
-            label6.Click += label6_Click;
             // 
             // label7
             // 
@@ -204,15 +185,15 @@
             lblRequestID.TabIndex = 23;
             lblRequestID.Text = "#####";
             // 
-            // lblProductId
+            // lblPerfumeId
             // 
-            lblProductId.AutoSize = true;
-            lblProductId.ForeColor = SystemColors.ActiveCaptionText;
-            lblProductId.Location = new Point(138, 135);
-            lblProductId.Name = "lblProductId";
-            lblProductId.Size = new Size(65, 22);
-            lblProductId.TabIndex = 24;
-            lblProductId.Text = "#####";
+            lblPerfumeId.AutoSize = true;
+            lblPerfumeId.ForeColor = SystemColors.ActiveCaptionText;
+            lblPerfumeId.Location = new Point(138, 135);
+            lblPerfumeId.Name = "lblPerfumeId";
+            lblPerfumeId.Size = new Size(65, 22);
+            lblPerfumeId.TabIndex = 24;
+            lblPerfumeId.Text = "#####";
             // 
             // lblBranch
             // 
@@ -258,21 +239,21 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.FromArgb(135, 135, 135);
-            label9.Location = new Point(225, 135);
+            label9.Location = new Point(223, 135);
             label9.Name = "label9";
-            label9.Size = new Size(83, 22);
+            label9.Size = new Size(136, 22);
             label9.TabIndex = 29;
-            label9.Text = "Perfume:";
+            label9.Text = "Perfume Name:";
             // 
             // lblPerfume
             // 
             lblPerfume.AutoSize = true;
             lblPerfume.ForeColor = SystemColors.ActiveCaptionText;
-            lblPerfume.Location = new Point(308, 135);
+            lblPerfume.Location = new Point(374, 135);
             lblPerfume.Name = "lblPerfume";
-            lblPerfume.Size = new Size(164, 22);
+            lblPerfume.Size = new Size(252, 22);
             lblPerfume.TabIndex = 30;
-            lblPerfume.Text = "##############";
+            lblPerfume.Text = "######################";
             // 
             // label10
             // 
@@ -294,11 +275,12 @@
             lblMessage.TabIndex = 32;
             lblMessage.Text = "######################################################";
             // 
-            // AdminRequestDetailsPopUp
+            // RequestDetailsPopUp
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(794, 323);
+            BackColor = SystemColors.ControlLight;
+            ClientSize = new Size(794, 319);
             Controls.Add(lblMessage);
             Controls.Add(label10);
             Controls.Add(lblPerfume);
@@ -307,12 +289,11 @@
             Controls.Add(lblRequestDate);
             Controls.Add(lblQuantity);
             Controls.Add(lblBranch);
-            Controls.Add(lblProductId);
+            Controls.Add(lblPerfumeId);
             Controls.Add(lblRequestID);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label3);
-            Controls.Add(btnArchiveRequest);
             Controls.Add(btnRejectRequest);
             Controls.Add(btnApproveRequest);
             Controls.Add(label5);
@@ -323,7 +304,7 @@
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "AdminRequestDetailsPopUp";
+            Name = "RequestDetailsPopUp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminRequestDetailsPopUp";
             ResumeLayout(false);
@@ -339,12 +320,11 @@
         private Label label5;
         private Button btnApproveRequest;
         private Button btnRejectRequest;
-        private Button btnArchiveRequest;
         private Label label3;
         private Label label6;
         private Label label7;
         private Label lblRequestID;
-        private Label lblProductId;
+        private Label lblPerfumeId;
         private Label lblBranch;
         private Label lblQuantity;
         private Label lblRequestDate;

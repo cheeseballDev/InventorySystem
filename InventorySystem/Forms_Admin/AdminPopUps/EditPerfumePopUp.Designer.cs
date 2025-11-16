@@ -43,10 +43,10 @@
             btnArchivePerfume = new Button();
             label3 = new Label();
             cbxEditPerfumeBranch = new ComboBox();
-            cbxEditPerfumeNoteType = new ComboBox();
+            cbxEditPerfumeType = new ComboBox();
             label6 = new Label();
             label7 = new Label();
-            cbxEditPerfumeFragranceType = new ComboBox();
+            cbxEditPerfumeNoteType = new ComboBox();
             label8 = new Label();
             cbxEditPerfumeGenderType = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -205,6 +205,7 @@
             btnArchivePerfume.Text = "Archive Perfume";
             btnArchivePerfume.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnArchivePerfume.UseVisualStyleBackColor = false;
+            btnArchivePerfume.Click += btnArchivePerfume_Click;
             // 
             // label3
             // 
@@ -228,17 +229,17 @@
             cbxEditPerfumeBranch.Size = new Size(186, 26);
             cbxEditPerfumeBranch.TabIndex = 28;
             // 
-            // cbxEditPerfumeNoteType
+            // cbxEditPerfumeType
             // 
-            cbxEditPerfumeNoteType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxEditPerfumeNoteType.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxEditPerfumeNoteType.ForeColor = SystemColors.ControlText;
-            cbxEditPerfumeNoteType.FormattingEnabled = true;
-            cbxEditPerfumeNoteType.Location = new Point(122, 317);
-            cbxEditPerfumeNoteType.Name = "cbxEditPerfumeNoteType";
-            cbxEditPerfumeNoteType.Size = new Size(186, 26);
-            cbxEditPerfumeNoteType.TabIndex = 27;
-            cbxEditPerfumeNoteType.SelectedValueChanged += cbxEditPerfumeNoteType_SelectedValueChanged;
+            cbxEditPerfumeType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxEditPerfumeType.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxEditPerfumeType.ForeColor = SystemColors.ControlText;
+            cbxEditPerfumeType.FormattingEnabled = true;
+            cbxEditPerfumeType.Location = new Point(122, 317);
+            cbxEditPerfumeType.Name = "cbxEditPerfumeType";
+            cbxEditPerfumeType.Size = new Size(186, 26);
+            cbxEditPerfumeType.TabIndex = 27;
+            cbxEditPerfumeType.SelectedValueChanged += cbxEditPerfumeNoteType_SelectedValueChanged;
             // 
             // label6
             // 
@@ -246,9 +247,9 @@
             label6.ForeColor = Color.FromArgb(135, 135, 135);
             label6.Location = new Point(28, 318);
             label6.Name = "label6";
-            label6.Size = new Size(52, 22);
+            label6.Size = new Size(51, 22);
             label6.TabIndex = 26;
-            label6.Text = "Note:";
+            label6.Text = "Type:";
             // 
             // label7
             // 
@@ -256,20 +257,20 @@
             label7.ForeColor = Color.FromArgb(135, 135, 135);
             label7.Location = new Point(323, 318);
             label7.Name = "label7";
-            label7.Size = new Size(92, 22);
+            label7.Size = new Size(52, 22);
             label7.TabIndex = 30;
-            label7.Text = "Fragrance:";
+            label7.Text = "Note:";
             // 
-            // cbxEditPerfumeFragranceType
+            // cbxEditPerfumeNoteType
             // 
-            cbxEditPerfumeFragranceType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxEditPerfumeFragranceType.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxEditPerfumeFragranceType.ForeColor = SystemColors.ControlText;
-            cbxEditPerfumeFragranceType.FormattingEnabled = true;
-            cbxEditPerfumeFragranceType.Location = new Point(421, 317);
-            cbxEditPerfumeFragranceType.Name = "cbxEditPerfumeFragranceType";
-            cbxEditPerfumeFragranceType.Size = new Size(186, 26);
-            cbxEditPerfumeFragranceType.TabIndex = 31;
+            cbxEditPerfumeNoteType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxEditPerfumeNoteType.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxEditPerfumeNoteType.ForeColor = SystemColors.ControlText;
+            cbxEditPerfumeNoteType.FormattingEnabled = true;
+            cbxEditPerfumeNoteType.Location = new Point(421, 317);
+            cbxEditPerfumeNoteType.Name = "cbxEditPerfumeNoteType";
+            cbxEditPerfumeNoteType.Size = new Size(186, 26);
+            cbxEditPerfumeNoteType.TabIndex = 31;
             // 
             // label8
             // 
@@ -293,18 +294,19 @@
             cbxEditPerfumeGenderType.TabIndex = 33;
             cbxEditPerfumeGenderType.SelectedValueChanged += cbxEditPerfumeGenderType_SelectedValueChanged;
             // 
-            // AdminEditPerfumePopUp
+            // EditPerfumePopUp
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(650, 503);
             Controls.Add(cbxEditPerfumeGenderType);
             Controls.Add(label8);
-            Controls.Add(cbxEditPerfumeFragranceType);
+            Controls.Add(cbxEditPerfumeNoteType);
             Controls.Add(label7);
             Controls.Add(label3);
             Controls.Add(cbxEditPerfumeBranch);
-            Controls.Add(cbxEditPerfumeNoteType);
+            Controls.Add(cbxEditPerfumeType);
             Controls.Add(label6);
             Controls.Add(btnArchivePerfume);
             Controls.Add(btnCancel);
@@ -321,7 +323,7 @@
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "AdminEditPerfumePopUp";
+            Name = "EditPerfumePopUp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminEditProductPopUp";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -346,10 +348,10 @@
         private Button btnArchivePerfume;
         private Label label3;
         private ComboBox cbxEditPerfumeBranch;
-        private ComboBox cbxEditPerfumeNoteType;
+        private ComboBox cbxEditPerfumeType;
         private Label label6;
         private Label label7;
-        private ComboBox cbxEditPerfumeFragranceType;
+        private ComboBox cbxEditPerfumeNoteType;
         private Label label8;
         private ComboBox cbxEditPerfumeGenderType;
     }

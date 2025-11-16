@@ -44,35 +44,20 @@ namespace InventorySystem
 
         private void loadDetails()
         {
-            using (MySqlConnection con = new MySqlConnection("Server=localhost;Port=3306;Database=inventorysystemdatabase;Uid=username;Pwd=password123;SslMode=None;"))
+            string query = "SELECT * FROM requestlogtable WHERE Request_ID = @id";
+            DatabaseHelper.ExecuteReader(query, reader =>
             {
-                con.Open();
-                string query = "SELECT * FROM requestlogtable WHERE Request_ID = @id";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@id", reqID);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            lblRequestID.Text = reader["Request_ID"].ToString();
-                            lblProductId.Text = reader["Product_ID"].ToString();
-                            lblStatus.Text = reader["status"].ToString();
-                            lblRequestDate.Text = reader["request_date"].ToString();
-                            lblPerfume.Text = reader["perfume"].ToString();
-                            lblQuantity.Text = reader["quantity"].ToString();
-                            lblBranch.Text = reader["branch"].ToString();
-                            lblMessage.Text = reader["message"].ToString();
-                        }
-                    }
-                }
-            }
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+                lblRequestID.Text = reader["Request_ID"].ToString();
+                lblPerfumeId.Text = reader["Perfume_ID"].ToString();
+                lblStatus.Text = reader["status"].ToString();
+                lblRequestDate.Text = reader["request_date"].ToString();
+                lblPerfume.Text = reader["Perfume_Name"].ToString();
+                lblQuantity.Text = reader["quantity"].ToString();
+                lblBranch.Text = reader["branch"].ToString();
+                lblMessage.Text = reader["message"].ToString();
+            },
+            new MySqlParameter("@id", reqID)
+            );
         }
     }
 }

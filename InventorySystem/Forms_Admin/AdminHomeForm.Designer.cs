@@ -47,6 +47,7 @@
             imgBtnUser = new PictureBox();
             btnNotification = new Button();
             cbxUser = new ComboBox();
+            btnArchives = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -56,6 +57,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(28, 28, 28);
+            panel1.Controls.Add(btnArchives);
             panel1.Controls.Add(pnlNavigation);
             panel1.Controls.Add(btnAccounts);
             panel1.Controls.Add(btnAuditLog);
@@ -222,7 +224,7 @@
             lblTitle.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.Location = new Point(199, 13);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(156, 42);
+            lblTitle.Size = new Size(154, 37);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Inventory";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -234,7 +236,7 @@
             lblDescription.ForeColor = Color.FromArgb(135, 135, 135);
             lblDescription.Location = new Point(203, 55);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(274, 20);
+            lblDescription.Size = new Size(273, 18);
             lblDescription.TabIndex = 2;
             lblDescription.Text = "Overview of all available parfum products";
             // 
@@ -279,9 +281,27 @@
             cbxUser.FormattingEnabled = true;
             cbxUser.Location = new Point(926, 27);
             cbxUser.Name = "cbxUser";
-            cbxUser.Size = new Size(81, 33);
+            cbxUser.Size = new Size(81, 30);
             cbxUser.TabIndex = 6;
             cbxUser.SelectedIndexChanged += cbxUser_SelectedIndexChanged;
+            // 
+            // btnArchives
+            // 
+            btnArchives.BackgroundImageLayout = ImageLayout.Center;
+            btnArchives.Cursor = Cursors.Hand;
+            btnArchives.Dock = DockStyle.Top;
+            btnArchives.FlatAppearance.BorderSize = 0;
+            btnArchives.FlatStyle = FlatStyle.Flat;
+            btnArchives.ForeColor = SystemColors.Control;
+            btnArchives.Image = (Image)resources.GetObject("btnArchives.Image");
+            btnArchives.Location = new Point(0, 454);
+            btnArchives.Name = "btnArchives";
+            btnArchives.Size = new Size(180, 59);
+            btnArchives.TabIndex = 7;
+            btnArchives.Text = "Archives";
+            btnArchives.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnArchives.UseVisualStyleBackColor = true;
+            btnArchives.Click += btnArchives_Click;
             // 
             // AdminHomeForm
             // 
@@ -330,5 +350,6 @@
         private ComboBox cbxUser;
         private Button btnAuditLog;
         private Button btnAccounts;
+        private Button btnArchives;
     }
 }

@@ -48,12 +48,6 @@ namespace InventorySystem
                 MessageBox.Show("Please select a row to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        private void btnArchiveAccount_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)
         {
             if (tbSearchUserFilter.Text == "Search user..." || string.IsNullOrWhiteSpace(tbSearchUserFilter.Text))
@@ -65,6 +59,9 @@ namespace InventorySystem
             MySqlParameter searchParameter = new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%");
 
             dgAccounts.DataSource = DatabaseHelper.ExecuteQuery(query, searchParameter);
+            dgAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgAccounts.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgAccounts.ScrollBars = ScrollBars.Both;
         }
     }
 }

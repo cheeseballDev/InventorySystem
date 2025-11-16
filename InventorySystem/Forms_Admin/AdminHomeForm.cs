@@ -129,15 +129,32 @@ namespace InventorySystem
                );
 
         }
+        private void btnArchives_Click(object sender, EventArgs e)
+        {
+            ResetButtons();
+            btnArchives.BackColor = hoverButtonColor;
+
+            pnlNavigation.Height = btnAccounts.Height;
+            pnlNavigation.Top = btnAccounts.Top;
+
+            FormLoaderHelper.LoadForm(
+               pnlFormLoader,
+               new ArchivesForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true },
+               lblTitle,
+               lblDescription,
+               "Archived Items",
+               "List of all archived perfumes:"
+               );
+        }
 
         private void btnNotification_Click(object sender, EventArgs e)
         {
-            // temp
+            MessageBox.Show("Feature is yet to be implemented!");
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            // temp
+            MessageBox.Show("Feature is yet to be implemented!");
         }
 
         private void ResetButtons()
@@ -163,5 +180,7 @@ namespace InventorySystem
                 Application.Exit();
             }
         }
+
+
     }
 }

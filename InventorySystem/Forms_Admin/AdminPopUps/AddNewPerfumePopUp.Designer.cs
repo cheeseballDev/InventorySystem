@@ -40,10 +40,10 @@
             btnCancel = new Button();
             label3 = new Label();
             cbxNewPerfumeBranch = new ComboBox();
-            cbxNewPerfumeNoteType = new ComboBox();
+            cbxNewPerfumeType = new ComboBox();
             label6 = new Label();
             label7 = new Label();
-            cbxNewPerfumeFragranceType = new ComboBox();
+            cbxNewPerfumeNoteType = new ComboBox();
             label8 = new Label();
             cbxNewPerfumeGenderType = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -187,17 +187,17 @@
             cbxNewPerfumeBranch.Size = new Size(186, 26);
             cbxNewPerfumeBranch.TabIndex = 28;
             // 
-            // cbxNewPerfumeNoteType
+            // cbxNewPerfumeType
             // 
-            cbxNewPerfumeNoteType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxNewPerfumeNoteType.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxNewPerfumeNoteType.ForeColor = SystemColors.ControlText;
-            cbxNewPerfumeNoteType.FormattingEnabled = true;
-            cbxNewPerfumeNoteType.Location = new Point(122, 273);
-            cbxNewPerfumeNoteType.Name = "cbxNewPerfumeNoteType";
-            cbxNewPerfumeNoteType.Size = new Size(186, 26);
-            cbxNewPerfumeNoteType.TabIndex = 27;
-            cbxNewPerfumeNoteType.SelectedValueChanged += cbxNewPerfumeNoteType_SelectedValueChanged;
+            cbxNewPerfumeType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxNewPerfumeType.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxNewPerfumeType.ForeColor = SystemColors.ControlText;
+            cbxNewPerfumeType.FormattingEnabled = true;
+            cbxNewPerfumeType.Location = new Point(122, 273);
+            cbxNewPerfumeType.Name = "cbxNewPerfumeType";
+            cbxNewPerfumeType.Size = new Size(186, 26);
+            cbxNewPerfumeType.TabIndex = 27;
+            cbxNewPerfumeType.SelectedValueChanged += cbxNewPerfumeNoteType_SelectedValueChanged;
             // 
             // label6
             // 
@@ -205,9 +205,9 @@
             label6.ForeColor = Color.FromArgb(135, 135, 135);
             label6.Location = new Point(28, 274);
             label6.Name = "label6";
-            label6.Size = new Size(52, 22);
+            label6.Size = new Size(51, 22);
             label6.TabIndex = 26;
-            label6.Text = "Note:";
+            label6.Text = "Type:";
             // 
             // label7
             // 
@@ -215,20 +215,20 @@
             label7.ForeColor = Color.FromArgb(135, 135, 135);
             label7.Location = new Point(323, 274);
             label7.Name = "label7";
-            label7.Size = new Size(92, 22);
+            label7.Size = new Size(52, 22);
             label7.TabIndex = 30;
-            label7.Text = "Fragrance:";
+            label7.Text = "Note:";
             // 
-            // cbxNewPerfumeFragranceType
+            // cbxNewPerfumeNoteType
             // 
-            cbxNewPerfumeFragranceType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxNewPerfumeFragranceType.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbxNewPerfumeFragranceType.ForeColor = SystemColors.ControlText;
-            cbxNewPerfumeFragranceType.FormattingEnabled = true;
-            cbxNewPerfumeFragranceType.Location = new Point(421, 273);
-            cbxNewPerfumeFragranceType.Name = "cbxNewPerfumeFragranceType";
-            cbxNewPerfumeFragranceType.Size = new Size(186, 26);
-            cbxNewPerfumeFragranceType.TabIndex = 31;
+            cbxNewPerfumeNoteType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxNewPerfumeNoteType.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxNewPerfumeNoteType.ForeColor = SystemColors.ControlText;
+            cbxNewPerfumeNoteType.FormattingEnabled = true;
+            cbxNewPerfumeNoteType.Location = new Point(421, 273);
+            cbxNewPerfumeNoteType.Name = "cbxNewPerfumeNoteType";
+            cbxNewPerfumeNoteType.Size = new Size(186, 26);
+            cbxNewPerfumeNoteType.TabIndex = 31;
             // 
             // label8
             // 
@@ -256,14 +256,15 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(650, 471);
             Controls.Add(cbxNewPerfumeGenderType);
             Controls.Add(label8);
-            Controls.Add(cbxNewPerfumeFragranceType);
+            Controls.Add(cbxNewPerfumeNoteType);
             Controls.Add(label7);
             Controls.Add(label3);
             Controls.Add(cbxNewPerfumeBranch);
-            Controls.Add(cbxNewPerfumeNoteType);
+            Controls.Add(cbxNewPerfumeType);
             Controls.Add(label6);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
@@ -299,10 +300,10 @@
         private Button btnCancel;
         private Label label3;
         private ComboBox cbxNewPerfumeBranch;
-        private ComboBox cbxNewPerfumeNoteType;
+        private ComboBox cbxNewPerfumeType;
         private Label label6;
         private Label label7;
-        private ComboBox cbxNewPerfumeFragranceType;
+        private ComboBox cbxNewPerfumeNoteType;
         private Label label8;
         private ComboBox cbxNewPerfumeGenderType;
     }
