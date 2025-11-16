@@ -207,7 +207,7 @@
             dgExistingRequests.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 11.25F);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -216,7 +216,7 @@
             dgExistingRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 11.25F);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;

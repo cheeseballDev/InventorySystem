@@ -53,7 +53,7 @@
             label6.Font = new Font("Montserrat", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(12, 47);
             label6.Name = "label6";
-            label6.Size = new Size(228, 42);
+            label6.Size = new Size(228, 37);
             label6.TabIndex = 13;
             label6.Text = "Report Results";
             // 
@@ -65,7 +65,7 @@
             cbxReportTypeFilter.Items.AddRange(new object[] { "Added Quantity", "Deducted Quantity" });
             cbxReportTypeFilter.Location = new Point(135, 10);
             cbxReportTypeFilter.Name = "cbxReportTypeFilter";
-            cbxReportTypeFilter.Size = new Size(178, 26);
+            cbxReportTypeFilter.Size = new Size(178, 24);
             cbxReportTypeFilter.TabIndex = 15;
             // 
             // label1
@@ -75,7 +75,7 @@
             label1.ForeColor = Color.FromArgb(135, 135, 135);
             label1.Location = new Point(12, 16);
             label1.Name = "label1";
-            label1.Size = new Size(118, 18);
+            label1.Size = new Size(117, 16);
             label1.TabIndex = 14;
             label1.Text = "Select report type:";
             // 
@@ -86,7 +86,7 @@
             label2.ForeColor = Color.FromArgb(135, 135, 135);
             label2.Location = new Point(319, 16);
             label2.Name = "label2";
-            label2.Size = new Size(73, 18);
+            label2.Size = new Size(72, 16);
             label2.TabIndex = 16;
             label2.Text = "Date from:";
             // 
@@ -97,7 +97,7 @@
             label3.ForeColor = Color.FromArgb(135, 135, 135);
             label3.Location = new Point(531, 16);
             label3.Name = "label3";
-            label3.Size = new Size(22, 18);
+            label3.Size = new Size(21, 16);
             label3.TabIndex = 18;
             label3.Text = "To";
             // 
@@ -126,7 +126,7 @@
             label4.ForeColor = Color.FromArgb(135, 135, 135);
             label4.Location = new Point(35, 89);
             label4.Name = "label4";
-            label4.Size = new Size(155, 18);
+            label4.Size = new Size(153, 16);
             label4.TabIndex = 21;
             label4.Text = "Generated report results";
             // 
@@ -146,7 +146,7 @@
             dgReportResults.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -155,7 +155,7 @@
             dgReportResults.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 11.25F);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -226,7 +226,7 @@
             // 
             // ReportForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(820, 483);
             Controls.Add(dtpReportDateTo);

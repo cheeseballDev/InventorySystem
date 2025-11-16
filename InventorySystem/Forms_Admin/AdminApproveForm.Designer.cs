@@ -30,6 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminApproveForm));
             label6 = new Label();
             dgExistingRequests = new DataGridView();
@@ -74,16 +75,24 @@
             dgExistingRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgExistingRequests.BackgroundColor = SystemColors.Control;
             dgExistingRequests.BorderStyle = BorderStyle.None;
-            dgExistingRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 11.25F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle2;
-            dgExistingRequests.Location = new Point(29, 153);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgExistingRequests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgExistingRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 11.25F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgExistingRequests.DefaultCellStyle = dataGridViewCellStyle3;
+            dgExistingRequests.Location = new Point(19, 149);
             dgExistingRequests.Name = "dgExistingRequests";
             dgExistingRequests.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgExistingRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -251,7 +260,7 @@
             btnRefresh.ForeColor = Color.Black;
             btnRefresh.Image = (Image)resources.GetObject("btnRefresh.Image");
             btnRefresh.ImageAlign = ContentAlignment.MiddleRight;
-            btnRefresh.Location = new Point(509, 104);
+            btnRefresh.Location = new Point(505, 104);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(142, 29);
             btnRefresh.TabIndex = 27;
@@ -268,7 +277,7 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClear.ForeColor = SystemColors.Control;
-            btnClear.Location = new Point(666, 104);
+            btnClear.Location = new Point(663, 104);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(142, 29);
             btnClear.TabIndex = 35;

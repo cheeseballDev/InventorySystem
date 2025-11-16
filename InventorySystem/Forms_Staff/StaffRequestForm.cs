@@ -71,6 +71,9 @@ namespace InventorySystem
         {
             String query = "select * from requestlogtable";
             dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query);
+            dgExistingRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgExistingRequests.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgExistingRequests.ScrollBars = ScrollBars.Both;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

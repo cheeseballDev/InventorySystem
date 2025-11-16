@@ -67,7 +67,7 @@
             dgAccounts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 219, 219);
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -78,7 +78,7 @@
             dgAccounts.ReadOnly = true;
             dgAccounts.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgAccounts.Size = new Size(771, 325);
+            dgAccounts.Size = new Size(783, 325);
             dgAccounts.TabIndex = 5;
             // 
             // btnEditAccount
