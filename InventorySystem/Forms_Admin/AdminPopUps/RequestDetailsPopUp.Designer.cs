@@ -36,7 +36,6 @@
             label5 = new Label();
             btnApproveRequest = new Button();
             btnRejectRequest = new Button();
-            btnArchiveRequest = new Button();
             label3 = new Label();
             label6 = new Label();
             label7 = new Label();
@@ -117,7 +116,8 @@
             btnApproveRequest.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnApproveRequest.ForeColor = Color.Black;
             btnApproveRequest.Image = (Image)resources.GetObject("btnApproveRequest.Image");
-            btnApproveRequest.Location = new Point(29, 280);
+            btnApproveRequest.ImageAlign = ContentAlignment.MiddleRight;
+            btnApproveRequest.Location = new Point(162, 269);
             btnApproveRequest.Name = "btnApproveRequest";
             btnApproveRequest.Size = new Size(211, 31);
             btnApproveRequest.TabIndex = 17;
@@ -135,7 +135,8 @@
             btnRejectRequest.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRejectRequest.ForeColor = Color.Black;
             btnRejectRequest.Image = (Image)resources.GetObject("btnRejectRequest.Image");
-            btnRejectRequest.Location = new Point(284, 280);
+            btnRejectRequest.ImageAlign = ContentAlignment.MiddleRight;
+            btnRejectRequest.Location = new Point(417, 269);
             btnRejectRequest.Name = "btnRejectRequest";
             btnRejectRequest.Size = new Size(211, 31);
             btnRejectRequest.TabIndex = 18;
@@ -143,25 +144,6 @@
             btnRejectRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRejectRequest.UseVisualStyleBackColor = true;
             btnRejectRequest.Click += btnRejectRequest_Click;
-            // 
-            // btnArchiveRequest
-            // 
-            btnArchiveRequest.BackColor = Color.FromArgb(126, 16, 44);
-            btnArchiveRequest.BackgroundImageLayout = ImageLayout.Center;
-            btnArchiveRequest.Cursor = Cursors.Hand;
-            btnArchiveRequest.FlatAppearance.BorderSize = 0;
-            btnArchiveRequest.FlatStyle = FlatStyle.Flat;
-            btnArchiveRequest.Font = new Font("Montserrat", 9.749999F);
-            btnArchiveRequest.ForeColor = SystemColors.Control;
-            btnArchiveRequest.Image = (Image)resources.GetObject("btnArchiveRequest.Image");
-            btnArchiveRequest.Location = new Point(543, 280);
-            btnArchiveRequest.Name = "btnArchiveRequest";
-            btnArchiveRequest.Size = new Size(211, 31);
-            btnArchiveRequest.TabIndex = 19;
-            btnArchiveRequest.Text = "Archive Request";
-            btnArchiveRequest.TextAlign = ContentAlignment.MiddleLeft;
-            btnArchiveRequest.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnArchiveRequest.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -294,11 +276,11 @@
             lblMessage.TabIndex = 32;
             lblMessage.Text = "######################################################";
             // 
-            // AdminRequestDetailsPopUp
+            // RequestDetailsPopUp
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(794, 323);
+            ClientSize = new Size(794, 319);
             Controls.Add(lblMessage);
             Controls.Add(label10);
             Controls.Add(lblPerfume);
@@ -312,7 +294,6 @@
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label3);
-            Controls.Add(btnArchiveRequest);
             Controls.Add(btnRejectRequest);
             Controls.Add(btnApproveRequest);
             Controls.Add(label5);
@@ -323,7 +304,7 @@
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "AdminRequestDetailsPopUp";
+            Name = "RequestDetailsPopUp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminRequestDetailsPopUp";
             ResumeLayout(false);
@@ -339,7 +320,6 @@
         private Label label5;
         private Button btnApproveRequest;
         private Button btnRejectRequest;
-        private Button btnArchiveRequest;
         private Label label3;
         private Label label6;
         private Label label7;
