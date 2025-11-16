@@ -5,13 +5,13 @@ namespace InventorySystem
 {
     public partial class StaffEditPerfumePopUp : Form
     {
-        private String prodID;
+        private String perfumeID;
         private int origQty;
         public StaffEditPerfumePopUp(String id)
         {
             InitializeComponent();
-            prodID = id;
-            lblPerfumeID.Text = prodID;
+            perfumeID = id;
+            lblPerfumeID.Text = perfumeID;
             loadDetails();
         }
 
@@ -45,11 +45,10 @@ namespace InventorySystem
             }
 
             int rowsAffected1 = DatabaseHelper.ExecuteNonQuery(
-                "update perfumetable set Perfume = @name, Quantity = @quantity where Product_ID = @id",
-                    new MySqlParameter("@id", prodID),
+                "update perfumetable set Perfume = @name, Quantity = @quantity where Perfume_ID = @id",
+                    new MySqlParameter("@id", perfumeID),
                     new MySqlParameter("@name", perfumeName),
-                    new MySqlParameter("@quantity", quantity)
-                );
+                    new MySqlParameter("@quantity", quantity));
 
             if (rowsAffected1 > 0)
             {
@@ -57,7 +56,7 @@ namespace InventorySystem
                 DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
                     new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
                     new MySqlParameter("@userId", CurrentUser.id),
-                    new MySqlParameter("@action", $"Edited perfume information for {prodID}"),
+                    new MySqlParameter("@action", $"Edited perfume information for {perfumeID}"),
                     new MySqlParameter("@module", "Perfume Edit Page"));
             }
             else
@@ -66,9 +65,9 @@ namespace InventorySystem
             }
 
             int rowsAffected2 = DatabaseHelper.ExecuteNonQuery(
-                "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id",
+                "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, perfume, note, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id",
                 new MySqlParameter("@status", status),
-                new MySqlParameter("@id", prodID));
+                new MySqlParameter("@id", perfumeID));
 
             if (rowsAffected2 < 0)
             {
@@ -78,10 +77,10 @@ namespace InventorySystem
 
         private void loadDetails()
         {
-            string query = "SELECT * FROM perfumetable WHERE product_id = @id";
+            string query = "SELECT * FROM perfumetable WHERE Perfume_ID = @id";
             DatabaseHelper.ExecuteReader(query, reader =>
             {
-                tbPerfumeName.Text = reader["Perfume"].ToString();
+                tbPerfumeName.Text = reader["Perfume_Name"].ToString();
                 numPerfumeQuantity.Text = reader["Quantity"].ToString();
                 if (reader["Quantity"] != DBNull.Value)
                 {
@@ -93,7 +92,7 @@ namespace InventorySystem
                     numPerfumeQuantity.Value = 0;
                 }
             },
-            new MySqlParameter("@id", prodID)
+            new MySqlParameter("@id", perfumeID)
             );
         }
     }

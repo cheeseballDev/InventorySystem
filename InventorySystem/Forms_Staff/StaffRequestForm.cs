@@ -39,7 +39,7 @@ namespace InventorySystem
                 return;
             }
             String reqID = DatabaseHelper.CheckForExistingId("select request_id from requestlogtable order by request_id desc limit 1", "REQ");
-            String prodID = DatabaseHelper.getID($"select product_id from perfumetable where perfume = @perfume",
+            String prodID = DatabaseHelper.getID($"select Perfume_ID from perfumetable where perfume = @perfume",
                 new MySqlParameter("@perfume", cbxRequestParfumFilter.Text));
             int rowsAffected = DatabaseHelper.ExecuteNonQuery(
                 "insert into requestlogtable values (@reqid, @prodid, @perfume, @quantity, @branch, NOW(), @message, @status)",

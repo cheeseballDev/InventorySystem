@@ -33,7 +33,7 @@ namespace InventorySystem
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (!tbSearchPerfumeFilter.Text.Equals("Search perfume...") && !string.IsNullOrEmpty(tbSearchPerfumeFilter.Text))
             {
-                query += " and Product_ID like @search or Perfume like @search or Branch like @search";
+                query += " and Perfume_ID like @search or Perfume like @search or Branch like @search";
                 parameters.Add(new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%"));
             } 
             dgArchivedPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());

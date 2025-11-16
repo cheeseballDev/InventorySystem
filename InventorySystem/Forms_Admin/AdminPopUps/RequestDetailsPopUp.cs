@@ -57,7 +57,7 @@ namespace InventorySystem
                         if (reader.Read())
                         {
                             lblRequestID.Text = reader["Request_ID"].ToString();
-                            lblProductId.Text = reader["Product_ID"].ToString();
+                            lblProductId.Text = reader["Perfume_ID"].ToString();
                             lblStatus.Text = reader["status"].ToString();
                             lblRequestDate.Text = reader["request_date"].ToString();
                             lblPerfume.Text = reader["perfume"].ToString();
