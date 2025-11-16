@@ -48,13 +48,6 @@ namespace InventorySystem
                 MessageBox.Show("Please select a row to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        private void btnArchiveAccount_Click(object sender, EventArgs e)
-        {      
-            ArchivedAccountsPopUp aapp = new ArchivedAccountsPopUp();
-            aapp.ShowDialog();
-        }
-
         private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)
         {
             if (tbSearchUserFilter.Text == "Search user..." || string.IsNullOrWhiteSpace(tbSearchUserFilter.Text))

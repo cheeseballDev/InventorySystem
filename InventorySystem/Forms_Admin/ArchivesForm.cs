@@ -1,0 +1,61 @@
+﻿using InventorySystem.Enums;
+using InventorySystem.Helper_Classes;
+using MySql.Data.MySqlClient;
+
+namespace InventorySystem
+{
+    public partial class ArchivesForm : Form
+    {
+        private string currentSelectedPerfumeNote;
+        private string currentSelectedPerfumeGender;
+        public ArchivesForm()
+        {
+            InitializeComponent();
+            PlaceholderHelper.ApplyPlaceholder(tbSearchPerfumeFilter, "Search perfume...");
+            PlaceholderHelper.ApplyPlaceholder(tbSearchUserFilter, "Search user...");
+            loadAccounts();
+            loadPerfume();
+        }
+
+        private void tbSearchProductFilter_TextChanged(object sender, EventArgs e)
+        {
+            loadAccounts();
+        }
+
+        private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)
+        {
+            loadAccounts();
+        }
+
+        private void loadPerfume()
+        {
+            string query = "select Product_ID, Perfume, Branch, Quantity, Date_created from archiveperfumetable where 1 = 1 ";
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (!tbSearchPerfumeFilter.Text.Equals("Search perfume...") && !string.IsNullOrEmpty(tbSearchPerfumeFilter.Text))
+            {
+                query += " and Product_ID like @search or Perfume like @search or Branch like @search";
+                parameters.Add(new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%"));
+            } 
+            dgArchivedPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
+        }
+
+        private void loadAccounts()
+        {
+            String query = "select * from archiveaccountstable where 1 = 1 ";
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+            if (!tbSearchUserFilter.Text.Equals("Search user...") && !string.IsNullOrEmpty(tbSearchUserFilter.Text))
+            {
+                query += " and ID like @search or Name like @search or Email like @search or Branch like @search or Role like @search";
+                parameters.Add(new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%"));
+            }
+            dgArchivedPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadPerfume();
+            loadAccounts();
+        }
+    }
+}

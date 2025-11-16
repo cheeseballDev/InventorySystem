@@ -205,6 +205,7 @@
             btnArchivePerfume.Text = "Archive Perfume";
             btnArchivePerfume.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnArchivePerfume.UseVisualStyleBackColor = false;
+            btnArchivePerfume.Click += btnArchivePerfume_Click;
             // 
             // label3
             // 
@@ -293,7 +294,7 @@
             cbxEditPerfumeGenderType.TabIndex = 33;
             cbxEditPerfumeGenderType.SelectedValueChanged += cbxEditPerfumeGenderType_SelectedValueChanged;
             // 
-            // AdminEditPerfumePopUp
+            // EditPerfumePopUp
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -321,7 +322,7 @@
             Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "AdminEditPerfumePopUp";
+            Name = "EditPerfumePopUp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminEditProductPopUp";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

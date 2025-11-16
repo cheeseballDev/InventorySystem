@@ -252,5 +252,10 @@ namespace InventorySystem
             currentSelectedPerfumeGender = cbxEditPerfumeGenderType.Text;
             changeFilter();
         }
+
+        private void btnArchivePerfume_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
