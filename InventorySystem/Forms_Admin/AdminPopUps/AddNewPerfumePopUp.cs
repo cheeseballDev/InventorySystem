@@ -12,7 +12,15 @@ namespace InventorySystem
         {
             InitializeComponent();
             cbxNewPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            cbxNewPerfumeBranch.Items.RemoveAt(0);
             cbxNewPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeNote)));
+            cbxNewPerfumeGenderType.Items.AddRange(Enum.GetNames(typeof(PerfumeGender)));
+
+            cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumFemale)));
+            cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicFemale)));
+            cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumMale)));
+            cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicMale)));
+            cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumUnisex)));
         }
 
         private void btnClose_Click(object sender, EventArgs e)
