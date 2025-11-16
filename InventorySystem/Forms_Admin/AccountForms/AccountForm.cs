@@ -50,8 +50,9 @@ namespace InventorySystem
         }
 
         private void btnArchiveAccount_Click(object sender, EventArgs e)
-        {
-
+        {      
+            ArchivedAccountsPopUp aapp = new ArchivedAccountsPopUp();
+            aapp.ShowDialog();
         }
 
         private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)
