@@ -44,7 +44,7 @@ namespace InventorySystem
 
                 string id = row.Cells["Product_ID"].Value.ToString();
 
-                StaffEditPerfumePopUp editProductPopUp = new StaffEditPerfumePopUp(id);
+                EditPerfumePopUp editProductPopUp = new EditPerfumePopUp(id);
                 editProductPopUp.ShowDialog();
 
                 loadResults();
