@@ -40,7 +40,7 @@
             label6 = new Label();
             label7 = new Label();
             lblRequestID = new Label();
-            lblProductId = new Label();
+            lblPerfumeId = new Label();
             lblBranch = new Label();
             lblQuantity = new Label();
             lblRequestDate = new Label();
@@ -164,7 +164,6 @@
             label6.Size = new Size(123, 22);
             label6.TabIndex = 21;
             label6.Text = "Request Date:";
-            label6.Click += label6_Click;
             // 
             // label7
             // 
@@ -186,15 +185,15 @@
             lblRequestID.TabIndex = 23;
             lblRequestID.Text = "#####";
             // 
-            // lblProductId
+            // lblPerfumeId
             // 
-            lblProductId.AutoSize = true;
-            lblProductId.ForeColor = SystemColors.ActiveCaptionText;
-            lblProductId.Location = new Point(138, 135);
-            lblProductId.Name = "lblProductId";
-            lblProductId.Size = new Size(65, 22);
-            lblProductId.TabIndex = 24;
-            lblProductId.Text = "#####";
+            lblPerfumeId.AutoSize = true;
+            lblPerfumeId.ForeColor = SystemColors.ActiveCaptionText;
+            lblPerfumeId.Location = new Point(138, 135);
+            lblPerfumeId.Name = "lblPerfumeId";
+            lblPerfumeId.Size = new Size(65, 22);
+            lblPerfumeId.TabIndex = 24;
+            lblPerfumeId.Text = "#####";
             // 
             // lblBranch
             // 
@@ -240,21 +239,21 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.FromArgb(135, 135, 135);
-            label9.Location = new Point(225, 135);
+            label9.Location = new Point(223, 135);
             label9.Name = "label9";
-            label9.Size = new Size(83, 22);
+            label9.Size = new Size(136, 22);
             label9.TabIndex = 29;
-            label9.Text = "Perfume:";
+            label9.Text = "Perfume Name:";
             // 
             // lblPerfume
             // 
             lblPerfume.AutoSize = true;
             lblPerfume.ForeColor = SystemColors.ActiveCaptionText;
-            lblPerfume.Location = new Point(308, 135);
+            lblPerfume.Location = new Point(374, 135);
             lblPerfume.Name = "lblPerfume";
-            lblPerfume.Size = new Size(164, 22);
+            lblPerfume.Size = new Size(252, 22);
             lblPerfume.TabIndex = 30;
-            lblPerfume.Text = "##############";
+            lblPerfume.Text = "######################";
             // 
             // label10
             // 
@@ -289,7 +288,7 @@
             Controls.Add(lblRequestDate);
             Controls.Add(lblQuantity);
             Controls.Add(lblBranch);
-            Controls.Add(lblProductId);
+            Controls.Add(lblPerfumeId);
             Controls.Add(lblRequestID);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -324,7 +323,7 @@
         private Label label6;
         private Label label7;
         private Label lblRequestID;
-        private Label lblProductId;
+        private Label lblPerfumeId;
         private Label lblBranch;
         private Label lblQuantity;
         private Label lblRequestDate;
