@@ -165,6 +165,7 @@ namespace InventorySystem
             btnForecast.BackColor = defaultButtonColor;
             btnAuditLog.BackColor = defaultButtonColor;
             btnAccounts.BackColor = defaultButtonColor;
+            btnArchives.BackColor = defaultButtonColor;
         }
 
         private void cbxUser_SelectedIndexChanged(object sender, EventArgs e)
