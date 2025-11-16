@@ -52,14 +52,30 @@ namespace InventorySystem
                 status = "Stock unchanged";
             }
 
-            if (String.IsNullOrEmpty(perfumeName))
+            if (string.IsNullOrEmpty(perfumeName))
             {
                 MessageBox.Show("Please fill up the name field.", "Warning", MessageBoxButtons.OK);
+                return;
             }
-
-            if (String.IsNullOrEmpty(perfumeName))
+            if (string.IsNullOrEmpty(note))
             {
-                MessageBox.Show("Please fill up the name field.", "Warning", MessageBoxButtons.OK);
+                MessageBox.Show("Please select a note type.", "Warning", MessageBoxButtons.OK);
+                return;
+            }
+            if (string.IsNullOrEmpty(branch))
+            {
+                MessageBox.Show("Please select a branch.", "Warning", MessageBoxButtons.OK);
+                return;
+            }
+            if (string.IsNullOrEmpty(gender))
+            {
+                MessageBox.Show("Please select a gender type.", "Warning", MessageBoxButtons.OK);
+                return;
+            }
+            if (string.IsNullOrEmpty(fragrance))
+            {
+                MessageBox.Show("Please select a fragrance type.", "Warning", MessageBoxButtons.OK);
+                return;
             }
 
             int rowsAffected1 = DatabaseHelper.ExecuteNonQuery(

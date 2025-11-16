@@ -21,6 +21,7 @@ namespace InventorySystem
             cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumMale)));
             cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicMale)));
             cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumUnisex)));
+            changeFilter();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -42,10 +43,32 @@ namespace InventorySystem
             String fragrance = cbxNewPerfumeFragranceType.Text;
             int quantity = int.Parse(numPerfumeQuantity.Text);
 
-            if (String.IsNullOrEmpty(perfumeName))
+            if (string.IsNullOrEmpty(perfumeName))
             {
                 MessageBox.Show("Please fill up the name field.", "Warning", MessageBoxButtons.OK);
+                return;
             }
+            if (string.IsNullOrEmpty(note))
+            {
+                MessageBox.Show("Please select a note type.", "Warning", MessageBoxButtons.OK);
+                return;
+            }
+            if (string.IsNullOrEmpty(branch))
+            {
+                MessageBox.Show("Please select a branch.", "Warning", MessageBoxButtons.OK);
+                return;
+            }
+            if (string.IsNullOrEmpty(gender))
+            {
+                MessageBox.Show("Please select a gender type.", "Warning", MessageBoxButtons.OK);
+                return;
+            }
+            if (string.IsNullOrEmpty(fragrance))
+            {
+                MessageBox.Show("Please select a fragrance type.", "Warning", MessageBoxButtons.OK);
+                return;
+            }
+
             string newID = DatabaseHelper.CheckForExistingId("select Product_ID from perfumetable order by Product_ID desc limit 1", "PERF");
 
             int rowsAffected = DatabaseHelper.ExecuteNonQuery(
@@ -76,95 +99,50 @@ namespace InventorySystem
 
         private void changeFilter()
         {
-            if (currentSelectedPerfumeNote == "Premium" && currentSelectedPerfumeGender == "All")
+            if (currentSelectedPerfumeNote == "Premium" && currentSelectedPerfumeGender == "Female")
             {
+                cbxNewPerfumeFragranceType.Enabled = true;
                 cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumFemale)));
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumMale)));
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumUnisex)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
-            }
-            else if (currentSelectedPerfumeNote == "All" && currentSelectedPerfumeGender == "Female")
-            {
-                cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumFemale)));
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicFemale)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
-            }
-            else if (currentSelectedPerfumeNote == "All" && currentSelectedPerfumeGender == "Male")
-            {
-                cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumMale)));
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicMale)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
-            }
-            else if (currentSelectedPerfumeGender == "Unisex" && currentSelectedPerfumeNote == "All")
-            {
-                cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumUnisex)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
-            }
-            else if (currentSelectedPerfumeNote == "Classic" && currentSelectedPerfumeGender == "All")
-            {
-                cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicFemale)));
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicMale)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
-            }
-            else if (currentSelectedPerfumeNote == "Premium" && currentSelectedPerfumeGender == "Female")
-            {
-                cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
-                cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumFemale)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
             }
             else if (currentSelectedPerfumeNote == "Premium" && currentSelectedPerfumeGender == "Male")
             {
+                cbxNewPerfumeFragranceType.Enabled = true;
                 cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumMale)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
             }
             else if (currentSelectedPerfumeNote == "Premium" && currentSelectedPerfumeGender == "Unisex")
             {
+                cbxNewPerfumeFragranceType.Enabled = true;
                 cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumUnisex)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
             }
             else if (currentSelectedPerfumeNote == "Classic" && currentSelectedPerfumeGender == "Female")
             {
+                cbxNewPerfumeFragranceType.Enabled = true;
                 cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicFemale)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
             }
             else if (currentSelectedPerfumeNote == "Classic" && currentSelectedPerfumeGender == "Male")
             {
+                cbxNewPerfumeFragranceType.Enabled = true;
                 cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicMale)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
             }
             else if (currentSelectedPerfumeNote == "Classic" && currentSelectedPerfumeGender == "Unisex")
             {
+                cbxNewPerfumeFragranceType.Enabled = true;
                 cbxNewPerfumeFragranceType.Items.Clear();
             }
             else
             {
+                cbxNewPerfumeFragranceType.Enabled = false;
                 cbxNewPerfumeFragranceType.Items.Clear();
-                cbxNewPerfumeFragranceType.Items.Add("All");
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumFemale)));
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicFemale)));
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumMale)));
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragranceClassicMale)));
                 cbxNewPerfumeFragranceType.Items.AddRange(Enum.GetNames(typeof(PerfumeFragrancePremiumUnisex)));
-                cbxNewPerfumeFragranceType.SelectedIndex = 0;
             }
         }
 

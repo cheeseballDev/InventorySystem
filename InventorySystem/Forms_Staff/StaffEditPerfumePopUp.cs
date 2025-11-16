@@ -39,7 +39,7 @@ namespace InventorySystem
                 status = $"Deducted {origQty - quantity} to product quantity";
             }
 
-            if (String.IsNullOrEmpty(perfumeName))
+            if (string.IsNullOrEmpty(perfumeName))
             {
                 MessageBox.Show("Please fill up the name field.", "Warning", MessageBoxButtons.OK);
             }
