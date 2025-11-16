@@ -59,6 +59,9 @@ namespace InventorySystem
             MySqlParameter searchParameter = new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%");
 
             dgAccounts.DataSource = DatabaseHelper.ExecuteQuery(query, searchParameter);
+            dgAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgAccounts.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgAccounts.ScrollBars = ScrollBars.Both;
         }
     }
 }

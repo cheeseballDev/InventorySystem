@@ -56,6 +56,9 @@ namespace InventorySystem
                 parameters.Add(new MySqlParameter("@endDate", dtpRequestDateTo.Value.Date));
             }
             dgExistingRequests.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
+            dgExistingRequests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgExistingRequests.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgExistingRequests.ScrollBars = ScrollBars.Both;
         }
 
         private void loadExistingRequests()

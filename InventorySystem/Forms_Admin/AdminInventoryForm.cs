@@ -156,6 +156,9 @@ namespace InventorySystem
             }
 
             dgPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
+            dgPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgPerfume.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgPerfume.ScrollBars = ScrollBars.Both;
         }
 
         private void changeFilter()

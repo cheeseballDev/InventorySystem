@@ -37,6 +37,9 @@ namespace InventorySystem
                 parameters.Add(new MySqlParameter("@search", "%" + tbSearchPerfumeFilter.Text + "%"));
             } 
             dgArchivedPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
+            dgArchivedPerfume.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgArchivedPerfume.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgArchivedPerfume.ScrollBars = ScrollBars.Both;
         }
 
         private void loadAccounts()
@@ -49,7 +52,9 @@ namespace InventorySystem
                 parameters.Add(new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%"));
             }
             dgArchivedAccounts.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
-
+            dgArchivedAccounts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgArchivedAccounts.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgArchivedAccounts.ScrollBars = ScrollBars.Both;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
