@@ -72,7 +72,7 @@ namespace InventorySystem
             string newID = DatabaseHelper.CheckForExistingId("select Product_ID from perfumetable order by Product_ID desc limit 1", "PERF");
 
             int rowsAffected = DatabaseHelper.ExecuteNonQuery(
-                "insert into perfumetable (Product_ID, Perfume, Note, Branch, Gender, Fragrance Quantity) values (@id, @name, @note, @branch, @gender, @fragrance, @quantity)",
+                "insert into perfumetable (Product_ID, Perfume, Note, Branch, Gender, Fragrance, Quantity) values (@id, @name, @note, @branch, @gender, @fragrance, @quantity)",
                     new MySqlParameter("@id", newID),
                     new MySqlParameter("@name", perfumeName),
                     new MySqlParameter("@note", note),
@@ -90,6 +90,7 @@ namespace InventorySystem
                     new MySqlParameter("@userId", CurrentUser.id),
                     new MySqlParameter("@action", $"Added new perfume ({newID})"),
                     new MySqlParameter("@module", "Add perfume page"));
+                this.Close();
             }
             else
             {

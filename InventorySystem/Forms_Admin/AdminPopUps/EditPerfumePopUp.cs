@@ -15,6 +15,7 @@ namespace InventorySystem
             InitializeComponent();
             cbxEditPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
             cbxEditPerfumeNoteType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeNote)));
+            cbxEditPerfumeGenderType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeGender)));
             prodID = id;
             lblEditPerfumeID.Text = prodID;
             loadDetails();
@@ -104,14 +105,12 @@ namespace InventorySystem
             }
 
             int rowsAffected2 = DatabaseHelper.ExecuteNonQuery(
-                "INSERT INTO reporttable (product_id, perfume, note, branch, gender, fragrance, quantity, status) SELECT product_id, perfume, note, branch, gender, fragrance, quantity, @status FROM perfumetable WHERE product_id = @id",
+                "INSERT INTO reporttable (product_id, perfume, note, branch, quantity, status) SELECT product_id, perfume, note, branch, quantity, @status FROM perfumetable WHERE product_id = @id",
                 new MySqlParameter("@status", status),
                 new MySqlParameter("@id", prodID),
                 new MySqlParameter("@name", perfumeName),
                 new MySqlParameter("@note", note),
                 new MySqlParameter("@branch", branch),
-                new MySqlParameter("@gender", gender),
-                new MySqlParameter("@fragrance", fragrance),
                 new MySqlParameter("@quantity", quantity));
 
             if (rowsAffected2 < 0)
@@ -255,7 +254,39 @@ namespace InventorySystem
 
         private void btnArchivePerfume_Click(object sender, EventArgs e)
         {
+            String perfumeName = tbEditPerfumeName.Text;
+            String note = cbxEditPerfumeNoteType.Text;
+            String branch = cbxEditPerfumeBranch.Text;
+            String gender = cbxEditPerfumeGenderType.Text;
+            String fragrance = cbxEditPerfumeFragranceType.Text;
 
+            DialogResult wot = MessageBox.Show("Are you sure you want to archive this product?", "Archive confirmation", MessageBoxButtons.YesNo);
+
+            if (wot == DialogResult.Yes)
+            {
+                String query = "insert into archiveperfumestable values (@id, @perfume, @note, @gender, @fragrance, @branch, NOW())";
+
+                int rowsAffected = DatabaseHelper.ExecuteNonQuery(query,
+                        new MySqlParameter("@perfume", perfumeName),
+                        new MySqlParameter("@note", note),
+                        new MySqlParameter("@gender", gender),
+                        new MySqlParameter("@fragrance", fragrance),
+                        new MySqlParameter("@branch", branch),
+                        new MySqlParameter("@id", prodID)
+                    );
+
+                if (rowsAffected > 0)
+                {
+                    DatabaseHelper.ExecuteNonQuery("Delete from perfumetable where product_id = @id", new MySqlParameter("@id", prodID));
+                    MessageBox.Show("Product archived");
+                    DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
+                       new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
+                       new MySqlParameter("@userId", CurrentUser.id),
+                       new MySqlParameter("@action", $"Archived product ({prodID})"),
+                       new MySqlParameter("@module", "Perfume Edit Page"));
+                    this.Close();
+                }
+            }
         }
     }
 }

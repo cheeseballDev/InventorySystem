@@ -19,7 +19,7 @@ namespace InventorySystem
 
         private void tbSearchProductFilter_TextChanged(object sender, EventArgs e)
         {
-            loadAccounts();
+            loadPerfume();
         }
 
         private void tbSearchUserFilter_TextChanged(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace InventorySystem
 
         private void loadPerfume()
         {
-            string query = "select Product_ID, Perfume, Branch, Quantity, Date_created from archiveperfumetable where 1 = 1 ";
+            string query = "select * from archiveperfumestable where 1 = 1 ";
             List<MySqlParameter> parameters = new List<MySqlParameter>();
             if (!tbSearchPerfumeFilter.Text.Equals("Search perfume...") && !string.IsNullOrEmpty(tbSearchPerfumeFilter.Text))
             {
@@ -48,7 +48,7 @@ namespace InventorySystem
                 query += " and ID like @search or Name like @search or Email like @search or Branch like @search or Role like @search";
                 parameters.Add(new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%"));
             }
-            dgArchivedPerfume.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
+            dgArchivedAccounts.DataSource = DatabaseHelper.ExecuteQuery(query, parameters.ToArray());
 
         }
 
