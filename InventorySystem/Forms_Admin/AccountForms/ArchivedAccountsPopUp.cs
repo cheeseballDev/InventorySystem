@@ -16,8 +16,7 @@ namespace InventorySystem
 
         private void displayAccounts()
         {
-            // TODO: Change the table name to the archived accounts table
-            String query = "select ID, Name, Email, Branch, Role, Date_Created from ////";
+            String query = "select * from archiveaccountstable";
             dgArchivedAccounts.DataSource = DatabaseHelper.ExecuteQuery(query);
         }
 
@@ -52,8 +51,7 @@ namespace InventorySystem
                 return;
             }
 
-            // TODO: Change the table name to the archived accounts table
-            String query = "select ID, Name, Email, Branch, Role, Date_Created from //// where ID like @search or Name like @search or Email like @search or Branch like @search or Role like @search";
+            String query = "select * from archiveaccountstable where ID like @search or Name like @search or Email like @search or Branch like @search or Role like @search";
             MySqlParameter searchParameter = new MySqlParameter("@search", "%" + tbSearchUserFilter.Text + "%");
 
             dgArchivedAccounts.DataSource = DatabaseHelper.ExecuteQuery(query, searchParameter);
