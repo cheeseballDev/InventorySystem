@@ -79,5 +79,11 @@ namespace InventorySystem
             dtpAuditLogDateFrom.Value = firstDay;
             dtpAuditLogDateTo.Value = lastDay;
         }
+
+        private void dgAuditLog_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgAuditLog.ClearSelection();
+            dgAuditLog.CurrentCell = null;
+        }
     }
 }

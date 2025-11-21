@@ -63,5 +63,16 @@ namespace InventorySystem
             dgAccounts.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgAccounts.ScrollBars = ScrollBars.Both;
         }
+
+        private void dgAccounts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgAccounts.ClearSelection();
+            dgAccounts.CurrentCell = null;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            displayAccounts();
+        }
     }
 }

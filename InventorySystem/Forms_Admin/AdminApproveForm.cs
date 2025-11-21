@@ -137,5 +137,11 @@ namespace InventorySystem
             dtpRequestDateTo.Value = lastDay;
             loadResults();
         }
+
+        private void dgExistingRequests_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgExistingRequests.ClearSelection();
+            dgExistingRequests.CurrentCell = null;
+        }
     }
 }

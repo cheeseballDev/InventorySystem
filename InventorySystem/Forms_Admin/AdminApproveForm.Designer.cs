@@ -98,6 +98,7 @@
             dgExistingRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgExistingRequests.Size = new Size(786, 300);
             dgExistingRequests.TabIndex = 13;
+            dgExistingRequests.DataBindingComplete += dgExistingRequests_DataBindingComplete;
             // 
             // label7
             // 

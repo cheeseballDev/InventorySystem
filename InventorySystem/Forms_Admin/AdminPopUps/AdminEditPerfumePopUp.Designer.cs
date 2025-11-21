@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem
 {
-    partial class EditPerfumePopUp
+    partial class AdminEditPerfumePopUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPerfumePopUp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminEditPerfumePopUp));
             btnClose = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();

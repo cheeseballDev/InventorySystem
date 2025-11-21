@@ -59,5 +59,17 @@ namespace InventorySystem
             loadPerfume();
             loadAccounts();
         }
+
+        private void dgArchivedPerfume_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgArchivedPerfume.ClearSelection();
+            dgArchivedPerfume.CurrentCell = null;
+        }
+
+        private void dgArchivedAccounts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgArchivedAccounts.ClearSelection();
+            dgArchivedAccounts.CurrentCell = null;
+        }
     }
 }

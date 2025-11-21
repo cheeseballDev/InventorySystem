@@ -167,6 +167,7 @@
             dgReportResults.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgReportResults.Size = new Size(786, 306);
             dgReportResults.TabIndex = 22;
+            dgReportResults.DataBindingComplete += dgReportResults_DataBindingComplete;
             // 
             // btnExportToExcel
             // 

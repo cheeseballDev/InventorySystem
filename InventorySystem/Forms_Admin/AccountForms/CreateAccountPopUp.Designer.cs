@@ -177,25 +177,23 @@
             // 
             // cbxAccountRole
             // 
+            cbxAccountRole.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxAccountRole.Font = new Font("Montserrat", 8.999999F);
             cbxAccountRole.FormattingEnabled = true;
-            cbxAccountRole.Items.AddRange(new object[] { "Inventory Guy", "Family Guy" });
             cbxAccountRole.Location = new Point(122, 243);
             cbxAccountRole.Name = "cbxAccountRole";
             cbxAccountRole.Size = new Size(330, 24);
             cbxAccountRole.TabIndex = 22;
-            cbxAccountRole.Text = "Select role...";
             // 
             // cbxAccountBranch
             // 
+            cbxAccountBranch.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxAccountBranch.Font = new Font("Montserrat", 8.999999F);
             cbxAccountBranch.FormattingEnabled = true;
-            cbxAccountBranch.Items.AddRange(new object[] { "Branch 1", "Branch 2", "Branch 3" });
             cbxAccountBranch.Location = new Point(122, 199);
             cbxAccountBranch.Name = "cbxAccountBranch";
             cbxAccountBranch.Size = new Size(330, 24);
             cbxAccountBranch.TabIndex = 23;
-            cbxAccountBranch.Text = "Select branch...";
             // 
             // tbPassword
             // 

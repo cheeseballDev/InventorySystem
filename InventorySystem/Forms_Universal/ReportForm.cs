@@ -182,5 +182,11 @@ namespace InventorySystem
                 GC.Collect();
             }
         }
+
+        private void dgReportResults_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgReportResults.ClearSelection();
+            dgReportResults.CurrentCell = null;
+        }
     }
 }

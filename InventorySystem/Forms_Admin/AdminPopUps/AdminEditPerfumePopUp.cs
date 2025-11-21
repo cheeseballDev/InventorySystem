@@ -4,16 +4,17 @@ using MySql.Data.MySqlClient;
 
 namespace InventorySystem
 {
-    public partial class EditPerfumePopUp : Form
+    public partial class AdminEditPerfumePopUp : Form
     {
         private string perfumeID;
         private int origQty;
         private string currentSelectedPerfumeNote;
         private string currentSelectedPerfumeGender;
-        public EditPerfumePopUp(String id)
+        public AdminEditPerfumePopUp(String id)
         {
             InitializeComponent();
             cbxEditPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            cbxEditPerfumeBranch.Items.Remove("All");
             cbxEditPerfumeType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeType)));
             cbxEditPerfumeGenderType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeGender)));
             perfumeID = id;
@@ -184,7 +185,6 @@ namespace InventorySystem
                 cbxEditPerfumeNoteType.Enabled = false;
             }
         }
-
 
         private void cbxEditPerfumeNoteType_SelectedValueChanged(object sender, EventArgs e)
         {

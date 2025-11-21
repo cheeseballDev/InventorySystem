@@ -1,5 +1,4 @@
 ﻿using InventorySystem.Enums;
-using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
@@ -25,7 +24,6 @@ namespace InventorySystem
             cbxPerfumeTypeFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeType)));
             cbxPerfumeGenderFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeGender)));
 
-
             cbxPerfumeNoteFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNotePremiumFemale)));
             cbxPerfumeNoteFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNoteClassicFemale)));
             cbxPerfumeNoteFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNotePremiumMale)));
@@ -43,7 +41,7 @@ namespace InventorySystem
         {
             if (!id.Equals(""))
             {
-                EditPerfumePopUp editPerfumePopUp = new EditPerfumePopUp(id);
+                AdminEditPerfumePopUp editPerfumePopUp = new AdminEditPerfumePopUp(id);
                 editPerfumePopUp.ShowDialog();
 
                 loadResults();
@@ -304,6 +302,12 @@ namespace InventorySystem
 
                 currentQty = int.Parse(row.Cells["Quantity"].Value.ToString());
             }
+        }
+
+        private void dgPerfume_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgPerfume.ClearSelection();
+            dgPerfume.CurrentCell = null;
         }
     }
 }

@@ -91,6 +91,7 @@
             dgArchivedPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgArchivedPerfume.Size = new Size(797, 157);
             dgArchivedPerfume.TabIndex = 5;
+            dgArchivedPerfume.DataBindingComplete += dgArchivedPerfume_DataBindingComplete;
             // 
             // panel1
             // 
@@ -184,6 +185,7 @@
             dgArchivedAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgArchivedAccounts.Size = new Size(793, 178);
             dgArchivedAccounts.TabIndex = 17;
+            dgArchivedAccounts.DataBindingComplete += dgArchivedAccounts_DataBindingComplete;
             // 
             // panel2
             // 

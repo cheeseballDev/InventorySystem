@@ -1,9 +1,6 @@
-﻿using System.Windows.Forms;
-using InventorySystem.Enums;
+﻿using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace InventorySystem
 {
@@ -301,6 +298,12 @@ namespace InventorySystem
 
                 currentQty = int.Parse(row.Cells["Quantity"].Value.ToString());
             }
+        }
+
+        private void dgPerfume_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgPerfume.ClearSelection();
+            dgPerfume.CurrentCell = null;
         }
     }
 }
