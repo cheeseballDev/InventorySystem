@@ -1,6 +1,9 @@
-﻿using InventorySystem.Enums;
+﻿using System.Windows.Forms;
+using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace InventorySystem
 {
@@ -82,7 +85,7 @@ namespace InventorySystem
             loadResults();
 
             String addReport = $"Added {quantityAmount} to product quantity";
-            String incrementReportQuery = "INSERT INTO reporttable (Perfume_ID, perfume, note, branch, quantity, status) SELECT Perfume_ID, perfume, note, branch, gender, fragrance, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
+            String incrementReportQuery = "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
             DatabaseHelper.ExecuteNonQuery(incrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", addReport));
             quantityAmount = 0;
         }
@@ -97,7 +100,7 @@ namespace InventorySystem
                     String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE Perfume_ID = @id";
                     DatabaseHelper.ExecuteNonQuery(decrementQuery, new MySqlParameter("@id", id));
 
-                    quantityAmount--;
+                    quantityAmount++;
                 }
             }
             else
@@ -111,7 +114,7 @@ namespace InventorySystem
             loadResults();
 
             String deductReport = $"Deducted {quantityAmount} to product quantity";
-            String decrementReportQuery = "INSERT INTO reporttable (Perfume_ID, perfume, note, branch, quantity, status) SELECT Perfume_ID, perfume, note, branch, gender, fragrance, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
+            String decrementReportQuery = "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
             DatabaseHelper.ExecuteNonQuery(decrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", deductReport));
             quantityAmount = 0;
         }

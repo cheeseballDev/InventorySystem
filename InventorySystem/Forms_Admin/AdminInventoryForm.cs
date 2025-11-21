@@ -95,7 +95,7 @@ namespace InventorySystem
                     String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE Perfume_ID = @id";
                     DatabaseHelper.ExecuteNonQuery(decrementQuery, new MySqlParameter("@id", id));
 
-                    quantityAmount--;
+                    quantityAmount++;
                 }
             }
             else
