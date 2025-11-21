@@ -89,5 +89,10 @@ namespace InventorySystem
             numPerfumeAmountToRequest.Value = 0;
         }
 
+        private void dgExistingRequests_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgExistingRequests.ClearSelection();
+            dgExistingRequests.CurrentCell = null;
+        }
     }
 }

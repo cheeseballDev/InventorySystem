@@ -109,6 +109,7 @@
             dgAuditLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgAuditLog.Size = new Size(797, 288);
             dgAuditLog.TabIndex = 5;
+            dgAuditLog.DataBindingComplete += dgAuditLog_DataBindingComplete;
             // 
             // richTextBox1
             // 

@@ -57,7 +57,7 @@
             dgPerfume.AllowUserToDeleteRows = false;
             dgPerfume.AllowUserToResizeColumns = false;
             dgPerfume.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -90,6 +90,7 @@
             dgPerfume.Size = new Size(797, 328);
             dgPerfume.TabIndex = 5;
             dgPerfume.CellClick += dgPerfume_CellClick;
+            dgPerfume.DataBindingComplete += dgPerfume_DataBindingComplete;
             // 
             // btnAddSelectedPerfumeQuantity
             // 

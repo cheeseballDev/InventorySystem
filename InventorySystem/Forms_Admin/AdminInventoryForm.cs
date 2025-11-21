@@ -1,4 +1,6 @@
-﻿using InventorySystem.Enums;
+﻿using System;
+using System.Windows.Forms;
+using InventorySystem.Enums;
 using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
@@ -24,7 +26,6 @@ namespace InventorySystem
             cbxPerfumeBranchFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
             cbxPerfumeTypeFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeType)));
             cbxPerfumeGenderFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeGender)));
-
 
             cbxPerfumeNoteFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNotePremiumFemale)));
             cbxPerfumeNoteFilter.Items.AddRange(Enum.GetNames(typeof(PerfumeNoteClassicFemale)));
@@ -304,6 +305,12 @@ namespace InventorySystem
 
                 currentQty = int.Parse(row.Cells["Quantity"].Value.ToString());
             }
+        }
+
+        private void dgPerfume_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgPerfume.ClearSelection();
+            dgPerfume.CurrentCell = null;
         }
     }
 }

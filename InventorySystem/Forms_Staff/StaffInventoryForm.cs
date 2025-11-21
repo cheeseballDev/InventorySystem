@@ -302,5 +302,11 @@ namespace InventorySystem
                 currentQty = int.Parse(row.Cells["Quantity"].Value.ToString());
             }
         }
+
+        private void dgPerfume_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgPerfume.ClearSelection();
+            dgPerfume.CurrentCell = null;
+        }
     }
 }

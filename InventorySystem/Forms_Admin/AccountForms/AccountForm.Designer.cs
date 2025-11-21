@@ -80,6 +80,7 @@
             dgAccounts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgAccounts.Size = new Size(783, 325);
             dgAccounts.TabIndex = 5;
+            dgAccounts.DataBindingComplete += dgAccounts_DataBindingComplete;
             // 
             // btnEditAccount
             // 
