@@ -95,18 +95,16 @@
         Riverbanks
     }
 
-    public enum AccountRoles
-    {
-        All,
-        Admin,
-        Staff
-    }
-
     public enum RequestStatus
     {
         All,
         Approved,
         Rejected,
         Pending
+    }
+
+    public enum AccountRoles
+    {
+        Inventory
     }
 }

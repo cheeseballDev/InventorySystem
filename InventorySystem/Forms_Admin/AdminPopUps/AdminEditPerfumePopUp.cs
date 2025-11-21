@@ -14,6 +14,7 @@ namespace InventorySystem
         {
             InitializeComponent();
             cbxEditPerfumeBranch.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeBranch)));
+            cbxEditPerfumeBranch.Items.Remove("All");
             cbxEditPerfumeType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeType)));
             cbxEditPerfumeGenderType.Items.AddRange(Enum.GetNames(typeof(Enums.PerfumeGender)));
             perfumeID = id;
@@ -184,7 +185,6 @@ namespace InventorySystem
                 cbxEditPerfumeNoteType.Enabled = false;
             }
         }
-
 
         private void cbxEditPerfumeNoteType_SelectedValueChanged(object sender, EventArgs e)
         {

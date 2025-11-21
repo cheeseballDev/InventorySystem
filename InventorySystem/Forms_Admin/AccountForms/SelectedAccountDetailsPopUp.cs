@@ -11,6 +11,7 @@ namespace InventorySystem.Forms_Admin
         {
             InitializeComponent();
             cbxAccountBranch.Items.AddRange(Enum.GetNames(typeof(PerfumeBranch)));
+            cbxAccountBranch.Items.Remove("All");
             cbxAccountRole.Items.AddRange(Enum.GetNames(typeof(AccountRoles)));
             empID = id;
             loadDetails();
