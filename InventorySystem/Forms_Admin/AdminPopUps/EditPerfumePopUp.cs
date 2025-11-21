@@ -80,7 +80,7 @@ namespace InventorySystem
             }
 
             int rowsAffected = DatabaseHelper.ExecuteNonQuery(
-                "insert into perfumetable (Perfume_ID, Perfume_Name, Perfume_Type, Note, Gender, Branch, Quantity) values (@id, @name, @type, @note, @gender, @branch, @quantity)",
+                "UPDATE perfumetable SET Perfume_Name = @name, Perfume_Type = @type, Note = @note, Gender = @gender, Branch = @branch, Quantity = @quantity WHERE Perfume_ID = @id",
                     new MySqlParameter("@id", perfumeID),
                     new MySqlParameter("@name", perfumeName),
                     new MySqlParameter("@type", type),
@@ -98,6 +98,7 @@ namespace InventorySystem
                     new MySqlParameter("@userId", CurrentUser.id),
                     new MySqlParameter("@action", $"Edited perfume information for {perfumeID}"),
                     new MySqlParameter("@module", "Perfume Edit Page"));
+                this.Close();
             }
             else
             {

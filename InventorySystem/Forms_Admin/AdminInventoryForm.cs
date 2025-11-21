@@ -9,6 +9,8 @@ namespace InventorySystem
         private string currentSelectedPerfumeType;
         private string currentSelectedPerfumeGender;
         private int quantityAmount = 0;
+        private string id = "";
+        private int currentQty = 0;
         public AdminInventoryForm()
         {
             InitializeComponent();
@@ -38,12 +40,8 @@ namespace InventorySystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgPerfume.SelectedRows.Count > 0)
+            if (!id.Equals(""))
             {
-                DataGridViewRow row = dgPerfume.SelectedRows[0];
-
-                string id = row.Cells["Perfume_ID"].Value.ToString();
-
                 EditPerfumePopUp editProductPopUp = new EditPerfumePopUp(id);
                 editProductPopUp.ShowDialog();
 
@@ -66,10 +64,8 @@ namespace InventorySystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (dgPerfume.SelectedRows.Count > 0)
+            if (!id.Equals(""))
             {
-                DataGridViewRow row = dgPerfume.SelectedRows[0];
-                string id = row.Cells["Perfume_ID"].Value.ToString();
                 String incrementQuery = "UPDATE perfumetable SET quantity = quantity + 1 WHERE Perfume_ID = @id";
                 DatabaseHelper.ExecuteNonQuery(incrementQuery, new MySqlParameter("@id", id));
 
@@ -84,9 +80,6 @@ namespace InventorySystem
         private void btnAddSelectedPerfumeQuantity_Leave(object sender, EventArgs e)
         {
             loadResults();
-            DataGridViewRow row = dgPerfume.SelectedRows[0];
-            string id = row.Cells["Perfume_ID"].Value.ToString();
-
             String addReport = $"Added {quantityAmount} to product quantity";
             String incrementReportQuery = "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
             DatabaseHelper.ExecuteNonQuery(incrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", addReport));
@@ -95,12 +88,9 @@ namespace InventorySystem
 
         private void btnDeductSelectedPerfumeQuantity_Click(object sender, EventArgs e)
         {
-            if (dgPerfume.SelectedRows.Count > 0)
+            if (!id.Equals(""))
             {
-                DataGridViewRow row = dgPerfume.SelectedRows[0];
-                string id = row.Cells["Perfume_ID"].Value.ToString();
-                int qty = int.Parse(row.Cells["Quantity"].Value.ToString());
-                if (qty > 0)
+                if (currentQty > 0)
                 {
                     String decrementQuery = "UPDATE perfumetable SET quantity = quantity - 1 WHERE Perfume_ID = @id";
                     DatabaseHelper.ExecuteNonQuery(decrementQuery, new MySqlParameter("@id", id));
@@ -116,8 +106,6 @@ namespace InventorySystem
         private void btnDeductSelectedPerfumeQuantity_Leave(object sender, EventArgs e)
         {
             loadResults();
-            DataGridViewRow row = dgPerfume.SelectedRows[0];
-            string id = row.Cells["Perfume_ID"].Value.ToString();
 
             String deductReport = $"Deducted {quantityAmount} to product quantity";
             String decrementReportQuery = "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
@@ -305,6 +293,17 @@ namespace InventorySystem
 
             AddNewPerfumePopUp addPerfume = new AddNewPerfumePopUp();
             addPerfume.ShowDialog();
+        }
+
+        private void dgPerfume_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgPerfume.Rows[e.RowIndex];
+                id = row.Cells["Perfume_ID"].Value.ToString();
+
+                currentQty = int.Parse(row.Cells["Quantity"].Value.ToString());
+            }
         }
     }
 }

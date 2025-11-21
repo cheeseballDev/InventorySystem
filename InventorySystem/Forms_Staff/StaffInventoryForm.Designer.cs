@@ -88,6 +88,7 @@
             dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgPerfume.Size = new Size(797, 328);
             dgPerfume.TabIndex = 5;
+            dgPerfume.CellClick += dgPerfume_CellClick;
             // 
             // btnAddSelectedPerfumeQuantity
             // 
