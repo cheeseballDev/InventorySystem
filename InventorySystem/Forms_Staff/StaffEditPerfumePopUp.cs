@@ -45,7 +45,7 @@ namespace InventorySystem
             }
 
             int rowsAffected1 = DatabaseHelper.ExecuteNonQuery(
-                "update perfumetable set Perfume = @name, Quantity = @quantity where Perfume_ID = @id",
+                "update perfumetable set Perfume_Name = @name, Quantity = @quantity where Perfume_ID = @id",
                     new MySqlParameter("@id", perfumeID),
                     new MySqlParameter("@name", perfumeName),
                     new MySqlParameter("@quantity", quantity));
@@ -65,7 +65,7 @@ namespace InventorySystem
             }
 
             int rowsAffected2 = DatabaseHelper.ExecuteNonQuery(
-                "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, perfume, note, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id",
+                "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id",
                 new MySqlParameter("@status", status),
                 new MySqlParameter("@id", perfumeID));
 
