@@ -45,8 +45,8 @@ namespace InventorySystem
         {
             if (!id.Equals(""))
             {
-                StaffEditPerfumePopUp editProductPopUp = new StaffEditPerfumePopUp(id);
-                editProductPopUp.ShowDialog();
+                StaffEditPerfumePopUp editPerfumePopUp = new StaffEditPerfumePopUp(id);
+                editPerfumePopUp.ShowDialog();
 
                 loadResults();
             }
@@ -84,7 +84,7 @@ namespace InventorySystem
         {
             loadResults();
 
-            String addReport = $"Added {quantityAmount} to product quantity";
+            String addReport = $"Added {quantityAmount} to perfume quantity";
             String incrementReportQuery = "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
             DatabaseHelper.ExecuteNonQuery(incrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", addReport));
             quantityAmount = 0;
@@ -113,7 +113,7 @@ namespace InventorySystem
         {
             loadResults();
 
-            String deductReport = $"Deducted {quantityAmount} to product quantity";
+            String deductReport = $"Deducted {quantityAmount} to perfume quantity";
             String decrementReportQuery = "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
             DatabaseHelper.ExecuteNonQuery(decrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", deductReport));
             quantityAmount = 0;

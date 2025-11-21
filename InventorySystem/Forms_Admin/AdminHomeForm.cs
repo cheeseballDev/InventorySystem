@@ -44,7 +44,7 @@ namespace InventorySystem
                 lblTitle,
                 lblDescription,
                 "Inventory",
-                "Overview of all available parfum products"
+                "Overview of all available perfumes"
                 );
         }
 

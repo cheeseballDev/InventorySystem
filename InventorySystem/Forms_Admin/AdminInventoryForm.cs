@@ -1,4 +1,5 @@
 ﻿using InventorySystem.Enums;
+using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
@@ -42,8 +43,8 @@ namespace InventorySystem
         {
             if (!id.Equals(""))
             {
-                EditPerfumePopUp editProductPopUp = new EditPerfumePopUp(id);
-                editProductPopUp.ShowDialog();
+                EditPerfumePopUp editPerfumePopUp = new EditPerfumePopUp(id);
+                editPerfumePopUp.ShowDialog();
 
                 loadResults();
             }
@@ -57,7 +58,7 @@ namespace InventorySystem
             }
         }
 
-        private void tbSearchProductFilter_TextChanged(object sender, EventArgs e)
+        private void tbSearchperfumeFilter_TextChanged(object sender, EventArgs e)
         {
             loadResults();
         }
@@ -80,7 +81,7 @@ namespace InventorySystem
         private void btnAddSelectedPerfumeQuantity_Leave(object sender, EventArgs e)
         {
             loadResults();
-            String addReport = $"Added {quantityAmount} to product quantity";
+            String addReport = $"Added {quantityAmount} to perfume quantity";
             String incrementReportQuery = "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
             DatabaseHelper.ExecuteNonQuery(incrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", addReport));
             quantityAmount = 0;
@@ -107,7 +108,7 @@ namespace InventorySystem
         {
             loadResults();
 
-            String deductReport = $"Deducted {quantityAmount} to product quantity";
+            String deductReport = $"Deducted {quantityAmount} to perfume quantity";
             String decrementReportQuery = "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id";
             DatabaseHelper.ExecuteNonQuery(decrementReportQuery, new MySqlParameter("@id", id), new MySqlParameter("@status", deductReport));
             quantityAmount = 0;
