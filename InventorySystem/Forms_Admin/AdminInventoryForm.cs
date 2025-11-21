@@ -58,7 +58,7 @@ namespace InventorySystem
             }
         }
 
-        private void tbSearchperfumeFilter_TextChanged(object sender, EventArgs e)
+        private void tbSearchPerfumeFilter_TextChanged(object sender, EventArgs e)
         {
             loadResults();
         }
@@ -291,7 +291,6 @@ namespace InventorySystem
 
         private void btnAddNewPerfume_Click(object sender, EventArgs e)
         {
-
             AddNewPerfumePopUp addPerfume = new AddNewPerfumePopUp();
             addPerfume.ShowDialog();
         }

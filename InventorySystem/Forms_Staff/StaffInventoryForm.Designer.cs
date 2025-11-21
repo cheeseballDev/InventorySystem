@@ -170,7 +170,7 @@
             tbSearchPerfumeFilter.Size = new Size(395, 21);
             tbSearchPerfumeFilter.TabIndex = 0;
             tbSearchPerfumeFilter.Text = "Search perfume...";
-            tbSearchPerfumeFilter.TextChanged += tbSearchProductFilter_TextChanged;
+            tbSearchPerfumeFilter.TextChanged += tbSearchPerfumeFilter_TextChanged;
             // 
             // cbxPerfumeNoteFilter
             // 

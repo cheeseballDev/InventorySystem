@@ -60,7 +60,7 @@ namespace InventorySystem
             }
         }
 
-        private void tbSearchProductFilter_TextChanged(object sender, EventArgs e)
+        private void tbSearchPerfumeFilter_TextChanged(object sender, EventArgs e)
         {
             loadResults();
         }

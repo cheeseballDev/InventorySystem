@@ -100,7 +100,7 @@ namespace InventorySystem.Helper_Classes
                 case "PERF":
                     substringType = 5;
                     idFormat = "PERF";
-                    moduleID = "Product_ID";
+                    moduleID = "Perfume_ID";
                     break;
                 case "E":
                     substringType = 3;
