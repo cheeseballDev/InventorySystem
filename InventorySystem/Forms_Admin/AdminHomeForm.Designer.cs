@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomeForm));
             panel1 = new Panel();
-            btnArchives = new Button();
             pnlNavigation = new Panel();
+            btnArchives = new Button();
             btnAccounts = new Button();
             btnAuditLog = new Button();
             btnForecast = new Button();
@@ -72,6 +72,14 @@
             panel1.Size = new Size(180, 600);
             panel1.TabIndex = 0;
             // 
+            // pnlNavigation
+            // 
+            pnlNavigation.BackColor = Color.FromArgb(225, 212, 193);
+            pnlNavigation.Location = new Point(168, 177);
+            pnlNavigation.Name = "pnlNavigation";
+            pnlNavigation.Size = new Size(12, 100);
+            pnlNavigation.TabIndex = 1;
+            // 
             // btnArchives
             // 
             btnArchives.BackgroundImageLayout = ImageLayout.Center;
@@ -89,14 +97,6 @@
             btnArchives.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnArchives.UseVisualStyleBackColor = true;
             btnArchives.Click += btnArchives_Click;
-            // 
-            // pnlNavigation
-            // 
-            pnlNavigation.BackColor = Color.FromArgb(225, 212, 193);
-            pnlNavigation.Location = new Point(168, 177);
-            pnlNavigation.Name = "pnlNavigation";
-            pnlNavigation.Size = new Size(12, 100);
-            pnlNavigation.TabIndex = 1;
             // 
             // btnAccounts
             // 

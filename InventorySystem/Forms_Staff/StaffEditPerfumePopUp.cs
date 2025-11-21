@@ -52,12 +52,13 @@ namespace InventorySystem
 
             if (rowsAffected1 > 0)
             {
-                MessageBox.Show($"Product successfully updated!");
+                MessageBox.Show($"Perfume successfully updated!");
                 DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
                     new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
                     new MySqlParameter("@userId", CurrentUser.id),
                     new MySqlParameter("@action", $"Edited perfume information for {perfumeID}"),
                     new MySqlParameter("@module", "Perfume Edit Page"));
+               this.Close();
             }
             else
             {

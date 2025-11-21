@@ -134,8 +134,8 @@ namespace InventorySystem
             ResetButtons();
             btnArchives.BackColor = hoverButtonColor;
 
-            pnlNavigation.Height = btnAccounts.Height;
-            pnlNavigation.Top = btnAccounts.Top;
+            pnlNavigation.Height = btnArchives.Height;
+            pnlNavigation.Top = btnArchives.Top;
 
             FormLoaderHelper.LoadForm(
                pnlFormLoader,
