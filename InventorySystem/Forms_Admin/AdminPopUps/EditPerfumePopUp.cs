@@ -42,11 +42,11 @@ namespace InventorySystem
             String status = null;
             if (quantity > origQty)
             {
-                status = $"Added {quantity - origQty} to product quantity";
+                status = $"Added {quantity - origQty} to perfume quantity";
             }
             else if (quantity < origQty)
             {
-                status = $"Deducted {origQty - quantity} to product quantity";
+                status = $"Deducted {origQty - quantity} to perfume quantity";
             }
             else if (quantity == origQty)
             {
@@ -80,7 +80,7 @@ namespace InventorySystem
             }
 
             int rowsAffected = DatabaseHelper.ExecuteNonQuery(
-                "insert into perfumetable (Perfume_ID, Perfume_Name, Perfume_Type, Note, Gender, Branch, Quantity) values (@id, @name, @type, @note, @gender, @branch, @quantity)",
+                "UPDATE perfumetable SET Perfume_Name = @name, Perfume_Type = @type, Note = @note, Gender = @gender, Branch = @branch, Quantity = @quantity WHERE Perfume_ID = @id",
                     new MySqlParameter("@id", perfumeID),
                     new MySqlParameter("@name", perfumeName),
                     new MySqlParameter("@type", type),
@@ -92,16 +92,17 @@ namespace InventorySystem
 
             if (rowsAffected > 0)
             {
-                MessageBox.Show($"Product successfully updated!");
+                MessageBox.Show($"Perfume successfully updated!");
                 DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
                     new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
                     new MySqlParameter("@userId", CurrentUser.id),
                     new MySqlParameter("@action", $"Edited perfume information for {perfumeID}"),
                     new MySqlParameter("@module", "Perfume Edit Page"));
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Product update error");
+                MessageBox.Show("Perfume update error");
             }
 
             int rowsAffected2 = DatabaseHelper.ExecuteNonQuery(
@@ -205,7 +206,7 @@ namespace InventorySystem
             String gender = cbxEditPerfumeGenderType.Text;
             String note = cbxEditPerfumeNoteType.Text;
 
-            DialogResult wot = MessageBox.Show("Are you sure you want to archive this product?", "Archive confirmation", MessageBoxButtons.YesNo);
+            DialogResult wot = MessageBox.Show("Are you sure you want to archive this perfume?", "Archive confirmation", MessageBoxButtons.YesNo);
 
             if (wot == DialogResult.Yes)
             {
@@ -223,11 +224,11 @@ namespace InventorySystem
                 if (rowsAffected > 0)
                 {
                     DatabaseHelper.ExecuteNonQuery("Delete from perfumetable where Perfume_ID = @id", new MySqlParameter("@id", perfumeID));
-                    MessageBox.Show("Product archived");
+                    MessageBox.Show("Perfume archived");
                     DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
                        new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
                        new MySqlParameter("@userId", CurrentUser.id),
-                       new MySqlParameter("@action", $"Archived product ({perfumeID})"),
+                       new MySqlParameter("@action", $"Archived perfume ({perfumeID})"),
                        new MySqlParameter("@module", "Perfume Edit Page"));
                     this.Close();
                 }

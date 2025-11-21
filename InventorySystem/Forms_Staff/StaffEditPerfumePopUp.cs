@@ -45,19 +45,20 @@ namespace InventorySystem
             }
 
             int rowsAffected1 = DatabaseHelper.ExecuteNonQuery(
-                "update perfumetable set Perfume = @name, Quantity = @quantity where Perfume_ID = @id",
+                "update perfumetable set Perfume_Name = @name, Quantity = @quantity where Perfume_ID = @id",
                     new MySqlParameter("@id", perfumeID),
                     new MySqlParameter("@name", perfumeName),
                     new MySqlParameter("@quantity", quantity));
 
             if (rowsAffected1 > 0)
             {
-                MessageBox.Show($"Product successfully updated!");
+                MessageBox.Show($"Perfume successfully updated!");
                 DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
                     new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
                     new MySqlParameter("@userId", CurrentUser.id),
                     new MySqlParameter("@action", $"Edited perfume information for {perfumeID}"),
                     new MySqlParameter("@module", "Perfume Edit Page"));
+               this.Close();
             }
             else
             {
@@ -65,7 +66,7 @@ namespace InventorySystem
             }
 
             int rowsAffected2 = DatabaseHelper.ExecuteNonQuery(
-                "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, perfume, note, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id",
+                "INSERT INTO reporttable (Perfume_ID, branch, quantity, status) SELECT Perfume_ID, branch, quantity, @status FROM perfumetable WHERE Perfume_ID = @id",
                 new MySqlParameter("@status", status),
                 new MySqlParameter("@id", perfumeID));
 

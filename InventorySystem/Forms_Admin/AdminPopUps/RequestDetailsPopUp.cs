@@ -26,7 +26,7 @@ namespace InventorySystem
             DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
                 new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
                 new MySqlParameter("@userId", CurrentUser.id),
-                new MySqlParameter("@action", $"Approved product request {reqID}"),
+                new MySqlParameter("@action", $"Approved perfume request {reqID}"),
                 new MySqlParameter("@module", "Request Details Module"));
         }
 
@@ -38,7 +38,7 @@ namespace InventorySystem
             DatabaseHelper.ExecuteNonQuery("INSERT INTO auditlogtable (log_id, user_id, action, module, timestamp) VALUES (@logID, @userID, @action, @module, NOW())",
                 new MySqlParameter("@logID", DatabaseHelper.CheckForExistingId("select log_id FROM auditlogtable order by log_id desc limit 1", "AL")),
                 new MySqlParameter("@userId", CurrentUser.id),
-                new MySqlParameter("@action", $"Rejected product request {reqID}"),
+                new MySqlParameter("@action", $"Rejected perfume request {reqID}"),
                 new MySqlParameter("@module", "Request Details Module"));
         }
 

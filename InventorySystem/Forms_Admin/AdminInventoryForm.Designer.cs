@@ -89,6 +89,7 @@
             dgPerfume.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgPerfume.Size = new Size(797, 328);
             dgPerfume.TabIndex = 5;
+            dgPerfume.CellClick += dgPerfume_CellClick;
             // 
             // btnAddSelectedPerfumeQuantity
             // 
@@ -170,7 +171,7 @@
             tbSearchPerfumeFilter.Size = new Size(395, 21);
             tbSearchPerfumeFilter.TabIndex = 0;
             tbSearchPerfumeFilter.Text = "Search perfume...";
-            tbSearchPerfumeFilter.TextChanged += tbSearchProductFilter_TextChanged;
+            tbSearchPerfumeFilter.TextChanged += tbSearchPerfumeFilter_TextChanged;
             // 
             // cbxPerfumeNoteFilter
             // 
