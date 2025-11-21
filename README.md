@@ -1,12 +1,12 @@
 # InventorySystem
 
 ## PREREQUISITES: 
-- [XAMPP] (https://www.apachefriends.org/)
+- [XAMPP](https://www.apachefriends.org/)
 - Visual Studio 2022 (.NET desktop environment)
 
 ## FILES NEEDED BEFORE RUNNING THE SYSTEM:
 - App.config (Place inside the InventorySystem solution and put your XAMPP connection string)
-- [The database file] (https://drive.google.com/file/d/1LOJ1m60olEMdtqxgIpoblr3Vr3mh-GVT/view?usp=sharing)
+- [The database file](https://drive.google.com/file/d/1LOJ1m60olEMdtqxgIpoblr3Vr3mh-GVT/view?usp=sharing)
 
 ## HOW TO RUN:
 1. Open XAMPP and run Apache and Mysql.
