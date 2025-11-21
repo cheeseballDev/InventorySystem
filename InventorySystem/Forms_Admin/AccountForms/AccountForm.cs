@@ -69,5 +69,10 @@ namespace InventorySystem
             dgAccounts.ClearSelection();
             dgAccounts.CurrentCell = null;
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            displayAccounts();
+        }
     }
 }

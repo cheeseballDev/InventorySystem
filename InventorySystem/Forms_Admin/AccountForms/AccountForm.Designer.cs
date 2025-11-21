@@ -39,6 +39,7 @@
             lblTitle = new Label();
             tbSearchUserFilter = new RichTextBox();
             btnCreateNewAccount = new Button();
+            btnRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dgAccounts).BeginInit();
             SuspendLayout();
             // 
@@ -170,11 +171,31 @@
             btnCreateNewAccount.UseVisualStyleBackColor = true;
             btnCreateNewAccount.Click += btnCreateNewAccount_Click;
             // 
+            // btnRefresh
+            // 
+            btnRefresh.BackColor = Color.FromArgb(225, 212, 193);
+            btnRefresh.Cursor = Cursors.Hand;
+            btnRefresh.FlatAppearance.BorderSize = 0;
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.Font = new Font("Montserrat", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRefresh.ForeColor = Color.Black;
+            btnRefresh.Image = (Image)resources.GetObject("btnRefresh.Image");
+            btnRefresh.ImageAlign = ContentAlignment.MiddleRight;
+            btnRefresh.Location = new Point(667, 451);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(142, 30);
+            btnRefresh.TabIndex = 16;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
             // AccountForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(821, 504);
+            Controls.Add(btnRefresh);
             Controls.Add(btnCreateNewAccount);
             Controls.Add(lblDescription);
             Controls.Add(lblTitle);
@@ -200,5 +221,6 @@
         private Label lblDescription;
         private Label lblTitle;
         private RichTextBox tbSearchUserFilter;
+        private Button btnRefresh;
     }
 }

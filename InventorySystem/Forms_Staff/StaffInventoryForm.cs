@@ -1,9 +1,6 @@
-﻿using System.Windows.Forms;
-using InventorySystem.Enums;
+﻿using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace InventorySystem
 {

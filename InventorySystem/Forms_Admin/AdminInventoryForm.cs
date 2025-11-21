@@ -1,7 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-using InventorySystem.Enums;
-using InventorySystem.Enums;
+﻿using InventorySystem.Enums;
 using InventorySystem.Helper_Classes;
 using MySql.Data.MySqlClient;
 
@@ -44,7 +41,7 @@ namespace InventorySystem
         {
             if (!id.Equals(""))
             {
-                EditPerfumePopUp editPerfumePopUp = new EditPerfumePopUp(id);
+                AdminEditPerfumePopUp editPerfumePopUp = new AdminEditPerfumePopUp(id);
                 editPerfumePopUp.ShowDialog();
 
                 loadResults();

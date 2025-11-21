@@ -40,12 +40,12 @@ namespace InventorySystem
             }
             String reqID = DatabaseHelper.CheckForExistingId("select request_id from requestlogtable order by request_id desc limit 1", "REQ");
             String perfID = DatabaseHelper.getID($"select Perfume_ID from perfumetable where Perfume_Name = @perfume_name",
-                new MySqlParameter("@perfume", cbxRequestPerfumeFilter.Text));
+                new MySqlParameter("@perfume_name", cbxRequestPerfumeFilter.Text));
             int rowsAffected = DatabaseHelper.ExecuteNonQuery(
                 "insert into requestlogtable values (@request_id, @perfume_id, @perfume_name, @quantity, @branch, NOW(), @message, @status)",
                     new MySqlParameter("@request_id", reqID),
                     new MySqlParameter("@perfume_id", perfID),
-                    new MySqlParameter("@perfume", cbxRequestPerfumeFilter.Text),
+                    new MySqlParameter("@perfume_name", cbxRequestPerfumeFilter.Text),
                     new MySqlParameter("@quantity", int.Parse(numPerfumeAmountToRequest.Text)),
                     new MySqlParameter("@branch", cbxRequestCurrentBranchFilter.Text),
                     new MySqlParameter("@message", tbRequestMessage.Text),
@@ -60,6 +60,10 @@ namespace InventorySystem
                     new MySqlParameter("@userId", CurrentUser.id),
                     new MySqlParameter("@action", $"Sent product request ({reqID})"),
                     new MySqlParameter("@module", "Request Product Page"));
+                tbRequestMessage.Clear();
+                cbxRequestCurrentBranchFilter.SelectedIndex = -1;
+                cbxRequestPerfumeFilter.SelectedIndex = -1;
+                numPerfumeAmountToRequest.Value = 0;
             }
             else
             {
@@ -83,8 +87,8 @@ namespace InventorySystem
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            cbxRequestCurrentBranchFilter.Items.Clear();
-            cbxRequestPerfumeFilter.Items.Clear();
+            cbxRequestCurrentBranchFilter.SelectedIndex = -1;
+            cbxRequestPerfumeFilter.SelectedIndex = -1;
             tbRequestMessage.Clear();
             numPerfumeAmountToRequest.Value = 0;
         }

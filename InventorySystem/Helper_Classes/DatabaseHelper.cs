@@ -199,7 +199,6 @@ namespace InventorySystem.Helper_Classes
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
                 con.Open();
-                //string query = $"select {idType} FROM {table} where email = @email limit 1";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     if (parameters != null && parameters.Length > 0)
